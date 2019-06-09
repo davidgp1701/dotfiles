@@ -7,7 +7,7 @@ set -eo pipefail
 # installation.
 
 # Update pacman reposotories and install any updates
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 
 # Install zsh
-pacman -S --noconfirm zsh
+sudo pacman -S --noconfirm zsh
