@@ -13,7 +13,7 @@ else
   exit 0 
 fi
 
-dirname=$(dirname "$0")
+dirname="$( cd "$(dirname "$0")" ; pwd -P )"
 
 # Preparing the vim configuration files
 (
