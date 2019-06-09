@@ -9,5 +9,8 @@ set -eo pipefail
 # Update pacman reposotories and install any updates
 sudo pacman -Syu --noconfirm
 
+dirname="$( cd "$(dirname "$0")" ; pwd -P )"
+
 # Install zsh
-sudo pacman -S --noconfirm zsh
+"${dirname}"/zsh.sh
+
