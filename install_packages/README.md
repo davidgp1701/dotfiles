@@ -6,9 +6,13 @@ To download this script and make it work, probably you need to install first som
 
 Install git:
 
+```console
+sudo pacman -S git
 ```
-pacman -S git
-```
+
+The command allows several options in case of the available hardware. This is for what I have around, so maybe you need to custimize this for your own hardware.
+
+* ```xps15_9570``` - It will install the necessary modules and Xorg to be able to use the nvidia graphics card.
 
 ## Mac OS X
 
