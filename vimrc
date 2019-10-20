@@ -60,3 +60,10 @@ call vundle#begin()
 
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
+" Closes the section managed by Vundle
+call vundle#end()
+filetype plugin indent on
+

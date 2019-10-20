@@ -12,3 +12,8 @@ The configuration makes usage of the Vundle plugin, you will need to perform thi
 mkdir ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
+
+The following plugins were installed using Vundle:
+
+* [Surround](https://github.com/tpope/vim-surround)
+* [Repeat](https://github.com/tpope/vim-repeat)
