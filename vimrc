@@ -1,3 +1,9 @@
+" Let's learn vim the right way, dissabiling arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " Disable compatibility with the old Vim. 
 set nocompatible
 
@@ -41,3 +47,6 @@ set statusline+=\ %l:%c
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Show line numbers
+set number
