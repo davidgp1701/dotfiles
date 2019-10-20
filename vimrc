@@ -7,6 +7,9 @@ noremap <Right> <Nop>
 " Disable compatibility with the old Vim. 
 set nocompatible
 
+" It's necessary for better plugin compatibility
+filetype off
+
 " Turn on syntax highlighting
 syntax on
 
@@ -50,3 +53,10 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Show line numbers
 set number
+
+" Enables plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
