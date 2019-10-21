@@ -17,3 +17,6 @@ The following plugins were installed using Vundle:
 
 * [Surround](https://github.com/tpope/vim-surround)
 * [Repeat](https://github.com/tpope/vim-repeat)
+* [Airline](https://github.com/vim-airline)
+* [Fugitive](https://github.com/tpope/vim-fugitive)
+* [Vimwiki](https://github.com/vimwiki/vimwiki)
