@@ -9,6 +9,7 @@ set nocompatible
 
 " It's necessary for better plugin compatibility
 filetype off
+filetype plugin on
 
 " Turn on syntax highlighting
 syntax on
@@ -40,6 +41,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vimwiki/vimwiki'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 " Closes the section managed by Vundle
 call vundle#end()
@@ -47,3 +50,6 @@ filetype plugin indent on
 
 " Configuring vim-airline for the vim status bar
 let g:airline_powerline_fonts = 1
+
+" InstantMarkdown Configuration
+let g:instant_markdown_autostart = 0

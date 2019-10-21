@@ -20,3 +20,4 @@ The following plugins were installed using Vundle:
 * [Airline](https://github.com/vim-airline)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
 * [Vimwiki](https://github.com/vimwiki/vimwiki)
+* [Instant Markdown](https://github.com/suan/vim-instant-markdown) - This requieres the installation of several external tools. Check documentation of the Plugin.
