@@ -43,6 +43,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'airblade/vim-gitgutter'
 
 " Closes the section managed by Vundle
 call vundle#end()
@@ -53,3 +54,7 @@ let g:airline_powerline_fonts = 1
 
 " InstantMarkdown Configuration
 let g:instant_markdown_autostart = 0
+
+" Vimwiki configuration
+let g:vimwiki_list = [{'path': '~/Documents/notes/', 'syntax': 'markdown', 'ext': '.md'}]
+au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
