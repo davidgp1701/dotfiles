@@ -4,6 +4,9 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" Mapping of keys
+let mapleader=","
+
 " Disable compatibility with the old Vim. 
 set nocompatible
 
