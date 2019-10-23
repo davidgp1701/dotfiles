@@ -4,6 +4,9 @@
     noremap <Left> <Nop>
     noremap <Right> <Nop>
 
+" Relative numbers
+   set number relativenumber
+
 " Disable compatibility with the old Vim. 
     set nocompatible
             
