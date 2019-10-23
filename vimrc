@@ -6,6 +6,11 @@
 
 " Relative numbers
    set number relativenumber
+" Mapping of keys
+   let mapleader=","
+
+" Disable compatibility with the old Vim. 
+set nocompatible
 
 " Disable compatibility with the old Vim. 
     set nocompatible
