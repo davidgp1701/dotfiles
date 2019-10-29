@@ -17,7 +17,7 @@
    let mapleader=","
 
 " Disable compatibility with the old Vim. 
-set nocompatible
+    set nocompatible
 
 " Disable compatibility with the old Vim. 
     set nocompatible
@@ -26,7 +26,7 @@ set nocompatible
     filetype off
     filetype plugin on
     
-" Turn on syntax highlighting
+" Turn on syntax highlighting 
     syntax on
 
 " Automatically wrap text that extends beyond the screen layout
@@ -59,6 +59,10 @@ set nocompatible
     Plugin 'vimwiki/vimwiki'
     Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
     Plugin 'airblade/vim-gitgutter'
+    Plugin 'danilo-augusto/vim-afterglow'
+    Plugin 'ayu-theme/ayu-vim'
+    Plugin 'hashivim/vim-terraform'
+    Plugin 'jvirtanen/vim-hcl'
 
 " Closes the section managed by Vundle
     call vundle#end()
@@ -73,3 +77,7 @@ set nocompatible
 " Vimwiki configuration
     let g:vimwiki_list = [{'path': '~/Documents/notes/', 'syntax': 'markdown', 'ext': '.md'}]
     au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
+
+" Color highlighting scheme
+    let g:afterglow_blackout = 1
+    colorscheme afterglow
