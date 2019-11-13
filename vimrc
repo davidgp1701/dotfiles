@@ -91,9 +91,10 @@
     endif
 
 
-" Colorschme 
+" Colorscheme 
     syntax enable
     colorscheme night-owl
+    let g:terminal_color_background="#010e19"
 
 " show existing tab with 4 spaces width
     set tabstop=4
