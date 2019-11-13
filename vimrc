@@ -63,6 +63,7 @@
     Plugin 'ayu-theme/ayu-vim'
     Plugin 'hashivim/vim-terraform'
     Plugin 'jvirtanen/vim-hcl'
+    Plugin 'haishanh/night-owl.vim'
 
 " Closes the section managed by Vundle
     call vundle#end()
@@ -79,5 +80,24 @@
     au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
 
 " Color highlighting scheme
-    let g:afterglow_blackout = 1
-    colorscheme afterglow
+"   let g:afterglow_blackout = 1
+"   colorscheme afterglow
+
+" Improving vim colors
+    if exists('+termguicolors')
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        set termguicolors
+    endif
+
+
+" Colorschme 
+    syntax enable
+    colorscheme night-owl
+
+" show existing tab with 4 spaces width
+    set tabstop=4
+" when indenting with '>', user 4 spaces
+    set shiftwidth=4
+" On pressing tab, insert 4 spaces
+    set expandtab
