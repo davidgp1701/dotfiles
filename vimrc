@@ -59,8 +59,6 @@
     Plugin 'vimwiki/vimwiki'
     Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
     Plugin 'airblade/vim-gitgutter'
-    Plugin 'danilo-augusto/vim-afterglow'
-    Plugin 'ayu-theme/ayu-vim'
     Plugin 'hashivim/vim-terraform'
     Plugin 'jvirtanen/vim-hcl'
     Plugin 'haishanh/night-owl.vim'
@@ -79,17 +77,12 @@
     let g:vimwiki_list = [{'path': '~/Documents/notes/', 'syntax': 'markdown', 'ext': '.md'}]
     au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
 
-" Color highlighting scheme
-"   let g:afterglow_blackout = 1
-"   colorscheme afterglow
-
 " Improving vim colors
     if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
     endif
-
 
 " Colorscheme 
     syntax enable
