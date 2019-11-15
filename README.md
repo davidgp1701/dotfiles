@@ -21,3 +21,11 @@ The following plugins were installed using Vundle:
 * [Fugitive](https://github.com/tpope/vim-fugitive)
 * [Vimwiki](https://github.com/vimwiki/vimwiki)
 * [Instant Markdown](https://github.com/suan/vim-instant-markdown) - This requieres the installation of several external tools. Check documentation of the Plugin.
+
+## .alacritty.yml
+
+[Alacritty}(https://github.com/jwilm/alacritty) is a cross platform GPU accelerated terminal. This is its configuration file.
+
+## i3/config
+
+[i3](https://i3wm.org/) is my favourity windows manager. In reality I have installed a fork of it, called [i3-gaps](https://github.com/Airblader/i3). 
