@@ -101,19 +101,20 @@ tabspaces: 8
 # Font configuration (changes require restart)
 font:
   normal:
-    family: Inconsolata for Powerline 
+      #    family: Inconsolata for Powerline 
+    family: Hack
     style: Regular
 
   bold:
-    family: Inconsolata for Powerline
+    family: Hack
     style: Bold
 
   italic:
-    family: Inconsolata for Powerline
+    family: Hack
     style: Italic
 
   # Point size
-  size: 11.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
