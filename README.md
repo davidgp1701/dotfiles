@@ -30,6 +30,8 @@ The following plugins were installed using Vundle:
 
 [i3](https://i3wm.org/) is my favourity windows manager. In reality I have installed a fork of it, called [i3-gaps](https://github.com/Airblader/i3). 
 
+For controlling Spotify I use the following script: [sp](https://gist.github.com/streetturtle/fa6258f3ff7b17747ee3). This allows to assign shortcuts to pause/play next or previous song.
+
 ## Scripts
 
 * `keyboard/switch-layout.sh`: It switches between an US language layout and a spanish one. To change it depending on the kind of text being inputed.
