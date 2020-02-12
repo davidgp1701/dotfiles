@@ -26,7 +26,7 @@ The following plugins were installed using Vundle:
 
 [Alacritty}(https://github.com/jwilm/alacritty) is a cross platform GPU accelerated terminal. This is its configuration file.
 
-## i3/config
+## config/i3/config
 
 [i3](https://i3wm.org/) is my favourity windows manager. In reality I have installed a fork of it, called [i3-gaps](https://github.com/Airblader/i3). 
 

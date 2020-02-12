@@ -83,10 +83,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -183,12 +183,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 workspace $ws1  output eDP1
 workspace $ws2  output eDP1
 workspace $ws3  output eDP1
-workspace $ws4  output DP3 #DP1-8
-workspace $ws5  output DP3 #DP1-8
-workspace $ws6  output DP3 #DP1-8 
-workspace $ws7  output DP3 #DP1-1-8
-workspace $ws8  output DP3 #DP1-1-8
-workspace $ws9  output DP3 #DP1-1-8
+workspace $ws4  output DP1-8
+workspace $ws5  output DP1-8
+workspace $ws6  output DP1-8 
+workspace $ws7  output DP1-1-8
+workspace $ws8  output DP1-1-8
+workspace $ws9  output DP1-1-8
 workspace $ws10 output eDP1
 
 # reload the configuration file
