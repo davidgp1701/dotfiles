@@ -28,6 +28,8 @@
     
 " Turn on syntax highlighting 
     syntax on
+    set t_Co=256
+    set cursorline
 
 " Automatically wrap text that extends beyond the screen layout
     set wrap
@@ -62,6 +64,9 @@
     Plugin 'hashivim/vim-terraform'
     Plugin 'jvirtanen/vim-hcl'
     Plugin 'haishanh/night-owl.vim'
+    Plugin 'morhetz/gruvbox'
+    Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+    Plugin 'tpope/vim-commentary'
 
 " Closes the section managed by Vundle
     call vundle#end()
@@ -78,6 +83,7 @@
     au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
 
 " Improving vim colors
+    
     if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -86,8 +92,22 @@
 
 " Colorscheme 
     syntax enable
-    colorscheme night-owl
+    "colorscheme night-owl
     let g:terminal_color_background="#010e19"
+    colorscheme gruvbox
+    " To be able to see the cursor position with gruvbox
+    nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+    nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+    nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+    nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+    nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+    nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+    let g:gruvbox_contrast_dark = 'hard'
+    set background=dark
+    set bg=dark
+    " colorscheme onehalfdark
+    " let g:airline_theme='onehalfdark'
+
 
 " show existing tab with 4 spaces width
     set tabstop=4
