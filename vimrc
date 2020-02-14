@@ -19,17 +19,9 @@
 " Disable compatibility with the old Vim. 
     set nocompatible
 
-" Disable compatibility with the old Vim. 
-    set nocompatible
-            
 " It's necessary for better plugin compatibility
     filetype off
     filetype plugin on
-    
-" Turn on syntax highlighting 
-    syntax on
-    set t_Co=256
-    set cursorline
 
 " Automatically wrap text that extends beyond the screen layout
     set wrap
@@ -45,9 +37,6 @@
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Show line numbers
-    set number
-
 " Enables plugins
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
@@ -58,7 +47,6 @@
     Plugin 'tpope/vim-repeat'
     Plugin 'vim-airline/vim-airline'
     Plugin 'tpope/vim-fugitive'
-    Plugin 'vimwiki/vimwiki'
     Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
     Plugin 'airblade/vim-gitgutter'
     Plugin 'hashivim/vim-terraform'
@@ -91,6 +79,9 @@
     endif
 
 " Colorscheme 
+    syntax on
+    set t_Co=256
+    set cursorline
     syntax enable
     "colorscheme night-owl
     let g:terminal_color_background="#010e19"
