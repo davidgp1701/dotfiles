@@ -34,7 +34,7 @@ For controlling Spotify I use the following script: [sp](https://gist.github.com
 
 ## config/dunst
 
-Configuration for the notification daemon [Dunst}(https://dunst-project.org/).
+Configuration for the notification daemon [Dunst](https://dunst-project.org/).
 
 ## config/zsh
 
