@@ -9,15 +9,15 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-# Basic auto/tab complete
+# Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
-# Auto complete with case sensitive
-zstyle ':completion:*' matcher-list '' 'm:(a-zA-Z)=(A-Za-z)' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)    # It includes hidden files
+_comp_options+=(globdots)		# Include hidden files.
 
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
