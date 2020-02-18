@@ -84,7 +84,7 @@
     set cursorline
     syntax enable
     "colorscheme night-owl
-    let g:terminal_color_background="#010e19"
+    " let g:terminal_color_background="#010e19"
     colorscheme gruvbox
     " To be able to see the cursor position with gruvbox
     nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
@@ -98,7 +98,8 @@
     set bg=dark
     " colorscheme onehalfdark
     " let g:airline_theme='onehalfdark'
-
+    
+    highlight Normal guibg=black guifg=white
 
 " show existing tab with 4 spaces width
     set tabstop=4
