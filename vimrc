@@ -55,6 +55,8 @@
     Plugin 'morhetz/gruvbox'
     Bundle 'sonph/onehalf', {'rtp': 'vim/'}
     Plugin 'tpope/vim-commentary'
+    Plugin 'cespare/vim-toml'
+    Plugin 'maralla/vim-toml-enhance', {'depends': 'cespare/vim-toml'}
 
 " Closes the section managed by Vundle
     call vundle#end()

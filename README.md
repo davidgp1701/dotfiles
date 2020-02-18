@@ -34,7 +34,16 @@ For controlling Spotify I use the following script: [sp](https://gist.github.com
 
 ## config/dunst
 
-Configuration for the notification daemon [Dunst}(https://dunst-project.org/).
+Configuration for the notification daemon [Dunst](https://dunst-project.org/).
+
+## config/zsh
+
+Basic configuration of zsh shell. Several submodules are used to automate the installation of functions. But at the end it is necessary to manually install spaceship. Follow the instructions here:
+
+* [Spaceship Prompt](https://github.com/denysdovhan/spaceship-prompt).
+
+Initial ideas about his configuration are based on the work of [Brodie Robertson](https://github.com/BrodieRobertson/dotfiles).
+
 
 ## Scripts
 
