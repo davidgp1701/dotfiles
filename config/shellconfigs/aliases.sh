@@ -10,4 +10,14 @@ case $(uname) in
         else
             alias ls="ls -G"
         fi
+        ;;
+    Linux)
+        # In case the OS is Linux
+        alias ls="ls --color"
+        alias ll="ls --color -la"
+        ;;
 esac        
+
+alias wbarcelona="curl wttr.in/barcelona"
+alias k="kubectl"
+alias v="vim"
