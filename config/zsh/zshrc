@@ -43,6 +43,8 @@ source ~/dotfiles/plugins/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 # Update path
 export PATH=$PATH:/home/david/.local/bin:/home/david/.okta/bin
 
+unsetopt MULTIBYTE
+
 # Update fpath for locally installed modules
 fpath=( "$HOME/.zfunctions" $fpath )
 

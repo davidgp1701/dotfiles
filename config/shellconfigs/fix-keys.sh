@@ -1,18 +1,3 @@
-#!/bin/sh
-
-actual=$(setxkbmap -print | grep xkb_geometry | cut -d '(' -f2 | cut -d ')' -f1)
-
-if [ "$actual" = "pc104" ] 
-then
-    setxkbmap -model pc105 -layout es
-else
-    setxkbmap -model pc104 -layout us 
-fi
-
-xmodmap -e "keycode 78 = Insert NoSymbol Insert"
-xmodmap -e "keycode 127 = Delete NoSymbol Delete"
-xmodmap -e "keycode 107 = XF86Copy"
-
 autoload zkbd
 [[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
 source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
@@ -28,3 +13,4 @@ source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
