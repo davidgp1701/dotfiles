@@ -60,7 +60,7 @@
     Plugin 'preservim/nerdtree'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
     Plugin 'ctrlpvim/ctrlp.vim'
-    " Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plugin 'neoclide/coc.nvim', {'branch':'release'}
     
 " Closes the section managed by Vundle
     call vundle#end()
