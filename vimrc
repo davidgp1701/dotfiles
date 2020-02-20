@@ -60,6 +60,7 @@
     Plugin 'preservim/nerdtree'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'vim-scripts/icansee.vim'
     " Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     
 " Closes the section managed by Vundle
@@ -157,3 +158,7 @@
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
+
+" Change color scheme for terraform buffers
+  autocmd BufEnter *.tf* colorscheme night-owl 
+
