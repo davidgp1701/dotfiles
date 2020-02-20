@@ -4,6 +4,10 @@ case $(uname) in
         # In case the OS is Linux
         export TERMINAL="st"
         ;;
+    Darwin)
+        # Exports specific to darwin
+        export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH" 
+        ;;
 esac  
 
 # General to all OS
