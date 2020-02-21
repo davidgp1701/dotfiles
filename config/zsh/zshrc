@@ -34,6 +34,10 @@ bindkey -M menuselect 'right' vi-forward-char
 # Fix backspace bug when switching modes
 bindkey "^?" backward-delete-char
 
+# Fix Control arrow to move a word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # Load personal configuration shell files
 for f in ~/.config/shellconfigs/*; do source "$f"; done
 
