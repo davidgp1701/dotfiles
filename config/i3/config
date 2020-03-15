@@ -184,16 +184,28 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # workspace $ws9  output DP1-1-8
 # workspace $ws10 output eDP1
 
+# # Home configuration
+# workspace $ws1  output eDP1
+# workspace $ws2  output eDP1
+# workspace $ws3  output eDP1
+# workspace $ws4  output DP1
+# workspace $ws5  output DP1
+# workspace $ws6  output DP1 
+# workspace $ws7  output DP1
+# workspace $ws8  output DP1
+# workspace $ws9  output DP1
+# workspace $ws10 output eDP1
+
 # Home configuration
 workspace $ws1  output eDP1
 workspace $ws2  output eDP1
 workspace $ws3  output eDP1
-workspace $ws4  output DP1
-workspace $ws5  output DP1
-workspace $ws6  output DP1 
-workspace $ws7  output DP1
-workspace $ws8  output DP1
-workspace $ws9  output DP1
+workspace $ws4  output DP3
+workspace $ws5  output DP3
+workspace $ws6  output DP3 
+workspace $ws7  output DP3
+workspace $ws8  output DP3
+workspace $ws9  output DP3
 workspace $ws10 output eDP1
 
 # reload the configuration file
