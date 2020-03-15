@@ -267,7 +267,7 @@ bar {
 }
 
 
-bindsym $mod+shift+x exec /home/david/scripts/random_lock.sh
+bindsym $mod+shift+x exec betterlockscreen -l dim 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -290,9 +290,15 @@ exec --no-startup-id /usr/bin/start-pulseaudio-x11
 # Adding transparency
 exec_always compton -f
 
-# Random Background
-# exec /home/david/scripts/ramdonBackground.sh
+# Set background
 exec feh --bg-fill /home/david/Pictures/wallpapers/20190127_delta-del-ebro__DGP8946_0007.jpg
+
+# Configure BetterLockscreen
+## set desktop background with custom effect
+exec --no-startup-id betterlockscreen -w dim
+
+## Alternative (set last used background)
+exec --no-startup-id source ~/.fehbg
 
 # Screenshot
 bindsym $mod+shift+s exec flameshot gui -p ~/Desktop/screenshots
