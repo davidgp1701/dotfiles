@@ -62,7 +62,8 @@
     Plugin 'vim-scripts/icansee.vim'
     Plugin 'neoclide/coc.nvim', {'branch':'release'}
     Plugin 'hashivim/vim-hashicorp-tools'
-
+    Plugin 'rrethy/vim-hexokinase', { 'build': 'make hexokinase' }
+    
 " Closes the section managed by Vundle
     call vundle#end()
     filetype plugin indent on
@@ -291,3 +292,7 @@
     autocmd BufRead,BufNewFile *.tfvars set filetype=terraform
     autocmd BufRead,BufNewFile *.tfstate set filetype=json
     autocmd BufRead,BufNewFile *.tfstate.backup set filetype=json
+ 
+" Hexokinase configuration
+      let g:Hexokinase_highlighters = ['backgroundfull']
+
