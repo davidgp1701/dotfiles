@@ -34,6 +34,22 @@ super + shift + q
 super + shift + x 
   betterlockscreen -l
 
+# Only laptop monitor
+super + @F1
+  ~/dotfiles/scripts/monitors.sh alone
+
+# Work monitors
+super + @F2
+  ~/dotfiles/scripts/monitors.sh work
+
+# Home monitors
+super + @F3
+  ~/dotfiles/scripts/monitors.sh home
+
+# Santiago monitors
+super + @F4
+  ~/dotfiles/scripts/monitors.sh santiago 
+
 #-----------------#
 # BSPWN Movements #
 #-----------------#
