@@ -296,3 +296,7 @@
 " Hexokinase configuration
       let g:Hexokinase_highlighters = ['backgroundfull']
 
+" Set tabs to two spaces
+    set ts=2
+    set sts=2
+    set et     "expand tabs to spaces
