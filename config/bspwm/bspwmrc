@@ -9,12 +9,14 @@ sxhkd &
 # Set background image
 feh --bg-fill /home/david/Pictures/wallpapers/20190127_delta-del-ebro__DGP8946_0007.jpg &
 
-
 # Adding pulseaudio service startup
 /usr/bin/start-pulseaudio-x11 & 
 
 # Adding transparency
 compton -f &
+
+# Bluetooth Applet
+blueman-applet &
 
 # Configure lock screen
 betterlockscreen -w dim &
