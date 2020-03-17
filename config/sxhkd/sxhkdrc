@@ -114,3 +114,26 @@ super + Return
 super + @space
 	dmenu_run
 
+# screenshot
+super + shift + s
+  flameshot gui -p ~/Desktop/screenshots
+
+#############################
+# XF11 Audio & Special keys #
+#############################
+
+# Audiokeys
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume 0 {+,-}5%
+XF86Audio{Next,Prev}
+	playerctl {next,previous} 
+XF86Audio{Pause,Play,Stop}
+	playerctl {pause,play,stop}
+
+XF86PowerOff
+	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+XF86Sleep
+	prompt 'Hibernate computer?' 'sudo -A zzz'
+
