@@ -1,0 +1,116 @@
+##################
+# SKHKD Bindings #
+##################
+
+# Restart hotkey damon
+super + shift + r 
+  pkill -USR1 -x sxhkd && \
+  notify-send "sxhkd" "Config releoded"
+
+#########################
+# Keybard configuration #
+#########################
+
+@F12
+  /home/david/scripts/switch-layout.sh
+
+##################
+# BSPWM Bindings #
+##################
+
+# Quit bspwm
+super + shift + Escape
+  /home/david/.local/bin/prompt.sh "Are you sure you would like to quit this Xsession" "bspc quit"
+
+# Restart bspwm
+super + alt + r
+  bspc wm -r
+
+# Kill window
+super + shift + q
+  xdo close
+
+# Lock the screen
+super + shift + x 
+  betterlockscreen -l
+
+#-----------------#
+# BSPWN Movements #
+#-----------------#
+
+# focus the node in the given direction
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+  bspc node -s {west,south,north,east}
+
+# Send the node to the given desktop
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}'
+
+# Focus to the given desktop
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# Send window to desktop and swap to desktop
+super + control + {0-9}
+  bspc node -d {0-9} && bspunhide && bspc desktop -f {0-9}
+
+# Toggle fullscreen on and off
+super + f
+  bspfullscreen
+
+# Toggle floating on and off
+super + o
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Cycle through desktops
+super + alt + {Left, Right}
+  bspc desktop -f {prev, next}
+
+# Expand a window by moving one of its side outward
+ctrl + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract a window by moving one of its side inward
+ctrl + super + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move a floating window
+ctrl + alt + {Left,Right,Up,Down}
+  xdo move {-x -20, -x +20, -y -20, -y +20}
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# preselect the direction
+super + {y,u,i,o}
+  bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# Rotate 90 degrees
+super + r
+  bspc node @/ -R 90
+
+#####################
+# Lauching programs #
+#####################
+
+# terminal emulator
+super + Return
+    st
+
+# program launcher
+super + @space
+	dmenu_run
+

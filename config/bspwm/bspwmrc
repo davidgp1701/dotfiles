@@ -1,0 +1,25 @@
+#! /bin/sh
+
+# Launch shortcut daemon
+sxhkd &
+
+# Launch Polybar
+~/.config/polybar/launch.sh
+
+# Set background image
+feh --bg-fill /home/david/Pictures/wallpapers/20190127_delta-del-ebro__DGP8946_0007.jpg &
+
+# Configure lock screen
+betterlockscreen -w dim &
+source ~/.fehbg
+
+bspc monitor eDP1 -d 1 2 3 
+bspc monitor DP3 -d 4 5 6 7 8 9 10 
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
