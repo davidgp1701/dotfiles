@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 actual=$(setxkbmap -print | grep xkb_geometry | cut -d '(' -f2 | cut -d ')' -f1)
 
@@ -15,7 +15,7 @@ xmodmap -e "keycode 107 = XF86Copy"
 
 autoload zkbd
 [[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
-source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
+source "${ZDOTDIR:-$HOME}"/.zkbd/"$TERM"-"$VENDOR"-"$OSTYPE"
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
