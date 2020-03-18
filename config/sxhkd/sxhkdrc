@@ -32,7 +32,7 @@ super + shift + q
 
 # Lock the screen
 super + shift + x 
-  betterlockscreen -l
+  dm-tool lock 
 
 # Only laptop monitor
 super + @F1

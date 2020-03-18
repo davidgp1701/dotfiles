@@ -85,3 +85,5 @@ case $place in
 
     ;;
 esac
+
+feh --bg-fill /home/david/Pictures/wallpapers/20190127_delta-del-ebro__DGP8946_0007.jpg &
