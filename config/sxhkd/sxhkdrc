@@ -128,7 +128,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -l 25
+	dmenu_run -c -l 25
 
 # screenshot
 super + shift + s
