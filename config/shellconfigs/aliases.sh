@@ -20,4 +20,5 @@ esac
 
 alias wbarcelona="curl wttr.in/barcelona"
 alias k="kubectl"
+alias vim="nvim"
 alias v="vim"
