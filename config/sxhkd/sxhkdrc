@@ -148,6 +148,9 @@ XF86Audio{Next,Prev}
 XF86Audio{Pause,Play,Stop}
 	playerctl {pause,play,stop}
 
+super + {F6,F7,F8}
+  playerctl {previous,play-pause,next}
+
 XF86PowerOff
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
 XF86Sleep
