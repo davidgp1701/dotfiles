@@ -67,6 +67,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'neoclide/coc.nvim', {'branch':'release'}
   Plug 'hashivim/vim-hashicorp-tools'
+  Plug 'unblevable/quick-scope'
+  Plug 'dbakker/vim-paragraph-motion'
 call plug#end()
 " }}}} vim-plug
 
@@ -98,7 +100,6 @@ call plug#end()
   set background=dark
   set bg=dark
   highlight Normal guibg=black guifg=white
-
 " }}} Vim color configuration
 
 " NerdTree Config {{{
