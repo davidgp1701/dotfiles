@@ -69,6 +69,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hashivim/vim-hashicorp-tools'
   Plug 'unblevable/quick-scope'
   Plug 'dbakker/vim-paragraph-motion'
+  Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " }}}} vim-plug
 
