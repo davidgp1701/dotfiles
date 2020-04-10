@@ -23,3 +23,7 @@ alias k="kubectl"
 alias vim="nvim"
 alias v="vim"
 alias l="lsd -ha --group-dirs first"
+
+# Force programs to follow the XDG dir structure
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
