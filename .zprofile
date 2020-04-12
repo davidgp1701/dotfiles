@@ -27,6 +27,6 @@ export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME/vagrant/aliases"
 # Force docker to follow XDG config
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
-# Vim config
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+# Vim config - It conflicts with nvim, just dissable it 
+# export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
