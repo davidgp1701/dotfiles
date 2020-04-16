@@ -65,6 +65,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'maralla/vim-toml-enhance', {'depends': 'cespare/vim-toml'}
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'neoclide/coc.nvim', {'branch':'release'}
   Plug 'hashivim/vim-hashicorp-tools'
   Plug 'unblevable/quick-scope'
@@ -136,6 +138,23 @@ call plug#end()
 
 	" If more than one window and previous buffer was NERDTree, go back to it.
 	autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+  " Check if NERDTree is open or active
+  function! IsNERDTreeOpen()        
+    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+  endfunction
+
+  " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+  " file, and we're not in vimdiff
+  function! SyncTree()
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+      NERDTreeFind
+      wincmd p
+    endif
+  endfunction
+
+  " Highlight currently open buffer in NERDTree
+  autocmd BufEnter * call SyncTree()
 " }}} NERDTree config
 
 " hexokinase configuration to show colors 
