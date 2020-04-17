@@ -286,3 +286,8 @@ call plug#end()
 	" Resume latest coc list.
 	nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " }}} CoC Configuration 
+
+" {{{ Terraform plugin configuration
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+" }}}
