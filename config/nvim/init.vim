@@ -291,3 +291,7 @@ call plug#end()
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 " }}}
+
+" Force json to be filetype json
+au BufRead,BufNewFile *.json.tpl set filetype=json
+
