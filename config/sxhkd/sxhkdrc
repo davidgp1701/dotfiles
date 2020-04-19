@@ -134,6 +134,10 @@ super + @space
 super + shift + s
   flameshot gui -p ~/Desktop/screenshots
 
+# clipmenu
+super + shift + v
+  clipmenu
+
 #############################
 # XF11 Audio & Special keys #
 #############################

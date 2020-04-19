@@ -3,6 +3,9 @@
 # Launch shortcut daemon
 sxhkd &
 
+# Launch clipmenud
+clipmenud &
+
 # Launch Polybar
 ~/.config/polybar/launch.sh
 
