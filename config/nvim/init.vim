@@ -295,3 +295,5 @@ let g:terraform_fmt_on_save=1
 " Force json to be filetype json
 au BufRead,BufNewFile *.json.tpl set filetype=json
 
+" Dissable caching for ControlP
+g:ctrlp_use_caching = 0
