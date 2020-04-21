@@ -72,6 +72,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'unblevable/quick-scope'
   Plug 'dbakker/vim-paragraph-motion'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'tomasiser/vim-code-dark'
 call plug#end()
 " }}}} vim-plug
 
@@ -91,15 +92,18 @@ call plug#end()
   set t_Co=256
   set cursorline
   syntax enable
-  colorscheme gruvbox
-  " To be able to see the cursor position with gruvbox
-  nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-  nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-  nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-  nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-  nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-  nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
-  let g:gruvbox_contrast_dark = 'hard'
+  " colorscheme gruvbox
+  " " To be able to see the cursor position with gruvbox
+  " nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+  " nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+  " nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+  " nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+  " nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+  " nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+  " let g:gruvbox_contrast_dark = 'hard'
+  " colorscheme codedark
+  colorscheme bubblegum-256-dark 
+  " let g:airline_theme = 'codedark'
   set background=dark
   set bg=dark
   highlight Normal guibg=black guifg=white
