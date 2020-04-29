@@ -9,6 +9,7 @@ else
     setxkbmap -model pc104 -layout us 
 fi
 
+setxkbmap -option "caps:swapescape"
 xmodmap -e "keycode 78 = Insert NoSymbol Insert"
 xmodmap -e "keycode 127 = Delete NoSymbol Delete"
 xmodmap -e "keycode 107 = XF86Copy"
