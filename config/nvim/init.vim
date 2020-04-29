@@ -297,8 +297,18 @@ let g:terraform_fmt_on_save=1
 " }}}
 
 " Force json to be filetype json
-au BufRead,BufNewFile *.json.tpl set filetype=json
-au BufRead,BufNewFile packerfile set filetype=json
-
+  au BufRead,BufNewFile *.json.tpl set filetype=json
+  au BufRead,BufNewFile packerfile set filetype=json
+  au BufRead,BufNewFile Jenkinsfile set filetype=groovy 
 " Dissable caching for ControlP
-g:ctrlp_use_caching = 0
+  g:ctrlp_use_caching = 0
+
+" {{{ GitGutter configuration
+  highlight GitGutterAdd guifg=#009900 ctermfg=Green
+  highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
+  highlight GitGutterDelete guifg=#ff2222 ctermfg=Red
+  nmap ) <Plug>(GitGutterNextHunk)
+  nmap ( <Plug>(GitGutterPrevHunk)
+  let g:gitgutter_enabled = 1
+  let g:gitgutter_highlight_linenrs = 1
+" }}}
