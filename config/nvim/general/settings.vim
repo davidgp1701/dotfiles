@@ -48,3 +48,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" You can't stop me
+cmap w!! w !sudo tee %
