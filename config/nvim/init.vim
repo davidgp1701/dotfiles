@@ -1,54 +1,7 @@
-" Mapping of keys {{{
-  " Leader key
-  let mapleader=","
-
-  " Dissable arroy keys
-  noremap <Up> <Nop>
-  noremap <Down> <Nop>
-  noremap <Left> <Nop>
-  noremap <Right> <Nop>
-
-  " Splits remapping
-  nnoremap <C-J> <C-W><C-J>
-  nnoremap <C-K> <C-W><C-K>
-  nnoremap <C-L> <C-W><C-L>
-  nnoremap <C-H> <C-W><C-H>
-" }}}} Mapping of keys 
-
-" Relative numbers {{{{
-  set number relativenumber
-  
-  augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-  augroup END
-" }}}} Relative numbers
-
-" It's necessary for better plugin compatibility
-  filetype off
-  filetype plugin on
-
-" Automatically wrap text that extends beyond the screen layout
-  set wrap
-
-" Speed vim scrolling
-  set ttyfast
-
-" Shows status bar whatever the circunstances
-  set laststatus=2
-
-" Enables clipboard to other applications
-  set clipboard=unnamedplus
-
-" Spaces & Tabs {{{
-  set tabstop=2       " number of visual spaces per TAB
-  set softtabstop=2   " number of spaces in tab when editing
-  set shiftwidth=2    " number of spaces to use for autoindent
-  set expandtab       " tabs are space
-  set autoindent
-  set copyindent      " copy indent from the previous line
-" }}} Spaces & Tab
+" Import general configuration 
+source $HOME/.config/nvim/general/settings.vim
+source $HOME/.config/nvim/general/mappings.vim
+source $HOME/.config/nvim/general/filetypes.vim
 
 " vim-plug configuration {{{
 call plug#begin('~/.config/nvim/plugged')
@@ -80,18 +33,10 @@ call plug#end()
   let g:airline_powerline_fonts = 1
 
 " Vim color configuration {{{
-  " Improving vim colors
-  if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
 
   " Colorscheme 
   syntax on
-  set t_Co=256
   set cursorline
-  syntax enable
   " colorscheme gruvbox
   " " To be able to see the cursor position with gruvbox
   " nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
@@ -165,11 +110,6 @@ call plug#end()
   let g:Hexokinase_highlighters = ['virtual']
 
 " CoC configuration {{{
-  set hidden
-  set nobackup
-  set nowritebackup
-  set cmdheight=2
-  set updatetime=300
   set shortmess+=c
   set signcolumn=yes
 
@@ -297,9 +237,6 @@ let g:terraform_fmt_on_save=1
 " }}}
 
 " Force json to be filetype json
-  au BufRead,BufNewFile *.json.tpl set filetype=json
-  au BufRead,BufNewFile packerfile set filetype=json
-  au BufRead,BufNewFile Jenkinsfile set filetype=groovy 
 " Dissable caching for ControlP
   g:ctrlp_use_caching = 0
 
