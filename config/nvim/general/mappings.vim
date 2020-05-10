@@ -1,5 +1,5 @@
 " Leader key
-let mapleader=","
+let mapleader="\<Space>"
 
 " Dissable arroy keys
 noremap <Up> <Nop>
