@@ -21,7 +21,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-rooter'
+  Plug 'joshdick/onedark.vim'
+  Plug 'haishanh/night-owl.vim'
+  Plug 'whatyouhide/vim-gotham' 
+  Plug 'jacoborus/tender.vim'
+  Plug 'kyoz/purify', { 'rtp': 'vim' }  
+  Plug 'mhartington/oceanic-next'
+  Plug 'sheerun/vim-polyglot'
   " Plug 'tomasiser/vim-code-dark'
-  " Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
   " Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()

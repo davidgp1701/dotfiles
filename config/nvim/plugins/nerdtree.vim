@@ -1,7 +1,7 @@
 
 " Enable NerdTree if no file open
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Shortcut for NerdTree
 map <C-n> :NERDTreeToggle<CR>
