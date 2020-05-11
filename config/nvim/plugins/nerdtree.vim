@@ -48,3 +48,6 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
