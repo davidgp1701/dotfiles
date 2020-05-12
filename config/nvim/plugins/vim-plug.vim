@@ -31,4 +31,5 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'tomasiser/vim-code-dark'
   Plug 'morhetz/gruvbox'
   " Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
