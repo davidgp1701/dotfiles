@@ -1,5 +1,12 @@
 {
-	"languageserver": {
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expandOrCollapse", "open"],
+    "v": "open:vsplit"
+  },
+  "languageserver": {
 		"terraform": {
 			"command": "terraform-lsp",
 			"args": [],

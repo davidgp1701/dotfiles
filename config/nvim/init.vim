@@ -10,7 +10,6 @@ source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/git-gutter.vim
 source $HOME/.config/nvim/plugins/hexokinase.vim
-source $HOME/.config/nvim/plugins/nerdtree.vim
 source $HOME/.config/nvim/plugins/terraform.vim
 
 " Color
