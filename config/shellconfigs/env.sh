@@ -3,6 +3,7 @@ case $(uname) in
     Linux)
         # In case the OS is Linux
         export TERMINAL="st"
+        export PATH="$HOME/go/bin:$HOME/extras/neo4j-community-4.0.4/bin:$PATH"
         ;;
     Darwin)
         # Exports specific to darwin
