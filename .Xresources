@@ -82,3 +82,11 @@ st.font: Inconsolata\ for\ Powerline:size=12:antialias=true:autohint=true;
 !*.colorIT:
 !*.colorUL:
 
+! Better font rendering
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 140
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
