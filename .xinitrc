@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. $HOME/.profile
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -45,9 +47,6 @@ nitrogen --restore &
 
 # dwmblocks
 dwmblocks &
-
-# Make sure we load again Xresources
-xrdb -merge ~/.Xresources
 
 # Execute DWM
 while true
