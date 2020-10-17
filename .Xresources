@@ -1,5 +1,5 @@
 ! ST terminal configuration
-st.font: Inconsolata\ for\ Powerline:size=12:antialias=true:autohint=true;
+st.font: Inconsolata\ for\ Powerline:size=10:antialias=true:autohint=true;
 *.alpha: 220 
 
 !special
