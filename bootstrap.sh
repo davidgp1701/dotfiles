@@ -3,7 +3,7 @@
 set -e
 
 # Dotfiles' project root directory
-ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Host file location
 HOSTS="$ROOTDIR/hosts"
