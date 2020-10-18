@@ -1,8 +1,5 @@
 #!/bin/sh
 
-export calendar="+"
-export clock=""
+#!/bin/sh
 
-
-date "%Y %b %d (%a) $clock%H:%M"
-
+date "+%d %b %Y - %H:%M"
