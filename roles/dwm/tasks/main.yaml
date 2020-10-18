@@ -1,0 +1,7 @@
+---
+- name: Links clock script for status bar  
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/dwm/files/clock.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/statusbar/clock.sh"
+    state: link
+    force: yes
