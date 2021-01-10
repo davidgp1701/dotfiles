@@ -1,5 +1,2 @@
-[prometheus]
-prometheus
-
-[prometheus:vars]
-ansible_connection=local
+[workstation]
+test-desktop
