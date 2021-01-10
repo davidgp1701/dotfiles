@@ -8,6 +8,6 @@
 set -eo pipefail
 
 # For the momento only for Linux
-sudo pacman -Syu
+sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm -S ansible git
 

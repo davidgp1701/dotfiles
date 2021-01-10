@@ -2,28 +2,18 @@
 
 All configuration files in my typical Arch Linux installations.
 
-## Requirements
+## Bootstrap
 
-Everything is automatically configured using Ansible. It is necessary to install it first:
+After basic configuration of your Arch Linux system apply the following command to update the system and install `git` and `ansible`.
 
 ```
-sudo pacman -S ansible
+source <(https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
 ```
 
 ## Configuration
 
 Edit the `hosts` file to add a new computer to be managed.
 
-Edit the `dotfiles.yaml` to apply different parameters to each computer.
-
 ## Execution
 
-From your user account just execute the following script
-
-```
-./bootstrap.sh
-```
-
-Depending on how you have configured your `sudo` it may ask you for the password.
-
-
+TODO
