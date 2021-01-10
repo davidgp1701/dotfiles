@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
-set -e
+################################################
+# Minimal tools installation to be able to     #
+# execute ansible-pull                         #
+################################################
 
-# Dotfiles' project root directory
-export ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -eo pipefail
 
-# Host file location
-HOSTS="$ROOTDIR/hosts"
+# For the momento only for Linux
+sudo pacman -Syu
+sudo pacman --noconfirm -S ansible git
 
-# Main playbook
-PLAYBOOK="$ROOTDIR/dotfiles.yaml"
-
-# Runs ansible playblook for our user 
-# Ansible must be installed first
-ansible-playbook -i "$HOSTS" "$PLAYBOOK" 
-
-exit 0
