@@ -3,3 +3,7 @@
   pacman:
     name: which
     state: present
+- name: Installs basic network utils such as hostname
+  pacman:
+    name: inetutils
+    state: present
