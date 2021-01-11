@@ -1,8 +1,7 @@
-
-# tasks to complete before running roles
-- hosts: all
-  tags: always
+- hosts: localhost
+  connection: local
   become: true
+  
   pre_tasks:
     - name: pre-run | update package cache (arch)
       tags: always
@@ -10,8 +9,6 @@
       changed_when: False
       when: ansible_distribution == "Archlinux"
 
-- hosts: all
-  tags: base
-  become: true
-  roles:
-    - base
+  tasks:
+    - include: tasks/base.yaml
+    - include: tasks/zsh.yaml
