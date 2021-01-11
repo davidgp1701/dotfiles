@@ -1,0 +1,5 @@
+---
+- name: Installs which
+  pacman:
+    name: which
+    state: present

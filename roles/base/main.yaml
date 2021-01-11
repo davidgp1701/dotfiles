@@ -2,4 +2,5 @@
 # Esential configuration to all systems
 - block:
   # Software install
+  - import_tasks: software/base.yaml
   - import_tasks: software/zsh.yaml
