@@ -11,3 +11,9 @@
     use: yay
     name:
       - neovim-git
+
+- name: Create config directoy if does not exists
+  ansible.builtin.file:
+    path: /home/david/.config/nvim
+    state: directory
+    mode: '0755'
