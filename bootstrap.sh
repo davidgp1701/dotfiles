@@ -11,15 +11,24 @@ IFS=$'\n\t'
 # For the moment only for Arch Linux
 
 # Update the system first
-sudo pacman --noconfirm -Syu
+# sudo pacman --noconfirm -Syu
 
 # Install Ansible to manage dotfiles
-sudo pacman --noconfirm -S ansible git
+if ! sudo pacman -Qi ansible
+then
+  sudo pacman --noconfirm -S ansible
+fi
+
+# Install git
+if ! sudo pacman -Qi git
+then
+  sudo pacman --noconfirm -S git
+fi
 
 # Install yay to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
-if sudo pacman -Si yay
+if ! sudo pacman -Qi yay
 then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   pushd /tmp/yay
