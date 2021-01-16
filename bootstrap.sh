@@ -5,7 +5,7 @@
 # execute ansible-pull                         #
 ################################################
 
-set -euo pipefail
+set -uo pipefail
 IFS=$'\n\t'
 
 # For the moment only for Arch Linux
@@ -19,7 +19,6 @@ sudo pacman --noconfirm -S ansible git
 # Install yay to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
-set +e
 if ! sudo pacman -Si yay;
 then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
@@ -27,7 +26,6 @@ then
     makepkg -si --noconfirm
   popd
 fi
-set -e
 
 # Install AUR ansible plugin
 ansible-galaxy install kwlfft.aur
