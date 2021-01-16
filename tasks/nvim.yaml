@@ -1,7 +1,7 @@
 ---
 - name: Ensure nvim normal package is not installed
   pacman:
-    name: nvim
+    name: neovim
     state: absent
   become: true
   become_user: root
