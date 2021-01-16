@@ -1,7 +1,0 @@
----
-- name: Installs shellcheck 
-  become: yes
-  become_user: root
-  pacman:
-    name: shellcheck
-    state: present

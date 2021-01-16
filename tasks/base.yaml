@@ -1,9 +1,15 @@
 ---
-- name: Installs which
+- name: Install which
   pacman:
     name: which
     state: present
-- name: Installs basic network utils such as hostname
+    
+- name: Install basic network utils such as hostname
   pacman:
     name: inetutils
+    state: present
+
+- name: Install shellcheck
+  pacman:
+    name: shellcheck
     state: present
