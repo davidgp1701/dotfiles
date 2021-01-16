@@ -10,10 +10,10 @@ After basic configuration of your Arch Linux system apply the following command 
 source <(https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
 ```
 
-## Configuration
-
-Edit the `hosts` file to add a new computer to be managed.
-
 ## Execution
 
-TODO
+To configure the system apply the following changes:
+
+```
+ansible-pull -U https://github.com/davidgp1701/dotfiles.git
+```
