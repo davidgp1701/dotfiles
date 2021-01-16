@@ -15,3 +15,4 @@
   tasks:
     - include: tasks/base.yaml
     - include: tasks/zsh.yaml
+    - include: tasks/nvim.yaml
