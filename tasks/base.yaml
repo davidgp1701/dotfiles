@@ -3,13 +3,19 @@
   pacman:
     name: which
     state: present
+  become: true
+  become_user: root
     
 - name: Install basic network utils such as hostname
   pacman:
     name: inetutils
     state: present
+  become: true
+  become_user: root
 
 - name: Install shellcheck
   pacman:
     name: shellcheck
     state: present
+  become: true
+  become_user: root

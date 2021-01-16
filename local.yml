@@ -1,6 +1,5 @@
 - hosts: localhost
   connection: local
-  become: true
 
   roles:
     - kewlfft.aur
@@ -11,6 +10,8 @@
       pacman: update_cache=yes
       changed_when: False
       when: ansible_distribution == "Archlinux"
+      become: true
+      become_user: root
 
   tasks:
     - include: tasks/base.yaml
