@@ -1,0 +1,6 @@
+---
+- name: Installs nvim nightly build
+  aur:
+    use: yay
+    name:
+      - neovim-git
