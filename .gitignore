@@ -1,3 +1,4 @@
 config/nvim/plugged
 .zcompdump
 tags
+.nvimlog
