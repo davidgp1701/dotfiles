@@ -1,4 +1,11 @@
 ---
+- name: Ensure nvim normal package is not installed
+  pacman:
+    name: nvim
+    state: absent
+  become: true
+  become_user: root
+
 - name: Installs nvim nightly build
   aur:
     use: yay
