@@ -1,6 +1,9 @@
 - hosts: localhost
   connection: local
   become: true
+
+  roles:
+    - kewlfft.aur
   
   pre_tasks:
     - name: pre-run | update package cache (arch)
