@@ -19,10 +19,15 @@ sudo pacman --noconfirm -S ansible git
 # Install yay to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-pushd /tmp/yay
-makepkg -si --noconfirm
-popd
+set +e
+if ! sudo pacman -Si yay;
+then
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  pushd /tmp/yay
+    makepkg -si --noconfirm
+  popd
+fi
+set -e
 
 # Install AUR ansible plugin
 ansible-galaxy install kwlfft.aur
