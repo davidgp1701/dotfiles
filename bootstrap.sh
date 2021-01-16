@@ -19,7 +19,7 @@ sudo pacman --noconfirm -S ansible git
 # Install yay to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
-if ! sudo pacman -Si yay;
+if sudo pacman -Si yay
 then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   pushd /tmp/yay
