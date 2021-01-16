@@ -28,4 +28,4 @@ then
 fi
 
 # Install AUR ansible plugin
-ansible-galaxy install kwlfft.aur
+ansible-galaxy install kewlfft.aur
