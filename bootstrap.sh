@@ -21,7 +21,7 @@ sudo pacman --noconfirm -S --needed base-devel
 
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 pushd /tmp/yay
-makepkg -si
+makepkg -si --noconfirm
 popd
 
 # Install AUR ansible plugin
