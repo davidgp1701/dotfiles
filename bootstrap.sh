@@ -22,4 +22,7 @@ sudo pacman --noconfirm -S --needed base-devel
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 pushd /tmp/yay
 makepkg -si
-popd 
+popd
+
+# Install AUR ansible plugin
+ansible-galaxy install kwlfft.aur
