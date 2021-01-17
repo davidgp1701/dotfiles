@@ -22,4 +22,9 @@ call plug#begin('~/.config/nvim/plugged')
   
   " Color Themes
   Plug 'cocopon/iceberg.vim' 
+
+  " Search on vim
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
