@@ -27,3 +27,5 @@ In a fresh installation it is necessary to execute the command `:PlugInstall` to
 Plugins that are going to be used:
 * [vim-plug](https://github.com/junegunn/vim-plug) - Plugin manager.
 * [iceberg](https://cocopon.github.io/iceberg.vim/) - Color scheme.
+* [airline](https://github.com/vim-airline/vim-airline) - Lean and mean status line.
+* [vim-hashicorp-tools](https://github.com/hashivim/vim-hashicorp-tools) - Collection of tools for Terraform and other Hashicorp files.
