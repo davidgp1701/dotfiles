@@ -8,6 +8,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
+  " Faster horizontal movement
+  Plug 'unblevable/quick-scope'
+
   " Changes the default root directory
   Plug 'airblade/vim-rooter'
 
