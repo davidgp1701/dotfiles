@@ -32,3 +32,4 @@ Plugins that are going to be used:
 * [vim-surround](https://github.com/tpope/vim-surround) - Change the surround of a string.
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration with vim.
 * [vim-comentary](https://github.com/tpope/vim-commentary) - Add comments to vim.
+* [vim-gutter](https://github.com/airblade/vim-gitgutter) - Adds navigation of git changes and shows icons in the left bar.
