@@ -2,8 +2,12 @@
 call plug#begin('~/.config/nvim/plugged')
   " Basic plugins for me
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
+
+  " Git related plugins
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
+
 
   " Terraform/Packer/etc.
   Plug 'hashivim/vim-hashicorp-tools'
