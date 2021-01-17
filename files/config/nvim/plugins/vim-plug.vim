@@ -8,6 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
+  " Changes the default root directory
+  Plug 'airblade/vim-rooter'
 
   " Terraform/Packer/etc.
   Plug 'hashivim/vim-hashicorp-tools'
