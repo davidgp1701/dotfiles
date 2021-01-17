@@ -24,3 +24,4 @@ set updatetime=50                    " Improves user experience, default time is
 set shortmess+=c                     " Don't pass messages to |ins-completion-menu|
 set colorcolumn=80                   " Show 80 columns
 set signcolumn=yes                   " Extra column for git plugins and linting
+set clipboard=unnamedplus            " Copy and paste between vim and everything else
