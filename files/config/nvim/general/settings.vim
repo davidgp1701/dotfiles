@@ -1,5 +1,8 @@
+set exrc                             " Loads project specific .nvimrc file
 set relativenumber                   " Sets relative numbers
+set nu                               " Shows current line number
 set nohlsearch                       " No keep search highligths
+set incsearch                        " Performs incremental searchs
 set hidden                           " Required to keep multiple buffers
 set noerrorbells                     " No sounds when error
 set tabstop=2 softtabstop=2          " Insert 2 spaces for a tab
@@ -7,7 +10,7 @@ set shiftwidth=2                     " Changes the number of spaces used for ind
 set expandtab                        " Converts tabs for spaces
 set smartindent                      " Makes indentation smart
 set laststatus=0                     " Always display the status line
-set cursorline		             " Enable highlighting of the current line
+set cursorline		                   " Enable highlighting of the current line
 set showtabline=2                    " Always shows tabs
 set nobackup                         " No backups or swap file
 set nowritebackup                    " No backups or swap file
@@ -20,3 +23,4 @@ set cmdheight=2                      " Give more space for displaying messages.
 set updatetime=50                    " Improves user experience, default time is 4000ms
 set shortmess+=c                     " Don't pass messages to |ins-completion-menu|
 set colorcolumn=80                   " Show 80 columns
+set signcolumn=yes                   " Extra column for git plugins and linting
