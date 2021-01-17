@@ -17,3 +17,12 @@ To configure the system apply the following changes:
 ```
 ansible-pull -U https://github.com/davidgp1701/dotfiles.git
 ```
+
+## Notes about programs installed
+
+### NeoVim
+
+In a fresh installation it is necessary to execute the command `:PlugInstall` to install the plugins inside neovim.
+
+Plugins that are going to be used:
+* [vim-plug](https://github.com/junegunn/vim-plug) - Plugin manager.
