@@ -29,3 +29,6 @@ Plugins that are going to be used:
 * [iceberg](https://cocopon.github.io/iceberg.vim/) - Color scheme.
 * [airline](https://github.com/vim-airline/vim-airline) - Lean and mean status line.
 * [vim-hashicorp-tools](https://github.com/hashivim/vim-hashicorp-tools) - Collection of tools for Terraform and other Hashicorp files.
+* [vim-surround](https://github.com/tpope/vim-surround) - Change the surround of a string.
+* [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration with vim.
+* [vim-comentary](https://github.com/tpope/vim-commentary) - Add comments to vim.
