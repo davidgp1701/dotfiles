@@ -17,3 +17,15 @@
     path: /home/david/.config/nvim
     state: directory
     mode: '0755'
+
+- name: Create init.vim file
+  ansible.builtin.copy:
+    src: ../files/config/nvim/init.vim
+    dest: /home/david/.config/nvim/init.vim
+    mode: '0644'
+
+- name: Create general settings file
+  ansible.builtin.copy:
+    src: ../files/config/nvim/general/
+    dest: /home/david/.config/nvim/general/
+    mode: '0755'
