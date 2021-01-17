@@ -6,6 +6,7 @@ source $HOME/.config/nvim/general/mappings.vim
 source $HOME/.config/nvim/plugins/vim-plug.vim
 source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/terraform.vim
+source $HOME/.config/nvim/plugins/gitgutter.vim
 
 " Loading color configuration
 " Needs to be after loading plugin configuration or it will fail
