@@ -33,3 +33,6 @@ Plugins that are going to be used:
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration with vim.
 * [vim-comentary](https://github.com/tpope/vim-commentary) - Add comments to vim.
 * [vim-gutter](https://github.com/airblade/vim-gitgutter) - Adds navigation of git changes and shows icons in the left bar.
+* [popup](https://github.com/nvim-lua/popup.nvim) - Needed for Telescope plugin.
+* [plenary](https://github.com/nvim-lua/plenary.nvim) - Needed for Telescope plugin.
+* [telescope](nvim-telescope/telescope.nvim) - Search by files and grep in projects.
