@@ -22,6 +22,9 @@ call plug#begin('~/.config/nvim/plugged')
   
   " Color Themes
   Plug 'cocopon/iceberg.vim' 
+  
+  " Add extra information about how to color text
+  Plug 'sheerun/vim-polyglot'
 
   " Search on vim
   Plug 'nvim-lua/popup.nvim'
