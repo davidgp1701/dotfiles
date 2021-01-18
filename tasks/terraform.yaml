@@ -1,0 +1,7 @@
+---
+- name: Installs Terraform Language Server
+  aur:
+    use: yay
+    name:
+      - terraform-ls
+
