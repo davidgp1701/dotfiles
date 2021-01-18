@@ -15,6 +15,6 @@
 
   tasks:
     - include: tasks/base.yaml
-    - include: tasks/zsh.yaml
     - include: tasks/nvim.yaml
     - include: tasks/terraform.yaml
+    - include: tasks/zsh.yaml
