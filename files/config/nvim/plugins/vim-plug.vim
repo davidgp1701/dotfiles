@@ -30,4 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+
+  " Neovim LSP
+  Plug 'neovim/nvim-lspconfig'
 call plug#end()
