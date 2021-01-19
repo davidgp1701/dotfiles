@@ -32,5 +32,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
 
   " Neovim LSP
+  Plug 'nvim-lua/lsp-status.nvim'
+  Plug 'nathunsmitty/diagnostic-nvim'
+  Plug 'nvim-lua/completion-nvim'
   Plug 'neovim/nvim-lspconfig'
 call plug#end()
