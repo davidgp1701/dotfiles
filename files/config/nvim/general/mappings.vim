@@ -33,9 +33,6 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 vnoremap < <gv
 vnoremap > >gv
 
-" Open new tab with empty file
-nnoremap <C-n> :tabnew<CR>
-
 " Move between tabs
 noremap <leader>1 1gt
 noremap <leader>2 2gt
