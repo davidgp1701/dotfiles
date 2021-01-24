@@ -36,7 +36,6 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Neovim LSP
   Plug 'nvim-lua/lsp-status.nvim'
-  Plug 'nathunsmitty/diagnostic-nvim'
   Plug 'nvim-lua/completion-nvim'
   Plug 'neovim/nvim-lspconfig'
 
