@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
   
   " Color Themes
   Plug 'cocopon/iceberg.vim' 
+  Plug 'joshdick/onedark.vim'
   
   " Add extra information about how to color text
   Plug 'sheerun/vim-polyglot'
