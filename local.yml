@@ -18,3 +18,4 @@
     - include: tasks/nvim.yaml
     - include: tasks/terraform.yaml
     - include: tasks/zsh.yaml
+    - include: tasks/starship.yaml

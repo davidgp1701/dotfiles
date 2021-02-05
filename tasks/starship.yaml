@@ -1,0 +1,5 @@
+- name: Installs starship shell build
+  aur:
+    use: yay
+    name:
+      - starship
