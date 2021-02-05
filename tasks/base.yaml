@@ -6,6 +6,13 @@
   become: true
   become_user: root
     
+- name: Install base-devel tools
+  pacman:
+    name: base-devel
+    state: present
+  become: true
+  become_user: root
+
 - name: Install basic network utils such as hostname
   pacman:
     name: inetutils
