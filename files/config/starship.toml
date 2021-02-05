@@ -1,0 +1,44 @@
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+format = """
+$directory \
+$env_var \
+$kubernetes \
+$terraform \
+$git_branch \
+$git_status 
+$character
+"""
+
+[character]                            
+success_symbol = "[➜ ](bold green)"
+error_symbol = "[✗ ](bold red)"
+vicmd_symbol = "[V ](bold green)"
+
+[aws]
+format = '| [$symbol $profile]($style)'
+style = "bold yellow"
+symbol = "🅰 "
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+format = "[$path]($style)"
+
+[env_var]
+variable="AWS_PROFILE"
+format = '| [$symbol $env_value]($style)'
+style = "bold fg:214"
+symbol = "🅰 "
+
+[git_branch]
+format = "| [$symbol$branch]($style)"
+
+[kubernetes]
+format = '| [$symbol $context( \($namespace\))]($style)'
+style = "blue bold"
+disabled = false
+
+[terraform]
+format = "| [$workspace]($style)"

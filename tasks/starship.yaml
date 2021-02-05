@@ -3,3 +3,9 @@
     use: yay
     name:
       - starship
+
+- name: Create Starship config file
+  ansible.builtin.copy:
+    src: ../files/config/starship.toml
+    dest: /home/david/.config/starship.toml
+    mode: '0644'
