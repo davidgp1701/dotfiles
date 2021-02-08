@@ -1,6 +1,6 @@
 - name: Installs starship shell build
   aur:
-    use: yay
+    use: paru
     name:
       - starship
 
