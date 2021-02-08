@@ -11,6 +11,7 @@ source $HOME/.config/nvim/plugins/gitgutter.vim
 source $HOME/.config/nvim/plugins/telescope.vim
 source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/completion.vim
+source $HOME/.config/nvim/plugins/simple-todo.vim
 
 lua require("lsp") -- Loads Lua configuration of nvim-lsp
 
