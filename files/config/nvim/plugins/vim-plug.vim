@@ -43,4 +43,7 @@ call plug#begin('~/.config/nvim/plugged')
   " File explorer
   Plug 'kyazdani42/nvim-web-devicons' " for file icons
   Plug 'kyazdani42/nvim-tree.lua'
+
+  " Vim TODO plugin
+  Plug 'aserebryakov/vim-todo-lists'
 call plug#end()
