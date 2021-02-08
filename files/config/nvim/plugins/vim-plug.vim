@@ -45,5 +45,5 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'kyazdani42/nvim-tree.lua'
 
   " Vim TODO plugin
-  Plug 'aserebryakov/vim-todo-lists'
+  Plug 'vitalk/vim-simple-todo'
 call plug#end()
