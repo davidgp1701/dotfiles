@@ -24,7 +24,10 @@ nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+" nnoremap <C-s> :w<CR>
+noremap <silent> <C-s>          :update<CR>
+vnoremap <silent> <C-s>         <C-C>:update<CR>
+inoremap <silent> <C-s>         <C-O>:update<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
