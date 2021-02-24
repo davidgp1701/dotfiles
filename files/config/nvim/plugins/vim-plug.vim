@@ -46,4 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Vim TODO plugin
   Plug 'vitalk/vim-simple-todo'
+  
+  " Vimwiki
+  Plug 'vimwiki/vimwiki'
 call plug#end()
