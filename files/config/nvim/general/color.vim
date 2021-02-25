@@ -13,8 +13,13 @@ if (has("autocmd"))
   augroup END
 endif
 
-" Iceberg ColorScheme settings
-colorscheme iceberg
-" let g:lightline = { 'colorscheme': 'icebergDark' }
-let g:airline_theme = 'iceberg'
+" " Iceberg ColorScheme settings
+" colorscheme iceberg
+" " let g:lightline = { 'colorscheme': 'icebergDark' }
+" let g:airline_theme = 'iceberg'
+
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic=1
+let g:airline_theme='gruvbox'
 
