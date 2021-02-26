@@ -10,7 +10,7 @@
   aur:
     use: paru
     name:
-      - neovim-git
+      - neovim-nightly-bin
 
 - name: Create config directoy if does not exists
   ansible.builtin.file:
