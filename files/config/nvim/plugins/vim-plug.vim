@@ -50,4 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
   
   " Vimwiki
   Plug 'vimwiki/vimwiki'
+
+  " Vim Cyclest to show listchars
+  Plug 'tjdevries/cyclist.vim'
 call plug#end()

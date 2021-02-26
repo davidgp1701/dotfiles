@@ -6,6 +6,7 @@ source $HOME/.config/nvim/general/filetypes.vim
 " Load plugin configurations
 source $HOME/.config/nvim/plugins/vim-plug.vim
 source $HOME/.config/nvim/plugins/airline.vim
+source $HOME/.config/nvim/plugins/cyclist.vim
 source $HOME/.config/nvim/plugins/terraform.vim
 source $HOME/.config/nvim/plugins/gitgutter.vim
 source $HOME/.config/nvim/plugins/telescope.vim
