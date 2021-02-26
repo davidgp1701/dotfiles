@@ -24,4 +24,4 @@ nmap <leader>cn <Plug>CyclistNext
 nmap <leader>cp <Plug>CyclistPrev
 
 " Reset to default configuration
-call cyclist#activate_listchars('default')
+call cyclist#activate_listchars('busy')
