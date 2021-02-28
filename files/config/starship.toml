@@ -1,42 +1,45 @@
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
 
+# format = """
+# $directory \
+# $env_var \
+# $kubernetes \
+# $terraform \
+# $git_branch \
+# $git_status 
+# $character
+# """
 format = """
-$directory \
-$env_var \
-$kubernetes \
-$terraform \
-$git_branch \
-$git_status 
-$character
-"""
+[┌──](bold green) $directory$env_var$kubernetes$terraform$git_branch$git_status[─>](bold green)
+[└─>](bold green) $character"""
 
 [character]                            
-success_symbol = "[➜ ](bold green)"
+success_symbol = ""
 error_symbol = "[✗ ](bold red)"
 vicmd_symbol = "[V ](bold green)"
 
 [aws]
-format = '| [$symbol $profile]($style)'
+format = '| [$symbol $profile]($style) '
 style = "bold yellow"
 symbol = "🅰 "
 
 [directory]
 truncation_length = 8
 truncation_symbol = "…/"
-format = "[$path]($style)"
+format = "[$path]($style) "
 
 [env_var]
 variable="AWS_PROFILE"
-format = '| [$symbol $env_value]($style)'
+format = '| [$symbol $env_value]($style) '
 style = "bold fg:214"
 symbol = "🅰 "
 
 [git_branch]
-format = "| [$symbol$branch]($style)"
+format = "| [$symbol$branch]($style) "
 
 [kubernetes]
-format = '| [$symbol $context( \($namespace\))]($style)'
+  format = '| [$symbol $context( \($namespace\))]($style) '
 style = "blue bold"
 disabled = false
 
