@@ -39,9 +39,9 @@ symbol = "🅰 "
 format = "| [$symbol$branch]($style) "
 
 [kubernetes]
-  format = '| [$symbol $context( \($namespace\))]($style) '
+format = '| [$symbol $context( \($namespace\))]($style) '
 style = "blue bold"
 disabled = false
 
 [terraform]
-format = "| [$workspace]($style)"
+format = "| [$workspace]($style) "
