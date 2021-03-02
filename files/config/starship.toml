@@ -44,4 +44,4 @@ style = "blue bold"
 disabled = false
 
 [terraform]
-format = "| [$workspace]($style) "
+format = "| [TF - $workspace]($style) "
