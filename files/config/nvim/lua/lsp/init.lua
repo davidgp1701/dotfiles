@@ -1,13 +1,15 @@
 local nvim_lsp = require 'lspconfig'
-local completion = require 'completion'
 
-local on_attach = function(client, bufnr)
-  completion.on_attach(client, bufnr)
-end
+vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+
+-- Bash LS configuration
+nvim_lsp.bashls.setup{}
+
+-- Python LS configuration
+nvim_lsp.pyls.setup{}
 
 -- Terraform LSP configuraiton
-nvim_lsp.terraformls.setup{
-  on_attach = on_attach,
-  cmd = {'terraform-ls', 'serve'},
-  root_dir = nvim_lsp.util.root_pattern(".terraform", ".git")
-}
+nvim_lsp.terraformls.setup{}

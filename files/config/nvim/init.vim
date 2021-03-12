@@ -14,8 +14,10 @@ source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/completion.vim
 source $HOME/.config/nvim/plugins/simple-todo.vim
 source $HOME/.config/nvim/plugins/vimwiki.vim
-
-lua require("lsp") -- Loads Lua configuration of nvim-lsp
+luafile $HOME/.config/nvim/lua/lsp/init.lua
+luafile $HOME/.config/nvim/lua/lsp/lsp-kind.lua
+luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
+luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
 
 " Loading color configuration
 " Needs to be after loading plugin configuration or it will fail

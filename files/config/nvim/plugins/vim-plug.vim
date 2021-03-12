@@ -38,8 +38,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Neovim LSP
   Plug 'nvim-lua/lsp-status.nvim'
-  Plug 'nvim-lua/completion-nvim'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-compe'
+  Plug 'onsails/lspkind-nvim'
 
   " File explorer
   Plug 'kyazdani42/nvim-web-devicons' " for file icons
