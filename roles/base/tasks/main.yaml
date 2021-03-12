@@ -37,3 +37,4 @@
 - name: Install Paru package manager
   aur: 
     name: paru
+

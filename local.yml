@@ -1,23 +1,27 @@
-- hosts: localhost
+# tasks to complete before running roles
+- hosts: all
   connection: local
-
-  roles:
-    - kewlfft.aur
-  
+  tags: always
+  become: true
   pre_tasks:
     - name: pre-run | update package cache (arch)
       tags: always
       pacman: update_cache=yes
       changed_when: False
       when: ansible_distribution == "Archlinux"
-      become: true
-      become_user: root
 
-  tasks:
-    - include: tasks/base.yaml
-    - include: tasks/nvim.yaml
-    - include: tasks/kitty.yaml
-    - include: tasks/terraform.yaml
-    - include: tasks/tdrop.yaml
-    - include: tasks/zsh.yaml
-    - include: tasks/starship.yaml
+- hosts: all
+  tags: base
+  connection: local
+  become: true
+  roles:
+    - base
+
+# tasks:
+#     - include: tasks/base.yaml
+#     - include: tasks/nvim.yaml
+#     - include: tasks/kitty.yaml
+#     - include: tasks/terraform.yaml
+#     - include: tasks/tdrop.yaml
+#     - include: tasks/zsh.yaml
+#     - include: tasks/starship.yaml
