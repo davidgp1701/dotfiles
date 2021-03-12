@@ -17,10 +17,15 @@
   roles:
     - base
 
+- hosts: workstation
+  tags: workstation
+  connection: local
+  become: true
+  roles:
+    - kitty
+
 # tasks:
-#     - include: tasks/base.yaml
 #     - include: tasks/nvim.yaml
-#     - include: tasks/kitty.yaml
 #     - include: tasks/terraform.yaml
 #     - include: tasks/tdrop.yaml
 #     - include: tasks/zsh.yaml
