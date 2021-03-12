@@ -25,13 +25,13 @@ then
   sudo pacman --noconfirm -S git
 fi
 
-# Install yay to manage aur packages
+# Install paru to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
-if ! sudo pacman -Qi yay
+if ! sudo pacman -Qi paru 
 then
-  git clone https://aur.archlinux.org/yay.git /tmp/yay
-  pushd /tmp/yay
+  git clone https://aur.archlinux.org/paru.git /tmp/paru
+  pushd /tmp/paru
     makepkg -si --noconfirm
   popd
 fi
