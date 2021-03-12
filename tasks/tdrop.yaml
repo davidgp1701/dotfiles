@@ -1,5 +1,0 @@
-- name: Installs TDrop ScratchPad app
-  aur:
-    use: paru
-    name:
-      - tdrop-git
