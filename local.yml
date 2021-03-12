@@ -29,7 +29,3 @@
     - kitty
     - terraform
 
-# tasks:
-#     - include: tasks/nvim.yaml
-#     - include: tasks/tdrop.yaml
-#     - include: tasks/zsh.yaml
