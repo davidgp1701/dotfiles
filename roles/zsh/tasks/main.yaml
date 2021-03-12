@@ -1,7 +1,5 @@
 ---
 - name: Installs zsh
-  become: yes
-  become_user: root
   pacman:
     name: zsh
     state: present

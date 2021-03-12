@@ -17,6 +17,7 @@
   roles:
     - base
     - starship
+    - zsh
 
 - hosts: workstation
   tags: workstation
