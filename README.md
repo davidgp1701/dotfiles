@@ -15,6 +15,6 @@ source <(https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap
 To configure the system apply the following changes:
 
 ```
-ansible-playbook local.yml
+./apply.sh
 ```
 
