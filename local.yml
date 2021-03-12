@@ -17,6 +17,7 @@
   roles:
     - base
     - nvim
+    - python
     - starship
     - zsh
 

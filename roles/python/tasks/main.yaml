@@ -1,0 +1,4 @@
+---
+- name: Installs Python Language Server protocol
+  pip:
+    name: 'python-language-server[yapf]'
