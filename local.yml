@@ -16,6 +16,8 @@
   become: true
   roles:
     - base
+    - node
+    - bash # It requires node first to install the LS
     - nvim
     - python
     - starship
