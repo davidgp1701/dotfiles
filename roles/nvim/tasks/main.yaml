@@ -1,0 +1,30 @@
+---
+- name: Ensure nvim normal package is not installed
+  pacman:
+    name: neovim
+    state: absent
+
+- name: Installs nvim nightly build
+  aur:
+    use: paru
+    name:
+      - neovim-nightly-bin
+
+- name: Links config file for Starship
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/nvim"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/nvim"
+    state: link
+    force: yes
+
+- name: Make sure nvim log folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/log"
+    state: directory
+    mode: '0755'
+
+- name: Install vim-plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/autoload/plug.vim" 
+    mode: '0640'
