@@ -28,3 +28,9 @@
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/autoload/plug.vim" 
     mode: '0640'
+
+- name: Install vim language server
+  npm:
+    name: vim-language-server
+    global: yes
+
