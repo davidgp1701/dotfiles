@@ -3,8 +3,10 @@
   pacman:
     name: nodejs
     state: present
+  become: yes
     
 - name: Install npm 
   pacman:
     name: npm 
     state: present
+  become: yes

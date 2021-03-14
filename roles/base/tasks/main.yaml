@@ -4,35 +4,30 @@
     name: which
     state: present
   become: true
-  become_user: root
     
 - name: Install base-devel tools
   pacman:
     name: base-devel
     state: present
   become: true
-  become_user: root
 
 - name: Install basic network utils such as hostname
   pacman:
     name: inetutils
     state: present
   become: true
-  become_user: root
 
 - name: Install shellcheck
   pacman:
     name: shellcheck
     state: present
   become: true
-  become_user: root
 
 - name: Install ipcalc
   pacman:
     name: ipcalc
     state: present
   become: true
-  become_user: root
 
 - name: Install Paru package manager
   aur: 

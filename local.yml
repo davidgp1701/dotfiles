@@ -13,7 +13,6 @@
 - hosts: all
   tags: base
   connection: local
-  become: true
   roles:
     - base
     - node
@@ -26,7 +25,6 @@
 - hosts: workstation
   tags: workstation
   connection: local
-  become: true
   roles:
     - kitty
     - terraform
