@@ -1,5 +1,6 @@
 ---
 - name: Ensure nvim normal package is not installed
+  become: yes
   pacman:
     name: neovim
     state: absent
@@ -33,4 +34,10 @@
   npm:
     name: vim-language-server
     global: yes
+  become: yes
 
+- name: Installs the lua-language-server
+  aur:
+    use: paru
+    name:
+      - lua-language-server

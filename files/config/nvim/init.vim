@@ -15,6 +15,7 @@ source $HOME/.config/nvim/plugins/completion.vim
 source $HOME/.config/nvim/plugins/simple-todo.vim
 source $HOME/.config/nvim/plugins/vimwiki.vim
 luafile $HOME/.config/nvim/lua/lsp/init.lua
+luafile $HOME/.config/nvim/lua/lsp/lua-ls.lua
 luafile $HOME/.config/nvim/lua/lsp/lsp-kind.lua
 luafile $HOME/.config/nvim/lua/plugins/compe-config.lua
 luafile $HOME/.config/nvim/lua/plugins/treesitter-config.lua
