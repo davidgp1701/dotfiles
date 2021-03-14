@@ -17,12 +17,6 @@
     state: present
   become: true
 
-- name: Install shellcheck
-  pacman:
-    name: shellcheck
-    state: present
-  become: true
-
 - name: Install ipcalc
   pacman:
     name: ipcalc

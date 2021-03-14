@@ -4,3 +4,10 @@
     name: bash-language-server
     global: yes
   become: yes
+
+- name: Install shellcheck
+  pacman:
+    name: shellcheck
+    state: present
+  become: true
+
