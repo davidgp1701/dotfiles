@@ -1,0 +1,7 @@
+---
+- name: Links AWS assume role script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/aws_assume_role.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/aws_assume_role"
+    state: link
+    force: yes

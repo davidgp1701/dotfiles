@@ -27,3 +27,20 @@
   aur: 
     name: paru
 
+- name: Make sure config folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config"
+    state: directory
+    mode: '0755'
+    
+- name: Make sure local folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local"
+    state: directory
+    mode: '0755'
+
+- name: Make sure bin folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/bin"
+    state: directory
+    mode: '0755'

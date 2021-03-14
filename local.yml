@@ -26,6 +26,7 @@
   tags: workstation
   connection: local
   roles:
+    - aws
     - kitty
     - terraform
 
