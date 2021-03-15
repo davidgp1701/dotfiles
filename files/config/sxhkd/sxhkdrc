@@ -124,7 +124,7 @@ super + r
 
 # terminal emulator
 super + Return
-    st
+    alacritty
 
 # program launcher
 super + @space
