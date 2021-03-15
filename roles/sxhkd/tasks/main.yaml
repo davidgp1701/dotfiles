@@ -1,0 +1,13 @@
+---
+- name: Install sxhkd
+  pacman:
+    name: sxhkd
+    state: present
+  become: true
+  
+- name: Links config file for sxhkd
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/sxhkd"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/sxhkd"
+    state: link
+    force: yes
