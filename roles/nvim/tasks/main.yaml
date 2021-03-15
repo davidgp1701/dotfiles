@@ -11,7 +11,7 @@
     name:
       - neovim-nightly-bin
 
-- name: Links config file for Starship
+- name: Links config file for nvim
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/nvim"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.config/nvim"
