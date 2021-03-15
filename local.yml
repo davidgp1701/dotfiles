@@ -27,6 +27,7 @@
   connection: local
   roles:
     - aws
+    - bspwm
     - kitty
     - terraform
 

@@ -1,0 +1,13 @@
+---
+- name: Install BSPWM
+  pacman:
+    name: bspwm
+    state: present
+  become: true
+  
+- name: Links config file for BSPWM
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bspwm"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/bspwm"
+    state: link
+    force: yes
