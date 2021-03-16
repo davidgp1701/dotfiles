@@ -1,8 +1,21 @@
 " OneDark ColoScheme settings
-" colorscheme onedark
+let g:onedark_color_overrides = {
+\  "comment_grey": { "gui": "#9CA3B0", "cterm": "59", "cterm16": "15" }
+\}
 
-" let g:airline_theme='onedark'
+colorscheme onedark
+
+let g:airline_theme='onedark'
 " let g:lightline = { 'colorscheme': 'onedark' }
+
+"onedark.vim override: Set a custom background color in the terminal
+if (has("autocmd") && !has("gui_running"))
+  augroup colors
+    autocmd!
+    let s:background = { "gui": "#00000", "cterm": "235", "cterm16": "0" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "bg": s:background }) "No `fg` setting
+  augroup END
+endif
 
 " if (has("autocmd"))
 "   augroup colorextend
@@ -11,13 +24,14 @@
 "   augroup END
 " endif
 
-" " Iceberg ColorScheme settings
+" Iceberg ColorScheme settings
 " colorscheme iceberg
-" " let g:lightline = { 'colorscheme': 'icebergDark' }
 " let g:airline_theme = 'iceberg'
 
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italic=1
-let g:airline_theme='gruvbox'
-colorscheme gruvbox
+
+" Gruvbox color scheme
+" let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_italic=1
+" let g:airline_theme='gruvbox'
+" colorscheme gruvbox
