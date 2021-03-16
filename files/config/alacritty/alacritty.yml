@@ -1,33 +1,31 @@
-# Colors (One Darker)
+# Colors (Iceberg Dark)
 colors:
   # Default colors
   primary:
-    background: "#000000"
-    # background: "#2E3440"
-    foreground: "#D8DEE9"
+    background: '#000000' # I like pure black
+    foreground: '#d2d4de'
 
   # Normal colors
   normal:
-    black: "#000000"
-    red: "#D54646"
-    green: "#23D18B"
-    yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#abb2bf"
+    black:   '#000000'
+    red:     '#e27878'
+    green:   '#b4be82'
+    yellow:  '#e2a478'
+    blue:    '#84a0c6'
+    magenta: '#a093c7'
+    cyan:    '#89b8c2'
+    white:   '#c6c8d1'
 
   # Bright colors
   bright:
-    black: "#000000"
-    red: "#D54646"
-    green: "#23D18B"
-    yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#ECEFF4"
-  # background_opacity: 1.0
+    black:   '#000000'
+    red:     '#e98989'
+    green:   '#c0ca8e'
+    yellow:  '#e9b189'
+    blue:    '#91acd1'
+    magenta: '#ada0d3'
+    cyan:    '#95c4ce'
+    white:   '#d2d4de'
 
 font:
   # The normal (roman) font face to use.
