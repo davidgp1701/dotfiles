@@ -1,4 +1,10 @@
 ---
+- name: Installs XClip, required by Alacritty for c&p
+  pacman:
+    name: xclip
+    state: present
+  become: true
+
 - name: Installs Alacritty
   pacman:
     name: alacritty
