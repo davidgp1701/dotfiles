@@ -83,3 +83,4 @@ key_bindings:
   - { key: Up, mods: Alt, action: ScrollLineUp  }
   - { key: Down, mods: Alt, action: ScrollLineDown }
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+  - { key: Insert, mods: Shift, action: PasteSelection }
