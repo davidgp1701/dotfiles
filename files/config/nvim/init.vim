@@ -1,6 +1,6 @@
 " General settings
-source $HOME/.config/nvim/general/settings.vim
 luafile $HOME/.config/nvim/lua/key_mappings.lua
+luafile $HOME/.config/nvim/lua/settings.lua
 source $HOME/.config/nvim/general/filetypes.vim
 
 " Load plugin configurations
