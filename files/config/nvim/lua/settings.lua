@@ -35,11 +35,11 @@ vim.bo.expandtab=true
 -- Makes indentation smart
 vim.bo.smartindent=true
 
--- Always display the status line
-vim.o.laststatus=0
+-- -- Always display the status line
+-- vim.o.laststatus=0
 
--- Enable highlighting of the current line
-vim.o.cursorline=true
+-- -- Enable highlighting of the current line
+-- vim.o.cursorline=true
 
 -- Always shows tabs
 vim.o.showtabline=2
@@ -53,11 +53,11 @@ vim.o.writebackup=false
 -- No swap file
 vim.o.swapfile=false
 
--- Undo folder
-vim.o.undodir="~/.local/share/nvim/undo"
+-- -- Undo folder
+-- vim.o.undodir="~/.local/share/nvim/undo"
 
--- Enable undo file
-vim.o.undofile=true
+-- -- Enable undo file
+-- vim.o.undofile=true
 
 -- Enables 24 bits colors
 vim.o.termguicolors=true
@@ -73,6 +73,9 @@ vim.o.updatetime=50
 
 -- Don't pass messages to |ins-completion-menu|
 vim.cmd('set shortmess+=c')
+
+-- Set completeopt to have a better completion experience
+vim.cmd('set completeopt=menuone,noinsert,noselect')
 
 -- Show 80 columns
 vim.cmd('set colorcolumn=80')

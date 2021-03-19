@@ -5,6 +5,24 @@
     name: neovim
     state: absent
 
+- name: Telescope uses this tool to show files previews 
+  become: yes
+  pacman:
+    name: bat
+    state: present
+
+- name: Install ripgrep for complete project searchs
+  become: yes
+  pacman:
+    name: ripgrep
+    state: present
+
+- name: Install for telescope to find files
+  become: yes
+  pacman:
+    name: fd
+    state: present
+
 - name: Installs nvim nightly build
   aur:
     use: paru
@@ -24,11 +42,16 @@
     state: directory
     mode: '0755'
 
-- name: Install vim-plug
-  get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/autoload/plug.vim" 
-    mode: '0640'
+- name: Make sure nvim start folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start"
+    state: directory
+    mode: '0755'
+
+- name: Install packer
+  ansible.builtin.git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
 - name: Install vim language server
   npm:
