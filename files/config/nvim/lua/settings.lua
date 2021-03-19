@@ -35,7 +35,7 @@ vim.bo.expandtab=true
 -- Makes indentation smart
 vim.bo.smartindent=true
 
--- -- Always display the status line
+-- Always display the status line
 vim.o.laststatus=0
 
 -- Enable highlighting of the current line
