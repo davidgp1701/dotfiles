@@ -25,6 +25,8 @@ return require('packer').startup(function()
   use {'cocopon/iceberg.vim'}
   use {'morhetz/gruvbox'}
   use {'savq/melange'}
+  use {'tjdevries/colorbuddy.vim'}
+  use {'tjdevries/gruvbuddy.nvim'}
 
   -- Search on vim
   use {

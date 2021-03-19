@@ -7,3 +7,4 @@ vim.g.airline_theme='gruvbox'
 
 -- Active colorscheme
 vim.cmd('colorscheme gruvbox')
+-- require('colorbuddy').colorscheme('gruvbuddy')
