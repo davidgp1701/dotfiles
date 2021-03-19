@@ -36,10 +36,10 @@ vim.bo.expandtab=true
 vim.bo.smartindent=true
 
 -- -- Always display the status line
--- vim.o.laststatus=0
+vim.o.laststatus=0
 
--- -- Enable highlighting of the current line
--- vim.o.cursorline=true
+-- Enable highlighting of the current line
+vim.wo.cursorline=true
 
 -- Always shows tabs
 vim.o.showtabline=2
@@ -53,11 +53,10 @@ vim.o.writebackup=false
 -- No swap file
 vim.o.swapfile=false
 
--- -- Undo folder
--- vim.o.undodir="~/.local/share/nvim/undo"
-
--- -- Enable undo file
--- vim.o.undofile=true
+vim.cmd([[
+  set undodir=~/.local/share/nvim/undo " Undo folder 
+  set undofile                         " Enable undo file
+]])
 
 -- Enables 24 bits colors
 vim.o.termguicolors=true
