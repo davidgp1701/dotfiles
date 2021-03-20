@@ -14,8 +14,8 @@ require('nv-vim-rooter')
 
 -- Still in Vimscript
 vim.cmd('source ~/.config/nvim/vimscript/cyclest.vim')
-vim.cmd('source ~/.config/nvim/vimscript/filetypes.vim')
 vim.cmd('source ~/.config/nvim/vimscript/vimwiki.vim')
+vim.cmd('source ~/.config/nvim/vimscript/filetypes.vim')
 
 -- LSP
 require('lsp')

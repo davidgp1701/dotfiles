@@ -58,4 +58,7 @@ return require('packer').startup(function()
 
   -- Vimwiki
   use {'vimwiki/vimwiki'}
+
+  -- Init screen
+  use {'mhinz/vim-startify'}
 end)

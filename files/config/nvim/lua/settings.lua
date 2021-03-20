@@ -4,9 +4,6 @@ vim.o.clipboard="unnamedplus"
 -- Loads project specific .nvimrc file
 vim.o.exrc=true
 
--- Sets relative numbers
-vim.wo.relativenumber=true
-
 -- Shows current line number
 vim.wo.number=true
 
@@ -81,3 +78,6 @@ vim.cmd('set colorcolumn=80')
 
 -- Extra column for git plugins and linting
 vim.wo.signcolumn="yes"
+
+-- Sets relative numbers
+vim.wo.relativenumber=true
