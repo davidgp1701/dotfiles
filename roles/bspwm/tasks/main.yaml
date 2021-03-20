@@ -11,3 +11,10 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.config/bspwm"
     state: link
     force: yes
+    
+- name: Links monitor script to manage desktops when using connecting monitors
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/monitors.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/monitors.sh"     
+    state: link
+    force: yes
