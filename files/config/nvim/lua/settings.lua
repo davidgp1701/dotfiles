@@ -1,11 +1,20 @@
+-- Enable highlighting of the current line
+vim.wo.cursorline=true
+
+-- Shows current line number
+vim.wo.number=true
+
+-- Extra column for git plugins and linting
+vim.wo.signcolumn="yes"
+
+-- Sets relative numbers
+vim.wo.relativenumber=true
+
 -- Copy and paste between vim and everything else
 vim.o.clipboard="unnamedplus"
 
 -- Loads project specific .nvimrc file
 vim.o.exrc=true
-
--- Shows current line number
-vim.wo.number=true
 
 -- No keep search highligths
 vim.o.hlsearch=false
@@ -34,9 +43,6 @@ vim.bo.smartindent=true
 
 -- Always display the status line
 vim.o.laststatus=0
-
--- Enable highlighting of the current line
-vim.wo.cursorline=true
 
 -- Always shows tabs
 vim.o.showtabline=2
@@ -76,8 +82,3 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 -- Show 80 columns
 vim.cmd('set colorcolumn=80')
 
--- Extra column for git plugins and linting
-vim.wo.signcolumn="yes"
-
--- Sets relative numbers
-vim.wo.relativenumber=true
