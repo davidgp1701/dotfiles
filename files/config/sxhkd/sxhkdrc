@@ -36,19 +36,19 @@ super + shift + x
 
 # Only laptop monitor
 super + @F1
-  ~/.local/bin/monitors.sh alone
+  ~/.local/bin/monitor.sh alone
 
 # Work monitors
 super + @F2
-  ~/.local/bin/monitors.sh work
+  ~/.local/bin/monitor.sh work
 
 # Home monitors
 super + @F3
-  ~/.local/bin/monitors.sh home
+  ~/.local/bin/monitor.sh home
 
 # Santiago monitors
 super + @F4
-  ~/.local/bin/monitors.sh santiago 
+  ~/.local/bin/monitor.sh santiago 
 
 #-----------------#
 # BSPWN Movements #
