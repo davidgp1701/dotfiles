@@ -14,7 +14,7 @@
     
 - name: Links monitor script to manage desktops when using connecting monitors
   file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/monitors.sh"
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/monitors.sh"     
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/monitor.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/monitor.sh"
     state: link
     force: yes
