@@ -6,6 +6,7 @@ return require('packer').startup(function()
   -- Basic plugins for me
   use {'tpope/vim-surround'}
   use {'tpope/vim-commentary'}
+  use {'windwp/nvim-autopairs'}
 
   -- Git related plugins
   use {'airblade/vim-gitgutter'}
@@ -60,5 +61,5 @@ return require('packer').startup(function()
   use {'vimwiki/vimwiki'}
 
   -- Init screen
-  use {'mhinz/vim-startify'}
+  -- use {'mhinz/vim-startify'}
 end)
