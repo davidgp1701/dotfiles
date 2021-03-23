@@ -106,8 +106,8 @@ case $place in
 
   santiago)
     
-    xrandr --output eDP1 --primary --mode 1920x1080 --rate 60.00
-    xrandr --output DP3 --mode 1920x1200 --rate 59.95 --right-of eDP1
+    xrandr --output eDP1 --mode 1920x1080 --rate 60.00
+    xrandr --output DP3 --primary --mode 1920x1200 --rate 59.95 --right-of eDP1
 
     if (( number_desktops > 3 ))
     then
