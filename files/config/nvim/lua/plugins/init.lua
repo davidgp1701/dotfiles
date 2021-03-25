@@ -40,13 +40,13 @@ return require('packer').startup(function()
   
   -- Add extra information about how to color text
   use {'sheerun/vim-polyglot'}
-  
+
   -- Airline button bar
   use {'vim-airline/vim-airline'}
   
   -- Vim Cyclest to show listchars
   use {'tjdevries/cyclist.vim'}
-  
+
   -- Tree Sitter
   use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
   use {'nvim-treesitter/playground'}
@@ -62,4 +62,8 @@ return require('packer').startup(function()
 
   -- Init screen
   -- use {'mhinz/vim-startify'}
+
+  -- Show indent lines
+  use 'Yggdroot/indentLine'
+  use {'lukas-reineke/indent-blankline.nvim', branch='lua'}
 end)

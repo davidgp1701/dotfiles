@@ -11,7 +11,7 @@ call cyclist#add_listchar_option_set('limited', {
 call cyclist#add_listchar_option_set('default', {
 	\ 'eol': '↲',
 	\ 'tab': '»·',
-	\ 'space': '␣',
+	\ 'space': '·',
 	\ 'trail': '-',
 	\ 'extends': '☛',
 	\ 'precedes': '☚',
