@@ -64,6 +64,5 @@ return require('packer').startup(function()
   -- use {'mhinz/vim-startify'}
 
   -- Show indent lines
-  use 'Yggdroot/indentLine'
   use {'lukas-reineke/indent-blankline.nvim', branch='lua'}
 end)
