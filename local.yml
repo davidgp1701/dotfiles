@@ -36,6 +36,12 @@
     - sxhkd
     - wifi
 
+- hosts: laptop
+  tags: laptop
+  connection: local
+  roles:
+    - upower
+
 - hosts: g14
   connection: local
   roles:
