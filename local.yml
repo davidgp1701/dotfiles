@@ -29,6 +29,7 @@
     - aws
     - alacritty
     - bspwm
+    - fstrim
     - kitty
     - terraform
     - sxhkd
@@ -37,4 +38,5 @@
 - hosts: g14
   connection: local
   roles:
+    - fstrim
     - vconsole
