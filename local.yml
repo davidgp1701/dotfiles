@@ -19,6 +19,7 @@
     - bash # It requires node first to install the LS
     - nvim
     - python
+    - reflector
     - starship
     - zsh
 
