@@ -34,3 +34,7 @@
     - sxhkd
     - wifi
 
+- hosts: g14
+  connection: local
+  roles:
+    - vconsole
