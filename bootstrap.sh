@@ -38,6 +38,9 @@ echo '' >> "$HOME"/.bashrc
 echo 'CARGO_HOME="$XDG_DATA_HOME/cargo"' >> "$HOME"/.bashrc
 echo 'export CARGO_HOME' >> "$HOME"/.bashrc
 
+echo 'EDITOR="vim"' >> "$HOME"/.bashrc
+echo 'export EDITOR' >> "$HOME"/.bashrc
+
 # Install Ansible to manage dotfiles
 if ! sudo pacman -Qi ansible
 then
