@@ -32,6 +32,12 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.config"
     state: directory
     mode: '0755'
+
+- name: Make sure cache folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache"
+    state: directory
+    mode: '0755'
     
 - name: Make sure local folder exists 
   ansible.builtin.file:

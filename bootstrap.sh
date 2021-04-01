@@ -41,6 +41,12 @@ echo 'export CARGO_HOME' >> "$HOME"/.bashrc
 echo 'EDITOR="vim"' >> "$HOME"/.bashrc
 echo 'export EDITOR' >> "$HOME"/.bashrc
 
+# NPM configuration
+echo 'NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history' >> "$HOME"/.bashrc
+echo 'NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc' >> "$HOME"/.bashrc
+echo 'export NODE_REPL_HISTORY' >> "$HOME"/.bashrc
+echo 'export NPM_CONFIG_USERCONFIG' >> "$HOME"/.bashrc
+
 # Install Ansible to manage dotfiles
 if ! sudo pacman -Qi ansible
 then

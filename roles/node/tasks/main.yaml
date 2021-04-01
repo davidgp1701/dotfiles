@@ -5,6 +5,13 @@
     state: present
   become: yes
     
+- name: Links config file for npm
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/npm"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/npm"
+    state: link
+    force: yes
+    
 - name: Install npm 
   pacman:
     name: npm 
