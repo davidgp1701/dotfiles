@@ -1,0 +1,12 @@
+---
+- name: Install Xorg complete system
+  pacman:
+    name: xorg
+    state: present
+  become: true
+
+- name: Install Xinit
+  pacman:
+    name: xorg-xinit
+    state: present
+  become: true

@@ -45,5 +45,8 @@
 - hosts: g14
   connection: local
   roles:
+    - amdgpu
     - fstrim
+    - nvidia
     - vconsole
+    - xorg
