@@ -18,3 +18,10 @@ To configure the system apply the following changes:
 ./apply.sh
 ```
 
+## Considerations
+
+The configuration does not manages users in the system, ensure that the user belongs to video group for using things like changing screen backlight in a laptop:
+
+```
+usermod -a -G video david
+```

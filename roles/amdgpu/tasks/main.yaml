@@ -4,3 +4,11 @@
     name: xf86-video-amdgpu
     state: present
   become: true
+- name: Allows user in video group to change backlight
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/udev/rules.d/amd-backlight.rules"
+    dest: /etc/udev/rules.d/amd-backlight.rules
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
