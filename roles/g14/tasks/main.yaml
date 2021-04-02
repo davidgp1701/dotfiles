@@ -1,0 +1,16 @@
+---
+- name: Allows user in video group to change keyboard backlight in g14 backlight
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/udev/rules.d/asus-keyboard.rules"
+    dest: /etc/udev/rules.d/asus-keyboard.rules
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  
+- name: Links asus brightness configuration
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/asus_keyboard_backlight.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/asus_keyboard_backlight.sh"
+    state: link
+    force: yes

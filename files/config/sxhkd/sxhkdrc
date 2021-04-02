@@ -20,7 +20,7 @@ super + shift + r
 
 # Quit bspwm
 super + shift + Escape
-  /home/david/.local/bin/prompt.sh "Are you sure you would like to quit this Xsession" "bspc quit"
+    /home/david/.local/bin/prompt.sh "Are you sure you would like to quit this Xsession" "bspc quit"
 
 # Restart bspwm
 super + alt + r
@@ -128,7 +128,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -c -l 25
+	dmenu_run 
 
 # screenshot
 super + shift + s
@@ -146,9 +146,17 @@ super + shift + t
 # XF11 Audio & Special keys #
 #############################
 
-# Audiokeys
+# Monitor brightness
+XF86MonBrightness{Up,Down}
+  light -{A,U} 5
+
+# Keyboard brightness
+XF86KbdBrightness{Up,Down} 
+  ~/.local/bin/asus_keyboard_backlight.sh {increase,decrease}
+
+# Keyboard Audiokeys 
 XF86AudioMute
-  pactl set-sink-mute 0 toggle
+        pactl set-sink-mute 0 toggle
 XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume 0 {+,-}5%
 XF86Audio{Next,Prev}

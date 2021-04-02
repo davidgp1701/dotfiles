@@ -31,9 +31,9 @@
     - alacritty
     - bspwm
     - fstrim
+    - firefox
     - kitty
     - terraform
-    - sxhkd
     - wifi
 
 - hosts: laptop
@@ -45,8 +45,12 @@
 - hosts: g14
   connection: local
   roles:
+    - alacritty
     - amdgpu
+    - bspwm
     - fstrim
+    - firefox
+    - g14
     - nvidia
     - vconsole
     - xorg

@@ -10,3 +10,33 @@
     name: xorg-xinit
     state: present
   become: true
+
+- name: Install arandr 
+  pacman:
+    name: arandr
+    state: present
+  become: true
+
+- name: Install xdotool
+  pacman:
+    name: xdotool
+    state: present
+  become: true
+
+- name: Install xdo
+  pacman:
+    name: xdo
+    state: present
+  become: true
+
+- name: Install light to control screen backlight
+  pacman:
+    name: light
+    state: present
+  become: true
+
+- name: Install nerdfonts
+  aur:
+    use: paru
+    name:
+      - nerd-fonts-complete
