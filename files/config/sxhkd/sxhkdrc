@@ -154,6 +154,10 @@ XF86MonBrightness{Up,Down}
 XF86KbdBrightness{Up,Down} 
   ~/.local/bin/asus_keyboard_backlight.sh {increase,decrease}
 
+# Change compute profile
+XF86Launch4
+  ~/.local/bin/asus_profile.sh
+
 # Keyboard Audiokeys 
 XF86AudioMute
         pactl set-sink-mute 0 toggle

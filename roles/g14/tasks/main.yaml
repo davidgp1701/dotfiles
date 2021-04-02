@@ -14,3 +14,39 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/asus_keyboard_backlight.sh"
     state: link
     force: yes
+
+- name: Install asus control tool
+  aur:
+    use: paru
+    name:
+      - asus-nb-ctrl-git
+      
+- name: Activate asusd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: asusd
+  become: true
+
+- name: Update the asusd service configuration
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/asusd/asusd.conf"
+    dest: /etc/asusd/asusd.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  
+- name: Activate asus-notify service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: asus-notify.service
+    scope: user
+  
+- name: Links asus profile change
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/asus_profile.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/asus_profile.sh"
+    state: link
+    force: yes
