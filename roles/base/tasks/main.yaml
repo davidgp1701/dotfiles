@@ -11,6 +11,20 @@
     state: present
   become: true
 
+- name: Install dash for faster sh scripts
+  pacman:
+    name: dash
+    state: present
+  become: true
+  
+- name: Ensures dash is used for shell scripts instead of bash
+  file:
+    src: "/usr/bin/dash"
+    dest: "/usr/bin/sh"
+    state: link
+    force: yes
+  become: true
+
 - name: Install basic network utils such as hostname
   pacman:
     name: inetutils
