@@ -29,3 +29,8 @@
     name:
       - pulseaudio-modules-bt
 
+- name: Install ncpamixer - ncurses pulseadio control
+  aur:
+    use: paru
+    name:
+      - ncpamixer-git
