@@ -1,0 +1,19 @@
+---
+- name: Install dunst notifier
+  pacman:
+    name: dunst
+    state: present
+  become: true
+
+- name: Install icon theme for dunst
+  pacman:
+    name: adwaita-icon-theme 
+    state: present
+  become: true
+
+- name: Links config file for dunst
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/dunst"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/dunst"
+    state: link
+    force: yes

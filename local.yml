@@ -48,6 +48,7 @@
     - alacritty
     - amdgpu
     - bspwm
+    - dunst
     - fstrim
     - firefox
     - g14
