@@ -1,0 +1,20 @@
+---
+- name: Install bluetooth
+  pacman:
+    name: bluez
+    state: present
+  become: true
+
+- name: Install bluetooth utils
+  pacman:
+    name: bluez-utils
+    state: present
+  become: true
+
+- name: Activate bluetooth systemd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: bluetooth.service
+  become: true
+

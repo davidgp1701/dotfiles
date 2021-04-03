@@ -47,6 +47,8 @@
   roles:
     - alacritty
     - amdgpu
+    - audio
+    - bluetooth
     - bspwm
     - dunst
     - fstrim
