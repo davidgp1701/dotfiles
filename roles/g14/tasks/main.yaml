@@ -50,3 +50,19 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/asus_profile.sh"
     state: link
     force: yes
+
+- name: Add asus monitor size configuration
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/X11/xorg.conf.d/40-monitor-asus-g14.conf"
+    dest: "/etc/X11/xorg.conf.d/40-monitor-asus-g14.conf"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Links Xresources file for G14
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/X/Xresources.g14"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.Xresources"
+    state: link
+    force: yes
