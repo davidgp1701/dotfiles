@@ -76,3 +76,8 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share"
     state: directory
     mode: '0755'
+
+- name: Install jq to parse JSON
+  pacman:
+    name: jq
+    state: present

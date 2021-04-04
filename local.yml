@@ -58,6 +58,7 @@
     - google-chrome
     - g14
     - nvidia
+    - polybar
     - spotify
     - vconsole
     - xorg
