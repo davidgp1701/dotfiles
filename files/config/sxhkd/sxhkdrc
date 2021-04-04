@@ -12,7 +12,7 @@ super + shift + r
 #########################
 
 @F12
-    /home/david/scripts/switch-layout.sh
+    switch-layout.sh
 
 ##################
 # BSPWM Bindings #
