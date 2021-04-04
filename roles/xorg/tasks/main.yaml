@@ -40,3 +40,9 @@
     use: paru
     name:
       - nerd-fonts-complete
+
+- name: Install feh
+  pacman:
+    name: feh
+    state: present
+  become: true
