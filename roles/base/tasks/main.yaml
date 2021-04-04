@@ -4,6 +4,12 @@
     name: which
     state: present
   become: true
+
+- name: Install usbutils
+  pacman:
+    name: usbutils
+    state: present
+  become: true
     
 - name: Install base-devel tools
   pacman:

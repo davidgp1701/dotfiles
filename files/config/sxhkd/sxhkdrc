@@ -160,13 +160,13 @@ XF86Launch4
 
 # Keyboard Audiokeys 
 XF86AudioMute
-        pactl set-sink-mute 0 toggle
+  amixer -D pulse set Master 1+ toggle
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-volume 0 {+,-}5%
+  amixer set 'Master' 5%{+,-}
 XF86Audio{Next,Prev}
-	playerctl {next,previous} 
+  playerctl {next,previous} 
 XF86Audio{Pause,Play,Stop}
-	playerctl {pause,play,stop}
+  playerctl {pause,play-pause,stop}
 
 super + {F6,F7,F8}
   playerctl {previous,play-pause,next}
