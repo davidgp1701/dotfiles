@@ -32,6 +32,7 @@
     - bspwm
     - fstrim
     - firefox
+    - google-chrome
     - kitty
     - terraform
     - spotify
@@ -54,6 +55,7 @@
     - dunst
     - fstrim
     - firefox
+    - google-chrome
     - g14
     - nvidia
     - spotify
