@@ -147,6 +147,9 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
+time-format = %H:%M
+
+label-discharging = %percentage% %time%
 
 ;format-charging = Charging... <label-charging>
 format-charging = <animation-charging> <label-charging>
