@@ -87,3 +87,9 @@
   pacman:
     name: jq
     state: present
+
+- name: Install htop
+  pacman:
+    name: htop
+    state: present
+  become: true
