@@ -83,3 +83,9 @@
     state: link
     force: yes
 
+- name: Activate Betterlockscreen service for suspend
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: yes
+    name: betterlockscreen@david 
+  become: true
