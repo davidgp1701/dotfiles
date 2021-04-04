@@ -32,7 +32,7 @@ super + shift + q
 
 # Lock the screen
 super + shift + x 
-  dm-tool lock 
+  betterlockscreen -l blur
 
 # Only laptop monitor
 super + @F1

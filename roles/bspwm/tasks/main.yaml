@@ -56,3 +56,30 @@
     name: clipmenu
     state: present
   become: true
+
+# Betterlock screen configuration
+- name: Install imagemagick required by the package
+  pacman:
+    name: imagemagick
+    state: present
+  become: true
+
+- name: Installs i3lock
+  aur:
+    use: paru
+    name:
+      - i3lock-color
+
+- name: Installs betterlockscreen
+  aur:
+    use: paru
+    name:
+      - betterlockscreen
+
+- name: Links config file for betterlockscreen
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/betterlockscreen"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/betterlockscreenc"
+    state: link
+    force: yes
+
