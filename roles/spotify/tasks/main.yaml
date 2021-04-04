@@ -1,0 +1,7 @@
+---
+- name: Installs Spotify
+  aur:
+    use: paru
+    name:
+      - spotify
+
