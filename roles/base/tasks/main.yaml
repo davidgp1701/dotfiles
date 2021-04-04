@@ -37,6 +37,12 @@
     state: present
   become: true
 
+- name: Installs downgrade to easily downgrade packages in arch
+  aur:
+    use: paru
+    name:
+      - downgrade
+
 - name: Install Paru package manager
   aur: 
     name: paru
