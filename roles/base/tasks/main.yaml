@@ -82,6 +82,18 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share"
     state: directory
     mode: '0755'
+    
+- name: Make sure share folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/var"
+    state: directory
+    mode: '0755'
+
+- name: Make sure share folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/var/log"
+    state: directory
+    mode: '0755'
 
 - name: Install jq to parse JSON
   pacman:
