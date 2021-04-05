@@ -60,6 +60,47 @@
     group: root
     mode: '0644'
 
+- name: Add asus keyboard lights save/restore script
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/usr/local/bin/g14-kbd-backlight-suspend.sh"
+    dest: "/usr/local/bin/g14-kbd-backlight-suspend.sh"
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Add turn off keyboard lights service at suspend
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/systemd/system/g14_suspend@.service"
+    dest: "/etc/systemd/system/g14_suspend@.service"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Add restore keyboard lights service at resume
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/systemd/system/g14_resume@.service"
+    dest: "/etc/systemd/system/g14_resume@.service"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Activate suspend lights
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: yes
+    name: g14_suspend@david 
+  become: true
+
+- name: Activate restore lights
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: yes
+    name: g14_resume@david 
+  become: true
+
 - name: Links Xresources file for G14
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/X/Xresources.g14"

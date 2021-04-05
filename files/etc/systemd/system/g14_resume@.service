@@ -1,0 +1,11 @@
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=/usr/local/bin/g14-kbd-backlight-suspend.sh restore
+
+[Install]
+WantedBy=suspend.target
