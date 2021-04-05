@@ -107,3 +107,11 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.Xresources"
     state: link
     force: yes
+
+- name: Power saving options for AX200 Intel wifi card
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/modprobe.d/iwlwifi.conf"
+    dest: "/etc/modprobe.d/iwlwifi.conf"
+    owner: root
+    group: root
+    mode: '0644'
