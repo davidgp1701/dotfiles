@@ -105,3 +105,10 @@
     name: htop
     state: present
   become: true
+
+- name: Enable NTP with systemd-timesyncd
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: systemd-timesyncd 
+  become: true
