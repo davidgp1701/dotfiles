@@ -61,6 +61,8 @@
     - mpv
     - nvidia
     - polybar
+    - powertop
     - spotify
     - vconsole
     - xorg
+    - zsh
