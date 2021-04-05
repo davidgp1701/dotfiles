@@ -41,6 +41,24 @@
     name:
       - nerd-fonts-complete
 
+- name: Install noto-fonts-emoji
+  pacman:
+    name: noto-fonts-emoji
+    state: present
+  become: true
+
+- name: Install JoyPixels emoji font
+  pacman:
+    name: ttf-joypixels
+    state: present
+  become: true
+
+- name: Install symbola ttf emoji font
+  aur:
+    use: paru
+    name:
+      - ttf-symbola
+
 - name: Install feh
   pacman:
     name: feh
