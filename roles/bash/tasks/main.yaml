@@ -11,3 +11,9 @@
     state: present
   become: true
 
+- name: Update profile file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/profile"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.profile"
+    state: link
+    force: yes
