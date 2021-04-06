@@ -51,7 +51,12 @@ unsetopt MULTIBYTE
 
 # Update fpath for locally installed modules
 fpath=( "$HOME/.zfunctions" $fpath )
-#
+
+# Start X automatically in first TTy
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
 # Spaceship Prompt
 autoload -U promptinit; promptinit
 eval "$(starship init zsh)"
