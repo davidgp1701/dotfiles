@@ -63,6 +63,7 @@
     - polybar
     - powertop
     - spotify
+    - starship
     - vconsole
     - xorg
     - zsh
