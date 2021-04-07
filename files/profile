@@ -54,3 +54,7 @@ TASKRC="${XDG_CONFIG_HOME}/taskrc"
 TASKDATA="${XDG_DATA_HOME}/task"
 export TASKRC
 export TASKDATA
+
+# Force Pylint configuration
+PYLINTHOME="${XDG_CACHE_HOME}/pylint"
+export PYLINTHOME
