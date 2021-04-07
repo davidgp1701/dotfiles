@@ -13,10 +13,6 @@ export TERMINAL
 BROWSER="firefox"
 export BROWSER
 
-# PATH
-PATH="$PATH:$HOME/.local/bin"
-export PATH
-
 # RUST
 CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_HOME
@@ -32,7 +28,7 @@ GNUPGHOME="${XDG_DATA_HOME}/gnupg"
 export GNUPGHOME
 
 # Go configuration
-GOPATH="${XDG_DATA_HOME}/goexport"
+GOPATH="${XDG_DATA_HOME}/share/goexport"
 export GOPATH
 
 # ZSH config directory

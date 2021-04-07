@@ -47,9 +47,6 @@ source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlightin
 # Load zsh autosugestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Update path
-export PATH=$PATH:/home/david/.local/bin:/home/david/.okta/bin
-
 unsetopt MULTIBYTE
 
 # Update fpath for locally installed modules

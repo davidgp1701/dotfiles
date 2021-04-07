@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -x
 actual=$(setxkbmap -print | grep xkb_geometry | cut -d '(' -f2 | cut -d ')' -f1)
 
 if [ "$actual" = "pc104" ] 
