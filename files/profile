@@ -58,3 +58,19 @@ export TASKDATA
 # Force Pylint configuration
 PYLINTHOME="${XDG_CACHE_HOME}/pylint"
 export PYLINTHOME
+
+# Cuda cacha folder
+CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
+export CUDA_CACHE_PATH
+
+# K9s to follow XDG format
+K9SCONFIG="${XDG_CONFIG_HOME}/k9s"
+export K9SCONFIG
+
+# GTK 1.0 configuration files
+GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
+export GTK_RC_FILES
+
+# GTK 2.0 configuration files
+GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+export GTK2_RC_FILES
