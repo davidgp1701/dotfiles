@@ -48,3 +48,9 @@ export VAGRANT_HOME
 # Force docker to follow XDG config
 DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export DOCKER_CONFIG
+
+# Force task warrior configuration
+TASKRC="${XDG_CONFIG_HOME}/taskrc"
+TASKDATA="${XDG_DATA_HOME}/task"
+export TASKRC
+export TASKDATA

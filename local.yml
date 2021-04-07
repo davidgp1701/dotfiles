@@ -64,6 +64,7 @@
     - powertop
     - spotify
     - starship
+    - task
     - vconsole
     - xorg
     - zsh

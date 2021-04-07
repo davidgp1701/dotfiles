@@ -1,0 +1,12 @@
+---
+- name: Installs taskwarrior
+  pacman:
+    name: task
+    state: present
+
+- name: Make sure task folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task"
+    state: directory
+    mode: '0755'
+
