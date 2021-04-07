@@ -1,0 +1,14 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+
+# Load personal configuration shell files
+for f in ~/.config/shellconfigs/*; do source "$f"; done
+
+HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTFILE
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi

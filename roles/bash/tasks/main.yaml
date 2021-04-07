@@ -17,3 +17,40 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.profile"
     state: link
     force: yes
+
+- name: Update bash profile file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/.config/bash/bash_profile"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.bash_profile"
+    state: link
+    force: yes
+
+- name: Update bashrc file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/.config/bash/bashrc"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.bashrc"
+    state: link
+    force: yes
+
+- name: Remove file bash_logout, not personally using it 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.bash_logout"
+    state: absent
+
+- name: Make sure share bash folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/bash"
+    state: directory
+    mode: '0755'
+    
+
+- name: Create Bash history file if it does not exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/bash/history"
+    state: touch
+    mode: u+rw,g-wx,o-rwx
+
+- name: Remove file bash_history, not personally using it 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.bash_history"
+    state: absent
