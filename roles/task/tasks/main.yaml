@@ -3,6 +3,7 @@
   pacman:
     name: task
     state: present
+  become: yes
 
 - name: Make sure task folder exists
   ansible.builtin.file:
