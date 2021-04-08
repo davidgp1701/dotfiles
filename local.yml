@@ -53,6 +53,7 @@
     - audio
     - bluetooth
     - bspwm
+    - certificado-digital
     - dunst
     - fstrim
     - firefox
@@ -60,6 +61,7 @@
     - g14
     - mpv
     - nvidia
+    - ntp
     - polybar
     - powertop
     - spotify
