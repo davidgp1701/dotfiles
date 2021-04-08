@@ -49,3 +49,8 @@
     state: present
   become: true
 
+- name: Make sure zsh cache folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache/zsh"
+    state: directory
+    mode: '0700'
