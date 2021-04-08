@@ -20,6 +20,7 @@ compinit
 _comp_options+=(globdots)	
 
 # Enable searching through history
+bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 
 # Use vim keys in tab complete menu:
