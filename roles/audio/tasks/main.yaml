@@ -41,8 +41,8 @@
     name:
       - pulseaudio-modules-bt
 
-- name: Install ncpamixer - ncurses pulseadio control
-  aur:
-    use: paru
-    name:
-      - ncpamixer-git
+- name: Install pulsemixer
+  pacman:
+    name: pulsemixer
+    state: present
+  become: true
