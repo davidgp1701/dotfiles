@@ -29,8 +29,12 @@ vim.o.hidden=true
 vim.o.errorbells=true
 
 -- Insert 2 spaces for a tab
-vim.bo.tabstop=2 
-vim.bo.softtabstop=2
+-- vim.bo.tabstop=2 -- Need to check the right way to do this, it is not working 
+-- vim.bo.softtabstop=2
+-- vim.bo.shiftwidth=2
+vim.cmd('set ts=2')
+vim.cmd('set sw=2')
+vim.cmd('set sts=2')
 
 -- Changes the number of spaces used for indentation
 vim.bo.shiftwidth=2

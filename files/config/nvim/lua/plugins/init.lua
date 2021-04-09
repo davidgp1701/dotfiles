@@ -2,7 +2,7 @@
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim'}
-  
+
   -- Basic plugins for me
   use {'tpope/vim-surround'}
   use {'tpope/vim-commentary'}
@@ -39,7 +39,7 @@ return require('packer').startup(function()
   use {'hashivim/vim-hashicorp-tools'}
   
   -- Add extra information about how to color text
-  use {'sheerun/vim-polyglot'}
+  -- use {'sheerun/vim-polyglot'}
 
   -- Airline button bar
   use {'vim-airline/vim-airline'}
@@ -55,6 +55,7 @@ return require('packer').startup(function()
   use {'nvim-lua/lsp-status.nvim'}
   use {'neovim/nvim-lspconfig'}
   use {'hrsh7th/nvim-compe'}
+  use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
 
   -- Vimwiki
