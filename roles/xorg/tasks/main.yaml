@@ -71,3 +71,9 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/switch-layout.sh"
     state: link
     force: yes
+
+- name: Install colorpicker
+  aur:
+    use: paru
+    name:
+      - colorpicker
