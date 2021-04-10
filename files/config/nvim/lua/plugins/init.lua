@@ -29,6 +29,12 @@ return require('packer').startup(function()
   use {'tjdevries/colorbuddy.vim'}
   use {'tjdevries/gruvbuddy.nvim'}
 
+	-- Tabs
+	use {
+		'akinsho/nvim-bufferline.lua',
+		requires = 'kyazdani42/nvim-web-devicons'
+	}
+
   -- Search on vim
   use {
     'nvim-telescope/telescope.nvim',
