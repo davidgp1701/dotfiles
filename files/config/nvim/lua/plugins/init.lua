@@ -37,6 +37,9 @@ return require('packer').startup(function()
 
   -- Terraform/Packer/etc.
   use {'hashivim/vim-hashicorp-tools'}
+
+	-- Ansible support
+	use {'pearofducks/ansible-vim'}
   
   -- Add extra information about how to color text
   -- use {'sheerun/vim-polyglot'}
