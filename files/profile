@@ -1,3 +1,4 @@
+#!/bin/bash
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_CACHE_HOME="${HOME}/.cache"
 XDG_DATA_HOME="${HOME}/.local/share"
@@ -74,3 +75,6 @@ export GTK_RC_FILES
 # GTK 2.0 configuration files
 GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 export GTK2_RC_FILES
+
+# XAuthority file
+XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
