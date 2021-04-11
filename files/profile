@@ -9,7 +9,7 @@ export XDG_DATA_HOME
 # Typical programs
 EDITOR="nvim"
 export EDITOR
-TERMINAL="alacritty"
+TERMINAL="st"
 export TERMINAL
 BROWSER="firefox"
 export BROWSER
