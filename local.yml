@@ -29,15 +29,25 @@
   roles:
     - aws
     - alacritty
+    - audio
+    - bluetooth
     - bspwm
+    - dunst
     - fstrim
     - firefox
     - google-chrome
     - kitty
     - mpv
-    - terraform
+    - ntp
+    - powertop
+    - suckless
     - spotify
+    - task
+    - terraform
+    - vconsole
     - wifi
+    - xorg
+    - zsh
 
 - hosts: laptop
   tags: laptop
@@ -68,6 +78,8 @@
     - starship
     - suckless
     - task
+    - terraform
     - vconsole
+    - wifi
     - xorg
     - zsh
