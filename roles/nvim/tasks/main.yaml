@@ -23,6 +23,12 @@
     name: fd
     state: present
 
+- name: Install tree-sitter
+  become: yes
+  pacman:
+    name: tree-sitter
+    state: present
+
 - name: Installs nvim nightly build
   aur:
     use: paru

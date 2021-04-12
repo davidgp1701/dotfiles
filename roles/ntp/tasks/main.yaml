@@ -1,0 +1,18 @@
+---
+- name: Set timezone to Europe/Madrid
+  community.general.timezone:
+    name: Europe/Madrid
+    hwclock: UTC
+  become: yes
+
+- name: Enable Systemd systemd-timesyncd.service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: systemd-timesyncd.service 
+  become: true
+
+- name: Enable SystemD NTP service
+  command: timedatectl set-ntp true
+  become: yes
+

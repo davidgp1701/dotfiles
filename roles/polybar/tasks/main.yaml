@@ -1,0 +1,13 @@
+---
+- name: Install polybar
+  aur:
+    use: paru
+    name:
+      - polybar
+
+- name: Links config file for Polybar
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/polybar"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/polybar"
+    state: link
+    force: yes

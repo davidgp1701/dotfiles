@@ -1,0 +1,79 @@
+---
+- name: Install Xorg complete system
+  pacman:
+    name: xorg
+    state: present
+  become: true
+
+- name: Install Xinit
+  pacman:
+    name: xorg-xinit
+    state: present
+  become: true
+
+- name: Install arandr 
+  pacman:
+    name: arandr
+    state: present
+  become: true
+
+- name: Install xdotool
+  pacman:
+    name: xdotool
+    state: present
+  become: true
+
+- name: Install xdo
+  pacman:
+    name: xdo
+    state: present
+  become: true
+
+- name: Install light to control screen backlight
+  pacman:
+    name: light
+    state: present
+  become: true
+
+- name: Install nerdfonts
+  aur:
+    use: paru
+    name:
+      - nerd-fonts-complete
+
+- name: Install noto-fonts-emoji
+  pacman:
+    name: noto-fonts-emoji
+    state: present
+  become: true
+
+- name: Install JoyPixels emoji font
+  pacman:
+    name: ttf-joypixels
+    state: present
+  become: true
+
+- name: Install symbola ttf emoji font
+  aur:
+    use: paru
+    name:
+      - ttf-symbola
+
+- name: Install feh
+  pacman:
+    name: feh
+    state: present
+  become: true
+
+- name: Links switch-layout script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/switch-layout.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/switch-layout.sh"
+    state: link
+    force: yes
+
+- name: Install colorpicker
+  aur:
+    use: paru
+    name:
+      - colorpicker

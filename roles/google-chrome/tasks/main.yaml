@@ -1,0 +1,6 @@
+---
+- name: Installs Google Chrome
+  aur:
+    use: paru
+    name:
+      - google-chrome

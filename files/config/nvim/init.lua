@@ -4,6 +4,8 @@ require('mappings')
 
 -- Plugins
 require('plugins')
+require('cfg_ansible-vim')
+require('cfg_nvim-bufferline')
 require('nv-compe')
 require('nv-airline')
 require('nv-gitgutter')

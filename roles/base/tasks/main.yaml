@@ -4,11 +4,31 @@
     name: which
     state: present
   become: true
+
+- name: Install usbutils
+  pacman:
+    name: usbutils
+    state: present
+  become: true
     
 - name: Install base-devel tools
   pacman:
     name: base-devel
     state: present
+  become: true
+
+- name: Install dash for faster sh scripts
+  pacman:
+    name: dash
+    state: present
+  become: true
+  
+- name: Ensures dash is used for shell scripts instead of bash
+  file:
+    src: "/usr/bin/dash"
+    dest: "/usr/bin/sh"
+    state: link
+    force: yes
   become: true
 
 - name: Install basic network utils such as hostname
@@ -23,6 +43,12 @@
     state: present
   become: true
 
+- name: Installs downgrade to easily downgrade packages in arch
+  aur:
+    use: paru
+    name:
+      - downgrade
+
 - name: Install Paru package manager
   aur: 
     name: paru
@@ -30,6 +56,12 @@
 - name: Make sure config folder exists 
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.config"
+    state: directory
+    mode: '0755'
+
+- name: Make sure cache folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache"
     state: directory
     mode: '0755'
     
@@ -44,3 +76,39 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/bin"
     state: directory
     mode: '0755'
+
+- name: Make sure share folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share"
+    state: directory
+    mode: '0755'
+    
+- name: Make sure share folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/var"
+    state: directory
+    mode: '0755'
+
+- name: Make sure share folder exists 
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/var/log"
+    state: directory
+    mode: '0755'
+
+- name: Install jq to parse JSON
+  pacman:
+    name: jq
+    state: present
+
+- name: Install htop
+  pacman:
+    name: htop
+    state: present
+  become: true
+
+- name: Enable NTP with systemd-timesyncd
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: systemd-timesyncd 
+  become: true

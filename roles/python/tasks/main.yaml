@@ -1,4 +1,10 @@
 ---
+- name: Install pip
+  pacman:
+    name: python-pip
+    state: present
+  become: true
+
 - name: Installs Python Language Server protocol
   pip:
     name: 'python-language-server[yapf]'

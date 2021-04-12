@@ -1,0 +1,7 @@
+---
+- name: Installs the Mozilla Firefox Browser
+  pacman:
+    name: firefox
+    state: present
+  become: true
+

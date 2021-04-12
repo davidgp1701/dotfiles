@@ -1,0 +1,6 @@
+---
+- name: Install upower
+  pacman:
+    name: upower
+    state: present
+  become: true

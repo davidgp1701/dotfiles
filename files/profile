@@ -1,0 +1,80 @@
+#!/bin/bash
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME
+export XDG_CACHE_HOME
+export XDG_DATA_HOME
+
+# Typical programs
+EDITOR="nvim"
+export EDITOR
+TERMINAL="st"
+export TERMINAL
+BROWSER="firefox"
+export BROWSER
+
+# RUST
+CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CARGO_HOME
+
+# NPM
+NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export NODE_REPL_HISTORY
+export NPM_CONFIG_USERCONFIG
+
+# GNUPG configuration
+GNUPGHOME="${XDG_DATA_HOME}/gnupg"
+export GNUPGHOME
+
+# Go configuration
+GOPATH="${XDG_DATA_HOME}/share/goexport"
+export GOPATH
+
+# ZSH config directory
+ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export ZDOTDIR
+
+# Gradle XDG config
+GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
+export GRADLE_USER_HOME
+
+# Vagrant XDG config
+VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
+VAGRANT_ALIAS_FILE="${XDG_DATA_HOME}/vagrant/aliases"
+export VAGRANT_ALIAS_FILE
+export VAGRANT_HOME
+
+# Force docker to follow XDG config
+DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export DOCKER_CONFIG
+
+# Force task warrior configuration
+TASKRC="${XDG_CONFIG_HOME}/taskrc"
+TASKDATA="${XDG_DATA_HOME}/task"
+export TASKRC
+export TASKDATA
+
+# Force Pylint configuration
+PYLINTHOME="${XDG_CACHE_HOME}/pylint"
+export PYLINTHOME
+
+# Cuda cacha folder
+CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
+export CUDA_CACHE_PATH
+
+# K9s to follow XDG format
+K9SCONFIG="${XDG_CONFIG_HOME}/k9s"
+export K9SCONFIG
+
+# GTK 1.0 configuration files
+GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
+export GTK_RC_FILES
+
+# GTK 2.0 configuration files
+GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+export GTK2_RC_FILES
+
+# XAuthority file
+XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"

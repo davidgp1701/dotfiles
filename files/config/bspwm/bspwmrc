@@ -6,23 +6,28 @@ sxhkd &
 # Launch clipmenud
 clipmenud &
 
-# Launch Polybar
-~/.config/polybar/launch.sh
+# Ensure dunst is our dbus deamon, in case other ones are installed and automatically started
+/usr/bin/dunst &
 
 # Set background image
 feh --bg-fill /home/david/Pictures/somonstalenhag.se/l_ash09_big.jpg &
 
 # Adding pulseaudio service startup
-/usr/bin/start-pulseaudio-x11 & 
+usr/bin/start-pulseaudio-x11 & 
+# pulseaudio --start &
+# /usr/bin/pactl load-module module-x11-publish "display=$DISPLAY xauthority=$XAUTHORITY" &
+
+# Launch Polybar
+~/.config/polybar/launch.sh
 
 # Adding transparency
-compton -f &
+picom -b &
 
-# Bluetooth Applet
-blueman-applet &
+# Bluetooth
+bluetoothctl power on 
+# blueman-applet &
 
-bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10 
-
+bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10 
 bspc config border_width         3 
 bspc config window_gap          12
 
@@ -37,6 +42,6 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-# ScratchPad
-st -c scratchterm &
-bspc rule -a scratchterm sticky=on state=floating hidden=on
+#adwaita-icon-theme ScratchPad
+# st -c scratchterm &
+# bspc rule -a scratchterm sticky=on state=floating hidden=on

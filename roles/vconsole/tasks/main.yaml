@@ -1,0 +1,15 @@
+---
+- name: Installs terminus font
+  aur:
+    use: paru
+    name:
+      - terminus-font
+
+- name: Configures vconsole
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/vconsole.conf"
+    dest: /etc/vconsole.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
