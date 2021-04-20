@@ -27,7 +27,9 @@ picom -b &
 bluetoothctl power on 
 # blueman-applet &
 
-bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10 
+# Configure the desktops for the laptop display
+display_name="$(bspc query -M --names | head -1)"
+bspc monitor "$display_name" -d 1 2 3 4 5 6 7 8 9 10 
 bspc config border_width         3 
 bspc config window_gap          12
 
