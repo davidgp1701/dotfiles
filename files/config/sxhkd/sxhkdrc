@@ -128,11 +128,11 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run 
+	/usr/bin/dmenu_run 
 
 # screenshot
 super + shift + s
-  flameshot gui -p ~/Desktop/screenshots
+  flameshot gui -p /home/david/Desktop/screenshots
 
 # clipmenu
 super + shift + v
