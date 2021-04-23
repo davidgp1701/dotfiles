@@ -33,7 +33,7 @@
   aur:
     use: paru
     name:
-      - neovim-nightly-bin
+      - neovim-git
 
 - name: Links config file for nvim
   file:
