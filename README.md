@@ -25,3 +25,14 @@ The configuration does not manages users in the system, ensure that the user bel
 ```
 usermod -a -G video david
 ```
+## Software not automatically installed
+
+### ST terminal
+
+I'm using the [Suckless Simple Terminal - ST](https://st.suckless.org/) as my main terminal. It is manually installed like this:
+
+```
+git clone https://github.com/davidgp1701/st
+cd st
+sudo make install
+```
