@@ -106,9 +106,21 @@
     state: present
   become: true
 
+- name: Installs gtop
+  pacman:
+    name: gtop
+    state: present
+  become: true
+
 - name: Enable NTP with systemd-timesyncd
   ansible.builtin.systemd:
     state: started
     enabled: yes
     name: systemd-timesyncd 
   become: true
+
+- name: Installs bitwarden cli
+  aur:
+    use: paru
+    name:
+      - bitwarden

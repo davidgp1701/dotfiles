@@ -41,6 +41,12 @@
     name:
       - nerd-fonts-complete
 
+- name: Install tff-dejavu (needed for gtop)
+  pacman:
+    name: ttf-dejavu
+    state: present
+  become: true
+
 - name: Install noto-fonts-emoji
   pacman:
     name: noto-fonts-emoji
