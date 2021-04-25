@@ -11,3 +11,13 @@
     state: directory
     mode: '0755'
 
+- name: Make sure task certs folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task/certs"
+    state: directory
+    mode: '0700'
+
+- name: Ensure taskwarrior is configured 
+  template:
+    src: taskrc.j2
+    dest: ~/.config/taskrc
