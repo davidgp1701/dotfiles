@@ -123,4 +123,4 @@
   aur:
     use: paru
     name:
-      - bitwarden
+      - bitwarden-cli
