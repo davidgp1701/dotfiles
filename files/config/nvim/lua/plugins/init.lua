@@ -28,6 +28,7 @@ return require('packer').startup(function()
   use {'savq/melange'}
   use {'tjdevries/colorbuddy.vim'}
   use {'tjdevries/gruvbuddy.nvim'}
+	use {'tiagovla/tokyodark.nvim'}
 
 	-- Tabs
 	use {
