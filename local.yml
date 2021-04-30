@@ -47,6 +47,7 @@
     - vconsole
     - wifi
     - xorg
+    - zathura
     - zsh
 
 - hosts: laptop
@@ -82,4 +83,5 @@
     - vconsole
     - wifi
     - xorg
+    - zathura
     - zsh
