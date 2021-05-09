@@ -23,16 +23,22 @@
     - starship
     - zsh
 
+- hosts: laptop
+  tags: laptop
+  connection: local
+  roles:
+    - upower
+
 - hosts: workstation
   tags: workstation
   connection: local
   roles:
-    - aws
     - alacritty
     - audio
     - bluetooth
     - bspwm
     - dunst
+    - etckeeper
     - fstrim
     - firefox
     - google-chrome
@@ -40,8 +46,9 @@
     - mpv
     - ntp
     - powertop
-    - suckless
     - spotify
+    - suckless
+    - starship
     - task
     - terraform
     - vconsole
@@ -50,39 +57,18 @@
     - zathura
     - zsh
 
-- hosts: laptop
-  tags: laptop
+- hosts: archy
+  tags: archy
   connection: local
   roles:
-    - upower
+    - aws
 
 - hosts: g14
   connection: local
   roles:
-    - alacritty
     - amdgpu
-    - audio
-    - bluetooth
-    - bspwm
     - certificado-digital
-    - dunst
-    - fstrim
-    - firefox
-    - google-chrome
     - g14
-    - mpv
     - nvidia
-    - ntp
     - polybar
-    - powertop
-    - spotify
-    - starship
-    - suckless
-    - task
-    - terraform
     - torrent
-    - vconsole
-    - wifi
-    - xorg
-    - zathura
-    - zsh

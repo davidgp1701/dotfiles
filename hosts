@@ -1,5 +1,6 @@
 [workstation]
 archy.localdomain
+g14.localdomain
 
 [laptop]
 archy.localdomain
@@ -7,3 +8,6 @@ g14.localdomain
 
 [g14]
 g14.localdomain
+
+[archy]
+archy.localdomain
