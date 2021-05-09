@@ -47,3 +47,5 @@ bspc config gapless_monocle      true
 #adwaita-icon-theme ScratchPad
 # st -c scratchterm &
 # bspc rule -a scratchterm sticky=on state=floating hidden=on
+
+bspc rule -a Zathura state=tiled
