@@ -36,3 +36,8 @@ git clone https://github.com/davidgp1701/st
 cd st
 sudo make install
 ```
+
+## Software that requieres manual steps:
+
+* [NeoVim](./files/config/nvim/README.md)
+* [Etckeeper](./roles/etckeeper/README.md)

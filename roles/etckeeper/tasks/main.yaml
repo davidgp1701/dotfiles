@@ -1,0 +1,14 @@
+---
+- name: Installs etckeeper
+  become: yes
+  pacman:
+    name: etckeeper
+    state: present
+  
+- name: Activate etckeeper timer systemd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: etckeeper.timer
+  become: true
+
