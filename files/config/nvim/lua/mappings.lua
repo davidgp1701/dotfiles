@@ -89,3 +89,8 @@ vim.api.nvim_set_keymap('n', '<leader>cp', '<Plug>CyclistPrev', { noremap = fals
 -- Git Gutter helpers
 vim.api.nvim_set_keymap('n', ')', '<Plug>(GitGutterNextHunk)', { noremap = false })
 vim.api.nvim_set_keymap('n', '(', '<Plug>(GitGutterPrevHunk)', { noremap = false })
+
+-- vim.cmd([[
+-- inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+-- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+-- ]])
