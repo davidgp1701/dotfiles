@@ -29,3 +29,10 @@
     name: ncmpcpp
     state: present
   become: true
+
+- name: Wrapper for ncmpcpp
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/player.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/player"
+    state: link
+    force: yes

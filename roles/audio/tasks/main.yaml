@@ -55,3 +55,10 @@
     group: root
     mode: '0644'
   become: true
+
+- name: Play control script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/play-control.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/play-control.sh"
+    state: link
+    force: yes

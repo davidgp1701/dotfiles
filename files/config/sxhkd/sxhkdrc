@@ -164,12 +164,12 @@ XF86AudioMute
 XF86Audio{Raise,Lower}Volume
   amixer set 'Master' 5%{+,-}
 XF86Audio{Next,Prev}
-  playerctl {next,previous} 
+  play-control.sh {next,previous} 
 XF86Audio{Pause,Play,Stop}
-  playerctl {pause,play-pause,stop}
+  play-control.sh {pause,play-pause,stop}
 
 super + {F6,F7,F8}
-  playerctl {previous,play-pause,next}
+  play-control.sh {previous,play-pause,next}
 
 XF86PowerOff
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
