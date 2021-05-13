@@ -46,3 +46,12 @@
     name: pulsemixer
     state: present
   become: true
+
+- name: Configures personal USB DACs
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/modprobe.d/alsa.conf"
+    dest: /etc/modprobe.d/alsa.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true

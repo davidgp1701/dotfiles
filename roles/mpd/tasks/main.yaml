@@ -1,0 +1,31 @@
+---
+- name: Installs mpd latest version
+  pacman:
+    name: mpd
+    state: present
+  become: true
+  
+- name: Links config file for mpd
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/mpd"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/mpd"
+    state: link
+    force: yes
+
+- name: Make sure log folder exists for mpd
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/runtime/mpd"
+    state: directory
+    mode: '0755'
+
+- name: Make sure playlists folder exists for mpd
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/mpd/playlists"
+    state: directory
+    mode: '0755'
+
+- name: Install the NCurses Music Player Client Plus Plus mcmpcpp
+  pacman:
+    name: ncmpcpp
+    state: present
+  become: true
