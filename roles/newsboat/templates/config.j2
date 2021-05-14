@@ -1,0 +1,97 @@
+# URL Sources
+urls-source "inoreader"
+inoreader-app-id "{{ inoreader_app_id }}"
+inoreader-app-key "{{ inoreader_app_key }}"
+inoreader-login "{{ inoreader_login }}"
+inoreader-password "{{ inoreader_password }}"
+
+# general
+auto-reload yes
+reload-time 120
+show-read-articles no
+show-read-feeds no
+delete-read-articles-on-quit yes
+cache-file "~/.cache/newsboat/cache.db"
+max-items 4000
+delete-read-articles-on-quit yes
+text-width 80
+reload-threads 8
+show-title-bar yes
+confirm-exit no
+cleanup-on-quit no
+
+# define
+browser "firefox --new-tab %u"
+external-url-viewer "urlscan"
+html-renderer "w3m -T text/html"
+player "mpv"
+download-retries 4
+pager internal
+article-sort-order date-asc
+datetime-format "%Y-%m-%d"
+# The path where articles shall be saved to.
+save-path ~/Downloads/
+
+# Disable keymap hints on the bottom of screen.
+show-keymap-hint yes
+
+notify-always yes
+notify-program "notify-send"
+
+# Set format string that is used for formatting notifications.
+notify-format "%n unread articles"
+
+#Keys
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key r reload
+bind-key R reload-all
+
+# Colorschemes
+include /usr/share/doc/newsboat/contrib/colorschemes/nord
+
+# Highlight Rules
+highlight feedlist "https?://[^ ]+" cyan default
+highlight articlelist "[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}" cyan default
+highlight article "https?://[^ ]+" cyan default
+highlight article "^(Feed|Title|Author|Link|Date):" blue default
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Sponsored\""
+highlight-article "tags =~ \"security\"" red default bold
+feedlist-format     "%11u %t"
+articlelist-format  "%4i %f %D  %?T?|%-24T|  ?%t"
+highlight all "^ *[0-9]*" cyan black dim
+ 
+highlight feedlist "(News|news)" yellow black
+highlight feedlist "(Tech|Linux|Distro)" green black
+highlight feedlist "(Gaming|Games)" red black
+ 
+highlight-article "age > 5" red black dim
+highlight article "^(Feed|Title|Author|Link|Date):.*" blue black
+highlight article "(Read more)" red black
+highlight article "\\[[0-9][0-9]*\\]" green black
+highlight article "\\[image [0-9][0-9]*\\]" yellow black dim
+highlight article ":.*\\(link\\)$" cyan default
+highlight article ":.*\\(image\\)$" blue default
+highlight article ":.*\\(embedded flash\\)$" magenta default
+
+#Macros
+macro o open-in-browser ; toggle-article-read "read"
+
+# vim:ft=config:
