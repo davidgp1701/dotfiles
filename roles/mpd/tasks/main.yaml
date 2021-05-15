@@ -5,6 +5,12 @@
     state: present
   become: true
   
+- name: Installs mpc latest version
+  pacman:
+    name: mpc
+    state: present
+  become: true
+
 - name: Links config file for mpd
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/mpd"
@@ -42,3 +48,54 @@
     name: beets
     state: present
   become: true
+
+- name: Ensure beets music folder
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/Music/beets"
+    state: directory
+    mode: '0755'
+
+- name: Ensure beets db folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/Dropbox/beets"
+    state: directory
+    mode: '0755'
+
+- name: Ensure beets config folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/beets"
+    state: directory
+    mode: '0755'
+
+- name: Links beets configuration file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/beets/config.yaml"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/beets/config.yaml"
+    state: link
+    force: yes
+
+- name: Ensure pylast is installed
+  pacman:
+    name: python-pylast
+    state: present
+  become: true
+
+- name: Installs mpd-notification
+  aur:
+    use: paru
+    name:
+      - mpd-notification
+
+- name: Links beets configuration file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/mpd-notification.conf"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/mpd-notification.conf"
+    state: link
+    force: yes
+
+# - name: Activate mpd-notification service for user 
+#   ansible.builtin.systemd:
+#     state: started
+#     enabled: yes
+#     name: mpd-notification
+#     scope: user
