@@ -38,10 +38,12 @@
     - bluetooth
     - bspwm
     - dunst
+    - dropbox
     - etckeeper
     - fstrim
     - firefox
     - google-chrome
+    - gpg
     - kitty
     - mpd
     - mpv

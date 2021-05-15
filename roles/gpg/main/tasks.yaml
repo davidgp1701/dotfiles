@@ -1,0 +1,5 @@
+- name: Make sure GPG user folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/gnupg"
+    state: directory
+    mode: '0700'
