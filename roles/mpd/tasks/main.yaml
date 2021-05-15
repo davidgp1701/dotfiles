@@ -36,3 +36,9 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/player"
     state: link
     force: yes
+
+- name: Installs beets
+  pacman:
+    name: beets
+    state: present
+  become: true
