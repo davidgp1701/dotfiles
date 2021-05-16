@@ -124,3 +124,12 @@
     use: paru
     name:
       - bitwarden-cli
+
+- name: Enable makepkg to compile in native mode
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/makepkg.conf"
+    dest: /etc/makepkg.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
