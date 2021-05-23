@@ -81,3 +81,7 @@ export GTK2_RC_FILES
 
 # XAuthority file
 XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+
+# Tree Sitter
+TREE_SITTER_DIR="${XDG_CONFIG_HOME}/tree-sitter"
+export TREE_SITTER_DIR
