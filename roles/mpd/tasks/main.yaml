@@ -43,6 +43,12 @@
     state: link
     force: yes
 
+- name: Make sure lyrics folder exists for ncmpcpp
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache/ncmpcpp"
+    state: directory
+    mode: '0755'
+
 - name: Installs beets
   pacman:
     name: beets

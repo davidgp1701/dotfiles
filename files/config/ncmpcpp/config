@@ -27,3 +27,4 @@ progressbar_look = "▃▃▃"
 
 # General
 # header_visibility = "no"
+lyrics_directory = ~/.cache/ncmpcpp/lyrics
