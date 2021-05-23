@@ -99,3 +99,34 @@
 #     enabled: yes
 #     name: mpd-notification
 #     scope: user
+
+- name: Installs ueberzug for displaying images in terminal
+  pacman:
+    name: ueberzug
+    state: present
+  become: true
+
+- name: Installs tmux for displaying images in terminal
+  pacman:
+    name: tmux
+    state: present
+  become: true
+  
+- name: Installs inotify-tools for displaying images in terminal
+  pacman:
+    name: inotify-tools
+    state: present
+  become: true
+
+- name: Installs ffmpeg for displaying images in terminal
+  pacman:
+    name: ffmpeg
+    state: present
+  become: true
+
+- name: Links config file for ncmpcpp
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/ncmpcpp"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/ncmpcpp"
+    state: link
+    force: yes
