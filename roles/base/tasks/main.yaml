@@ -133,3 +133,9 @@
     group: root
     mode: '0644'
   become: true
+
+- name: Install fzf
+  pacman:
+    name: fzf
+    state: present
+  become: true

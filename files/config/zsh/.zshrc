@@ -39,6 +39,16 @@ bindkey "^?" backward-delete-char
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Switch quickly to a directory
+function _switch_to_directory {
+	local dir
+  dir="$(fd -t d . ${HOME} | fzf)"
+	cd "$dir"
+	zle reset-prompt
+}
+zle -N _switch_to_directory
+bindkey "^p" '_switch_to_directory'
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
