@@ -66,6 +66,7 @@
   connection: local
   roles:
     - aws
+    - k8s
 
 - hosts: g14
   connection: local

@@ -4,6 +4,18 @@ data.location=/home/david/.local/share/task
 # Verbose level
 verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,unwait
 
+# Persona Report
+report.personal.description='A list of personal tasks'
+report.personal.columns=id,project,tags,description.count,due
+report.personal.sort=start-,project-,urgency-
+report.personal.filter=status:pending project:personal
+
+# Darwin Report
+report.darwin.description='A list of Darwin project tasks'
+report.darwin.columns=id,project,tags,description.count,due
+report.darwin.sort=project-,start-,urgency-
+report.darwin.filter=status:pending project:Darwin
+
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
 #include /usr/share/doc/task/rc/light-256.theme
