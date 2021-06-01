@@ -112,6 +112,12 @@
     state: present
   become: true
 
+- name: Installs bpytop
+  pacman:
+    name: bpytop
+    state: present
+  become: true
+
 - name: Enable NTP with systemd-timesyncd
   ansible.builtin.systemd:
     state: started
