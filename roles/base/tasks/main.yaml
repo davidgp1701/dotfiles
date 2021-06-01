@@ -140,6 +140,15 @@
     mode: '0644'
   become: true
 
+- name: Configure pacman
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/pacman.conf"
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
 - name: Install fzf
   pacman:
     name: fzf
