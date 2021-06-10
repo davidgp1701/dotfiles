@@ -30,12 +30,18 @@
     state: directory
     mode: '0755'
 
-- name: Install the NCurses Music Player Client Plus Plus mcmpcpp
+- name: Ensure official ncmpcpp package is not installated
   pacman:
     name: ncmpcpp
-    state: present
+    state: absent
   become: true
 
+- name: Install the NCurses Music Player Client Plus Plus ncmpcpp
+  aur:
+    use: paru
+    name:
+      - ncmpcpp-git
+  
 - name: Wrapper for ncmpcpp
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/player.sh"
