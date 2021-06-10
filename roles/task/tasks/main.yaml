@@ -21,3 +21,10 @@
   template:
     src: taskrc.j2
     dest: ~/.config/taskrc
+
+- name: Add colorscheme
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/taskwarrior"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/taskwarrior"
+    state: link
+    force: yes
