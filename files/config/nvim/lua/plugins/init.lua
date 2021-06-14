@@ -73,6 +73,9 @@ return require('packer').startup(function()
 
   -- Init screen
   -- use {'mhinz/vim-startify'}
+	
+	-- Show colors from color codes
+	use {'norcalli/nvim-colorizer.lua'}
 
   -- Show indent lines
   use {'lukas-reineke/indent-blankline.nvim', branch='lua'}
