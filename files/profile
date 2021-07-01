@@ -85,3 +85,7 @@ XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 # Tree Sitter
 TREE_SITTER_DIR="${XDG_CONFIG_HOME}/tree-sitter"
 export TREE_SITTER_DIR
+
+# ASDF DATA DIR
+ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
+export ASDF_DATA_DIR

@@ -90,9 +90,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# Load personal configuration shell files
-for f in ~/.config/shellconfigs/*; do source "$f"; done
-
 # Add zsh syntax highlighting pluing
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -103,6 +100,14 @@ unsetopt MULTIBYTE
 
 # Update fpath for locally installed modules
 fpath=( "$HOME/.zfunctions" $fpath )
+
+# Load personal configuration shell files
+for f in ~/.config/shellconfigs/*; do source "$f"; done
+
+# ASDF Configuration
+ if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
+     . /opt/asdf-vm/asdf.sh 
+ fi
 
 # Start X automatically in first TTy
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

@@ -36,6 +36,7 @@
   roles:
     - alacritty
     - audio
+    - asdf
     - bluetooth
     - bspwm
     - dunst

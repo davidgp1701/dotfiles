@@ -9,6 +9,12 @@ for f in ~/.config/shellconfigs/*; do source "$f"; done
 HISTFILE="$XDG_DATA_HOME"/bash/history
 export HISTFILE
 
+# ASDF Configuration
+ if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
+     . /opt/asdf-vm/asdf.sh 
+ fi
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
+

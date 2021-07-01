@@ -1,0 +1,24 @@
+---
+- name: Ensure curl is installed as requirement for asdf
+  pacman:
+    name: curl
+    state: present
+  become: true
+
+- name: Ensure git is installed as requirement for asdf
+  pacman:
+    name: git
+    state: present
+  become: true
+
+- name: Installs asdf
+  aur:
+    use: paru
+    name:
+      - asdf-vm
+
+- name: Ensure asdf data folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/asdf"
+    state: directory
+    mode: '0755'
