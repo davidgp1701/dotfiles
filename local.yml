@@ -49,6 +49,7 @@
     - mpv
     - newsboat
     - ntp
+    - polybar
     - powertop
     - spotify
     - suckless
@@ -67,6 +68,7 @@
   roles:
     - aws
     - k8s
+    - xps9750
 
 - hosts: g14
   connection: local
@@ -75,5 +77,4 @@
     - certificado-digital
     - g14
     - nvidia
-    - polybar
     - torrent

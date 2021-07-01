@@ -1,0 +1,14 @@
+---
+- name: Links enablegpu bash script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/enablegpu.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/enablegpu"
+    state: link
+    force: yes
+
+- name: Links dissablegpu bash script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/disablegpu.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/disablegpu"
+    state: link
+    force: yes
