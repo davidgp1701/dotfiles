@@ -125,3 +125,5 @@ esac
 ~/.config/polybar/launch.sh
 feh --bg-fill /home/david/Pictures/somonstalenhag.se/l_ash09_big.jpg &
 # feh --bg-fill /home/david/Pictures/wallpapers/20190127_delta-del-ebro__DGP8946_0007.jpg &
+#  bspc wm --reorder-monitors eDP1 DP1-8 DP1-1
+
