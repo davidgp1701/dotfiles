@@ -5,3 +5,10 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/aws_assume_role"
     state: link
     force: yes
+
+- name: Links AWS ssm script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/ssm.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/ssm"
+    state: link
+    force: yes
