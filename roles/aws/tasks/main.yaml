@@ -12,3 +12,10 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/ssm"
     state: link
     force: yes
+
+- name: Installs Amazon ECR Credential Helper
+  aur:
+    use: paru
+    name:
+      - amazon-ecr-credential-helper
+

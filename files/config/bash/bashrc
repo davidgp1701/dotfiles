@@ -14,6 +14,9 @@ export HISTFILE
      . /opt/asdf-vm/asdf.sh 
  fi
 
+# Starts direnv if available
+type direnv &>/dev/null && eval "$(direnv hook bash)"
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi

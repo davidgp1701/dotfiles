@@ -11,6 +11,12 @@
     state: present
   become: true
 
+- name: Ensure pipenv is installed as requirement for direnv
+  pacman:
+    name: python-pipenv
+    state: present
+  become: true
+
 - name: Installs asdf
   aur:
     use: paru
@@ -22,3 +28,32 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/asdf"
     state: directory
     mode: '0755'
+
+- name: Links config file for default tool versions in ASDF
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/tool-versions"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.tool-versions"
+    state: link
+    force: yes
+
+- name: Install asdf direnv plugin
+  shell:
+    "if ! asdf plugin list | grep -qsxF 'direnv'; then asdf plugin add direnv ; fi"
+
+- name: Install direnv shims
+  shell:
+    "if ! asdf list direnv | grep '{{ direnv.version }}'; then asdf install direnv {{ direnv.version }} && asdf global direnv {{ direnv.version }}; fi" 
+
+- name: Ensure TMP folder for ASDF exists
+  ansible.builtin.file:
+    path: /opt/asdf-vm/tmp
+    state: directory
+    mode: '0777'
+  become: true
+
+- name: Links config file for nvim
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/direnv"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/direnv"
+    state: link
+    force: yes

@@ -105,9 +105,12 @@ fpath=( "$HOME/.zfunctions" $fpath )
 for f in ~/.config/shellconfigs/*; do source "$f"; done
 
 # ASDF Configuration
- if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
-     . /opt/asdf-vm/asdf.sh 
- fi
+if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
+    . /opt/asdf-vm/asdf.sh 
+fi
+
+# Start Direnv
+type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 # Start X automatically in first TTy
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
