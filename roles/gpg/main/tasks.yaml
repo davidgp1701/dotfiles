@@ -3,3 +3,9 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/gnupg"
     state: directory
     mode: '0700'
+
+- name: Install GPG Agent
+  pacman:
+    name: ggp-agent
+    status: present
+  become: true

@@ -89,3 +89,7 @@ export TREE_SITTER_DIR
 # ASDF DATA DIR
 ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 export ASDF_DATA_DIR
+
+# GPG TTY
+GPG_TTY="$(tty)"
+export GPG_TTY
