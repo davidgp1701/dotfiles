@@ -6,6 +6,8 @@ $directory\
 $env_var\
 $kubernetes\
 $terraform\
+$python\
+$java\
 $git_branch\
 $git_status 
 $character
@@ -44,4 +46,14 @@ style = "blue bold"
 disabled = false
 
 [terraform]
-format = "| [TF - $workspace]($style) "
+format = '| [$symbol$version \($workspace\)]($style) '
+symbol = "💠 "
+
+[python]
+format = '| [${symbol}${version}]($style) '
+style = 'bold green'
+symbol = "🐍 "
+
+[java]
+format = '| [${symbol}${version}]($style) '
+symbol = "☕ " 
