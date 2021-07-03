@@ -24,7 +24,7 @@ vicmd_symbol = "[ ](bold green)"
 [aws]
 format = 'on [$symbol $profile]($style) '
 style = "bold yellow"
-symbol = "🅰 "
+symbol = "☁️ "
 
 [directory]
 truncation_length = 8
@@ -35,7 +35,8 @@ format = "[$path]($style) "
 variable="AWS_PROFILE"
 format = '| [$symbol $env_value]($style) '
 style = "bold fg:214"
-symbol = "🅰 "
+symbol = "☁️ "
+#symbol = "🅰 "
 
 [git_branch]
 format = "| [$symbol$branch]($style) "
@@ -57,3 +58,4 @@ symbol = "🐍 "
 [java]
 format = '| [${symbol}${version}]($style) '
 symbol = "☕ " 
+style = "red"
