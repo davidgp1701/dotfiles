@@ -4,13 +4,9 @@
     name: nodejs
     state: present
   become: yes
-    
-- name: Links config file for npm
-  file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/npm"
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/npm"
-    state: link
-    force: yes
+
+- name: Update npm configuration
+  ansible.builtin.script: configure_npm.sh
     
 - name: Install npm 
   pacman:
