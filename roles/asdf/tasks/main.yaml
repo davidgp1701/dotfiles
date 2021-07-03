@@ -151,7 +151,7 @@
 
 - name: Ensure XDG docker config file exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker/docker.json" 
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker/config.json" 
     state: touch
     mode: '0600'
 
