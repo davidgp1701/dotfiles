@@ -95,3 +95,10 @@ vim.api.nvim_set_keymap('n', '(', '<Plug>(GitGutterPrevHunk)', { noremap = false
 -- inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 -- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 -- ]])
+
+-- nvim-tree
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', { noremap = true })
+
