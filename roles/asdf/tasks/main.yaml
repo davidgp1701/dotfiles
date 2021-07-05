@@ -199,6 +199,12 @@
     name: core.attributesfile
     scope: global
     value: ~/.config/git/gitattributes
+    
+- name: Configure git to always rewrite https url
+  community.general.git_config:
+    name: url.ssh://git@github.com.insteadOf 
+    value: "https://github.com"
+    scope: global
 
 # ASDF configuration related tasks
 - name: Installs asdf
