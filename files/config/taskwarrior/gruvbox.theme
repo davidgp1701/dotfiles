@@ -39,11 +39,11 @@ color.debug=blue
 # Task state
 color.completed=
 color.deleted=
-color.active=color106
+color.active=color142
 color.recurring=rgb151
 color.scheduled=black on rgb031
 color.until=
-color.blocked=white on rgb010
+color.blocked=white on color142
 color.blocking=white on rgb020
 
 # Project
@@ -51,7 +51,7 @@ color.project.none=
 
 # Priority
 color.uda.priority.H=rgb050
-color.uda.priority.L=rgb010
+color.uda.priority.L=color142
 color.uda.priority.M=rgb030
 
 # Tags
@@ -66,11 +66,11 @@ color.overdue=color255
 
 # Report: burndown
 color.burndown.done=on gray4
-color.burndown.pending=on rgb010
+color.burndown.pending=on color142
 color.burndown.started=on rgb030
 
 # Report: history
-color.history.add=color0 on rgb010
+color.history.add=color0 on color142
 color.history.delete=color0 on rgb050
 color.history.done=color0 on rgb030
 
@@ -83,14 +83,14 @@ color.calendar.due.today=color0 on color214
 color.calendar.due=color0 on color249
 color.calendar.holiday=color0 on color166
 color.calendar.overdue=color0 on color167 
-color.calendar.today=color0 on color106 
+color.calendar.today=color0 on color142 
 color.calendar.weekend=on color239
 color.calendar.weeknumber=color108
 
 # Command: sync
 color.sync.added=gray4
 color.sync.changed=rgb030
-color.sync.rejected=rgb010
+color.sync.rejected=color142
 
 # Command: undo
 color.undo.after=rgb053
