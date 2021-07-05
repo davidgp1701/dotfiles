@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -eo pipefail
+IFS=$'\n\t'
 
 # Function to get files stored in Bitwarden server
 bw_get_file() {
