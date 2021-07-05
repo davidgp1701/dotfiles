@@ -78,7 +78,7 @@ return require('packer').startup(function()
 	use {'norcalli/nvim-colorizer.lua'}
 
   -- Show indent lines
-  use {'lukas-reineke/indent-blankline.nvim', branch='lua'}
+  use {'lukas-reineke/indent-blankline.nvim', branch='master'}
 
 	-- Which key
 	use {
