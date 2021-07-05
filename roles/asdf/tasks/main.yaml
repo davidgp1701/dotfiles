@@ -143,6 +143,18 @@
     state: present
   become: true
 
+- name: Ensure XDG docker config folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker" 
+    state: directory
+    mode: '0755'
+
+- name: Ensure XDG docker config file exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker/config.json" 
+    state: touch
+    mode: '0600'
+
 # Git configuration related tasks
 - name: Ensure XDG git config folder exists
   ansible.builtin.file:
