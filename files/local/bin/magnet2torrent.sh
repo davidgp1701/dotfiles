@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 watch_folder="${HOME}/Downloads/torrents/watch"
 
