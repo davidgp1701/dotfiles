@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Opens a basic yes/no prompt with dmenu
 # This is useful for confirming whether an action should be taken
 
