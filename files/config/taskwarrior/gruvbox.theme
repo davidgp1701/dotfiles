@@ -43,16 +43,16 @@ color.active=color142
 color.recurring=rgb151
 color.scheduled=black on rgb031
 color.until=
-color.blocked=white on color142
-color.blocking=white on rgb020
+color.blocked=color234 on color142
+color.blocking=color234 on color106
 
 # Project
 color.project.none=
 
 # Priority
-color.uda.priority.H=rgb050
+color.uda.priority.H=color208
 color.uda.priority.L=color142
-color.uda.priority.M=rgb030
+color.uda.priority.M=color175
 
 # Tags
 color.tag.next=rgb440
@@ -67,16 +67,16 @@ color.overdue=color255
 # Report: burndown
 color.burndown.done=on gray4
 color.burndown.pending=on color142
-color.burndown.started=on rgb030
+color.burndown.started=on color175
 
 # Report: history
 color.history.add=color0 on color142
-color.history.delete=color0 on rgb050
-color.history.done=color0 on rgb030
+color.history.delete=color0 on color108
+color.history.done=color0 on color175
 
 # Report: summary
 color.summary.background=white on gray3
-color.summary.bar=white on rgb030
+color.summary.bar=white on color175
 
 # Command: calendar
 color.calendar.due.today=color0 on color214 
@@ -89,7 +89,7 @@ color.calendar.weeknumber=color108
 
 # Command: sync
 color.sync.added=gray4
-color.sync.changed=rgb030
+color.sync.changed=color175
 color.sync.rejected=color142
 
 # Command: undo
