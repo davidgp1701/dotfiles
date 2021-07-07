@@ -43,6 +43,12 @@
     state: present
   become: true
 
+- name: Install exa
+  pacman:
+    name: exa
+    state: present
+  become: true
+
 - name: Installs downgrade to easily downgrade packages in arch
   aur:
     use: paru
