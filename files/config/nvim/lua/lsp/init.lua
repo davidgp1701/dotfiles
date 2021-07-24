@@ -9,7 +9,7 @@ vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnostics
 nvim_lsp.bashls.setup{}
 
 -- Python LS configuration
-nvim_lsp.pyls.setup{}
+nvim_lsp.pylsp.setup{}
 
 -- Terraform LSP configuraiton
 nvim_lsp.terraformls.setup{}

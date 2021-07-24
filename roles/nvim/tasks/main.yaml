@@ -48,6 +48,12 @@
     state: directory
     mode: '0755'
 
+- name: Make sure the tree-sitter teal folder exist
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/tree-sitter-teal"
+    state: directory
+    mode: '0755'
+
 - name: Make sure nvim start folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start"
@@ -70,3 +76,24 @@
     use: paru
     name:
       - lua-language-server
+
+- name: Install neovim python provider
+  pip:
+    name: pynvim
+    extra_args: --user
+
+- name: Install the Python LSP
+  pip:
+    name: python-lsp-server
+    extra_args: --user
+
+- name: Install Ruby provider
+  community.general.gem:
+    name: neovim
+    state: latest
+
+- name: Install "Node.js Neovim Provider"
+  community.general.npm:
+    name: neovim
+    global: yes
+

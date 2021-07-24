@@ -4,7 +4,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true,          -- false will disable the whole extension
   },
   indent = {
-    enable = true
+    enable = true,
+		disable = {"python"}
   },
   playground = {
     enable = true,
