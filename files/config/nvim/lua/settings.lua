@@ -31,19 +31,18 @@ vim.o.errorbells=true
 -- Insert 2 spaces for a tab
 -- vim.bo.tabstop=2 -- Need to check the right way to do this, it is not working 
 -- vim.bo.softtabstop=2
+-- Changes the number of spaces used for indentation
+-- Converts tabs for spaces
+-- vim.bo.expandtab=true
 -- vim.bo.shiftwidth=2
+-- Makes indentation smart
+-- vim.bo.smartindent=true
 vim.cmd('set ts=2')
 vim.cmd('set sw=2')
 vim.cmd('set sts=2')
-
--- Changes the number of spaces used for indentation
-vim.bo.shiftwidth=2
-
--- Converts tabs for spaces
-vim.bo.expandtab=true
-
--- Makes indentation smart
-vim.bo.smartindent=true
+vim.cmd('set expandtab')
+vim.cmd('set smartindent')
+vim.cmd('filetype plugin indent on')
 
 -- Always display the status line
 vim.o.laststatus=0
