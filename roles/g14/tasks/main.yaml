@@ -19,7 +19,7 @@
   aur:
     use: paru
     name:
-      - asus-nb-ctrl-git
+      - asusctl-git 
       
 - name: Activate asusd service
   ansible.builtin.systemd:

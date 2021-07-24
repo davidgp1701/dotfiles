@@ -87,6 +87,12 @@
     name: python-lsp-server
     extra_args: --user
 
+- name: Install Ruby
+  pacman:
+    name: ruby
+    state: present
+  become: yes
+
 - name: Install Ruby provider
   community.general.gem:
     name: neovim
