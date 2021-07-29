@@ -45,6 +45,7 @@
     - fstrim
     - firefox
     - google-chrome
+    - gtk
     - kitty
     - mpd
     - mpv
