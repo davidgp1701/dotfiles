@@ -17,79 +17,79 @@
     state: present
   become: true
 
-- name: Ensure graphviz is installed as requirement 
+- name: Ensure graphviz is installed as requirement
   pacman:
     name: graphviz
     state: present
   become: true
 
-- name: Ensure jq is installed as requirement 
+- name: Ensure jq is installed as requirement
   pacman:
     name: jq
     state: present
   become: true
-  
-- name: Ensure bzip2 is installed as requirement 
+
+- name: Ensure bzip2 is installed as requirement
   pacman:
     name: bzip2
     state: present
   become: true
 
-- name: Ensure libffi is installed as requirement 
+- name: Ensure libffi is installed as requirement
   pacman:
     name: libffi
     state: present
   become: true
 
-- name: Ensure xz is installed as requirement 
+- name: Ensure xz is installed as requirement
   pacman:
-    name: xz 
+    name: xz
     state: present
   become: true
 
-- name: Ensure ncurses is installed as requirement 
+- name: Ensure ncurses is installed as requirement
   pacman:
-    name: ncurses 
+    name: ncurses
     state: present
   become: true
 
-- name: Ensure readline is installed as requirement 
+- name: Ensure readline is installed as requirement
   pacman:
-    name: readline 
+    name: readline
     state: present
   become: true
 
-- name: Ensure sqlite is installed as requirement 
+- name: Ensure sqlite is installed as requirement
   pacman:
-    name: sqlite 
+    name: sqlite
     state: present
   become: true
 
-- name: Ensure sqlite is installed as requirement 
+- name: Ensure sqlite is installed as requirement
   pacman:
-    name: sqlite 
+    name: sqlite
     state: present
   become: true
 
-- name: Ensure openssl is installed as requirement 
+- name: Ensure openssl is installed as requirement
   pacman:
-    name: openssl 
+    name: openssl
     state: present
   become: true
 
-- name: Ensure libxml2 is installed as requirement 
+- name: Ensure libxml2 is installed as requirement
   pacman:
-    name: libxml2 
+    name: libxml2
     state: present
   become: true
 
-- name: Ensure libxmlsecis installed as requirement 
+- name: Ensure libxmlsecis installed as requirement
   pacman:
     name: xmlsec
     state: present
   become: true
 
-- name: Ensure llvm installed as requirement 
+- name: Ensure llvm installed as requirement
   pacman:
     name: llvm
     state: present
@@ -103,7 +103,7 @@
 
 - name: Ensure networkmanager-fortisslvpn is installed
   pacman:
-    name: networkmanager-fortisslvpn 
+    name: networkmanager-fortisslvpn
     state: present
   become: true
 
@@ -145,26 +145,26 @@
 
 - name: Ensure XDG docker config folder exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker" 
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker"
     state: directory
     mode: '0755'
 
 - name: Ensure XDG docker config file exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker/config.json" 
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/docker/config.json"
     state: touch
     mode: '0600'
 
 # Git configuration related tasks
 - name: Ensure XDG git config folder exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/git" 
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/git"
     state: directory
     mode: '0755'
 
 - name: Ensure XDG git config file exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/git/config" 
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/git/config"
     state: touch
     mode: '0644'
 
@@ -174,7 +174,7 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.config/git/gitattributes"
     state: link
     force: yes
-    
+
 - name: Links config file for gittemplate
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/git/gittemplate"
@@ -199,19 +199,20 @@
     name: core.attributesfile
     scope: global
     value: ~/.config/git/gitattributes
-    
+
 - name: Configure git to always rewrite https url
   community.general.git_config:
-    name: url.ssh://git@github.com.insteadOf 
+    name: url.ssh://git@github.com.insteadOf
     value: "https://github.com"
     scope: global
 
 # ASDF configuration related tasks
-- name: Installs asdf
-  aur:
-    use: paru
-    name:
-      - asdf-vm
+- name: Clone ASDF Git repo
+  ansible.builtin.git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/asdf"
+    single_branch: yes
+    version: v0.8.1
 
 - name: Ensure asdf data folder exists
   ansible.builtin.file:
@@ -220,10 +221,10 @@
     mode: '0755'
 
 - name: Install asdf direnv plugin
-  ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }} 
+  ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }}
 
 - name: Install asdf websocat plugin
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ websocat.version }} 
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ websocat.version }}
 
 - name: Install asdf nodeJS
   shell:
@@ -244,7 +245,7 @@
   community.general.git_config:
     name: merge.npm-merge-driver.name
     scope: global
-    value: Automatically merge mpm lock files 
+    value: Automatically merge mpm lock files
 
 - name: Configure the merge driver for npm
   community.general.git_config:
@@ -256,7 +257,7 @@
   community.general.git_config:
     name: merge.yarn-merge-driver.name
     scope: global
-    value: Automatically merge yarn lock files 
+    value: Automatically merge yarn lock files
 
 - name: Configure the merge driver for Yarn
   community.general.git_config:
