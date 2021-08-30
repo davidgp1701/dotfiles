@@ -53,6 +53,7 @@
     - ntp
     - polybar
     - powertop
+    - rust
     - spotify
     - suckless
     - starship
