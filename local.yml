@@ -45,6 +45,7 @@
     - fstrim
     - firefox
     - google-chrome
+    - gtk
     - kitty
     - mpd
     - mpv
@@ -52,6 +53,7 @@
     - ntp
     - polybar
     - powertop
+    - rust
     - spotify
     - suckless
     - starship

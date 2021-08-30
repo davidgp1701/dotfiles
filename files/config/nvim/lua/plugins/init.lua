@@ -19,8 +19,8 @@ return require('packer').startup(function()
   use {'airblade/vim-rooter'}
 
   -- File explorer
-  use {'kyazdani42/nvim-web-devicons'} 
-  use {'kyazdani42/nvim-tree.lua'} 
+  use {'kyazdani42/nvim-web-devicons'}
+  use {'kyazdani42/nvim-tree.lua'}
 
   -- Color Themes
   use {'cocopon/iceberg.vim'}
@@ -47,13 +47,13 @@ return require('packer').startup(function()
 
 	-- Ansible support
 	use {'pearofducks/ansible-vim'}
-  
+
   -- Add extra information about how to color text
   -- use {'sheerun/vim-polyglot'}
 
   -- Airline button bar
   use {'vim-airline/vim-airline'}
-  
+
   -- Vim Cyclest to show listchars
   use {'tjdevries/cyclist.vim'}
 
@@ -68,12 +68,9 @@ return require('packer').startup(function()
   use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
 
-  -- Vimwiki
-  use {'vimwiki/vimwiki'}
-
   -- Init screen
   -- use {'mhinz/vim-startify'}
-	
+
 	-- Show colors from color codes
 	use {'norcalli/nvim-colorizer.lua'}
 

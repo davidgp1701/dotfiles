@@ -1,0 +1,26 @@
+- name: Installs Gruvbox Material icon theme
+  aur:
+    use: paru
+    name:
+      - gruvbox-material-icon-theme-git
+
+- name: Installs Gruvbox Material GTK theme
+  aur:
+    use: paru
+    name:
+      - gruvbox-material-gtk-theme-git
+
+- name: Links config file for GTK-3.0
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/gtk-3.0"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/gtk-3.0"
+    state: link
+    force: yes
+
+- name: Links config file for GTK-2.0
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/gtkrc-2.0"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.gtkrc-2.0"
+    state: link
+    force: yes
+

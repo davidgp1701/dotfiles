@@ -17,7 +17,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)	
+_comp_options+=(globdots)
 
 # Enable searching through history
 bindkey -v
@@ -105,8 +105,8 @@ fpath=( "$HOME/.zfunctions" $fpath )
 for f in ~/.config/shellconfigs/*; do source "$f"; done
 
 # ASDF Configuration
-if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
-    . /opt/asdf-vm/asdf.sh 
+if [[ -f "$HOME/.local/asdf/asdf.sh" ]]; then
+    . "$HOME/.local/asdf/asdf.sh"
 fi
 
 # Start Direnv
