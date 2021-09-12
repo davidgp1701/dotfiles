@@ -71,4 +71,4 @@ then
 fi
 
 # Install AUR ansible plugin
-ansible-galaxy install kewlfft.aur
+ansible-galaxy collection install kewlfft.aur
