@@ -65,6 +65,12 @@ then
   sudo pacman --noconfirm -S bitwarden-cli
 fi
 
+# Install jq
+if ! sudo pacman -Qi jq
+then
+  sudo pacman --noconfirm -S jq
+fi
+
 # Install paru to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
