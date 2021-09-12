@@ -38,9 +38,9 @@ picom -f &
 
 # Remap keys
 setxkbmap -option "caps:swapescape"
-xmodmap -e "keycode 78 = Insert NoSymbol Insert"
-xmodmap -e "keycode 127 = Delete NoSymbol Delete"
-xmodmap -e "keycode 107 = XF86Copy"
+#xmodmap -e "keycode 78 = Insert NoSymbol Insert"
+#xmodmap -e "keycode 127 = Delete NoSymbol Delete"
+#xmodmap -e "keycode 107 = XF86Copy"
 
 # Wallpaper
 nitrogen --restore &
