@@ -1,9 +1,8 @@
 ---
 - name: Install polybar
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - polybar
+    name: polybar
 
 - name: Links config file for Polybar
   file:

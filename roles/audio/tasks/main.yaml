@@ -28,18 +28,23 @@
     name: libldac
     state: present
   become: true
-  
+
 - name: Install necessary LDAC libs
   pacman:
     name: pavucontrol
     state: present
   become: true
-  
+
+- name: Ensure pulse-audio-bluetooth is not present
+  pacman:
+    name: pulse-audio-bluetooth
+    state: absent
+  become: true
+
 - name: Installs extra bluetooth codecs
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - pulseaudio-modules-bt
+    name: pulseaudio-modules-bt
 
 - name: Install pulsemixer
   pacman:

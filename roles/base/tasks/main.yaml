@@ -10,7 +10,7 @@
     name: usbutils
     state: present
   become: true
-    
+
 - name: Install base-devel tools
   pacman:
     name: base-devel
@@ -22,7 +22,7 @@
     name: dash
     state: present
   become: true
-  
+
 - name: Ensures dash is used for shell scripts instead of bash
   file:
     src: "/usr/bin/dash"
@@ -50,52 +50,47 @@
   become: true
 
 - name: Installs downgrade to easily downgrade packages in arch
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - downgrade
+    name: downgrade
 
-- name: Install Paru package manager
-  aur: 
-    name: paru
-
-- name: Make sure config folder exists 
+- name: Make sure config folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.config"
     state: directory
     mode: '0755'
 
-- name: Make sure cache folder exists 
+- name: Make sure cache folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.cache"
     state: directory
     mode: '0755'
-    
-- name: Make sure local folder exists 
+
+- name: Make sure local folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local"
     state: directory
     mode: '0755'
 
-- name: Make sure bin folder exists 
+- name: Make sure bin folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/bin"
     state: directory
     mode: '0755'
 
-- name: Make sure share folder exists 
+- name: Make sure share folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share"
     state: directory
     mode: '0755'
-    
-- name: Make sure share folder exists 
+
+- name: Make sure share folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/var"
     state: directory
     mode: '0755'
 
-- name: Make sure share folder exists 
+- name: Make sure share folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/var/log"
     state: directory
@@ -128,14 +123,13 @@
   ansible.builtin.systemd:
     state: started
     enabled: yes
-    name: systemd-timesyncd 
+    name: systemd-timesyncd
   become: true
 
 - name: Installs bitwarden cli
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - bitwarden-cli
+    name: bitwarden-cli
 
 - name: Enable makepkg to compile in native mode
   ansible.builtin.copy:

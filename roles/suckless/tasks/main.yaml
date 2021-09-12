@@ -1,6 +1,5 @@
 ---
 - name: Install patched libxft-brga for icons in suckless apps
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - libxft-bgra
+    name: libxft-bgra

@@ -1,7 +1,6 @@
 ---
 - name: Installs Spotify
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - spotify
+    name: spotify
 

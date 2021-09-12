@@ -14,8 +14,7 @@
     force: yes
 
 - name: Installs Amazon ECR Credential Helper
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - amazon-ecr-credential-helper
+    name: amazon-ecr-credential-helper
 
