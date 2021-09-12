@@ -59,6 +59,12 @@ then
   sudo pacman --noconfirm -S git
 fi
 
+# Install bitwarden CLI
+if ! sudo pacman -Qi bitwarden-cli
+then
+  sudo pacman --noconfirm -S bitwarden-cli
+fi
+
 # Install paru to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
