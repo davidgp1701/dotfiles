@@ -1,0 +1,6 @@
+direnv:
+  version: 2.23.1
+docker_credential_secretservice:
+  version: 0.6.3 
+websocat:
+  version: 1.7.0

@@ -1,0 +1,64 @@
+---
+- name: Installs pulseaudio
+  pacman:
+    name: pulseaudio
+    state: present
+  become: true
+
+- name: Installs libpulse (adds pactl)
+  pacman:
+    name: libpulse
+    state: present
+  become: true
+
+- name: Installs playerctl
+  pacman:
+    name: playerctl
+    state: present
+  become: true
+
+- name: Install pulseaudio-alsa
+  pacman:
+    name: pulseaudio-alsa
+    state: present
+  become: true
+
+- name: Install necessary LDAC libs
+  pacman:
+    name: libldac
+    state: present
+  become: true
+  
+- name: Install necessary LDAC libs
+  pacman:
+    name: pavucontrol
+    state: present
+  become: true
+  
+- name: Installs extra bluetooth codecs
+  aur:
+    use: paru
+    name:
+      - pulseaudio-modules-bt
+
+- name: Install pulsemixer
+  pacman:
+    name: pulsemixer
+    state: present
+  become: true
+
+- name: Configures personal USB DACs
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/modprobe.d/alsa.conf"
+    dest: /etc/modprobe.d/alsa.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Play control script
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/play-control.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/play-control.sh"
+    state: link
+    force: yes

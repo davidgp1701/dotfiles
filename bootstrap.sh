@@ -1,18 +1,74 @@
 #!/usr/bin/env bash
 
-set -e
+################################################
+# Minimal tools installation to be able to     #
+# execute ansible-pull                         #
+################################################
 
-# Dotfiles' project root directory
-export ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -uo pipefail
+IFS=$'\n\t'
 
-# Host file location
-HOSTS="$ROOTDIR/hosts"
+# For the moment only for Arch Linux
 
-# Main playbook
-PLAYBOOK="$ROOTDIR/dotfiles.yaml"
+# Update the system first
+# sudo pacman --noconfirm -Syu
 
-# Runs ansible playblook for our user 
-# Ansible must be installed first
-ansible-playbook -i "$HOSTS" "$PLAYBOOK" 
+# Set the XDG configuration environment
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME
+export XDG_CACHE_HOME
+export XDG_DATA_HOME
 
-exit 0
+CARGO_HOME="$XDG_DATA_HOME/cargo"
+export $CARGO_HOME
+
+mkdir -p $XDG_CACHE_HOME
+mkdir -p $XDG_DATA_HOME
+
+# Enable this to bash
+echo 'XDG_CONFIG_HOME="${HOME}/.config"' >> "$HOME"/.bashrc
+echo 'XDG_CACHE_HOME="${HOME}/.cache"' >> "$HOME"/.bashrc
+echo 'XDG_DATA_HOME="${HOME}/.local/share"' >> "$HOME"/.bashrc
+echo 'export XDG_CONFIG_HOME' >> "$HOME"/.bashrc
+echo 'export XDG_CACHE_HOME' >> "$HOME"/.bashrc
+echo 'export XDG_DATA_HOME' >> "$HOME"/.bashrc
+echo '' >> "$HOME"/.bashrc
+echo 'CARGO_HOME="$XDG_DATA_HOME/cargo"' >> "$HOME"/.bashrc
+echo 'export CARGO_HOME' >> "$HOME"/.bashrc
+
+echo 'EDITOR="vim"' >> "$HOME"/.bashrc
+echo 'export EDITOR' >> "$HOME"/.bashrc
+
+# NPM configuration
+echo 'NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history' >> "$HOME"/.bashrc
+echo 'NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc' >> "$HOME"/.bashrc
+echo 'export NODE_REPL_HISTORY' >> "$HOME"/.bashrc
+echo 'export NPM_CONFIG_USERCONFIG' >> "$HOME"/.bashrc
+
+# Install Ansible to manage dotfiles
+if ! sudo pacman -Qi ansible
+then
+  sudo pacman --noconfirm -S ansible
+fi
+
+# Install git
+if ! sudo pacman -Qi git
+then
+  sudo pacman --noconfirm -S git
+fi
+
+# Install paru to manage aur packages
+sudo pacman --noconfirm -S --needed base-devel
+
+if ! sudo pacman -Qi paru 
+then
+  git clone https://aur.archlinux.org/paru.git /tmp/paru
+  pushd /tmp/paru
+    makepkg -si --noconfirm
+  popd
+fi
+
+# Install AUR ansible plugin
+ansible-galaxy install kewlfft.aur

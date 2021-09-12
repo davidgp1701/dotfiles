@@ -1,0 +1,91 @@
+---
+- name: Install BSPWM
+  pacman:
+    name: bspwm
+    state: present
+  become: true
+  
+- name: Links config file for BSPWM
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bspwm"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/bspwm"
+    state: link
+    force: yes
+    
+- name: Links monitor script to manage desktops when using connecting monitors
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/monitor.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/monitor.sh"
+    state: link
+    force: yes
+    
+- name: Links dmenu prompt script to manage queries
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/prompt.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/prompt.sh"
+    state: link
+    force: yes
+
+- name: Install sxhkd
+  pacman:
+    name: sxhkd
+    state: present
+  become: true
+  
+- name: Links config file for sxhkd
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/sxhkd"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/sxhkd"
+    state: link
+    force: yes
+
+- name: Ensure dmenu is installed
+  pacman:
+    name: dmenu
+    state: present
+  become: true
+
+- name: Ensure picom is installed
+  pacman:
+    name: picom
+    state: present
+  become: true
+
+- name: Ensure clipmenud is installed
+  pacman:
+    name: clipmenu
+    state: present
+  become: true
+
+# Betterlock screen configuration
+- name: Install imagemagick required by the package
+  pacman:
+    name: imagemagick
+    state: present
+  become: true
+
+- name: Installs i3lock
+  aur:
+    use: paru
+    name:
+      - i3lock-color
+
+- name: Installs betterlockscreen
+  aur:
+    use: paru
+    name:
+      - betterlockscreen
+
+- name: Links config file for betterlockscreen
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/betterlockscreen"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/betterlockscreenc"
+    state: link
+    force: yes
+
+- name: Activate Betterlockscreen service for suspend
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: yes
+    name: betterlockscreen@david 
+  become: true

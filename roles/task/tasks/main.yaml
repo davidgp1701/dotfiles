@@ -1,0 +1,30 @@
+---
+- name: Installs taskwarrior
+  pacman:
+    name: task
+    state: present
+  become: yes
+
+- name: Make sure task folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task"
+    state: directory
+    mode: '0755'
+
+- name: Make sure task certs folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task/certs"
+    state: directory
+    mode: '0700'
+
+- name: Ensure taskwarrior is configured 
+  template:
+    src: taskrc.j2
+    dest: ~/.config/taskrc
+
+- name: Add colorscheme
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/taskwarrior"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/taskwarrior"
+    state: link
+    force: yes

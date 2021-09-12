@@ -1,0 +1,83 @@
+# tasks to complete before running roles
+- hosts: all
+  connection: local
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution == "Archlinux"
+
+- hosts: all
+  tags: base
+  connection: local
+  roles:
+    - base
+    - node
+    - bash # It requires node first to install the LS
+    - gpg
+    - nvim
+    - python
+    - reflector
+    - starship
+    - zsh
+
+- hosts: laptop
+  tags: laptop
+  connection: local
+  roles:
+    - upower
+
+- hosts: workstation
+  tags: workstation
+  connection: local
+  roles:
+    - alacritty
+    - audio
+    - asdf
+    - bluetooth
+    - bspwm
+    - dunst
+    - dropbox
+    - etckeeper
+    - fstrim
+    - firefox
+    - google-chrome
+    - gtk
+    - kitty
+    - mpd
+    - mpv
+    - newsboat
+    - ntp
+    - polybar
+    - powertop
+    - rust
+    - spotify
+    - suckless
+    - starship
+    - task
+    - terraform
+    - vconsole
+    - wifi
+    - xorg
+    - zathura
+    - zsh
+
+- hosts: archy
+  tags: archy
+  connection: local
+  roles:
+    - aws
+    - k8s
+    - xps9750
+
+- hosts: g14
+  connection: local
+  roles:
+    - amdgpu
+    - certificado-digital
+    - g14
+    - nvidia
+    - torrent

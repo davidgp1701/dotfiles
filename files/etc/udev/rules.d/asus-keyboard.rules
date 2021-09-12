@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", GROUP="video", MODE="0664"

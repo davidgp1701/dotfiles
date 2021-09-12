@@ -1,7 +1,56 @@
 ---
 - name: Installs zsh
-  become: yes
-  become_user: root
   pacman:
     name: zsh
     state: present
+  become: yes
+
+- name: Install zsh completions
+  pacman:
+    name: zsh-completions 
+    state: present
+  become: yes
+
+- name: change user shell to zsh 
+  become: yes
+  user:
+    name: "{{ the_user }}"
+    shell: /usr/bin/zsh
+    
+- name: Update zprofile file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/profile"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.zprofile"
+    state: link
+    force: yes
+
+- name: Links config files for zsh
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/zsh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/zsh"
+    state: link
+    force: yes
+
+- name: Links config files for shellconfigs
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/shellconfigs"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/shellconfigs"
+    state: link
+    force: yes
+
+- name: Install zsh syntax highlighting
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/zsh/plugins/zsh-syntax-highlighting"
+
+- name: Install zsh autosugestions
+  pacman:
+    name: zsh-autosuggestions
+    state: present
+  become: true
+
+- name: Make sure zsh cache folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache/zsh"
+    state: directory
+    mode: '0700'

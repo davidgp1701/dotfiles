@@ -1,0 +1,29 @@
+---
+- name: Install reflector
+  pacman:
+    name: reflector
+    state: present
+  become: true
+
+- name: Configures reflector service
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/xdg/reflector/reflector.conf"
+    dest: /etc/xdg/reflector/reflector.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Deactivate reflector systemd service
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: no
+    name: reflector.service
+  become: true
+
+- name: Activate reflector timer systemd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: reflector.timer
+  become: true

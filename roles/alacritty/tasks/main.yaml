@@ -1,0 +1,19 @@
+---
+- name: Installs XClip, required by Alacritty for c&p
+  pacman:
+    name: xclip
+    state: present
+  become: true
+
+- name: Installs Alacritty
+  pacman:
+    name: alacritty
+    state: present
+  become: true
+  
+- name: Links config file for Alacritty
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/alacritty"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/alacritty"
+    state: link
+    force: yes

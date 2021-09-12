@@ -1,5 +1,13 @@
-[prometheus]
-prometheus
+[workstation]
+archy.localdomain
+g14.localdomain
 
-[prometheus:vars]
-ansible_connection=local
+[laptop]
+archy.localdomain
+g14.localdomain
+
+[g14]
+g14.localdomain
+
+[archy]
+archy.localdomain

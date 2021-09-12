@@ -1,0 +1,13 @@
+---
+- name: Install util-linux
+  pacman:
+    name: util-linux
+    state: present
+  become: true
+
+- name: Activate fstrim timer systemd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: fstrim.timer
+  become: true

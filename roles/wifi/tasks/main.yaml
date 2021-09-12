@@ -1,0 +1,6 @@
+---
+- name: Collection of tools like iwlist
+  pacman:
+    name: wireless_tools
+    state: present
+  become: true

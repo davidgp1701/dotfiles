@@ -1,0 +1,19 @@
+---
+- name: Installs Zathura PDF reader
+  pacman:
+    name: zathura
+    state: present
+  become: true
+
+- name: Install Zathura PDF plugin
+  pacman:
+    name: zathura-pdf-mupdf
+    state: present
+  become: true
+
+- name: Links config file for zathura
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/zathura"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/zathura"
+    state: link
+    force: yes

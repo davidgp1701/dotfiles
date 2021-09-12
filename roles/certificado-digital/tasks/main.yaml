@@ -1,0 +1,11 @@
+---
+- name: Install needed OpenJDK
+  pacman:
+    name: jdk-openjdk
+    state: present
+  become: yes
+
+- name: Install Configurador FMNT
+  pacman:
+    name: configuradorfnmt
+    state: present

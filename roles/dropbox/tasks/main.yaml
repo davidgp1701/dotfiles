@@ -1,0 +1,19 @@
+---
+- name: Installs Dropbox from AUR
+  aur:
+    use: paru
+    name:
+      - dropbox
+
+- name: Install python-gpgme requiered by Dropbox
+  pacman:
+    name: python-gpgme
+    state: present
+  become: true
+
+- name: Activate dropbox service for user 
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: dropbox
+    scope: user

@@ -1,0 +1,50 @@
+# Files
+data.location=/home/david/.local/share/task
+
+# Verbose level
+verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,unwait
+
+# Personal Report
+report.personal.description='A list of personal tasks'
+report.personal.columns=id,project,tags,description.count,due
+report.personal.sort=start-,project-,urgency-
+report.personal.filter=status:pending project:personal
+
+# Darwin Report
+report.darwin.description='A list of Darwin project tasks'
+report.darwin.columns=id,project,tags,description.count,due
+report.darwin.sort=project-,start-,urgency-
+report.darwin.filter=status:pending project:Darwin
+
+# Adaptive Report
+report.adaptive.description='A list of Darwin project tasks'
+report.adaptive.columns=id,project,tags,description.count,due
+report.adaptive.sort=project-,start-,urgency-
+report.adaptive.filter=status:pending project:Adaptive
+
+# Color theme (uncomment one to use)
+#include /usr/share/doc/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+include /home/david/.config/taskwarrior/gruvbox.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+#include /usr/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/share/doc/task/rc/dark-gray-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+taskd.certificate=/home/david/.local/share/task/certs/private.certificate.pem
+taskd.key=/home/david/.local/share/task/certs/private.key.pem
+taskd.ca=/home/david/.local/share/task/certs/ca.crt
+taskd.server={{ task_server }}
+taskd.credentials={{ task_credentials }}
+taskd.trust=strict
+
+# Calendar configuration
+workweek=1,2,3,4,5
+weekstart=monday

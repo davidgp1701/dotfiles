@@ -1,0 +1,18 @@
+- name: Install Rust
+  pacman:
+    name: rust
+    state: present
+  become: true
+
+- name: Make sure the Cargo config/share folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/cargo"
+    state: directory
+    mode: '0700'
+
+- name: Links config file for Cargo
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/share/cargo/config"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/cargo/config"
+    state: link
+    force: yes

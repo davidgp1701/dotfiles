@@ -1,9 +1,0 @@
-- name: Set up local workstation
-  hosts: prometheus
-  roles:
-    - role: zsh
-      tags:
-        - zsh
-    - role: shellcheck
-    - role: X11
-    - role: dwm

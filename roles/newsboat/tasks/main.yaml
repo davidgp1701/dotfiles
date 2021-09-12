@@ -1,0 +1,29 @@
+---
+- name: Installs Newsboat RSS reader
+  pacman:
+    name: newsboat
+    state: present
+  become: true
+
+- name: Installs urlscan
+  pacman:
+    name: urlscan
+    state: present
+  become: true
+
+- name: Make sure cache Newsboat folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.cache/newsboat"
+    state: directory
+    mode: '0755'
+
+- name: Make sure config Newsboat folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/newsboat"
+    state: directory
+    mode: '0755'
+
+- name: Ensure Newsboat is configured 
+  template:
+    src: config.j2
+    dest: ~/.config/newsboat/config

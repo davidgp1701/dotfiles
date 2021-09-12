@@ -1,0 +1,6 @@
+---
+- name: Installs powertop
+  pacman:
+    name: powertop
+    state: present
+  become: true

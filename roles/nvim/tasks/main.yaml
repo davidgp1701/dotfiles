@@ -1,0 +1,105 @@
+---
+- name: Ensure nvim normal package is not installed
+  become: yes
+  pacman:
+    name: neovim
+    state: absent
+
+- name: Telescope uses this tool to show files previews 
+  become: yes
+  pacman:
+    name: bat
+    state: present
+
+- name: Install ripgrep for complete project searchs
+  become: yes
+  pacman:
+    name: ripgrep
+    state: present
+
+- name: Install for telescope to find files
+  become: yes
+  pacman:
+    name: fd
+    state: present
+
+- name: Install tree-sitter
+  become: yes
+  pacman:
+    name: tree-sitter
+    state: present
+
+- name: Installs nvim nightly build
+  aur:
+    use: paru
+    name:
+      - neovim-git
+
+- name: Links config file for nvim
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/nvim"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/nvim"
+    state: link
+    force: yes
+
+- name: Make sure nvim log folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/log"
+    state: directory
+    mode: '0755'
+
+- name: Make sure the tree-sitter teal folder exist
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/tree-sitter-teal"
+    state: directory
+    mode: '0755'
+
+- name: Make sure nvim start folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start"
+    state: directory
+    mode: '0755'
+
+- name: Install packer
+  ansible.builtin.git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
+- name: Install vim language server
+  npm:
+    name: vim-language-server
+    global: yes
+  become: yes
+
+- name: Installs the lua-language-server
+  aur:
+    use: paru
+    name:
+      - lua-language-server
+
+- name: Install neovim python provider
+  pip:
+    name: pynvim
+    extra_args: --user
+
+- name: Install the Python LSP
+  pip:
+    name: python-lsp-server
+    extra_args: --user
+
+- name: Install Ruby
+  pacman:
+    name: ruby
+    state: present
+  become: yes
+
+- name: Install Ruby provider
+  community.general.gem:
+    name: neovim
+    state: latest
+
+- name: Install "Node.js Neovim Provider"
+  community.general.npm:
+    name: neovim
+    global: yes
+
