@@ -1,5 +1,4 @@
 ! ST terminal configuration
-st.font: Inconsolata\ for\ Powerline:size=9:antialias=true:autohint=true;
 *.alpha: 220 
 
 !special
@@ -88,5 +87,5 @@ Xft.antialias: 1
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-!Xft.lcdfilter: lcddefault
+Xft.lcdfilter: lcddefault
 Xft.dpi: 140

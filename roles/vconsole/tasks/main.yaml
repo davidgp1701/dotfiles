@@ -1,9 +1,8 @@
 ---
 - name: Installs terminus font
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - terminus-font
+    name: terminus-font
 
 - name: Configures vconsole
   ansible.builtin.copy:

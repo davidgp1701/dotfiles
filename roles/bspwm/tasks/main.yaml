@@ -4,21 +4,21 @@
     name: bspwm
     state: present
   become: true
-  
+
 - name: Links config file for BSPWM
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bspwm"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.config/bspwm"
     state: link
     force: yes
-    
+
 - name: Links monitor script to manage desktops when using connecting monitors
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/monitor.sh"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/monitor.sh"
     state: link
     force: yes
-    
+
 - name: Links dmenu prompt script to manage queries
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/prompt.sh"
@@ -31,7 +31,7 @@
     name: sxhkd
     state: present
   become: true
-  
+
 - name: Links config file for sxhkd
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/sxhkd"
@@ -65,16 +65,14 @@
   become: true
 
 - name: Installs i3lock
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - i3lock-color
+    name: i3lock-color
 
 - name: Installs betterlockscreen
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - betterlockscreen
+    name: betterlockscreen
 
 - name: Links config file for betterlockscreen
   file:
@@ -87,5 +85,5 @@
   ansible.builtin.systemd:
     state: stopped
     enabled: yes
-    name: betterlockscreen@david 
+    name: betterlockscreen@david
   become: true

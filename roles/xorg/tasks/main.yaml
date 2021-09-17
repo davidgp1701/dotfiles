@@ -11,7 +11,7 @@
     state: present
   become: true
 
-- name: Install arandr 
+- name: Install arandr
   pacman:
     name: arandr
     state: present
@@ -36,10 +36,9 @@
   become: true
 
 - name: Install nerdfonts
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - nerd-fonts-complete
+    name: nerd-fonts-complete
 
 - name: Install tff-dejavu (needed for gtop)
   pacman:
@@ -60,10 +59,9 @@
   become: true
 
 - name: Install symbola ttf emoji font
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - ttf-symbola
+    name: ttf-symbola
 
 - name: Install feh
   pacman:
@@ -79,7 +77,6 @@
     force: yes
 
 - name: Install colorpicker
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - colorpicker
+    name: colorpicker

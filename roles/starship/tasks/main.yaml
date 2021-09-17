@@ -1,9 +1,8 @@
 ---
 - name: Installs Starship shell build
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - starship
+    name: starship
 
 - name: Make sure local config exists
   file:
