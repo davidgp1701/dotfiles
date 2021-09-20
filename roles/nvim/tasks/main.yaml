@@ -5,7 +5,7 @@
     name: neovim
     state: absent
 
-- name: Telescope uses this tool to show files previews 
+- name: Telescope uses this tool to show files previews
   become: yes
   pacman:
     name: bat
@@ -80,6 +80,18 @@
   kewlfft.aur.aur:
     use: paru
     name: lua-language-server
+
+- name: Make sure Lua LSP con write logs to this folder
+  ansible.builtin.file:
+    path: "/usr/share/lua-language-server/log"
+    state: directory
+    mode: '0777'
+
+- name: Make sure Lua LSP con write to the meta folder
+  ansible.builtin.file:
+    path: "/usr/share/lua-language-server/meta"
+    state: directory
+    mode: '0777'
 
 - name: Install neovim python provider
   pip:
