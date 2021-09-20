@@ -52,7 +52,12 @@ return require('packer').startup(function()
   -- use {'sheerun/vim-polyglot'}
 
   -- Airline button bar
-  use {'vim-airline/vim-airline'}
+  -- use {'vim-airline/vim-airline'}
+  -- use {'vim-airline/vim-airline-themes'}
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 
   -- Vim Cyclest to show listchars
   use {'tjdevries/cyclist.vim'}

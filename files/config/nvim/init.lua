@@ -4,10 +4,10 @@ require('mappings')
 
 -- Plugins
 require('plugins')
-require('cfg_airline')
 require('cfg_ansible-vim')
 require('cfg_gitgutter')
 require('cfg_indentline')
+require('cfg_lualine')
 require('cfg_nvim-autopairs')
 require('cfg_nvim-bufferline')
 require('cfg_nvim_colorizer')
