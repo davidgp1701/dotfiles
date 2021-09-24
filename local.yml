@@ -82,8 +82,3 @@
     - nvidia
     - torrent
 
-- hosts: private
-  tags: private
-  connection: local
-  roles:
-    - role: './private/roles/git'
