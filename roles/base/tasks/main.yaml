@@ -138,6 +138,8 @@
     owner: root
     group: root
     mode: '0644'
+  notify:
+  - Update pacman database
   become: true
 
 - name: Configure pacman
