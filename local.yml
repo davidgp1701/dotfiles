@@ -40,7 +40,6 @@
     - bluetooth
     - bspwm
     - dunst
-    - dropbox
     - etckeeper
     - fstrim
     - firefox
@@ -64,6 +63,7 @@
     - xorg
     - zathura
     - zsh
+    - dropbox # This needs an X11 running to be installed, leave it for the end
 
 - hosts: archy
   tags: archy
