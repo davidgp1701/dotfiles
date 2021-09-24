@@ -59,6 +59,18 @@ then
   sudo pacman --noconfirm -S git
 fi
 
+# Install bitwarden CLI
+if ! sudo pacman -Qi bitwarden-cli
+then
+  sudo pacman --noconfirm -S bitwarden-cli
+fi
+
+# Install jq
+if ! sudo pacman -Qi jq
+then
+  sudo pacman --noconfirm -S jq
+fi
+
 # Install paru to manage aur packages
 sudo pacman --noconfirm -S --needed base-devel
 
@@ -71,4 +83,4 @@ then
 fi
 
 # Install AUR ansible plugin
-ansible-galaxy install kewlfft.aur
+ansible-galaxy collection install kewlfft.aur

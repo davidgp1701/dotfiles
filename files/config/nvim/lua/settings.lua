@@ -29,7 +29,7 @@ vim.o.hidden=true
 vim.o.errorbells=true
 
 -- Insert 2 spaces for a tab
--- vim.bo.tabstop=2 -- Need to check the right way to do this, it is not working 
+-- vim.bo.tabstop=2 -- Need to check the right way to do this, it is not working
 -- vim.bo.softtabstop=2
 -- Changes the number of spaces used for indentation
 -- Converts tabs for spaces
@@ -60,7 +60,7 @@ vim.o.writebackup=false
 vim.o.swapfile=false
 
 vim.cmd([[
-  set undodir=~/.local/share/nvim/undo " Undo folder 
+  set undodir=~/.local/share/nvim/undo " Undo folder
   set undofile                         " Enable undo file
 ]])
 
@@ -85,3 +85,5 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 -- Show 80 columns
 vim.cmd('set colorcolumn=80')
 
+--- Always show statusline
+vim.cmd('set laststatus=2')

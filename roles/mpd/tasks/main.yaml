@@ -4,7 +4,7 @@
     name: mpd
     state: present
   become: true
-  
+
 - name: Installs mpc latest version
   pacman:
     name: mpc
@@ -37,11 +37,10 @@
   become: true
 
 - name: Install the NCurses Music Player Client Plus Plus ncmpcpp
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - ncmpcpp-git
-  
+    name: ncmpcpp-git
+
 - name: Wrapper for ncmpcpp
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/player.sh"
@@ -93,10 +92,9 @@
   become: true
 
 - name: Installs mpd-notification
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - mpd-notification
+    name: mpd-notification
 
 - name: Links beets configuration file
   file:
@@ -105,7 +103,7 @@
     state: link
     force: yes
 
-# - name: Activate mpd-notification service for user 
+# - name: Activate mpd-notification service for user
 #   ansible.builtin.systemd:
 #     state: started
 #     enabled: yes
@@ -123,7 +121,7 @@
     name: tmux
     state: present
   become: true
-  
+
 - name: Installs inotify-tools for displaying images in terminal
   pacman:
     name: inotify-tools

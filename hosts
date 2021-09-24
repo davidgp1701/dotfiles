@@ -1,6 +1,7 @@
 [workstation]
 archy.localdomain
 g14.localdomain
+prometheus.localdomain
 
 [laptop]
 archy.localdomain

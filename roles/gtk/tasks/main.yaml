@@ -1,14 +1,12 @@
 - name: Installs Gruvbox Material icon theme
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - gruvbox-material-icon-theme-git
+    name: gruvbox-material-icon-theme-git
 
 - name: Installs Gruvbox Material GTK theme
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - gruvbox-material-gtk-theme-git
+    name: gruvbox-material-gtk-theme-git
 
 - name: Links config file for GTK-3.0
   file:

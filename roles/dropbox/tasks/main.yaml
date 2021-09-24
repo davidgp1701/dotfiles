@@ -1,9 +1,8 @@
 ---
 - name: Installs Dropbox from AUR
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - dropbox
+    name: dropbox
 
 - name: Install python-gpgme requiered by Dropbox
   pacman:
@@ -11,7 +10,7 @@
     state: present
   become: true
 
-- name: Activate dropbox service for user 
+- name: Activate dropbox service for user
   ansible.builtin.systemd:
     state: started
     enabled: yes

@@ -1,6 +1,5 @@
 ---
 - name: Installs Google Chrome
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - google-chrome
+    name: google-chrome

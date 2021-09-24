@@ -315,7 +315,6 @@
 
 # Installs the AWS session manager plugin
 - name: Installs AWS session manager plugin
-  aur:
+  kewlfft.aur.aur:
     use: paru
-    name:
-      - aws-session-manager-plugin
+    name: aws-session-manager-plugin
