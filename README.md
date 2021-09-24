@@ -6,6 +6,7 @@ following packages:
 ```
 base-devel
 dhcpcd
+inetutils
 ```
 
 It is not a bad idea also to install `openssh`, it will enable to ssh into the machine from other one to perform things
@@ -25,6 +26,13 @@ writting the ideal algorithm will be:
 
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Before starting the `apply.sh` script that will run the Ansible configuration to each one of your machines remember 
+that you need first to perform a login action:
+
+```
+bw login
 ```
 
 ## Execution
