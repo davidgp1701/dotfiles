@@ -86,12 +86,14 @@
     path: "/usr/share/lua-language-server/log"
     state: directory
     mode: '0777'
+  become: true
 
 - name: Make sure Lua LSP con write to the meta folder
   ansible.builtin.file:
     path: "/usr/share/lua-language-server/meta"
     state: directory
     mode: '0777'
+  become: true
 
 - name: Install neovim python provider
   pip:
