@@ -28,12 +28,14 @@ writting the ideal algorithm will be:
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-Before starting the `apply.sh` script that will run the Ansible configuration to each one of your machines remember 
+Before starting the `apply.sh` script that will run the Ansible configuration to each one of your machines remember
 that you need first to perform a login action:
 
 ```
 bw login
 ```
+
+Also ensure `~/Downloads` directory exists.
 
 ## Execution
 
