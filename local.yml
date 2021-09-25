@@ -46,14 +46,12 @@
     - google-chrome
     - gtk
     - kitty
-    - mpd
     - mpv
     - newsboat
     - ntp
     - polybar
     - powertop
     - rust
-    - spotify
     - suckless
     - starship
     - task
@@ -63,7 +61,9 @@
     - xorg
     - zathura
     - zsh
-    - dropbox # This needs an X11 running to be installed, leave it for the end
+    - dropbox
+    - mpd
+    - spotify
 
 - hosts: archy
   tags: archy
