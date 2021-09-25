@@ -21,3 +21,12 @@
     state: started
     enabled: yes
   become: true
+
+- name: Add BenqSW320 configuration
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/X11/xorg.conf.d/30-benq-sw320.conf"
+    dest: "/etc/X11/xorg.conf.d/30-benq-sw320.conf"
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
