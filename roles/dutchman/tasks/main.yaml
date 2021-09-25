@@ -1,0 +1,23 @@
+---
+- name: Add network configuration
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/systemd/network/20-wired.network"
+    dest: "/etc/systemd/network/20-wired.network"
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Ensure Systemd-networkd.service is enabled and started
+  ansible.builtin.systemd:
+    name: systemd-networkd.service
+    state: started
+    enabled: yes
+  become: true
+
+- name: Ensure Systemd-resolved.service is enabled and started
+  ansible.builtin.systemd:
+    name: systemd-resolved.service
+    state: started
+    enabled: yes
+  become: true

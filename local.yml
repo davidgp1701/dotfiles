@@ -73,6 +73,12 @@
     - k8s
     - xps9750
 
+- hosts: dutchman
+  tags: dutchman
+  connection: local
+  roles:
+    - dutchman
+
 - hosts: g14
   connection: local
   roles:
