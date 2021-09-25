@@ -4,13 +4,6 @@
     state: directory
     mode: '0700'
 
-- name: Make sure GPG user folder exists
-  ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/gnupg"
-    owner: david
-    group: david
-    mode: '0700'
-
 - name: Install GPG Agent
   pacman:
     name: ggp-agent
