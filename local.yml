@@ -78,6 +78,7 @@
   connection: local
   roles:
     - dutchman
+    - raspberrypi-tools
 
 - hosts: g14
   connection: local

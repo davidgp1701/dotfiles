@@ -1,0 +1,11 @@
+---
+- name: Install dosfstools
+  pacman:
+    name: dosfstools
+    state: present
+  become: yes
+
+- name: Installs rpi-imager
+  kewlfft.aur.aur:
+    use: paru
+    name: rpi-imager
