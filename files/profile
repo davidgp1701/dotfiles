@@ -93,3 +93,8 @@ export ASDF_DATA_DIR
 # GPG TTY
 GPG_TTY="$(tty)"
 export GPG_TTY
+
+# WINE
+export WINEPREFIX="${XDG_DATA_HOME}/wine/prefix"
+export WINEPATH="${XDG_DATA_HOME}/wine"
+export WINEARCH="win32"
