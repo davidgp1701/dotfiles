@@ -64,6 +64,7 @@
     - dropbox
     - mpd
     - spotify
+    - work
 
 - hosts: archy
   tags: archy

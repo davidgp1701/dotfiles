@@ -1,0 +1,16 @@
+---
+- name: Installs slack-desktop
+  kewlfft.aur.aur:
+    use: paru
+    name: slack-desktop
+
+- name: Installs zoom
+  kewlfft.aur.aur:
+    use: paru
+    name: zoom
+
+- name: Installas openfortivpn
+  pacman:
+    name: openfortivpn
+    state: present
+  become: true
