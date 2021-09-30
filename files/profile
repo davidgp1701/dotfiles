@@ -98,3 +98,6 @@ export GPG_TTY
 export WINEPREFIX="${XDG_DATA_HOME}/wine/prefix"
 export WINEPATH="${XDG_DATA_HOME}/wine"
 export WINEARCH="win32"
+
+# Zoom data folder
+export SSB_HOME="${XDG_DATA_HOME}"/zoom
