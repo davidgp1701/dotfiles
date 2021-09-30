@@ -74,6 +74,18 @@
     use: paru
     name: betterlockscreen
 
+- name: Install flameshot for screencapture
+  pacman:
+    name: flameshot
+    state: present
+  become: true
+
+- name: Ensure screenshots folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/Desktop/screenshots"
+    state: directory
+    mode: '0755'
+
 - name: Links config file for betterlockscreen
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/betterlockscreen"

@@ -13,7 +13,7 @@ clipmenud &
 feh --bg-fill /home/david/Pictures/somonstalenhag.se/l_ash09_big.jpg &
 
 # Adding pulseaudio service startup
-usr/bin/start-pulseaudio-x11 & 
+/usr/bin/start-pulseaudio-x11 &
 # pulseaudio --start &
 # /usr/bin/pactl load-module module-x11-publish "display=$DISPLAY xauthority=$XAUTHORITY" &
 
@@ -24,13 +24,13 @@ usr/bin/start-pulseaudio-x11 &
 picom -b &
 
 # Bluetooth
-bluetoothctl power on 
+bluetoothctl power on
 # blueman-applet &
 
 # Configure the desktops for the laptop display
 display_name="$(bspc query -M --names | head -1)"
-bspc monitor "$display_name" -d 1 2 3 4 5 6 7 8 9 10 
-bspc config border_width         3 
+bspc monitor "$display_name" -d 1 2 3 4 5 6 7 8 9 10
+bspc config border_width         3
 bspc config window_gap          12
 
 # Border colors
