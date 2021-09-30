@@ -18,3 +18,14 @@
     use: paru
     name: amazon-ecr-credential-helper
 
+- name: Ensure AWS data folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/aws"
+    state: directory
+    mode: '0700'
+
+- name: Ensure AWS config folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/aws"
+    state: directory
+    mode: '0700'
