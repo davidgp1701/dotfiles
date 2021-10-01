@@ -35,20 +35,65 @@
     state: present
   become: true
 
-- name: Install nerdfonts
+- name: Install nerdfonts Cascadia Code
   kewlfft.aur.aur:
     use: paru
-    name: nerd-fonts-complete
+    name: nerd-fonts-cascadia-code
 
-- name: Install tff-dejavu (needed for gtop)
-  pacman:
-    name: ttf-dejavu
-    state: present
-  become: true
+- name: Install nerdfonts Fantasque
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-fantasque-sans-mono
+
+- name: Install nerdfonts Fira Code
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-fira-code
+
+- name: Install nerdfonts Hack
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-hack
+
+- name: Install nerdfonts Jetbrains Mono
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-jetbrains-mono
+
+- name: Install nerdfonts Overpass
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-overpass
+
+- name: Install nerdfonts Roboto Mono
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-roboto-mono
+
+- name: Install nerdfonts Source Code Pro
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-source-code-pro
+
+- name: Install nerdfonts Terminus
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-terminus
+
+- name: Install nerdfonts Ubuntu Mno
+  kewlfft.aur.aur:
+    use: paru
+    name: nerd-fonts-ubuntu-mono
 
 - name: Install noto-fonts-emoji
   pacman:
     name: noto-fonts-emoji
+    state: present
+  become: true
+
+- name: Install tff-dejavu (needed for gtop)
+  pacman:
+    name: ttf-dejavu
     state: present
   become: true
 
