@@ -9,8 +9,32 @@
     use: paru
     name: zoom
 
-- name: Installas openfortivpn
+- name: Installs openfortivpn
   pacman:
     name: openfortivpn
+    state: present
+  become: true
+
+- name: Installs jdk-openjdk for Okta
+  pacman:
+    name: jdk-openjdk
+    state: present
+  become: true
+
+- name: Installs kubectl
+  pacman:
+    name: kubectl
+    state: present
+  become: true
+
+- name: Install kubectx
+  pacman:
+    name: kubectx
+    state: present
+  become: true
+
+- name: Install kubens
+  pacman:
+    name: kubens
     state: present
   become: true

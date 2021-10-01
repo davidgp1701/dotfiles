@@ -162,3 +162,9 @@
     name: unzip
     state: present
   become: true
+
+- name: Installs OpenVPN
+  pacman:
+    name: openvpn
+    state: present
+  become: true
