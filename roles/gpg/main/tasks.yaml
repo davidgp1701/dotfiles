@@ -28,3 +28,11 @@
     name: pinentry
     state: present
   become: true
+
+- name: Copy gpg-agent config file
+  ansible.builtin.copy:
+    src: gpg-agent.conf
+    dest: "{{ lookup( 'env', 'XDG_DATA_HOME' ) }}/gnupg"
+    mode: 0600
+    owner: david
+    group: david

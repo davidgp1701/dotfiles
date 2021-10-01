@@ -4,7 +4,8 @@
     path: "{{ lookup('env','HOME') }}/.local/bin/statusbar"
     state: directory
     mode: '0755'
-- name: Links clock script for status bar  
+
+- name: Links clock script for status bar
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/roles/dwm/files/statusbar/clock.sh"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/statusbar/clock.sh"
