@@ -1,6 +1,6 @@
 - name: Make sure GPG user folder exists
   ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/gnupg"
+    path: "{{ lookup( 'env', 'XDG_DATA_HOME' ) }}/gnupg"
     state: directory
     mode: '0700'
 
@@ -9,3 +9,16 @@
     name: ggp-agent
     status: present
   become: true
+
+- name: Ensure directories are 0700 for GnuPG
+  command: find {{ lookup( 'env', 'XDG_DATA_HOME' }}/gnupg -type d -exec chmod 0755 {} \;
+
+- name: Ensure files are 0600 for GnuPG
+  command: find {{ lookup( 'env', 'XDG_DATA_HOME' }}/gnupg -type f -exec chmod 0600 {} \;
+
+- name: Ensure gpg-agent.socket service is enabled and started
+  ansible.builtin.systemd:
+    name: gpg-agent.socket
+    state: started
+    enabled: yes
+    scope: user
