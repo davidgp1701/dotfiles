@@ -9,6 +9,11 @@
     use: paru
     name: zoom
 
+- name: Installs Microsoft Teams
+  kewlfft.aur.aur:
+    use: paru
+    name: teams
+
 - name: Installs openfortivpn
   pacman:
     name: openfortivpn
