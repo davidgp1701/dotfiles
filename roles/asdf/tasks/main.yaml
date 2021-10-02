@@ -214,11 +214,18 @@
     single_branch: yes
     version: v0.8.1
 
-- name: Ensure asdf data folder exists
+- name: Ensure ASDF data folder exists
   ansible.builtin.file:
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/asdf"
     state: directory
     mode: '0755'
+
+- name: Links config file for some plugins in ASDF (Python/NPM for the moment)
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/asdf"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/asdf"
+    state: link
+    force: yes
 
 - name: Install asdf direnv plugin
   ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }}
@@ -234,12 +241,6 @@
   shell:
     "if [[ ! -f '{{ lookup( 'env', 'HOME' ) }}/.local/gnupg/asdf-nodejs.gpg' ]]; then {{ lookup( 'env', 'HOME' ) }}/.local/share/asdf/plugins/nodejs/bin/import-release-team-keyring; fi"
 
-- name: Links config file for default npm packages installed by ASDF
-  file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/files/default-npm-packages"
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.default-npm-packages"
-    state: link
-    force: yes
 
 - name: Configure the merge driver for npm
   community.general.git_config:
@@ -268,13 +269,6 @@
 - name: Install asdf python plugin
   shell:
     "if ! asdf plugin list | grep -qsxF 'python'; then asdf plugin add python ; fi"
-
-- name: Links config file for default plython packages installed by ASDF
-  file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/files/default-python-packages"
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.default-python-packages"
-    state: link
-    force: yes
 
 - name: Install Docker Credentials Helper
   ansible.builtin.script: install_docker_credentials_helper.sh {{ docker_credential_secretservice.version }}
