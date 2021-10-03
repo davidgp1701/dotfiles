@@ -117,6 +117,9 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
+# Avoid character duplication using tab
+export LC_CTYPE=en_US.UTF-8
+
 # Spaceship Prompt
 autoload -U promptinit; promptinit
 eval "$(starship init zsh)"
