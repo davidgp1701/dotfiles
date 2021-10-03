@@ -66,6 +66,7 @@
     - mpd
     - spotify
     - work
+    - mikrotik
 
 - hosts: archy
   tags: archy
