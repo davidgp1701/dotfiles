@@ -4,17 +4,21 @@
     state: directory
     mode: '0700'
 
-- name: Install GPG Agent
+- name: Install GnuPG
   pacman:
-    name: ggp-agent
-    status: present
+    name: gnupg
+    state: present
   become: true
 
 - name: Ensure directories are 0700 for GnuPG
-  command: find {{ lookup( 'env', 'XDG_DATA_HOME' }}/gnupg -type d -exec chmod 0755 {} \;
+  environment:
+    folder: "{{ lookup( 'env', 'XDG_DATA_HOME') }}"
+  command: find "$folder"/gnupg -type d -exec chmod 0755 {} \;
 
 - name: Ensure files are 0600 for GnuPG
-  command: find {{ lookup( 'env', 'XDG_DATA_HOME' }}/gnupg -type f -exec chmod 0600 {} \;
+  environment:
+    folder: "{{ lookup( 'env', 'XDG_DATA_HOME') }}"
+  command: find "$folder"/gnupg -type f -exec chmod 0600 {} \;
 
 - name: Ensure gpg-agent.socket service is enabled and started
   ansible.builtin.systemd:
