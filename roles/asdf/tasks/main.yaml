@@ -227,8 +227,50 @@
     state: link
     force: yes
 
+- name: Install asdf awscli plugin
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ awscli.version }}
+
 - name: Install asdf direnv plugin
   ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }}
+
+- name: Set default to system for docker-compose in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ docker_compose.version }}
+
+- name: Set default to system for editorconfig-checker in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ editor_config.version }}
+
+- name: Set default to system for golang in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ golang.version }}
+
+- name: Set default to system for hadolint in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ hadolint.version }}
+
+- name: Set default to system for java in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh awscli {{ java.version }}
+
+- name: Set default to system for nodejs in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ nodejs.version }}
+
+- name: Set default to system for python in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ python.version }}
+
+- name: Set default to system for shellcheck in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ shellcheck.version }}
+
+- name: Set default to system for shfmt in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ shfmt.version }}
+
+- name: Set default to system for terraform in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ terraform.version }}
+
+- name: Set default to system for terraform-docs in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ terraform_docs.version }}
+
+- name: Set default to system for tflint in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ tflint.version }}
+
+- name: Set default to system for tfsec in ASDF
+  ansible.builtin.script: install_asdf_plugin.sh websocat {{ tfsec.version }}
 
 - name: Install asdf websocat plugin
   ansible.builtin.script: install_asdf_plugin.sh websocat {{ websocat.version }}
@@ -241,47 +283,6 @@
   shell:
     "if [[ ! -f '{{ lookup( 'env', 'HOME' ) }}/.local/gnupg/asdf-nodejs.gpg' ]]; then {{ lookup( 'env', 'HOME' ) }}/.local/share/asdf/plugins/nodejs/bin/import-release-team-keyring; fi"
 
-- name: Set default to system for awscli in ASDF
-  ansible.builtin.script: set_global_config.sh awscli system
-
-- name: Set default to system for docker-compose in ASDF
-  ansible.builtin.script: set_global_config.sh docker-compose system
-
-- name: Set default to system for editorconfig-checker in ASDF
-  ansible.builtin.script: set_global_config.sh editorconfig-checker system
-
-- name: Set default to system for golang in ASDF
-  ansible.builtin.script: set_global_config.sh golang system
-
-- name: Set default to system for hadolint in ASDF
-  ansible.builtin.script: set_global_config.sh hadolint system
-
-- name: Set default to system for java in ASDF
-  ansible.builtin.script: set_global_config.sh java system
-
-- name: Set default to system for nodejs in ASDF
-  ansible.builtin.script: set_global_config.sh nodejs system
-
-- name: Set default to system for python in ASDF
-  ansible.builtin.script: set_global_config.sh python system
-
-- name: Set default to system for shellcheck in ASDF
-  ansible.builtin.script: set_global_config.sh shellcheck system
-
-- name: Set default to system for shfmt in ASDF
-  ansible.builtin.script: set_global_config.sh shfmt system
-
-- name: Set default to system for terraform in ASDF
-  ansible.builtin.script: set_global_config.sh terraform system
-
-- name: Set default to system for terraform-docs in ASDF
-  ansible.builtin.script: set_global_config.sh terraform-docs system
-
-- name: Set default to system for tflint in ASDF
-  ansible.builtin.script: set_global_config.sh tflint system
-
-- name: Set default to system for tfsec in ASDF
-  ansible.builtin.script: set_global_config.sh tfsec system
 
 # Git configuration
 - name: Configure the merge driver for npm

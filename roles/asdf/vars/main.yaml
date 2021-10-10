@@ -1,6 +1,34 @@
+awscli:
+  version: system
 direnv:
   version: 2.23.1
 docker_credential_secretservice:
-  version: 0.6.3 
+  version: 0.6.3
+docker_compose:
+  version: system
+editor_config:
+  version: system
+golang:
+  version: system
+hadolint:
+  version: system
+java:
+  version: system
+nodejs:
+  version: system
+python:
+  version: system
+shellcheck:
+  version: system
+shfmt:
+  version: system
+terraform:
+  version: system
+terraform_docs:
+  version: system
+tflint:
+  version: system
+tfsec:
+  version: system
 websocat:
   version: 1.7.0
