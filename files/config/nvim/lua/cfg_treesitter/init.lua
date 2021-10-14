@@ -6,7 +6,7 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
-		disable = {"python", "yaml"}
+		disable = {"python", "ruby", "yaml"}
   },
   playground = {
     enable = true,

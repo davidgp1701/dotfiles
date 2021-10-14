@@ -51,7 +51,7 @@ color.project.none=
 
 # Priority
 color.uda.priority.H=color208
-color.uda.priority.L=color142
+color.uda.priority.L=color245
 color.uda.priority.M=color175
 
 # Tags
@@ -79,11 +79,11 @@ color.summary.background=white on gray3
 color.summary.bar=white on color175
 
 # Command: calendar
-color.calendar.due.today=color0 on color214 
+color.calendar.due.today=color0 on color214
 color.calendar.due=color0 on color249
 color.calendar.holiday=color0 on color166
-color.calendar.overdue=color0 on color167 
-color.calendar.today=color0 on color142 
+color.calendar.overdue=color0 on color167
+color.calendar.today=color0 on color142
 color.calendar.weekend=on color239
 color.calendar.weeknumber=color108
 
