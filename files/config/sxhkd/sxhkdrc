@@ -3,7 +3,7 @@
 ##################
 
 # Restart hotkey damon
-super + shift + r 
+super + shift + r
   pkill -USR1 -x sxhkd && \
   notify-send "sxhkd" "Config releoded"
 
@@ -31,7 +31,7 @@ super + shift + q
   xdo close
 
 # Lock the screen
-super + shift + x 
+super + shift + x
   betterlockscreen -l blur
 
 # Only laptop monitor
@@ -48,7 +48,7 @@ super + @F3
 
 # Santiago monitors
 super + @F4
-  ~/.local/bin/monitor.sh santiago 
+  ~/.local/bin/monitor.sh santiago
 
 #-----------------#
 # BSPWN Movements #
@@ -86,13 +86,12 @@ super + o
 super + alt + {Left, Right}
   bspc desktop -f {prev, next}
 
-# Expand a window by moving one of its side outward
-ctrl + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# Contract a window by moving one of its side inward
+# Expand/contract a window
 ctrl + super + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+  bspc node -z {left -20 0 || bspc node -z right -20 0, \
+                bottom 0 20 || bspc node -z top 0 20,\
+                top 0 -20 || bspc node -z bottom 0 -20,\
+                right 20 0 || bspc node -z left 20 0}
 
 # Move a floating window
 ctrl + alt + {Left,Right,Up,Down}
@@ -128,7 +127,7 @@ super + Return
 
 # program launcher
 super + @space
-	/usr/bin/dmenu_run 
+	/usr/bin/dmenu_run
 
 # screenshot
 super + shift + s
@@ -151,20 +150,20 @@ XF86MonBrightness{Up,Down}
   light -{A,U} 5
 
 # Keyboard brightness
-XF86KbdBrightness{Up,Down} 
+XF86KbdBrightness{Up,Down}
   ~/.local/bin/asus_keyboard_backlight.sh {increase,decrease}
 
 # Change compute profile
 XF86Launch4
   ~/.local/bin/asus_profile.sh
 
-# Keyboard Audiokeys 
+# Keyboard Audiokeys
 XF86AudioMute
   amixer -D pulse set Master 1+ toggle
 XF86Audio{Raise,Lower}Volume
   amixer set 'Master' 5%{+,-}
 XF86Audio{Next,Prev}
-  play-control.sh {next,previous} 
+  play-control.sh {next,previous}
 XF86Audio{Pause,Play,Stop}
   play-control.sh {pause,play-pause,stop}
 
