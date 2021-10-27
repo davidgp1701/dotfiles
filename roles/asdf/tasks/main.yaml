@@ -41,6 +41,11 @@
     state: present
   become: true
 
+- name: Ensure libffi7 is installed as requirement
+  kewlfft.aur.aur:
+    use: paru
+    name: libffi7
+
 - name: Ensure xz is installed as requirement
   pacman:
     name: xz
