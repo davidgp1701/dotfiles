@@ -24,11 +24,13 @@ return require('packer').startup(function()
 
   -- Color Themes
   use {'cocopon/iceberg.vim'}
-  use {'morhetz/gruvbox'}
+  --use {'morhetz/gruvbox'}
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use {'savq/melange'}
   use {'tjdevries/colorbuddy.vim'}
   use {'tjdevries/gruvbuddy.nvim'}
 	use {'tiagovla/tokyodark.nvim'}
+  use {'arcticicestudio/nord-vim', branch = 'develop' }
 
 	-- Tabs
 	use {

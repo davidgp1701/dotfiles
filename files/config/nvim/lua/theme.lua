@@ -13,6 +13,6 @@ vim.g.tokyodark_color_gamma = "1.0"
 
 -- Active colorscheme
 vim.cmd('set termguicolors')
-vim.cmd('colorscheme gruvbox')
+vim.cmd[[colorscheme gruvbox]]
 -- vim.cmd("colorscheme tokyodark")
 -- require('colorbuddy').colorscheme('gruvbuddy')
