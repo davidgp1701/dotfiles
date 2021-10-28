@@ -71,12 +71,19 @@ return require('packer').startup(function()
   -- Neovim LSP
   use {'nvim-lua/lsp-status.nvim'}
   use {'neovim/nvim-lspconfig'}
-  use {'hrsh7th/nvim-compe'}
-  use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
 
-  -- Init screen
-  -- use {'mhinz/vim-startify'}
+  -- Completion
+  -- Sources
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lsp"
+  -- use "saadparwaiz1/cmp_luasnip" -- TODO readd it when starting to use snippets
+  use "tamago324/cmp-zsh"
+  -- Comparators
+  use "lukas-reineke/cmp-under-comparator"
 
 	-- Show colors from color codes
 	use {'norcalli/nvim-colorizer.lua'}
@@ -84,6 +91,7 @@ return require('packer').startup(function()
   -- Show indent lines
   use {'lukas-reineke/indent-blankline.nvim', branch='master'}
 
+  -- Use .editorconfig file from projects for indents
   use {'editorconfig/editorconfig-vim'}
 
 	-- Which key

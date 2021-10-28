@@ -76,12 +76,6 @@ vim.o.cmdheight=2
 -- Improves user experience, default time is 4000ms
 vim.o.updatetime=50
 
--- Don't pass messages to |ins-completion-menu|
-vim.cmd('set shortmess+=c')
-
--- Set completeopt to have a better completion experience
-vim.cmd('set completeopt=menuone,noinsert,noselect')
-
 -- Show 80 columns
 vim.cmd('set colorcolumn=80')
 
