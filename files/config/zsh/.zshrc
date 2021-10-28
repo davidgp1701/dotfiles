@@ -104,6 +104,9 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # Load personal configuration shell files
 for f in ~/.config/shellconfigs/*; do source "$f"; done
 
+# Pipenv completion - A bit slow to start, though commented
+# [[ -s /usr/bin/pipenv ]] && eval "$(pipenv --completion)"
+
 # ASDF Configuration
 if [[ -f "$HOME/.local/asdf/asdf.sh" ]]; then
     . "$HOME/.local/asdf/asdf.sh"

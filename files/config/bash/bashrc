@@ -21,3 +21,5 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
+# Pipenv completion - A bit slow to start, though commented
+# [[ -s /usr/bin/pipenv ]] && eval "$(pipenv --completion)"
