@@ -10,9 +10,9 @@ HISTFILE="$XDG_DATA_HOME"/bash/history
 export HISTFILE
 
 # ASDF Configuration
- if [[ -f "/opt/asdf-vm/asdf.sh" ]]; then
-     . /opt/asdf-vm/asdf.sh 
- fi
+if [[ -f "$HOME/.local/asdf/asdf.sh" ]]; then
+    . "$HOME/.local/asdf/asdf.sh"
+fi
 
 # Starts direnv if available
 type direnv &>/dev/null && eval "$(direnv hook bash)"
