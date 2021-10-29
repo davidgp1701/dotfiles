@@ -102,3 +102,7 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', { noremap = true })
 
+
+-- Enable or dissable spellcheck
+vim.api.nvim_set_keymap('n', '<leader>se', ':setlocal spell spelllang=en_us<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>sd', ':set nospell<CR>', { noremap = true })
