@@ -17,7 +17,13 @@
     state: directory
     mode: '0700'
 
-- name: Ensure taskwarrior is configured 
+- name: Make sure task hooks folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task/hooks"
+    state: directory
+    mode: '0700'
+
+- name: Ensure taskwarrior is configured
   template:
     src: taskrc.j2
     dest: ~/.config/taskrc
@@ -26,5 +32,12 @@
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/taskwarrior"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.config/taskwarrior"
+    state: link
+    force: yes
+
+- name: Add Taskwarrior sync hook
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/share/task/hooks/on-exit-sync.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/task/hooks/on-exit-sync.sh"
     state: link
     force: yes
