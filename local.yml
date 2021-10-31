@@ -75,6 +75,7 @@
     - aws
     - k8s
     - xps9750
+    - wireguard
 
 - hosts: dutchman
   tags: dutchman
