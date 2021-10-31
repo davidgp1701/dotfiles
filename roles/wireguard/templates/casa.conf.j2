@@ -1,0 +1,8 @@
+[Interface]
+PrivateKey = {{ wireguard_private_key_local }}
+Address = {{ wireguard_address }}
+
+[Peer]
+PublicKey = {{ wireguard_public_key_dagger }}
+Endpoint = {{ wireguard_endpoint }}
+AllowedIPs = {{ wireguard_allowed_ips }}

@@ -1,0 +1,12 @@
+---
+- name: Install Wireguard Tools
+  become: yes
+  pacman:
+    name: wireguard-tools
+    state: present
+
+- name: Configure Wireguard casa connection
+  become: yes
+  ansible.builtin.template:
+    src: casa.conf.j2
+    dest: /etc/wireguard/casa.conf

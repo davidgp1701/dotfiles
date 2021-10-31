@@ -26,6 +26,12 @@ inoreader_app_key="$(bw get item www.inoreader.com | jq '.fields[] | select(.nam
 inoreader_login="$(bw get username www.inoreader.com)"
 inoreader_password="$(bw get password www.inoreader.com)"
 
+# Wireguard key configuration
+short_hostname="$(hostname -a | xargs)"
+wireguard_public_key_dagger="$(bw get item wireguard | jq '.fields[] | select(.name == "public_key_dagger") | .value' -r)"
+wireguard_private_key_local="$(bw get item wireguard | jq ".fields[] | select(.name == \"private_key_${short_hostname}\") | .value" -r)"
+wireguard_endpoint="$(bw get item wireguard | jq '.fields[] | select(.name == "endpoint") | .value' -r)"
+
 ROOTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 export ROOTDIR
 
@@ -40,7 +46,10 @@ ansible-playbook local.yml \
 		inoreader_app_id=${inoreader_app_id} \
 		inoreader_app_key=${inoreader_app_key} \
 		inoreader_login=${inoreader_login} \
-		inoreader_password=${inoreader_password}"
+		inoreader_password=${inoreader_password} \
+    wireguard_public_key_dagger=${wireguard_public_key_dagger} \
+    wireguard_endpoint=${wireguard_endpoint} \
+    wireguard_private_key_local=${wireguard_private_key_local}"
 
 # Get taskwarrior certificates
 taskwarrior_item_id="$(bw get item taskwarrior | jq '.id' -r)"
