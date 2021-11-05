@@ -1,0 +1,24 @@
+---
+- name: Install `texlive-most` packages
+  become: true
+  pacman:
+    name: texlive-most
+    state: present
+
+- name: Install `texlive-lang` packages
+  become: true
+  pacman:
+    name: texlive-lang
+    state: present
+
+- name: Install `texlive-bibtexextra` packages (Bibliography)
+  become: true
+  pacman:
+    name: texlive-bibtexextra
+    state: present
+
+- name: Install `biber` package (alternate Bibligraphy backend)
+  become: true
+  pacman:
+    name: biber
+    state: present
