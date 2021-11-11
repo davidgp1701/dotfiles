@@ -44,18 +44,19 @@ return require('packer').startup(function()
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
 
+  -- NeoClip - Clipboard manager
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {'tami5/sqlite.lua', module = 'sqlite'}
+  }
+
   -- Terraform/Packer/etc.
   use {'hashivim/vim-hashicorp-tools'}
 
 	-- Ansible support
 	use {'pearofducks/ansible-vim'}
 
-  -- Add extra information about how to color text
-  -- use {'sheerun/vim-polyglot'}
-
-  -- Airline button bar
-  -- use {'vim-airline/vim-airline'}
-  -- use {'vim-airline/vim-airline-themes'}
+  -- Lower line
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
@@ -94,15 +95,4 @@ return require('packer').startup(function()
   -- Use .editorconfig file from projects for indents
   use {'editorconfig/editorconfig-vim'}
 
-	-- Which key
-	-- use {
-	-- 	"folke/which-key.nvim",
-	-- 	config = function()
-	-- 		require("which-key").setup {
-	-- 			-- your configuration comes here
-	-- 			-- or leave it empty to use the default settings
-	-- 			-- refer to the configuration section below
-	-- 		}
-	-- 	end
-	-- }
 end)
