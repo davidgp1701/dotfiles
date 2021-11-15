@@ -12,3 +12,10 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/disablegpu"
     state: link
     force: yes
+
+- name: Installs Atheros Wifi firmware
+  apt:
+    name: firmware-atheros
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

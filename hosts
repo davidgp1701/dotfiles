@@ -1,21 +1,17 @@
 [workstation]
-archy.localdomain
-g14.localdomain
 dutchman.localdomain
+g14.localdomain
+vortan.localdomain
 
 [laptop]
-archy.localdomain
 g14.localdomain
+vortan.localdomain
 
 [g14]
 g14.localdomain
 
-[archy]
-archy.localdomain
-
-[private]
-g14.localdomain
-archy.localdomain
+[vortan]
+vortan.localdomain
 
 [dutchman]
 dutchman.localdomain

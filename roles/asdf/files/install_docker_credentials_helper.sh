@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-IFS=$'\n\t' 
+IFS=$'\n\t'
+
+download_folder="$(xdg-user-dir DOWNLOAD)"
 
 install() {
-		curl -fsSL "$url" -o "${HOME}/Downloads/${file}"
-		tar -C "${HOME}/.local/bin/" -xzf "${HOME}/Downloads/${file}"
-		rm "${HOME}/Downloads/${file}" 
+		curl -fsSL "$url" -o "${download_folder}/${file}"
+		tar -C "${HOME}/.local/bin/" -xzf "${download_folder}/${file}"
+		rm "${download_folder}/${file}"
 		chmod 0755 "${HOME}/.local/bin/docker-credential-secretservice"
 }
 
@@ -16,7 +18,7 @@ url="https://github.com/docker/docker-credential-helpers/releases/download/v${ve
 
 if [[ ! -x "${HOME}/.local/bin/docker-credential-secretservice" ]]
 then
-	install	
+	install
 else
   installed_version="$(docker-credential-secretservice version)"
 

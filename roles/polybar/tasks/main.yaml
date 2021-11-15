@@ -3,6 +3,14 @@
   kewlfft.aur.aur:
     use: paru
     name: polybar
+  when: ansible_distribution == "Archlinux"
+
+- name: Install polybar
+  apt:
+    name: polybar
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for Polybar
   file:

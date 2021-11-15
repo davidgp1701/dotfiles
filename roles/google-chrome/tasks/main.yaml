@@ -3,3 +3,27 @@
   kewlfft.aur.aur:
     use: paru
     name: google-chrome
+  when: ansible_distribution == "Archlinux"
+
+# TODO this is ugly, need to write something better
+# - name: Add Google public key for their repos
+#   command: wget -O- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/google-keyring.gpg
+#   become: true
+#   when: ansible_facts['os_family'] == "Debian"
+
+- name: Copy google chrome repo
+  ansible.builtin.copy:
+    src: google-chrome.list
+    dest: /etc/apt/sources.list.d/google-chrome.list
+    mode: 0644
+    owner: root
+    group: root
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install Google Chome
+  apt:
+    name: google-chrome-stable
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

@@ -4,24 +4,42 @@
     name: which
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install usbutils
   pacman:
     name: usbutils
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install base-devel tools
   pacman:
     name: base-devel
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install build-essential tools
+  apt:
+    name: build-essential
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install dash for faster sh scripts
   pacman:
     name: dash
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install dash for faster sh scripts
+  apt:
+    name: dash
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensures dash is used for shell scripts instead of bash
   file:
@@ -36,23 +54,41 @@
     name: inetutils
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
-- name: Install ipcalc
+- name: Install ipcalc - IPV4 CIDR calculator
   pacman:
     name: ipcalc
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install ipcalc - IPV4 CIDR calculator
+  apt:
+    name: ipcalc
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install exa
   pacman:
     name: exa
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install exa
+  apt:
+    name: exa
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs downgrade to easily downgrade packages in arch
   kewlfft.aur.aur:
     use: paru
     name: downgrade
+  when: ansible_distribution == "Archlinux"
 
 - name: Make sure config folder exists
   ansible.builtin.file:
@@ -100,24 +136,48 @@
   pacman:
     name: jq
     state: present
+  when: ansible_distribution == "Archlinux"
+
+- name: Install jq to parse JSON
+  apt:
+    name: jq
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install htop
   pacman:
     name: htop
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install htop
+  apt:
+    name: htop
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs gtop
   pacman:
     name: gtop
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs bpytop
   pacman:
     name: bpytop
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs bpytop
+  apt:
+    name: bpytop
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Enable NTP with systemd-timesyncd
   ansible.builtin.systemd:
@@ -130,6 +190,7 @@
   kewlfft.aur.aur:
     use: paru
     name: bitwarden-cli
+  when: ansible_distribution == "Archlinux"
 
 - name: Enable makepkg to compile in native mode
   ansible.builtin.copy:
@@ -141,6 +202,7 @@
   notify:
   - Update pacman database
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Configure pacman
   ansible.builtin.copy:
@@ -150,21 +212,53 @@
     group: root
     mode: '0644'
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install fzf
   pacman:
     name: fzf
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install fzf
+  apt:
+    name: fzf
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install unzip
   pacman:
     name: unzip
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install unzip
+  apt:
+    name: unzip
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs OpenVPN
   pacman:
     name: openvpn
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs OpenVPN
+  apt:
+    name: openvpn
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs OpenVPN SystemD ResolveD
+  apt:
+    name: openvpn-systemd-resolved
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

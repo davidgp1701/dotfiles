@@ -3,7 +3,15 @@
   pacman:
     name: task
     state: present
-  become: yes
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs taskwarrior
+  apt:
+    name: taskwarrior
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Make sure task folder exists
   ansible.builtin.file:

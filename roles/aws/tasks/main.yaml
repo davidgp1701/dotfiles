@@ -17,6 +17,7 @@
   kewlfft.aur.aur:
     use: paru
     name: amazon-ecr-credential-helper
+  when: ansible_distribution == "Archlinux"
 
 - name: Ensure AWS data folder exists
   ansible.builtin.file:

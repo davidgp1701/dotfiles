@@ -1,15 +1,26 @@
 ---
 - name: Install bluetooth
   pacman:
-    name: bluez
+    name:
+      - bluez
+      - bluez-utils
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
-- name: Install bluetooth utils
-  pacman:
-    name: bluez-utils
+- name: Install bluetooth
+  apt:
+    name:
+      - bluez
+      - bluez-alsa-utils
+      - bluez-firmware
+      - bluez-hcidump
+      - bluez-meshd
+      - bluez-obexd
+      - bluez-tools
     state: present
   become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Activate bluetooth systemd service
   ansible.builtin.systemd:

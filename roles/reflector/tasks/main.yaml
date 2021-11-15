@@ -4,6 +4,7 @@
     name: reflector
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Configures reflector service
   ansible.builtin.copy:
@@ -13,6 +14,7 @@
     group: root
     mode: '0644'
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Deactivate reflector systemd service
   ansible.builtin.systemd:
@@ -20,6 +22,7 @@
     enabled: no
     name: reflector.service
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Activate reflector timer systemd service
   ansible.builtin.systemd:
@@ -27,3 +30,4 @@
     enabled: yes
     name: reflector.timer
   become: true
+  when: ansible_distribution == "Archlinux"

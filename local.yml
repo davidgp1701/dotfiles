@@ -4,11 +4,16 @@
   tags: always
   become: true
   pre_tasks:
-    - name: pre-run | update package cache (arch)
+    - name: pre-run | Update package cache (Arch)
       tags: always
       pacman: update_cache=yes
       changed_when: False
       when: ansible_distribution == "Archlinux"
+    - name: pre-run | Update package cache (Debian)
+      tags: always
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_facts['os_family'] == "Debian"
 
 - hosts: all
   tags: base
@@ -41,42 +46,40 @@
     - bluetooth
     - bspwm
     - dunst
-    - etckeeper
-    - fstrim
+    # - fstrim
     - firefox
     - google-chrome
-    - gtk
-    - kitty
-    - latex
-    - mpv
-    - newsboat
-    - ntp
+    # - ntp
     - polybar
-    - powertop
-    - rust
+    # - powertop
+    # - rust
     - suckless
-    - starship
     - task
-    - terraform
-    - vconsole
+    # - terraform
+    # - vconsole
     - wifi
     - xorg
-    - zathura
-    - zsh
-    - dropbox
-    - mpd
-    - spotify
+    # - zathura
+    # - spotify
     - work
-    - mikrotik
+    # - mikrotik
+    # - gtk
+    # - kitty
+    # - latex
+    # - newsboat
+    # - mpv
+    # - mpd
+    # - etckeeper
+      #- dropbox
 
-- hosts: archy
-  tags: archy
+- hosts: vortan
+  tags: vortan
   connection: local
   roles:
-    - aws
-    - k8s
+    #- aws
+    #- k8s
     - xps9750
-    - wireguard
+    #- wireguard
 
 - hosts: dutchman
   tags: dutchman

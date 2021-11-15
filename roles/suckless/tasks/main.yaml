@@ -3,3 +3,14 @@
   kewlfft.aur.aur:
     use: paru
     name: libxft-bgra
+  when: ansible_distribution == "Archlinux"
+
+- name: Install needed libs to st
+  apt:
+    name:
+      - xutils-dev
+      - libharfbuzz-bin
+      - libharfbuzz-dev
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

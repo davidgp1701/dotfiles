@@ -127,7 +127,7 @@ super + Return
 
 # program launcher
 super + @space
-	/usr/bin/dmenu_run
+	dmenu_run
 
 # screenshot
 super + shift + s
