@@ -1,4 +1,5 @@
 ---
+# Arch Linux
 - name: Installs pulseaudio
   pacman:
     name: pulseaudio
@@ -19,13 +20,6 @@
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Installs playerctl
-  apt:
-    name: playerctl
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install pulseaudio-alsa
   pacman:
@@ -48,13 +42,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Install Pavucontrol
-  apt:
-    name: pavucontrol
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure pulse-audio-bluetooth is not present
   pacman:
     name: pulse-audio-bluetooth
@@ -75,6 +62,55 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
+# Debian systems
+- name: Installs pulseaudio
+  apt:
+    name: pulseaudio
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Uninstalls pulseaudio-dlna
+  apt:
+    name: pulseaudio-dlna
+    state: absent
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+- name: Installs pulseaudio-bluetooth
+  apt:
+    name: pulseaudio-module-bluetooth
+    state: absent
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs libspa-bluetooth
+  apt:
+    name: libspa-0.2-bluetooth
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs pipewire-audio-client-libraries
+  apt:
+    name: pipewire-audio-client-libraries
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs playerctl
+  apt:
+    name: playerctl
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install Pavucontrol
+  apt:
+    name: pavucontrol
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
 - name: Install pulsemixer
   apt:
     name: pulsemixer
@@ -82,6 +118,7 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
+# Common all systems
 - name: Configures personal USB DACs
   ansible.builtin.copy:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/modprobe.d/alsa.conf"

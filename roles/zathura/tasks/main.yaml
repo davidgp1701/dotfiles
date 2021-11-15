@@ -4,12 +4,32 @@
     name: zathura
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Zathura PDF reader
+  apt:
+    name: zathura
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install Zathura PDF plugin
   pacman:
     name: zathura-pdf-mupdf
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Zathura plugins
+  apt:
+    name:
+      - zathura-cb
+      - zathura-djvu
+      - zathura-pdf-poppler
+      - zathura-ps
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for zathura
   file:

@@ -46,28 +46,28 @@
     - bluetooth
     - bspwm
     - dunst
-    # - fstrim
+    - fstrim
     - firefox
     - google-chrome
-    # - ntp
+    - gtk
+    - hashicorp
+    - kitty
+    - mikrotik
+    # - mpv
+    - newsboat
+    - ntp
     - polybar
-    # - powertop
-    # - rust
+    - powertop
+    - rust
+    - spotify
     - suckless
     - task
-    # - terraform
-    # - vconsole
+    - vconsole
     - wifi
     - xorg
-    # - zathura
-    # - spotify
+    - zathura
     - work
-    # - mikrotik
-    # - gtk
-    # - kitty
     # - latex
-    # - newsboat
-    # - mpv
     # - mpd
     # - etckeeper
       #- dropbox

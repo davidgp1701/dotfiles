@@ -169,6 +169,13 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
+- name: Ensure libsqlite3-dev is installed as requirement
+  apt:
+    name: libsqlite3-dev
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
 - name: Ensure openssl is installed as requirement
   pacman:
     name: openssl

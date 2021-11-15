@@ -4,6 +4,7 @@
     name: util-linux
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Activate fstrim timer systemd service
   ansible.builtin.systemd:
