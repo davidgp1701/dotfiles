@@ -5,7 +5,7 @@
     name: neovim
     state: absent
   when: ansible_distribution == "Archlinux"
-   
+
 - name: Ensure nvim normal package is not installed
   become: true
   apt:
@@ -19,7 +19,7 @@
     name: bat
     state: present
   when: ansible_distribution == "Archlinux"
-   
+
 - name: Telescope uses this tool to show files previews
   become: true
   apt:
@@ -67,6 +67,14 @@
   apt:
     name: fd-find
     state: present
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Links fd to fd-find
+  file:
+    src: /usr/bin/fdfind
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/fd"
+    state: link
+    force: yes
   when: ansible_facts['os_family'] == "Debian"
 
 - name: Install tree-sitter
@@ -189,7 +197,7 @@
 
 - name: Install Debian NeoVim build dependencies
   apt:
-    name: 
+    name:
       - ninja-build
       - gettext
       - libtool
