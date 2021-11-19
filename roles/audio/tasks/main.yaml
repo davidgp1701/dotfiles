@@ -66,7 +66,7 @@
 - name: Installs pulseaudio
   apt:
     name: pulseaudio
-    state: present
+    state: absent
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
