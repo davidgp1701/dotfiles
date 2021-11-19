@@ -27,6 +27,13 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
+- name: Install linux-firmware
+  apt:
+    name: firmware-linux
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
 - name: Install dash for faster sh scripts
   pacman:
     name: dash
