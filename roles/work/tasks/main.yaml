@@ -119,3 +119,15 @@
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
+
+- name: Get the latests draw.io release
+  shell: curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest | grep browser_download_url | grep '\.deb' | cut -d '"' -f 4
+  register: drawio_version
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install latest version of draw.io
+  apt:
+    deb: '{{ drawio_version.stdout }}'
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
