@@ -1,6 +1,0 @@
----
-- name: Installs Terraform Language Server
-  kewlfft.aur.aur:
-    use: paru
-    name: terraform-ls
-

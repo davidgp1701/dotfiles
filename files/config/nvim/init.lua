@@ -20,6 +20,7 @@ require('cfg_vim-rooter')
 -- Still in Vimscript
 vim.cmd('source ~/.config/nvim/vimscript/cyclest.vim')
 vim.cmd('source ~/.config/nvim/vimscript/filetypes.vim')
+vim.cmd('source ~/.config/nvim/vimscript/fugitive.vim')
 -- vim.cmd('source ~/.config/nvim/vimscript/vimwiki.vim')
 
 -- LSP

@@ -1,57 +1,124 @@
 ---
+# Arch Linux
 - name: Installs pulseaudio
   pacman:
     name: pulseaudio
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs libpulse (adds pactl)
   pacman:
     name: libpulse
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs playerctl
   pacman:
     name: playerctl
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install pulseaudio-alsa
   pacman:
     name: pulseaudio-alsa
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install necessary LDAC libs
   pacman:
     name: libldac
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
-- name: Install necessary LDAC libs
+- name: Install Pavucontrol
   pacman:
     name: pavucontrol
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Ensure pulse-audio-bluetooth is not present
   pacman:
     name: pulse-audio-bluetooth
     state: absent
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs extra bluetooth codecs
   kewlfft.aur.aur:
     use: paru
     name: pulseaudio-modules-bt
+  when: ansible_distribution == "Archlinux"
 
 - name: Install pulsemixer
   pacman:
     name: pulsemixer
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
+# Debian systems
+- name: Installs pulseaudio
+  apt:
+    name: pulseaudio
+    state: absent
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Uninstalls pulseaudio-dlna
+  apt:
+    name: pulseaudio-dlna
+    state: absent
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+- name: Installs pulseaudio-bluetooth
+  apt:
+    name: pulseaudio-module-bluetooth
+    state: absent
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs libspa-bluetooth
+  apt:
+    name: libspa-0.2-bluetooth
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs pipewire-audio-client-libraries
+  apt:
+    name: pipewire-audio-client-libraries
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installs playerctl
+  apt:
+    name: playerctl
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install Pavucontrol
+  apt:
+    name: pavucontrol
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install pulsemixer
+  apt:
+    name: pulsemixer
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+# Common all systems
 - name: Configures personal USB DACs
   ansible.builtin.copy:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/modprobe.d/alsa.conf"

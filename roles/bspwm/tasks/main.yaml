@@ -4,6 +4,14 @@
     name: bspwm
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install BSPWM
+  apt:
+    name: bspwm
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for BSPWM
   file:
@@ -31,6 +39,14 @@
     name: sxhkd
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install sxhkd
+  apt:
+    name: sxhkd
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for sxhkd
   file:
@@ -44,18 +60,38 @@
     name: dmenu
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install needed libs to build dmenu
+  apt:
+    name:
+      - libxinerama-dev
+      - libxft-dev
+      - libxft2
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure picom is installed
   pacman:
     name: picom
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Ensure picom is installed
+  apt:
+    name: picom
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure clipmenud is installed
   pacman:
     name: clipmenu
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 # Betterlock screen configuration
 - name: Install imagemagick required by the package
@@ -63,22 +99,67 @@
     name: imagemagick
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install imagemagick required by the package
+  apt:
+    name: imagemagick
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs i3lock
   kewlfft.aur.aur:
     use: paru
     name: i3lock-color
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs i3lock-color necessary build dependencies
+  apt:
+    name:
+      - autoconf
+      - gcc
+      - make
+      - pkg-config
+      - libpam0g-dev
+      - libcairo2-dev
+      - libfontconfig1-dev
+      - libxcb-composite0-dev
+      - libev-dev
+      - libx11-xcb-dev
+      - libxcb-xkb-dev
+      - libxcb-xinerama0-dev
+      - libxcb-randr0-dev
+      - libxcb-image0-dev
+      - libxcb-util0-dev
+      - libxcb-xrm-dev
+      - libxcb-xtest0-dev
+      - libxkbcommon-dev
+      - libxkbcommon-x11-dev
+      - libjpeg-dev
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs betterlockscreen
   kewlfft.aur.aur:
     use: paru
     name: betterlockscreen
+  when: ansible_distribution == "Archlinux"
 
 - name: Install flameshot for screencapture
   pacman:
     name: flameshot
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install flameshot for screencapture
+  apt:
+    name: flameshot
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Ensure screenshots folder exists
   ansible.builtin.file:

@@ -9,6 +9,14 @@
     name: gnupg
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+   
+- name: Install GnuPG
+  apt:
+    name: gnupg
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure directories are 0700 for GnuPG
   environment:
@@ -32,6 +40,14 @@
     name: pinentry
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Add pinentry to GPG agent
+  apt:
+    name: pinentry-gnome3
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Copy gpg-agent config file
   ansible.builtin.copy:

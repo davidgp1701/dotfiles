@@ -3,11 +3,18 @@
 
 PS1='[\u@\h \W]\$ '
 
+[[ -f ~/.profile ]] && . ~/.profile
+
 # Load personal configuration shell files
 for f in ~/.config/shellconfigs/*; do source "$f"; done
 
 HISTFILE="$XDG_DATA_HOME"/bash/history
 export HISTFILE
+
+PATH="${PATH}:${HOME}/.local/bin"
+export PATH
+
+alias ls="ls --color"
 
 # ASDF Configuration
 if [[ -f "$HOME/.local/asdf/asdf.sh" ]]; then

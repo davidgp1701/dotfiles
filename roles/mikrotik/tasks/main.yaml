@@ -3,6 +3,14 @@
   kewlfft.aur.aur:
     use: paru
     name: snapd
+  when: ansible_distribution == "Archlinux"
+
+- name: Ensure snapd is installed for Mikrotik Winbox
+  apt:
+    name: snapd
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Activate Snapd systemd service
   ansible.builtin.systemd:
@@ -18,6 +26,7 @@
     state: link
     force: yes
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install Winbox as an Snap package
   community.general.snap:

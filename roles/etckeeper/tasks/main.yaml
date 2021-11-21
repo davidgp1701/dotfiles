@@ -1,10 +1,18 @@
 ---
 - name: Installs etckeeper
-  become: yes
+  become: true
   pacman:
     name: etckeeper
     state: present
-  
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs etckeeper
+  become: true
+  apt:
+    name: etckeeper
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
+
 - name: Activate etckeeper timer systemd service
   ansible.builtin.systemd:
     state: started

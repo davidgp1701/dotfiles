@@ -3,6 +3,7 @@
   kewlfft.aur.aur:
     use: paru
     name: starship
+  when: ansible_distribution == "Archlinux"
 
 - name: Make sure local config exists
   file:

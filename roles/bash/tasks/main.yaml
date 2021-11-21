@@ -10,6 +10,14 @@
     name: shellcheck
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install shellcheck
+  apt:
+    name: shellcheck
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Update profile file
   file:
@@ -20,14 +28,14 @@
 
 - name: Update bash profile file
   file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/.config/bash/bash_profile"
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bash/bash_profile"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.bash_profile"
     state: link
     force: yes
 
 - name: Update bashrc file
   file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/.config/bash/bashrc"
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bash/bashrc"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.bashrc"
     state: link
     force: yes
@@ -42,7 +50,6 @@
     path: "{{ lookup( 'env', 'HOME' ) }}/.local/share/bash"
     state: directory
     mode: '0755'
-
 
 - name: Create Bash history file if it does not exists
   ansible.builtin.file:

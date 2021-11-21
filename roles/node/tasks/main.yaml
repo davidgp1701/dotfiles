@@ -3,7 +3,15 @@
   pacman:
     name: nodejs
     state: present
-  become: yes
+  become: true
+  when: ansible_distribution == "Archlinux"
+   
+- name: Install node 
+  apt:
+    name: nodejs
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Update npm configuration
   ansible.builtin.script: configure_npm.sh
@@ -12,4 +20,12 @@
   pacman:
     name: npm 
     state: present
-  become: yes
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install npm 
+  apt:
+    name: npm 
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

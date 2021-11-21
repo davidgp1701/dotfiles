@@ -1,9 +1,17 @@
 ---
 - name: Install Wireguard Tools
-  become: yes
+  become: true
   pacman:
     name: wireguard-tools
     state: present
+  when: ansible_distribution == "Archlinux"
+
+- name: Install Wireguard Tools
+  become: true
+  apt:
+    name: wireguard-tools
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Configure Wireguard casa connection
   become: yes

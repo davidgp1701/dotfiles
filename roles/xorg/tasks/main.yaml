@@ -4,115 +4,199 @@
     name: xorg
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install Xinit
   pacman:
     name: xorg-xinit
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install arandr
   pacman:
     name: arandr
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install arandr
+  apt:
+    name: arandr
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install xdotool
   pacman:
     name: xdotool
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install xdotool
+  apt:
+    name: xdotool
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install xdo
   pacman:
     name: xdo
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install xdo
+  apt:
+    name: xdo
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install light to control screen backlight
   pacman:
     name: light
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install light to control screen backlight
+  apt:
+    name: light
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install nerdfonts Cascadia Code
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-cascadia-code
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Fantasque
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-fantasque-sans-mono
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Fira Code
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-fira-code
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Hack
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-hack
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Jetbrains Mono
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-jetbrains-mono
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Overpass
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-overpass
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Roboto Mono
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-roboto-mono
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Source Code Pro
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-source-code-pro
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Terminus
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-terminus
+  when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Ubuntu Mno
   kewlfft.aur.aur:
     use: paru
     name: nerd-fonts-ubuntu-mono
+  when: ansible_distribution == "Archlinux"
 
 - name: Install noto-fonts-emoji
   pacman:
     name: noto-fonts-emoji
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install noto-fonts-emoji
+  apt:
+    name: fonts-noto-color-emoji
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install tff-dejavu (needed for gtop)
   pacman:
     name: ttf-dejavu
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install tff-dejavu (needed for gtop)
+  apt:
+    name: fonts-dejavu-core
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install JoyPixels emoji font
   pacman:
     name: ttf-joypixels
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Install symbola ttf emoji font
   kewlfft.aur.aur:
     use: paru
     name: ttf-symbola
+  when: ansible_distribution == "Archlinux"
+
+- name: Install symbola ttf emoji font
+  apt:
+    name: fonts-symbola
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install feh
   pacman:
     name: feh
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Install feh
+  apt:
+    name: feh
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install dbus-X11
+  apt:
+    name: dbus-x11
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links switch-layout script
   file:
@@ -125,3 +209,12 @@
   kewlfft.aur.aur:
     use: paru
     name: colorpicker
+  when: ansible_distribution == "Archlinux"
+
+- name: Disable lightdm
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: no
+    name: lightdm
+  become: true
+  when: ansible_facts['os_family'] == "Debian"

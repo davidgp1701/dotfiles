@@ -5,13 +5,18 @@
 # execute ansible-pull                         #
 ################################################
 
-set -uo pipefail
+set -euo pipefail
 IFS=$'\n\t'
 
-# For the moment only for Arch Linux
+bw_version="1.19.1"
+bw_url="https://github.com/bitwarden/cli/releases/download/v${bw_version}/bw-linux-${bw_version}.zip"
+
+# Detect first the Linux variant
+os_id="$( grep '^ID=' /etc/os-release | cut -d'=' -f2 )"
 
 # Update the system first
 # sudo pacman --noconfirm -Syu
+# sudo apt full-upgrade
 
 # Set the XDG configuration environment
 XDG_CONFIG_HOME="${HOME}/.config"
@@ -22,7 +27,7 @@ export XDG_CACHE_HOME
 export XDG_DATA_HOME
 
 CARGO_HOME="$XDG_DATA_HOME/cargo"
-export $CARGO_HOME
+export CARGO_HOME
 
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_DATA_HOME
@@ -47,40 +52,82 @@ echo 'NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc' >> "$HOME"/.bashrc
 echo 'export NODE_REPL_HISTORY' >> "$HOME"/.bashrc
 echo 'export NPM_CONFIG_USERCONFIG' >> "$HOME"/.bashrc
 
+# Add local bin to PATH
+echo 'PATH="$PATH:$HOME/.local/bin"' >> "$HOME"/.bashrc
+
+install_package() {
+  local _package_arch="$1"
+  local _package_debian="$2"
+
+  if [ "$os_id" == "arch" ]
+  then
+    if ! sudo pacman -Qi "$_package_arch"
+    then
+      sudo pacman --noconfirm -S "$_package_arch"
+    fi
+  elif [ "$os_id" == "debian" ]
+  then
+    if ! sudo dpkg -s "$_package_debian"
+    then
+      sudo apt-get install -y "$_package_debian"
+    fi
+  else
+    echo "Distro family: ${os_id} no supported"
+    exit 1
+  fi
+} 
+    
+     
 # Install Ansible to manage dotfiles
-if ! sudo pacman -Qi ansible
-then
-  sudo pacman --noconfirm -S ansible
-fi
+install_package ansible ansible
 
 # Install git
-if ! sudo pacman -Qi git
-then
-  sudo pacman --noconfirm -S git
-fi
+install_package git git
+
+# Install curl
+install_package curl curl
 
 # Install bitwarden CLI
-if ! sudo pacman -Qi bitwarden-cli
+
+if [ "$os_id" == "arch" ]
 then
-  sudo pacman --noconfirm -S bitwarden-cli
-fi
+  install_package bitwarden-cli not_available
+elif [ "$os_id" == "debian" ]
+then
+  curl -L "$bw_url" --output /tmp/bw.zip
+  pushd /tmp
+    unzip bw.zip
+    [[ -d "${HOME}/.local/bin" ]] || mkdir -p "${HOME}/.local/bin"
+    mv bw "${HOME}/.local/bin"
+    chmod +x "${HOME}/.local/bin/bw"
+    rm bw.zip
+  popd
+fi	
 
 # Install jq
-if ! sudo pacman -Qi jq
-then
-  sudo pacman --noconfirm -S jq
-fi
+install_package jq jq
 
-# Install paru to manage aur packages
-sudo pacman --noconfirm -S --needed base-devel
+# Install build essentials
+install_package base_devel build-essential
 
-if ! sudo pacman -Qi paru 
+# Ensure Paru is installed in Arch systems
+if [ "$os_id" == "arch" ]
 then
-  git clone https://aur.archlinux.org/paru.git /tmp/paru
-  pushd /tmp/paru
-    makepkg -si --noconfirm
-  popd
+  if ! sudo pacman -Qi paru 
+  then
+    git clone https://aur.archlinux.org/paru.git /tmp/paru
+    pushd /tmp/paru
+      makepkg -si --noconfirm
+    popd
+  fi
 fi
 
 # Install AUR ansible plugin
 ansible-galaxy collection install kewlfft.aur
+
+# Ensure config folder Bitwarden exits
+[[ -d "${HOME}/.config/Bitwarden" ]] || mkdir -p "${HOME}/.config/Bitwarden"
+
+# Ensure log folder for Ansible exists
+[[ -d "${HOME}/.local/var/log" ]] || mkdir -p "${HOME}/.local/var/log"
+
