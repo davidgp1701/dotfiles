@@ -417,7 +417,7 @@
   ansible.builtin.git:
     repo: https://github.com/asdf-vm/asdf.git
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/asdf"
-    version: master
+    # version: master
 
 - name: Ensure ASDF data folder exists
   ansible.builtin.file:
@@ -439,43 +439,37 @@
   ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }}
 
 - name: Set default to system for docker-compose in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh awscli {{ docker_compose.version }}
+  ansible.builtin.script: install_asdf_plugin.sh docker-compose {{ docker_compose.version }}
 
 - name: Set default to system for editorconfig-checker in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh awscli {{ editor_config.version }}
+  ansible.builtin.script: install_asdf_plugin.sh editorconfig-checker {{ editor_config.version }}
 
 - name: Set default to system for golang in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh awscli {{ golang.version }}
-
-- name: Set default to system for hadolint in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh awscli {{ hadolint.version }}
+  ansible.builtin.script: install_asdf_plugin.sh golang {{ golang.version }}
 
 - name: Set default to system for java in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh awscli {{ java.version }}
+  ansible.builtin.script: install_asdf_plugin.sh java {{ java.version }}
 
 - name: Set default to system for nodejs in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ nodejs.version }}
+  ansible.builtin.script: install_asdf_plugin.sh nodejs {{ nodejs.version }}
 
 - name: Set default to system for python in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ python.version }}
+  ansible.builtin.script: install_asdf_plugin.sh python {{ python.version }}
 
 - name: Set default to system for shellcheck in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ shellcheck.version }}
+  ansible.builtin.script: install_asdf_plugin.sh shellcheck {{ shellcheck.version }}
 
 - name: Set default to system for shfmt in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ shfmt.version }}
+  ansible.builtin.script: install_asdf_plugin.sh shfmt {{ shfmt.version }}
 
 - name: Set default to system for terraform in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ terraform.version }}
+  ansible.builtin.script: install_asdf_plugin.sh terraform {{ terraform.version }}
 
 - name: Set default to system for terraform-docs in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ terraform_docs.version }}
-
-- name: Set default to system for tflint in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ tflint.version }}
+  ansible.builtin.script: install_asdf_plugin.sh terraform-docs {{ terraform_docs.version }}
 
 - name: Set default to system for tfsec in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh websocat {{ tfsec.version }}
+  ansible.builtin.script: install_asdf_plugin.sh tfsec {{ tfsec.version }}
 
 - name: Install asdf websocat plugin
   ansible.builtin.script: install_asdf_plugin.sh websocat {{ websocat.version }}

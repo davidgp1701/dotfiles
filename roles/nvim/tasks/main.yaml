@@ -131,7 +131,6 @@
   npm:
     name: vim-language-server
     global: yes
-  become: true
 
 - name: Installs the lua-language-server
   kewlfft.aur.aur:
@@ -190,7 +189,6 @@
     state: latest
 
 - name: Install "Node.js Neovim Provider"
-  become: true
   community.general.npm:
     name: neovim
     global: yes

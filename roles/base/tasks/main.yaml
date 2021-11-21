@@ -6,6 +6,13 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
+- name: Install xdg-user-dirs
+  pacman:
+    name: xdg-user-dirs
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
 - name: Install usbutils
   pacman:
     name: usbutils

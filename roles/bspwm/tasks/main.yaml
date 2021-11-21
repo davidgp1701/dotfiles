@@ -159,7 +159,7 @@
     name: flameshot
     state: present
   become: true
-  when: ansible_distribution == "Archlinux"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure screenshots folder exists
   ansible.builtin.file:

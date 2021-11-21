@@ -3,7 +3,6 @@
   community.general.npm:
     name: bash-language-server
     global: yes
-  become: yes
 
 - name: Install shellcheck
   pacman:
