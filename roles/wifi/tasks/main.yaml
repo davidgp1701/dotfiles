@@ -24,8 +24,8 @@
 
 - name: Activate iwd systemd service
   ansible.builtin.systemd:
-    state: started
-    enabled: yes
+    state: disabled
+    enabled: false
     name: iwd.service
   become: true
   when: ansible_facts['os_family'] == "Debian"

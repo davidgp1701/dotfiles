@@ -4,12 +4,28 @@
     name: mpd
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs mpd latest version
+  apt:
+    name: mpd
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs mpc latest version
   pacman:
     name: mpc
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs mpc latest version
+  apt:
+    name: mpc
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for mpd
   file:
@@ -35,11 +51,20 @@
     name: ncmpcpp
     state: absent
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Ensure official ncmpcpp package is not installated
+  apt:
+    name: ncmpcpp
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install the NCurses Music Player Client Plus Plus ncmpcpp
   kewlfft.aur.aur:
     use: paru
     name: ncmpcpp-git
+  when: ansible_distribution == "Archlinux"
 
 - name: Wrapper for ncmpcpp
   file:
@@ -59,6 +84,16 @@
     name: beets
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs beets
+  apt:
+    name:
+      - beets
+      - beets-doc
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure beets music folder
   ansible.builtin.file:
@@ -90,11 +125,20 @@
     name: python-pylast
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Ensure pylast is installed
+  apt:
+    name: python3-pylast
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs mpd-notification
   kewlfft.aur.aur:
     use: paru
     name: mpd-notification
+  when: ansible_distribution == "Archlinux"
 
 - name: Links beets configuration file
   file:
@@ -115,24 +159,49 @@
     name: ueberzug
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs tmux for displaying images in terminal
   pacman:
     name: tmux
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs tmux for displaying images in terminal
+  apt:
+    name: tmux
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs inotify-tools for displaying images in terminal
   pacman:
     name: inotify-tools
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs inotify-tools for displaying images in terminal
+  apt:
+    name: inotify-tools
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Installs ffmpeg for displaying images in terminal
   pacman:
     name: ffmpeg
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs ffmpeg for displaying images in terminal
+  apt:
+    name: ffmpeg
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: Links config file for ncmpcpp
   file:

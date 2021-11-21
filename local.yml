@@ -45,6 +45,7 @@
     - aws
     - bluetooth
     - bspwm
+    - etckeeper
     - dunst
     - fstrim
     - firefox
@@ -52,8 +53,10 @@
     - gtk
     - hashicorp
     - kitty
+    - latex
     - mikrotik
-    # - mpv
+    - mpd
+    - mpv
     - newsboat
     - ntp
     - polybar
@@ -67,19 +70,15 @@
     - xorg
     - zathura
     - work
-    # - latex
-    # - mpd
-    # - etckeeper
-      #- dropbox
 
 - hosts: vortan
   tags: vortan
   connection: local
   roles:
-    #- aws
-    #- k8s
+    - aws
+    - k8s
     - xps9750
-    #- wireguard
+    - wireguard
 
 - hosts: dutchman
   tags: dutchman
