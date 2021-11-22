@@ -3,12 +3,15 @@
   kewlfft.aur.aur:
     use: paru
     name: dropbox
+    state: present
+  when: ansible_distribution == "Archlinux"
 
 - name: Install python-gpgme requiered by Dropbox
   pacman:
     name: python-gpgme
     state: present
   become: true
+  when: ansible_distribution == "Archlinux"
 
 - name: Activate dropbox service for user
   ansible.builtin.systemd:
