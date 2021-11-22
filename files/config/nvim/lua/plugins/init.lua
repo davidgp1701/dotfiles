@@ -29,7 +29,7 @@ return require('packer').startup(function()
   use {'savq/melange'}
   use {'tjdevries/colorbuddy.vim'}
   use {'tjdevries/gruvbuddy.nvim'}
-	use {'tiagovla/tokyodark.nvim'}
+  use 'folke/tokyonight.nvim'
   use {'arcticicestudio/nord-vim', branch = 'develop' }
 
 	-- Tabs
