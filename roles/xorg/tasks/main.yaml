@@ -199,9 +199,22 @@
   when: ansible_facts['os_family'] == "Debian"
 
 - name: Links switch-layout script
-  file:
+  ansible.builtin.file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/switch-layout.sh"
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/switch-layout.sh"
+    state: link
+    force: yes
+
+- name: Make sure the config X11 folder exists
+  ansible.builtin.file:
+    path: "{{ lookup( 'env', 'HOME' ) }}/.config/X11"
+    state: directory
+    mode: '0755'
+
+- name: Links Xresources file
+  ansible.builtin.file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/X11/Xresources"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/X11/xresources"
     state: link
     force: yes
 
