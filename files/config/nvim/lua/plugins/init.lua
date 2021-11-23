@@ -95,4 +95,10 @@ return require('packer').startup(function()
   -- Use .editorconfig file from projects for indents
   use {'editorconfig/editorconfig-vim'}
 
+  -- Neovim Org mode
+  use {
+    'nvim-neorg/neorg',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+
 end)

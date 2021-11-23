@@ -16,6 +16,7 @@ require('cfg_nvim-tree')
 require('cfg_terraform')
 require('cfg_treesitter')
 require('cfg_vim-rooter')
+require('cfg_neorg')
 
 -- Still in Vimscript
 vim.cmd('source ~/.config/nvim/vimscript/cyclest.vim')

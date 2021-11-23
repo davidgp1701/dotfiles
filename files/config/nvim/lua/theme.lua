@@ -7,7 +7,7 @@ vim.g.gruvbox_italic=1
 -- vim.g.airline_theme='gruvbox'
 
 -- Tokyonight color scheme
-vim.g.tokyonight_style='storm'
+vim.g.tokyonight_style='night'
 
 vim.cmd[[colorscheme tokyonight]]
 -- Active colorscheme
