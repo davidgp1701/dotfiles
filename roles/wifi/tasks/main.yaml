@@ -25,7 +25,7 @@
 
 - name: Activate iwd systemd service
   ansible.builtin.systemd:
-    state: disabled
+    state: stopped
     enabled: false
     name: iwd.service
   become: true
