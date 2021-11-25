@@ -9,7 +9,7 @@ $terraform\
 $python\
 $java\
 $git_branch\
-$git_status 
+$git_status
 $character
 """
 # format = """
@@ -17,9 +17,10 @@ $character
 # [└─ ](bold green) $character"""
 
 [character]
-success_symbol ="[➜](bold green) " 
-error_symbol = "[✗ ](bold red)"
-vicmd_symbol = "[ ](bold green)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
+# vicmd_symbol = "[ ](bold green)"
 
 [aws]
 format = 'on [$symbol $profile]($style) '
@@ -57,5 +58,5 @@ symbol = "🐍 "
 
 [java]
 format = '| [${symbol}${version}]($style) '
-symbol = "☕ " 
+symbol = "☕ "
 style = "red"
