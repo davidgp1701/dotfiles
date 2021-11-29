@@ -49,6 +49,7 @@
     - dunst
     - fstrim
     - firefox
+    - git-sync
     - google-chrome
     - gtk
     - hashicorp
