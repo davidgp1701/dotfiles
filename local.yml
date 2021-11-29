@@ -61,6 +61,7 @@
     - ntp
     - polybar
     - powertop
+    - print
     - rust
     - spotify
     - suckless
