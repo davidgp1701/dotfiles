@@ -1,6 +1,6 @@
-alias ls="ls --color"
+alias ls="exa"
 alias ll="ls --color -la"
-alias l="lsd -ha --group-dirs first"
+alias l="ls"
 
 alias wbarcelona="curl wttr.in/barcelona"
 alias wsantiago="curl wttr.in/santiago-de-compostela"
