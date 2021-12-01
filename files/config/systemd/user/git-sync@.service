@@ -1,0 +1,8 @@
+[Unit]
+Description=%i folder to be automatically synced with Github repo
+
+[Service]
+Type=simple
+WorkingDirectory=/home/david/Documents/synced/%i
+ExecStart=/home/david/.local/bin/git-sync-on-inotify.sh
+Nice=19

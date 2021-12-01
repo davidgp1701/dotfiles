@@ -49,6 +49,7 @@
     - dunst
     - fstrim
     - firefox
+    - git-sync
     - google-chrome
     - gtk
     - hashicorp
@@ -61,6 +62,7 @@
     - ntp
     - polybar
     - powertop
+    - print
     - rust
     - spotify
     - suckless

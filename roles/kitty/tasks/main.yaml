@@ -11,3 +11,11 @@
     state: present
   become: true
   when: ansible_facts['os_family'] == "Debian"
+
+- name: Links Kitty configuration file
+  file:
+    src: "{{ lookup( 'env', 'ROOTDIR' ) }}/files/config/kitty/kitty.conf"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/kitty/kitty.conf"
+    state: link
+    force: yes
+
