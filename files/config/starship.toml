@@ -22,11 +22,6 @@ error_symbol = "[❯](bold red)"
 vicmd_symbol = "[❮](bold green)"
 # vicmd_symbol = "[ ](bold green)"
 
-[aws]
-format = 'on [$symbol $profile]($style) '
-style = "bold yellow"
-symbol = "☁️ "
-
 [directory]
 truncation_length = 8
 truncation_symbol = "…/"
@@ -34,7 +29,7 @@ format = "[$path]($style) "
 
 [env_var]
 variable="AWS_PROFILE"
-format = '| [$symbol $env_value]($style) '
+format = '| [$symbol$env_value]($style) '
 style = "bold fg:214"
 symbol = "☁️ "
 #symbol = "🅰 "
