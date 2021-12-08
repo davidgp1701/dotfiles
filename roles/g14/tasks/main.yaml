@@ -152,5 +152,5 @@
     state: started
     enabled: yes
     masked: no
-    name: supergfxctd.service
+    name: supergfxd.service
   become: true
