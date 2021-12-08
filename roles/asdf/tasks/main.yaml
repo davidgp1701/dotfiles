@@ -438,9 +438,6 @@
 - name: Install asdf direnv plugin
   ansible.builtin.script: install_asdf_plugin.sh direnv {{ direnv.version }}
 
-- name: Set default to system for docker-compose in ASDF
-  ansible.builtin.script: install_asdf_plugin.sh docker-compose {{ docker_compose.version }}
-
 - name: Set default to system for editorconfig-checker in ASDF
   ansible.builtin.script: install_asdf_plugin.sh editorconfig-checker {{ editor_config.version }}
 
