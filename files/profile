@@ -14,82 +14,6 @@ export TERMINAL
 BROWSER="firefox"
 export BROWSER
 
-# RUST
-CARGO_HOME="$XDG_DATA_HOME/cargo"
-export CARGO_HOME
-
-# NPM
-NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export NODE_REPL_HISTORY
-export NPM_CONFIG_USERCONFIG
-
-#NVM
-export NVM_DIR="$XDG_DATA_HOME"/nvm
-
-# GNUPG configuration
-GNUPGHOME="${XDG_DATA_HOME}/gnupg"
-export GNUPGHOME
-
-# Go configuration
-GOPATH="${XDG_DATA_HOME}/share/goexport"
-export GOPATH
-
-# ZSH config directory
-ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
-export ZDOTDIR
-
-# ZSH Suggestions COLOR
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE
-
-# Gradle XDG config
-GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
-export GRADLE_USER_HOME
-
-# Vagrant XDG config
-VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
-VAGRANT_ALIAS_FILE="${XDG_DATA_HOME}/vagrant/aliases"
-export VAGRANT_ALIAS_FILE
-export VAGRANT_HOME
-
-# Force docker to follow XDG config
-DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
-export DOCKER_CONFIG
-
-# Force task warrior configuration
-TASKRC="${XDG_CONFIG_HOME}/taskrc"
-TASKDATA="${XDG_DATA_HOME}/task"
-export TASKRC
-export TASKDATA
-
-# Force Pylint configuration
-PYLINTHOME="${XDG_CACHE_HOME}/pylint"
-export PYLINTHOME
-
-# Cuda cacha folder
-CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
-export CUDA_CACHE_PATH
-
-# K9s to follow XDG format
-K9SCONFIG="${XDG_CONFIG_HOME}/k9s"
-export K9SCONFIG
-
-# GTK 1.0 configuration files
-GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
-export GTK_RC_FILES
-
-# GTK 2.0 configuration files
-GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
-export GTK2_RC_FILES
-
-# XAuthority file
-XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
-
-# Tree Sitter
-TREE_SITTER_DIR="${XDG_CONFIG_HOME}/tree-sitter"
-export TREE_SITTER_DIR
-
 # ASDF DATA DIR
 ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 export ASDF_DATA_DIR
@@ -102,22 +26,95 @@ export ASDF_PYTHON_DEFAULT_PACKAGES_FILE
 ASDF_NPM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-npm-packages"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE
 
+# Cuda cacha folder
+CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
+export CUDA_CACHE_PATH
+
+# Docker to follow XDG config
+DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export DOCKER_CONFIG
+
+# GNUPG configuration
+GNUPGHOME="${XDG_DATA_HOME}/gnupg"
+export GNUPGHOME
+
+# Go configuration
+GOPATH="${XDG_DATA_HOME}/share/goexport"
+export GOPATH
+
 # GPG TTY
 GPG_TTY="$(tty)"
 export GPG_TTY
+
+# Gradle XDG config
+GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
+export GRADLE_USER_HOME
+
+# GTK 1.0 configuration files
+GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
+export GTK_RC_FILES
+
+# GTK 2.0 configuration files
+GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+export GTK2_RC_FILES
+
+# K9s to follow XDG format
+K9SCONFIG="${XDG_CONFIG_HOME}/k9s"
+export K9SCONFIG
+
+# NPM
+NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export NODE_REPL_HISTORY
+export NPM_CONFIG_USERCONFIG
+
+# NVM
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+
+# Pylint configuration
+PYLINTHOME="${XDG_CACHE_HOME}/pylint"
+export PYLINTHOME
+
+# RUST
+CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CARGO_HOME
+
+# Task warrior configuration
+TASKRC="${XDG_CONFIG_HOME}/taskrc"
+TASKDATA="${XDG_DATA_HOME}/task"
+export TASKRC
+export TASKDATA
+
+# Tree Sitter
+TREE_SITTER_DIR="${XDG_CONFIG_HOME}/tree-sitter"
+export TREE_SITTER_DIR
+
+# Vagrant XDG config
+VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
+VAGRANT_ALIAS_FILE="${XDG_DATA_HOME}/vagrant/aliases"
+export VAGRANT_ALIAS_FILE
+export VAGRANT_HOME
+
+# WGET Configuration
+WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export WGETRC
 
 # WINE
 export WINEPREFIX="${XDG_DATA_HOME}/wine/prefix"
 export WINEPATH="${XDG_DATA_HOME}/wine"
 export WINEARCH="win32"
 
+# XAuthority file
+XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+
 # Zoom data folder
 export SSB_HOME="${XDG_DATA_HOME}"/zoom
 
-# AWS configuration
-# export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-# export AWS_CLI_HISTORY_FILE="$XDG_DATA_HOME/aws/history"
-# export AWS_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/credentials"
-# export AWS_WEB_IDENTITY_TOKEN_FILE="$XDG_DATA_HOME/aws/token"
-# export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
+# ZSH config directory
+ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export ZDOTDIR
+
+# ZSH Suggestions COLOR
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE
 

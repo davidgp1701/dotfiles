@@ -283,3 +283,11 @@
     state: present
   become: true
   when: ansible_facts['os_family'] == "Debian"
+
+- name: Add wget configuration
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/wgetrc"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/wgetrc"
+    state: link
+    force: yes
+  become: true
