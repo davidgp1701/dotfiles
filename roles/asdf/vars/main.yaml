@@ -1,7 +1,7 @@
 awscli:
   version: system
 direnv:
-  version: 2.23.1
+  version: 2.29.0
 docker_credential_secretservice:
   version: 0.6.3
 docker_compose:
