@@ -79,6 +79,10 @@ export PYLINTHOME
 CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_HOME
 
+# SQLite history
+SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export SQLITE_HISTORY
+
 # Task warrior configuration
 TASKRC="${XDG_CONFIG_HOME}/taskrc"
 TASKDATA="${XDG_DATA_HOME}/task"
