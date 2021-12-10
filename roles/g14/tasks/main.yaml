@@ -8,6 +8,20 @@
     mode: '0644'
   become: true
 
+- name: Install the power-profiles-daemon
+  pacman:
+    name: power-profiles-daemon
+    state: latest
+  become: true
+
+- name: Activate power-profiles-daemon service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    masked: no
+    name: power-profiles-daemon.service
+  become: true
+
 - name: Links asus brightness configuration
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/asus_keyboard_backlight.sh"
@@ -114,4 +128,29 @@
     owner: root
     group: root
     mode: '0644'
+  become: true
+
+- name: Configure AsusCTL pacman repo
+  become: true
+  blockinfile:
+    path: /etc/pacman.conf
+    marker: '# ANSIBLE MANAGED BLOCK'
+    insertafter: '^#\[custom\]'
+    block: |
+      [g14]
+      SigLevel = DatabaseNever Optional TrustAll
+      Server = https://arch.asus-linux.org
+
+- name: Install the Supergfxctl - Graphics Switching
+  pacman:
+    name: supergfxctl
+    state: latest
+  become: true
+
+- name: Activate supergfxctd service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    masked: no
+    name: supergfxd.service
   become: true
