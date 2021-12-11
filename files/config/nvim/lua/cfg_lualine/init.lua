@@ -1,6 +1,6 @@
 require('lualine').setup({
   options = {
-    theme = 'tokyonight'
+    theme = 'gruvbox'
   },
   sections = {
     lualine_a = {'mode'},

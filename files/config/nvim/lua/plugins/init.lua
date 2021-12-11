@@ -23,14 +23,16 @@ return require('packer').startup(function()
   use {'kyazdani42/nvim-tree.lua'}
 
   -- Color Themes
-  use {'cocopon/iceberg.vim'}
   --use {'morhetz/gruvbox'}
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use {'savq/melange'}
   use {'tjdevries/colorbuddy.vim'}
-  use {'tjdevries/gruvbuddy.nvim'}
+  -- use {'tjdevries/gruvbuddy.nvim'}
   use 'folke/tokyonight.nvim'
-  use {'arcticicestudio/nord-vim', branch = 'develop' }
+  -- use {'embark-theme/vim', as = 'embark'}
+  use 'katawful/kat.nvim'
+  -- use 'shatur/neovim-ayu'
+  use 'marko-cerovac/material.nvim'
 
 	-- Tabs
 	use {

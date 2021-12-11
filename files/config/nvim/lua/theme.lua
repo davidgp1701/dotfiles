@@ -10,7 +10,7 @@ vim.g.gruvbox_italic=1
 vim.g.tokyonight_style='night'
 vim.g.tokyonight_colors = { comment = "#767fa9" }
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme melange]]
 -- Active colorscheme
 -- vim.cmd[[colorscheme gruvbox]]
 -- vim.cmd("colorscheme tokyodark")
