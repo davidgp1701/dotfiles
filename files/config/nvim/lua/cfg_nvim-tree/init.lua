@@ -3,6 +3,11 @@ require'nvim-tree'.setup {
   disable_netrw       = true,
   -- hijack netrw window on startup
   hijack_netrw        = true,
+
+  git = {
+    ignore = true
+  },
+
   -- open the tree when running this setup function
   open_on_setup       = false,
   -- will not open on setup if the filetype is in this list
@@ -62,7 +67,6 @@ vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git a
 vim.g.nvim_tree_width_allow_resize  = 1 -- 0 by default, will not resize the tree when opening a file
 vim.g.nvim_tree_width = 40 -- 30 by default, can be width_in_columns or 'width_in_percent%'
 vim.g.nvim_tree_side = 'left' -- left by default
-vim.g.nvim_tree_gitignore = 1 -- 0 by default
 -- vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' } -- empty by default, don't auto open tree on specific filetypes.
 vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 vim.g.nvim_tree_root_folder_modifier = ':~' -- This is the default. See :help filename-modifiers for more options

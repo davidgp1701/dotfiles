@@ -81,3 +81,7 @@ vim.cmd('set colorcolumn=80')
 
 --- Always show statusline
 vim.cmd('set laststatus=2')
+
+-- Color theme aspects
+vim.o.background='dark'
+vim.cmd('set termguicolors')
