@@ -30,5 +30,3 @@ require('lsp.lsp-kind')
 require('lsp.lua-ls')
 require('cfg_nvim-cmp')
 
--- Color Theme
-require('theme')

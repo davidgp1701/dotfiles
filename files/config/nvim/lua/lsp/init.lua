@@ -13,3 +13,4 @@ nvim_lsp.pylsp.setup{}
 
 -- Terraform LSP configuraiton
 nvim_lsp.terraformls.setup{}
+

@@ -127,7 +127,7 @@ cmp.setup {
     native_menu = false,
 
     -- Make text to fade a bit
-    ghost_text = true,
+    ghost_text = false,
   },
 }
 
