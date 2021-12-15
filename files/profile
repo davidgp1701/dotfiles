@@ -89,6 +89,14 @@ TASKDATA="${XDG_DATA_HOME}/task"
 export TASKRC
 export TASKDATA
 
+# Terraform CLI config file
+TF_CLI_CONFIG_FILE="${XDG_CONFIG_HOME}/terraformrc"
+export TF_CLI_CONFIG_FILE
+
+# TFLint configuration
+TFLINT_PLUGIN_DIR="${XDG_DATA_HOME}/tflint.d"
+export TFLINT_PLUGIN_DIR
+
 # Tree Sitter
 TREE_SITTER_DIR="${XDG_CONFIG_HOME}/tree-sitter"
 export TREE_SITTER_DIR
@@ -108,7 +116,7 @@ export WINEPREFIX="${XDG_DATA_HOME}/wine/prefix"
 export WINEPATH="${XDG_DATA_HOME}/wine"
 export WINEARCH="win32"
 
-# XAuthority file
+# XAuthority file (this is completely ignored, sniff, sniff...)
 XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 
 # Zoom data folder
