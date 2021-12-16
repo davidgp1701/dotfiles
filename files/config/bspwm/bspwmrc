@@ -49,3 +49,4 @@ bspc config gapless_monocle      true
 # bspc rule -a scratchterm sticky=on state=floating hidden=on
 
 bspc rule -a Zathura state=tiled
+bspc rule -a Peek state=floating
