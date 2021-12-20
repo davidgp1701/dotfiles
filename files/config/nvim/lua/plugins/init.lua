@@ -57,7 +57,11 @@ return require('packer').startup(function()
   -- NeoClip - Clipboard manager
   use {
     "AckslD/nvim-neoclip.lua",
-    requires = {'tami5/sqlite.lua', module = 'sqlite'}
+    requires = {
+      {'tami5/sqlite.lua', module = 'sqlite'},
+      {'nvim-telescope/telescope.nvim'},
+    },
+    config = "require('neoclip-config')"
   }
 
   -- Terraform/Packer/etc.
