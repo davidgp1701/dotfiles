@@ -15,7 +15,10 @@ zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# Add zsh syntax highlighting pluing
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zmodload zsh/complist
+
 compinit
 _comp_options+=(globdots)
 
@@ -90,9 +93,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# Add zsh syntax highlighting pluing
-source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Load zsh autosugestions
 if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]
 then
@@ -128,6 +128,7 @@ fi
 
 # Avoid character duplication using tab
 export LC_CTYPE=en_US.UTF-8
+
 
 # Spaceship Prompt
 autoload -U promptinit; promptinit
