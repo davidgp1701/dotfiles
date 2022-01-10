@@ -131,7 +131,7 @@ super + @space
 
 # screenshot
 super + shift + s
-  flameshot gui -p /home/david/Desktop/screenshots
+  flameshot gui
 
 # clipmenu
 super + shift + v
