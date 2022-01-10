@@ -53,7 +53,7 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure official ncmpcpp package is not installated
+- name: Ensure official ncmpcpp package is installated
   apt:
     name: ncmpcpp
     state: present
@@ -63,7 +63,7 @@
 - name: Install the NCurses Music Player Client Plus Plus ncmpcpp
   kewlfft.aur.aur:
     use: paru
-    name: ncmpcpp-git
+    name: ncmpcpp
   when: ansible_distribution == "Archlinux"
 
 - name: Wrapper for ncmpcpp
