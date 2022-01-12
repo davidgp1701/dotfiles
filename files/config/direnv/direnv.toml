@@ -3,3 +3,4 @@
 [global]
 strict_env=true
 warn_timeout="15s"
+skip_dotenv=true
