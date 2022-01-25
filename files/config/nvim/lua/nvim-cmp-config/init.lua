@@ -92,7 +92,7 @@ cmp.setup {
     { name = "path" },
     -- { name = "luasnip" }, -- TODO enable when playing with snippets
     { name = "buffer", keyword_length = 5 }, -- Only try to replace with buffer matching words if typed at least 5 chars
- --   { name = "neorg" }
+    { name = "neorg" }
   },
 
   sorting = {
