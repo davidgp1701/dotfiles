@@ -53,7 +53,6 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use {'nvim-lua/lsp-status.nvim'}
-  use {'onsails/lspkind-nvim'}
 
   -- Completion plugins
   use {
@@ -67,7 +66,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua"  -- Lua autocompletation
   use "lukas-reineke/cmp-under-comparator" -- Comparators
   use "tamago324/cmp-zsh"  --  Zsh autocomplate
-  use "onsails/lspkind-nvim"
+  use {'onsails/lspkind-nvim'}
 
   -- Color Theme
   use {

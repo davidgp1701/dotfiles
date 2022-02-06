@@ -18,7 +18,8 @@ if not lspkind_status_ok then
    return
 end
 lspkind.init({
-    with_text = false,
+    mode = 'text_symbol',
+
     symbol_map = {
       Text = '  ',
       Method = '  ',
@@ -133,7 +134,7 @@ cmp.setup {
   formatting = {
     -- To show a nice formatting of the different sources for completion
     format = lspkind.cmp_format {
-      with_text = true,
+      mode = 'text_symbol',
       menu = {
         buffer = "[buf]",
         nvim_lsp = "[LSP]",
