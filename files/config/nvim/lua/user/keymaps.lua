@@ -52,7 +52,7 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 
 -- greatest remap ever
-keymap("v", "<leader>p", '"_dp', opts)
+keymap("v", "<leader>p", '"_dp', { noremap = true })
 
 -- next greatest remap ever : asbjornHaland
 keymap('n', '<leader>y', '"+y', opts)
