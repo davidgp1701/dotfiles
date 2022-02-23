@@ -53,20 +53,56 @@ like changing screen backlight in a laptop:
 ```
 usermod -a -G video david
 ```
-## Software not automatically installed
-
-### ST terminal
-
-I'm using the [Suckless Simple Terminal - ST](https://st.suckless.org/) as my main terminal. It is manually installed
-like this:
-
-```
-git clone https://github.com/davidgp1701/st
-cd st
-sudo make install
-```
 
 ## Software that requieres manual steps:
 
 * [NeoVim](./files/config/nvim/README.md)
 * [Etckeeper](./roles/etckeeper/README.md)
+
+## Docker login using pass
+
+Extracting the steps from here: https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092
+
+1. Install pass and gpg
+
+```
+sudo apt-get install pass
+```
+
+or
+
+```
+sudo pacman -S pass
+```
+
+2. Download the latest version of docker-credential-pass: https://github.com/docker/docker-credential-helpers/releases
+
+For Arch you can use the aur:
+
+```
+paru -S docker-credential-pass
+```
+
+3. GPG2 should be already installed by the dotfiles
+
+4. Generate a gpg key for this
+
+```
+gpg2 --gen-key
+```
+
+5. Initialize pass the newly created key:
+
+```
+pass init "key name"
+```
+
+6. Add the following to your docker config:
+
+```
+{
+	"credsStore": "pass"
+}
+```
+
+Now you can perform login to the different docker repositories that require it.
