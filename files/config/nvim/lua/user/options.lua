@@ -53,7 +53,7 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
 
 -- Allow usage of mouse
-vim.o.mouse = "a"
+-- vim.o.mouse = "a"
 
 -- No sounds when error
 vim.o.errorbells = true
