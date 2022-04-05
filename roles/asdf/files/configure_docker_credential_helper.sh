@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-IFS=$'\n\t' 
+IFS=$'\n\t'
 
-helper="secretservice"
+helper="pass"
 docker_config="${HOME}/.config/docker/config.json"
 timestamp="$(date -u +%Y%m%d%H%M%S)"
 
 if [[ -f "$docker_config" ]]
 then
   credsStore="$(jq -r '.credsStore' "$docker_config")"
-  
+
 	# shellcheck disable=SC2076
 	if [[ ! "${credsStore}" =~ "${helper}" ]]
 	then
@@ -26,5 +26,5 @@ else
 }
 END
 fi
-		
+
 chmod 0600 "$docker_config"
