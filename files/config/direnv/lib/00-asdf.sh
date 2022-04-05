@@ -2,5 +2,8 @@
 
 # https://github.com/asdf-community/asdf-direnv#global-asdf-direnv-integration
 set -euo pipefail
-# shellcheck disable=SC1090
-source "$(asdf direnv hook asdf)"
+
+# Mimics what asdf direnv setup command produces
+use_asdf() {
+  source_env "$(asdf direnv envrc "@$")"
+}
