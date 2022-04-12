@@ -4,16 +4,61 @@ if not configs_status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained",
-  ignore_install = { 
-    "devicetree", 
-    "elixir", 
-    "gdscript", 
-    "godotResource", 
-    "ocamllex", 
-    "teal" 
+  ensure_installed = {
+    "bash",
+    "bibtex",
+    "c",
+    "c_sharp",
+    "clojure",
+    "cmake",
+    "comment",
+    "cpp",
+    "css",
+    "cuda",
+    "dart",
+    "dockerfile",
+    "erlang",
+    "glsl",
+    "go",
+    "graphql",
+    "hcl",
+    "help",
+    "hjson",
+    "html",
+    "http",
+    "java",
+    "javascript",
+    "jsdoc",
+    "json5",
+    "kotlin",
+    "latex",
+    "llvm",
+    "lua",
+    "make",
+    "ninja",
+    "norg",
+    "perl",
+    "php",
+    "python",
+    "r",
+    "regex",
+    "rst",
+    "ruby",
+    "rust",
+    "scala",
+    "scheme",
+    "sparql",
+    "todotxt",
+    "toml",
+    "typescript",
+    "vim",
+    "vue",
+    "wgsl",
+    "yaml",
+    "yang",
+    "zig"
   },
-  sync_install = false, 
+  sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
@@ -21,12 +66,12 @@ configs.setup {
     additional_vim_regex_highlighting = true,
 
   },
-  indent = { 
-    enable = true, 
-    disable = { 
+  indent = {
+    enable = true,
+    disable = {
       "python",
       "ruby",
-      "yaml" 
+      "yaml"
     },
   },
   context_commentstring = {
