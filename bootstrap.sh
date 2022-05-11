@@ -22,15 +22,18 @@ os_id="$( grep '^ID=' /etc/os-release | cut -d'=' -f2 )"
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_CACHE_HOME="${HOME}/.cache"
 XDG_DATA_HOME="${HOME}/.local/share"
+XDG_STATE_HOME="${HOME}/.local/state"
 export XDG_CONFIG_HOME
 export XDG_CACHE_HOME
 export XDG_DATA_HOME
+export XDG_STATE_HOME
 
 CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_HOME
 
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_DATA_HOME
+mkdir -p $XDG_STATE_HOME
 
 # Enable this to bash
 echo 'XDG_CONFIG_HOME="${HOME}/.config"' >> "$HOME"/.bashrc
@@ -75,9 +78,9 @@ install_package() {
     echo "Distro family: ${os_id} no supported"
     exit 1
   fi
-} 
-    
-     
+}
+
+
 # Install Ansible to manage dotfiles
 install_package ansible ansible
 
@@ -102,7 +105,7 @@ then
     chmod +x "${HOME}/.local/bin/bw"
     rm bw.zip
   popd
-fi	
+fi
 
 # Install jq
 install_package jq jq
@@ -113,7 +116,7 @@ install_package base_devel build-essential
 # Ensure Paru is installed in Arch systems
 if [ "$os_id" == "arch" ]
 then
-  if ! sudo pacman -Qi paru 
+  if ! sudo pacman -Qi paru
   then
     git clone https://aur.archlinux.org/paru.git /tmp/paru
     pushd /tmp/paru
