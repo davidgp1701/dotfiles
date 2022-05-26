@@ -51,19 +51,18 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
   use {'nvim-lua/lsp-status.nvim'}
-
+  use 'williamboman/nvim-lsp-installer'
+  --
   -- Completion plugins
-  use {
-    "hrsh7th/nvim-cmp",
-    config = "require('nvim-cmp-config')"
-  }
+  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer" -- Buffer completions
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
   use "hrsh7th/cmp-nvim-lua"  -- Lua autocompletation
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
   use "lukas-reineke/cmp-under-comparator" -- Comparators
   use "tamago324/cmp-zsh"  --  Zsh autocomplate
   use {'onsails/lspkind-nvim'}
