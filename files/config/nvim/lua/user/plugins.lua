@@ -51,7 +51,7 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use {'nvim-lua/lsp-status.nvim'}
+  use { 'nvim-lua/lsp-status.nvim' }
   use 'williamboman/nvim-lsp-installer'
   --
   -- Completion plugins
@@ -60,22 +60,28 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
-  use "hrsh7th/cmp-nvim-lua"  -- Lua autocompletation
+  use "hrsh7th/cmp-nvim-lua" -- Lua autocompletation
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use "lukas-reineke/cmp-under-comparator" -- Comparators
-  use "tamago324/cmp-zsh"  --  Zsh autocomplate
-  use {'onsails/lspkind-nvim'}
+  use "tamago324/cmp-zsh" --  Zsh autocomplate
+  use { 'onsails/lspkind-nvim' }
 
   -- Color Theme
+  -- use {
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = "require('rose-pine-config')"
+  -- }
+
   use {
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = "require('rose-pine-config')"
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = "require('catppuccin-config')"
   }
 
   -- Dev Icons
-  use {'kyazdani42/nvim-web-devicons'}
+  use { 'kyazdani42/nvim-web-devicons' }
 
   -- Telescope
   use {
@@ -87,10 +93,10 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
-    run=':TSUpdate',
+    run = ':TSUpdate',
     config = 'require("treesitter-config")',
   }
-  use {'nvim-treesitter/playground'}
+  use { 'nvim-treesitter/playground' }
 
   -- Autopairs
   use {
@@ -113,7 +119,7 @@ return packer.startup(function(use)
   }
 
   -- Git related plugins
-  use {'tpope/vim-fugitive'}
+  use { 'tpope/vim-fugitive' }
 
   -- Nvim-tree
   use {
@@ -121,38 +127,38 @@ return packer.startup(function(use)
     config = 'require("nvim-tree-config")'
   }
 
-	-- New more informative line
+  -- New more informative line
   use {
     'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = 'require("lualine-config")'
   }
   --
-	-- Tabs
-	use {
-		'akinsho/nvim-bufferline.lua',
-		requires = 'kyazdani42/nvim-web-devicons',
+  -- Tabs
+  use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
     config = 'require("bufferline-config")'
-	}
+  }
 
   -- Show indent lines
   use {
     'lukas-reineke/indent-blankline.nvim',
-    branch='master',
+    branch = 'master',
     config = 'require("indentblackline-config")'
   }
 
   -- Basic plugins for me
-  use {'tpope/vim-surround'}
+  use { 'tpope/vim-surround' }
 
   -- Faster horizontal movement
-  use {'unblevable/quick-scope'}
+  use { 'unblevable/quick-scope' }
 
   -- Vim Cyclest to show listchars
-  use {'tjdevries/cyclist.vim'}
+  use { 'tjdevries/cyclist.vim' }
 
   -- Use .editorconfig file from projects for indents
-  use {'editorconfig/editorconfig-vim'}
+  use { 'editorconfig/editorconfig-vim' }
 
   -- Neovim Org mode
   use {
@@ -165,14 +171,14 @@ return packer.startup(function(use)
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
-      {'tami5/sqlite.lua', module = 'sqlite'},
-      {'nvim-telescope/telescope.nvim'},
+      { 'tami5/sqlite.lua', module = 'sqlite' },
+      { 'nvim-telescope/telescope.nvim' },
     },
     config = "require('neoclip-config')"
   }
 
-	-- Show colors from color codes
-	use {
+  -- Show colors from color codes
+  use {
     'norcalli/nvim-colorizer.lua',
     config = 'require("colorizer-config")'
   }
@@ -183,7 +189,7 @@ return packer.startup(function(use)
     config = "require('terraform-config')"
   }
 
-    -- Changes the default root directory
+  -- Changes the default root directory
   use {
     'airblade/vim-rooter',
     config = "require('vim-rooter-config')"
