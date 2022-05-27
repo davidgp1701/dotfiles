@@ -10,7 +10,7 @@ clipmenud &
 /usr/bin/dunst &
 
 # Set background image
-feh --no-fehbg --bg-fill /home/david/Pictures/somonstalenhag.se/l_ash09_big.jpg &
+feh --no-fehbg --bg-fill /home/david/Pictures/shaded_landscape.jpeg &
 
 # Adding pulseaudio service startup
 /usr/bin/start-pulseaudio-x11 &
