@@ -96,7 +96,7 @@ return packer.startup(function(use)
     run = ':TSUpdate',
     config = 'require("treesitter-config")',
   }
-  use { 'nvim-treesitter/playground' }
+  --use { 'nvim-treesitter/playground' }
 
   -- Autopairs
   use {
@@ -137,6 +137,7 @@ return packer.startup(function(use)
   -- Tabs
   use {
     'akinsho/nvim-bufferline.lua',
+    branch = 'main',
     requires = 'kyazdani42/nvim-web-devicons',
     config = 'require("bufferline-config")'
   }
