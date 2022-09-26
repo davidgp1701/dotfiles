@@ -25,3 +25,9 @@
     state: link
     force: yes
 
+- name: Links Kitty configuration file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/kitty"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/kitty"
+    state: link
+    force: yes
