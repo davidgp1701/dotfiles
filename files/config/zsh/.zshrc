@@ -122,9 +122,9 @@ fi
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 # Start X automatically in first TTy
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
+# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#   exec startx
+# fi
 
 # Avoid character duplication using tab
 export LC_CTYPE=en_US.UTF-8
