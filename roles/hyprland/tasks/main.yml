@@ -69,3 +69,18 @@
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/start_hyprland.sh"
     state: link
     force: yes
+
+- name: Installs Gnome polkit
+  pacman:
+    name: polkit-gnome
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Links config file for Wofi
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/wofi"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/wofi"
+    state: link
+    force: yes
+
