@@ -1,12 +1,12 @@
 ---
-- name: Install node 
+- name: Install node
   pacman:
-    name: nodejs
+    name: nodejs-lts-gallium
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-   
-- name: Install node 
+
+- name: Install node
   apt:
     name: nodejs
     state: present
@@ -15,17 +15,17 @@
 
 - name: Update npm configuration
   ansible.builtin.script: configure_npm.sh
-    
-- name: Install npm 
+
+- name: Install npm
   pacman:
-    name: npm 
+    name: npm
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Install npm 
+- name: Install npm
   apt:
-    name: npm 
+    name: npm
     state: present
   become: true
   when: ansible_facts['os_family'] == "Debian"
