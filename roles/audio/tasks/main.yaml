@@ -42,6 +42,13 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
+- name: Install alsa-utils
+  pacman:
+    name: alsa-utils
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
 - name: Ensure pulse-audio-bluetooth is not present
   pacman:
     name: pulse-audio-bluetooth
