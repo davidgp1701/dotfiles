@@ -18,7 +18,7 @@ After basic configuration of your Arch Linux system apply the following command 
 and `ansible`.
 
 ```
-source <(https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
+source <(curl -s https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
 ```
 
 Remember to generate some SSH keys that you can add to Github to clone the repo with all the ssh code. As time of

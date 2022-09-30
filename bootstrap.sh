@@ -111,7 +111,7 @@ fi
 install_package jq jq
 
 # Install build essentials
-install_package base_devel build-essential
+install_package base-devel build-essential
 
 # Ensure Paru is installed in Arch systems
 if [ "$os_id" == "arch" ]
