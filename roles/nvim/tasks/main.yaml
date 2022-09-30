@@ -91,26 +91,26 @@
     state: present
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Install libvterm
+- name: Ensure libterm01 does not exists
   become: true
   pacman:
     name: libvterm01
     state: absent
-  when: ansible_facts['os_family'] == "ArchLinux"
+  when: ansible_distribution == "Archlinux"
 
 - name: Install libvterm
   become: true
   pacman:
     name: libvterm
     state: present
-  when: ansible_facts['os_family'] == "ArchLinux"
+  when: ansible_distribution == "Archlinux"
 
 - name: Install python-setuptools
   become: true
   pacman:
     name: python-setuptools
     state: present
-  when: ansible_facts['os_family'] == "ArchLinux"
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs nvim nightly build
   kewlfft.aur.aur:
