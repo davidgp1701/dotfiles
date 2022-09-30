@@ -1,0 +1,65 @@
+---
+- name: Install acpid
+  pacman:
+    name: acpid
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Activate acpid service
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: acpid.service
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Ensure acpi handlers folder exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/acpi/handlers
+    state: directory
+    mode: '0755'
+
+- name: Ensure acpi events folder exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/acpi/events
+    state: directory
+    mode: '0755'
+
+- name: Add brightness up event
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/acpi/events/brightness_up"
+    dest: /etc/acpi/events/brightness_up
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Add brightness down event
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/acpi/events/brightness_down"
+    dest: /etc/acpi/events/brightness_down
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Add brightness up handler
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/acpi/handlers/brightness_up.sh"
+    dest: /etc/acpi/handlers/brightness_up.sh
+    owner: root
+    group: root
+    mode: '0544'
+  become: true
+
+- name: Add brightness down handler
+  ansible.builtin.copy:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/etc/acpi/handlers/brightness_down.sh"
+    dest: /etc/acpi/handlers/brightness_down.sh
+    owner: root
+    group: root
+    mode: '0544'
+  become: true

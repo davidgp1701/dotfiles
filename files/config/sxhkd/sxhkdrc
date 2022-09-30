@@ -159,7 +159,7 @@ XF86Launch4
 
 # Keyboard Audiokeys
 XF86AudioMute
-  amixer -D pulse set Master 1+ toggle
+  amixer set Master toggle
 XF86Audio{Raise,Lower}Volume
   amixer set 'Master' 5%{+,-}
 XF86Audio{Next,Prev}

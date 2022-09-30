@@ -80,6 +80,7 @@
     - aws
     - amdgpu
     - k8s
+    - thinkpad
     - wireguard
 
 - hosts: dutchman
