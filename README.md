@@ -61,7 +61,8 @@ usermod -a -G video david
 
 ## Docker login using pass
 
-Extracting the steps from here: https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092
+Extracting the steps from here: https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092 .
+Also the following thread is helpful: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
 
 1. Install pass and gpg
 
