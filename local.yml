@@ -81,6 +81,7 @@
     - amdgpu
     - k8s
     - thinkpad
+    - fprint
     - wireguard
 
 - hosts: dutchman
