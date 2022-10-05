@@ -114,7 +114,7 @@
 - name: Install nerdfonts Source Code Pro
   kewlfft.aur.aur:
     use: paru
-    name: nerd-fonts-source-code-pro
+    name: ttf-sourcecodepro-nerd
   when: ansible_distribution == "Archlinux"
 
 - name: Install nerdfonts Terminus
