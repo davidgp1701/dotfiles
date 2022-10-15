@@ -13,6 +13,13 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
+- name: Install xss-lock
+  pacman:
+    name: xss-lock
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
 - name: Links config file for BSPWM
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/files/config/bspwm"

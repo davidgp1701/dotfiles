@@ -20,7 +20,10 @@ picom -b &
 
 # Bluetooth
 bluetoothctl power on
-# blueman-applet &
+
+# Lock screen when sleeping
+xset s 600 5
+xss-lock -n 'systemctl suspend' -- betterlockscreen -l dimblur &
 
 # Configure the desktops for the laptop display
 display_name="$(bspc query -M --names | head -1)"
