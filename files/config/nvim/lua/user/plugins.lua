@@ -74,11 +74,26 @@ return packer.startup(function(use)
   --   config = "require('rose-pine-config')"
   -- }
 
+  --[[ use { ]]
+  --[[   "catppuccin/nvim", ]]
+  --[[   as = "catppuccin", ]]
+  --[[   config = "require('catppuccin-config')" ]]
+  --[[ } ]]
+
   use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = "require('catppuccin-config')"
+    "ellisonleao/gruvbox.nvim",
+    config = "require('gruvbox-config')"
   }
+
+  --[[ use { ]]
+  --[[   'katawful/kat.nvim', ]]
+  --[[   config = "require('kat-config')" ]]
+  --[[ } ]]
+
+  --[[ use { ]]
+  --[[   'rebelot/kanagawa.nvim', ]]
+  --[[   config = "require('kanagawa-config')" ]]
+  --[[ } ]]
 
   -- Dev Icons
   use { 'kyazdani42/nvim-web-devicons' }
