@@ -9,5 +9,5 @@ au BufRead,BufNewFile *.yaml.tpl set filetype=yaml
 au BufRead,BufNewFile *.json.tmpl set filetype=json
 
 " auto-format
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+" autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)
