@@ -177,11 +177,11 @@ return packer.startup(function(use)
   use { 'editorconfig/editorconfig-vim' }
 
   -- Neovim Org mode
-  use {
-    'nvim-neorg/neorg',
-    requires = 'nvim-lua/plenary.nvim',
-    config = 'require("neorg-config")'
-  }
+  --[[ use { ]]
+  --[[   'nvim-neorg/neorg', ]]
+  --[[   requires = 'nvim-lua/plenary.nvim', ]]
+  --[[   config = 'require("neorg-config")' ]]
+  --[[ } ]]
 
   -- NeoClip - Clipboard manager
   use {
