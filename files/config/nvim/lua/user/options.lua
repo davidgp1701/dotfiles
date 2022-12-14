@@ -52,9 +52,6 @@ vim.o.hlsearch = false
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
 
--- Allow usage of mouse
--- vim.o.mouse = "a"
-
 -- No sounds when error
 vim.o.errorbells = true
 
@@ -106,3 +103,12 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 -- We want to show smartcase and indent
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+
+-- Neovim 0.8, disable mouse
+vim.cmd([[
+  set mouse=
+]])
+
+-- Allow usage of mouse
+-- vim.o.mouse = "a"
+

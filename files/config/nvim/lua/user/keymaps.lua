@@ -37,6 +37,14 @@ keymap("n", "<M-l>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Better vertical navigation
+keymap("n", "<C-d>", "<C-d>zz", opts) -- Moves half page down and centers cursor in middle of screen
+keymap("n", "<C-u>", "<C-u>zz", opts) -- Moves half page up and centers cursor in middle of screen
+
+-- Better search placement
+keymap("n", "n", "nzzzv", opts) -- Searchs item and cetners cursor in middle of screen
+keymap("n", "N", "Nzzzv", opts) -- Back searchs item and centers cursor in middle of screen
+
 -- Telescope
 keymap('n', '<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>', opts)
 keymap('n', '<C-P>', ':Telescope neoclip a extra=plus<CR>', opts)
