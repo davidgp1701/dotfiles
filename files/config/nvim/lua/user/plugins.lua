@@ -74,16 +74,16 @@ return packer.startup(function(use)
   --   config = "require('rose-pine-config')"
   -- }
 
-  --[[ use { ]]
-  --[[   "catppuccin/nvim", ]]
-  --[[   as = "catppuccin", ]]
-  --[[   config = "require('catppuccin-config')" ]]
-  --[[ } ]]
-
   use {
-    "ellisonleao/gruvbox.nvim",
-    config = "require('gruvbox-config')"
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = "require('catppuccin-config')"
   }
+
+  --[[ use { ]]
+  --[[   "ellisonleao/gruvbox.nvim", ]]
+  --[[   config = "require('gruvbox-config')" ]]
+  --[[ } ]]
 
   --[[ use { ]]
   --[[   'katawful/kat.nvim', ]]

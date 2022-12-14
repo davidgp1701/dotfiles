@@ -2,6 +2,13 @@ local catppuccin = require("catppuccin")
 
 -- configure it
 catppuccin.setup({
+  color_overrides = {
+    mocha = {
+      --[[ surface0 = "#686B80", ]]
+      surface1 = "#787B90",
+      surface2 = "#888BA0",
+    },
+  },
   dim_inactive = {
     enabled = false,
     shade = "dark",
