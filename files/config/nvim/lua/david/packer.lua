@@ -99,4 +99,7 @@ return require('packer').startup(function(use)
   use { 'editorconfig/editorconfig-vim' }
 
   use { 'norcalli/nvim-colorizer.lua' }
+
+  -- Helm until it is supported by YAMLLs and syntax highlighting
+  use { 'towolf/vim-helm' }
 end)
