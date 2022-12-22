@@ -20,20 +20,12 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 -- Better vertical navigation
-vim.keymap.set("n", "<C-d>", "<C-d>zz" )-- Moves half page down and centers cursor in middle of screen
-vim.keymap.set("n", "<C-u>", "<C-u>zz" )-- Moves half page up and centers cursor in middle of screen
+vim.keymap.set("n", "<C-d>", "<C-d>zz") -- Moves half page down and centers cursor in middle of screen
+vim.keymap.set("n", "<C-u>", "<C-u>zz") -- Moves half page up and centers cursor in middle of screen
 
 -- Better search placement
-vim.keymap.set("n", "n", "nzzzv" )-- Searchs item and cetners cursor in middle of screen
-vim.keymap.set("n", "N", "Nzzzv" )-- Back searchs item and centers cursor in middle of screen
-
--- Telescope
-vim.keymap.set('n', '<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>')
-vim.keymap.set('n', '<C-P>', ':Telescope neoclip a extra=plus<CR>')
-vim.keymap.set('n', '<leader>fg', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>')
-vim.keymap.set('n', '<leader>fb', '<cmd>lua require(\'telescope.builtin\').buffers()<cr>')
-vim.keymap.set('n', '<leader>fh', '<cmd>lua require(\'telescope.builtin\').help_tags()<cr>')
-vim.keymap.set('n', '<leader>fi', '<cmd>lua require(\'telescope.builtin\').git_status()<cr>')
+vim.keymap.set("n", "n", "nzzzv") -- Searchs item and cetners cursor in middle of screen
+vim.keymap.set("n", "N", "Nzzzv") -- Back searchs item and centers cursor in middle of screen
 
 -- VISUAL --
 -- Better indentation
