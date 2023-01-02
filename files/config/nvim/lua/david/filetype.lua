@@ -21,17 +21,39 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   group = terraform
 })
 
--- Autoformat on save
-local autoFormatOnSave = vim.api.nvim_create_augroup("AutoFormatOnSave", { clear = true })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+local hcl = vim.api.nvim_create_augroup("HCL", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = {
-    "*.lua",
-    "*.tf",
-    "*.tfvars"
+    "*.hcl",
+    ".terraformrc",
+    "terraform.rc"
   },
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end,
-  group = autoFormatOnSave
+  command = 'set filetype=hcl',
+  group = hcl
 })
+
+local tfstate = vim.api.nvim_create_augroup("TFSTATE", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = {
+    "*.tfstate",
+    "*.tfstate.backup",
+  },
+  command = 'set filetype=json',
+  group = tfstate
+})
+
+-- Autoformat on save
+-- local autoFormatOnSave = vim.api.nvim_create_augroup("AutoFormatOnSave", { clear = true })
+--
+-- vim.api.nvim_create_autocmd({ "BufWritePre", "BufWriteCmd" }, {
+--   pattern = {
+--     "*.lua",
+--     "*.tf",
+--     "*.tfvars"
+--   },
+--   command = 'LspZeroFormat',
+--   group = autoFormatOnSave
+-- })

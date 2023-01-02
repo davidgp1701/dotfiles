@@ -102,4 +102,7 @@ return require('packer').startup(function(use)
 
   -- Helm until it is supported by YAMLLs and syntax highlighting
   use { 'towolf/vim-helm' }
+
+  -- We still needed
+  use { 'hashivim/vim-terraform' }
 end)
