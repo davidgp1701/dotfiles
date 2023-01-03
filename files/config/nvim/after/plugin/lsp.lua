@@ -24,6 +24,26 @@ lsp.configure('sumneko_lua', {
   }
 })
 
+-- Local ltex spell directory configuration
+local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+local words = {}
+
+for word in io.open(path, "r"):lines() do
+	table.insert(words, word)
+end
+
+lsp.configure('ltex', {
+  settings = {
+    ltex = {
+      dictionary = {
+        ['en-US'] = words,
+        ['en-GB'] = words,
+      }
+    }
+  }
+})
+
+-- CMP configuration
 local cmp = require('cmp')
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-d>"] = cmp.mapping.scroll_docs(-4),
