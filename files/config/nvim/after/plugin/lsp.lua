@@ -132,6 +132,6 @@ vim.diagnostic.config({
   virtual_text = true,
 })
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>=", function()
   vim.lsp.buf.format()
 end)

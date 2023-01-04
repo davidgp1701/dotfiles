@@ -105,4 +105,7 @@ return require('packer').startup(function(use)
 
   -- We still needed
   use { 'hashivim/vim-terraform' }
+
+  -- Lua
+  use { "folke/which-key.nvim" }
 end)
