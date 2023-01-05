@@ -3,3 +3,7 @@ Terraform
 EKS
 EKS
 TODO
+Autoscaler
+VerticalPodAutoscaler
+recomender
+Burstable
