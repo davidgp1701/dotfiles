@@ -88,23 +88,46 @@ lsp.setup_nvim_cmp({
 
 
 lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, remap = false }
 
   if client.name == "eslint" then
     vim.cmd.LspStop('eslint')
     return
   end
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-  vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, remap = false, desc = "Go to definition" })
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, remap = false, desc = "Show description in hover" })
+  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Lists all LSP symbols in current workspace in the quickfix window" })
+  vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Show diagnostics in a floating Window" })
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Go to next LSP diagnostic" })
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Go to previous diagnostics" })
+  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Show possible code actions in the actual position" })
+  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Show all references to the symbol under the cursor in the quickfix window" })
+  vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Rename symbol under the cursor" })
+  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {
+    buffer = bufnr,
+    remap = false,
+    desc = "Displays the signature information of the symbol under the cursor in a floating window" })
 
   if client.server_capabilities.document_formatting then
     vim.cmd([[
