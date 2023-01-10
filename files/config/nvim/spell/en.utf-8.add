@@ -7,3 +7,13 @@ Autoscaler
 VerticalPodAutoscaler
 recomender
 Burstable
+statefulsets
+OTLP
+openTelemetry
+applicationName
+componentName
+ect
+bool
+otlp
+grpc
+http
