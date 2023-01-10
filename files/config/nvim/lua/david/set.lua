@@ -10,7 +10,7 @@ vim.opt.pumheight = 20
 -- give more space for displaying messages in cmd
 vim.opt.cmdheight = 2
 
-vim.opt.guicursor = ""
+vim.opt.guicursor = "i:block"
 
 -- enables 24 bits colors
 vim.opt.termguicolors = true
