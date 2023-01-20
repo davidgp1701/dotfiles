@@ -17,3 +17,8 @@ bool
 otlp
 grpc
 http
+filebeat
+RabbitMQ
+Otel
+Filebeat
+Enmacc
