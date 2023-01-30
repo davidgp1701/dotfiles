@@ -1,5 +1,5 @@
 function MyColors(color)
-	color = color or "rose-pine"
+	color = color or "duskfox"
 	vim.cmd.colorscheme(color)
 end
 
