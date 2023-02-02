@@ -28,3 +28,8 @@ amazon
 DOs
 SGs
 Parthiban
+OpenTelemetry
+Kubernetes
+logLevel
+resourcedetection
+limit_mib
