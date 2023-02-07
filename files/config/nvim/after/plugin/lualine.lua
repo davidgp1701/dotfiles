@@ -98,6 +98,12 @@ local modes = {
 	separator = { left = "", right = "" },
 }
 
+local location = {
+	'location',
+	color = { bg = "#fab387		", fg = "#1e1e2e" },
+	separator = { left = "", right = "" },
+}
+
 local function getLspName()
 	local msg = 'No Active Lsp'
 	local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -169,16 +175,17 @@ require('lualine').setup {
 			diff,
 		},
 		lualine_x = {
-			space,
-		},
-		lualine_y = {
 			encoding,
 			fileformat,
 			space,
 		},
-		lualine_z = {
+		lualine_y = {
 			dia,
 			lsp,
+      space,
+		},
+		lualine_z = {
+      location,
 		}
 	},
 	inactive_sections = {

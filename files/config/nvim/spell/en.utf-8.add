@@ -33,3 +33,4 @@ Kubernetes
 logLevel
 resourcedetection
 limit_mib
+PVs
