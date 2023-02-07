@@ -104,6 +104,12 @@ local location = {
 	separator = { left = "", right = "" },
 }
 
+local progress = {
+	'progress',
+	color = { bg = "#fab387		", fg = "#1e1e2e" },
+	separator = { left = "", right = "" },
+}
+
 local function getLspName()
 	local msg = 'No Active Lsp'
 	local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -186,6 +192,7 @@ require('lualine').setup {
 		},
 		lualine_z = {
       location,
+      progress
 		}
 	},
 	inactive_sections = {
