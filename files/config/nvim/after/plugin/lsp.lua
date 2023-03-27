@@ -6,7 +6,7 @@ lsp.ensure_installed({
   'bashls',
   'dockerls',
   'ltex',
-  'sumneko_lua',
+  'lua_ls',
   'pylsp',
   'terraformls',
   'tflint',
