@@ -55,6 +55,12 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
+- name: Install ZVM zsh-vi-mode plugin, better vi mode
+  kewlfft.aur.aur:
+    use: paru
+    name: zsh-vi-mode
+  when: ansible_distribution == "Archlinux"
+
 - name: change user shell to zsh
   become: yes
   user:
