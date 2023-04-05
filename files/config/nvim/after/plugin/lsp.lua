@@ -24,6 +24,15 @@ lsp.configure('sumneko_lua', {
   }
 })
 
+-- Configure yamlls
+lsp.configure('yamlls', {
+  settings = {
+    yaml = {
+      keyOrdering = false
+    }
+  }
+})
+
 -- Local ltex spell directory configuration
 local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 local words = {}
