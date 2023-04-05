@@ -471,6 +471,12 @@
 - name: Install asdf websocat plugin
   ansible.builtin.script: install_asdf_plugin.sh websocat {{ websocat.version }}
 
+- name: Install asdf github-cli
+  ansible.builtin.script: install_asdf_plugin.sh github-cli {{ github_cli.version }}
+
+- name: Install asdf glab
+  ansible.builtin.script: install_asdf_plugin.sh glab {{ glab.version }}
+
 - name: Install asdf nodeJS
   shell:
     "if ! asdf plugin list | grep -qsxF 'nodejs'; then asdf plugin add nodejs ; fi"

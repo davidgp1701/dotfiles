@@ -8,6 +8,10 @@ docker_compose:
   version: system
 editor_config:
   version: system
+github_cli:
+  version: 2.26.0
+glab:
+  version: 1.27.0
 golang:
   version: system
 hadolint:
