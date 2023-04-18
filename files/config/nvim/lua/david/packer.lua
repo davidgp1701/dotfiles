@@ -102,9 +102,6 @@ return require('packer').startup(function(use)
   -- Faster horizontal movement
   use { 'unblevable/quick-scope' }
 
-  -- Use .editorconfig file from projects for indents
-  use { 'editorconfig/editorconfig-vim' }
-
   use { 'norcalli/nvim-colorizer.lua' }
 
   -- Helm until it is supported by YAMLLs and syntax highlighting
