@@ -45,7 +45,7 @@
 - name: Install nerdfonts Cascadia Code
   pacman:
     state: present
-    name: community/otf-cascadia-code-nerd
+    name: community/ttf-cascadia-code-nerd
   become: true
   when: ansible_distribution == "Archlinux"
 
