@@ -36,7 +36,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 
 -- copy and paste between vim and everything else
--- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- no keep search highlights
 vim.opt.hlsearch = false
