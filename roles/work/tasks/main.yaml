@@ -44,19 +44,6 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Installs Microsoft Teams
-  kewlfft.aur.aur:
-    use: paru
-    name: teams
-  when: ansible_distribution == "Archlinux"
-
-- name: Installs Microsoft Teams
-  apt:
-    name: teams
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Installs openfortivpn
   pacman:
     name: openfortivpn
