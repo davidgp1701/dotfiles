@@ -6,21 +6,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Installs XClip, required by Alacritty for c&p
-  apt:
-    name: xclip
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Installs Alacritty
   pacman:
     name: alacritty
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-# TODO Create installer for debian if necessary
 
 - name: Links config file for Alacritty
   file:

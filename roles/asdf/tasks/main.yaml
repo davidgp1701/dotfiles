@@ -6,26 +6,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure curl is installed as requirement for asdf
-  apt:
-    name: curl
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure git is installed as requirement for asdf
   pacman:
     name: git
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure git is installed as requirement for asdf
-  apt:
-    name: git
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure pipenv is installed as requirement for direnv
   pacman:
@@ -34,26 +20,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure pipenv is installed as requirement for direnv
-  apt:
-    name: pipenv
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure graphviz is installed as requirement
   pacman:
     name: graphviz
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure graphviz is installed as requirement
-  apt:
-    name: graphviz
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure jq is installed as requirement
   pacman:
@@ -62,26 +34,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure jq is installed as requirement
-  apt:
-    name: jq
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure bzip2 is installed as requirement
   pacman:
     name: bzip2
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure bzip2 is installed as requirement
-  apt:
-    name: bzip2
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure libffi is installed as requirement
   pacman:
@@ -90,25 +48,11 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure libffi is installed as requirement
-  apt:
-    name: libffi8
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure libffi7 is installed as requirement
   kewlfft.aur.aur:
     use: paru
     name: libffi7
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure libffi7 is installed as requirement
-  apt:
-    name: libffi7
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure xz is installed as requirement
   pacman:
@@ -117,29 +61,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure xz is installed as requirement
-  apt:
-    name: xz-utils
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure ncurses is installed as requirement
   pacman:
     name: ncurses
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure ncurses is installed as requirement
-  apt:
-    name:
-      - ncurses-bin
-      - ncurses-base
-      - ncurses-term
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure readline is installed as requirement
   pacman:
@@ -148,13 +75,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure readline is installed as requirement
-  apt:
-    name: readline-common
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure sqlite is installed as requirement
   pacman:
     name: sqlite
@@ -162,20 +82,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure sqlite is installed as requirement
-  apt:
-    name: sqlite3
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Ensure libsqlite3-dev is installed as requirement
-  apt:
-    name: libsqlite3-dev
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure openssl is installed as requirement
   pacman:
     name: openssl
@@ -183,26 +89,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure openssl is installed as requirement
-  apt:
-    name: openssl
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure libxml2 is installed as requirement
   pacman:
     name: libxml2
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure libxml2 is installed as requirement
-  apt:
-    name: libxml2
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure libxmlsec is installed as requirement
   pacman:
@@ -211,28 +103,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure libxmlsec is installed as requirement
-  apt:
-    name:
-      - xmlsec1
-      - libxmlsec1
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure llvm installed as requirement
   pacman:
     name: llvm
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure llvm installed as requirement
-  apt:
-    name: llvm
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure base-devel installed as requirement (metapackage, includes things like make)
   pacman:
@@ -241,13 +117,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure build-essential installed as requirement (metapackage, includes things like make)
-  apt:
-    name: build-essential
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure networkmanager-fortisslvpn is installed
   pacman:
     name: networkmanager-fortisslvpn
@@ -255,13 +124,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure networkmanager-fortisslvpn is installed
-  apt:
-    name: network-manager-fortisslvpn
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure tar is installed
   pacman:
     name: tar
@@ -269,26 +131,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure tar is installed
-  apt:
-    name: tar
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure wget is installed
   pacman:
     name: wget
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure wget is installed
-  apt:
-    name: wget
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure zlib is installed
   pacman:
@@ -297,29 +145,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure zlib is installed
-  apt:
-    name:
-      - zlib1g
-      - zlib1g-dev
-      - zziplib-bin
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure containerd is installed
   pacman:
     name: containerd
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure containerd is installed
-  apt:
-    name: containerd
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure docker is installed
   pacman:
@@ -328,26 +159,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure docker is installed
-  apt:
-    name: docker
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Ensure docker-compose is installed
   pacman:
     name: docker-compose
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure docker-compose is installed
-  apt:
-    name: docker-compose
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure XDG docker config folder exists
   ansible.builtin.file:
@@ -558,9 +375,3 @@
     use: paru
     name: aws-session-manager-plugin
   when: ansible_distribution == "Archlinux"
-
-- name: Installs AWS session manager plugin
-  apt:
-    deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
