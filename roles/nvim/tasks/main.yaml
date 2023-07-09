@@ -6,26 +6,12 @@
     state: absent
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure nvim normal package is not installed
-  become: true
-  apt:
-    name: neovim
-    state: absent
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Telescope uses this tool to show files previews
   become: true
   pacman:
     name: bat
     state: present
   when: ansible_distribution == "Archlinux"
-
-- name: Telescope uses this tool to show files previews
-  become: true
-  apt:
-    name: bat
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure pip is installed
   become: true
@@ -34,26 +20,12 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure pip is installed
-  become: true
-  apt:
-    name: python3-pip
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install ripgrep for complete project searchs
   become: true
   pacman:
     name: ripgrep
     state: present
   when: ansible_distribution == "Archlinux"
-
-- name: Install ripgrep for complete project searchs
-  become: true
-  apt:
-    name: ripgrep
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install for telescope to find files
   become: true
@@ -62,34 +34,12 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-- name: Install for telescope to find files
-  become: true
-  apt:
-    name: fd-find
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Links fd to fd-find
-  file:
-    src: /usr/bin/fdfind
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/fd"
-    state: link
-    force: yes
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install tree-sitter
   become: true
   pacman:
     name: tree-sitter
     state: present
   when: ansible_distribution == "Archlinux"
-
-- name: Install tree-sitter
-  become: true
-  apt:
-    name: libtree-sitter0
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure libterm01 does not exists
   become: true
@@ -190,20 +140,6 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Install Ruby
-  apt:
-    name: ruby
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Install Ruby Dev libs
-  apt:
-    name: ruby-dev
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install Ruby provider
   community.general.gem:
     name: neovim
@@ -213,22 +149,3 @@
   community.general.npm:
     name: neovim
     global: yes
-
-- name: Install Debian NeoVim build dependencies
-  apt:
-    name:
-      - ninja-build
-      - gettext
-      - libtool
-      - libtool-bin
-      - autoconf
-      - automake
-      - cmake
-      - g++
-      - pkg-config
-      - unzip
-      - curl
-      - doxygen
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
