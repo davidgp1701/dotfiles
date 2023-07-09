@@ -84,3 +84,9 @@
     state: link
     force: yes
 
+- name: Links config file for waybar
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/waybar"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/waybar"
+    state: link
+    force: yes
