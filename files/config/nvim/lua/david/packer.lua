@@ -158,12 +158,4 @@ return require('packer').startup(function(use)
       require'mind'.setup()
     end
   }
-
-  -- Note taking tool
-  use {
-    'renerocksai/telekasten.nvim',
-    requires = {
-      'renerocksai/calendar-vim',
-    }
-  }
 end)

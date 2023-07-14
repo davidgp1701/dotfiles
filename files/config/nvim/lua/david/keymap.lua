@@ -45,29 +45,3 @@ vim.keymap.set('n', '<leader>se', ':setlocal spell spelllang=en_us<CR>', {
 vim.keymap.set('n', '<leader>sd', ':set nospell<CR>', { desc = "Disables the spellchecker for the actual buffer" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Makes the actual file executable" })
-
-
-vim.keymap.set("n", '<leader>nf', ":lua require('telekasten').find_notes()<CR>", { desc = "Find a note"})
-vim.keymap.set("n", '<leader>nd', ":lua require('telekasten').find_daily_notes()<CR>", { desc = "Find a daiy note"})
-vim.keymap.set("n", '<leader>ng', ":lua require('telekasten').search_notes()<CR>", { desc = "Search in notes"})
-vim.keymap.set("n", '<leader>nz', ":lua require('telekasten').follow_link()<CR>", { desc = "Follow link"})
-vim.keymap.set("n", '<leader>nT', ":lua require('telekasten').goto_today()<CR>", { desc = "Go to Today"})
-vim.keymap.set("n", '<leader>nW', ":lua require('telekasten').goto_thisweek()<CR>", { desc = "Go to this week"})
-vim.keymap.set("n", '<leader>nw', ":lua require('telekasten').find_weekly_notes()<CR>", { desc = "Find weekly notes"})
-vim.keymap.set("n", '<leader>nn', ":lua require('telekasten').new_note()<CR>", { desc = "New note"})
-vim.keymap.set("n", '<leader>nN', ":lua require('telekasten').new_templated_note()<CR>", { desc = "New templated note"})
-vim.keymap.set("n", '<leader>ny', ":lua require('telekasten').yank_notelink()<CR>", { desc = "Yank note link"})
-vim.keymap.set("n", '<leader>nc', ":lua require('telekasten').show_calendar()<CR>", { desc = "Show Calendar"})
-vim.keymap.set("n", '<leader>nC', ":CalendarT<CR>", { desc = ""})
-vim.keymap.set("n", '<leader>ni', ":lua require('telekasten').paste_img_and_link()<CR>", {
-  desc = "Paste image and link into the note"})
-vim.keymap.set("n", '<leader>nt', ":lua require('telekasten').toggle_todo()<CR>", { desc = "Toggle todo"})
-vim.keymap.set("n", '<leader>nb', ":lua require('telekasten').show_backlinks()<CR>", { desc = "Show backlinks"})
-vim.keymap.set("n", '<leader>nF', ":lua require('telekasten').find_friends()<CR>", { desc = "Find friends"})
-vim.keymap.set("n", '<leader>nI', ":lua require('telekasten').insert_img_link({ i=true })<CR>", {
-  desc = "Insert image link"})
-vim.keymap.set("n", '<leader>np', ":lua require('telekasten').preview_img()<CR>", { desc = "Preview image"})
-vim.keymap.set("n", '<leader>nm', ":lua require('telekasten').browse_media()<CR>", { desc = "Browse media"})
-vim.keymap.set("n", '<leader>na', ":lua require('telekasten').show_tags()<CR>", { desc = "Show tags"})
-vim.keymap.set("n", '<leader>nr', ":lua require('telekasten').rename_note()<CR>", { desc = "Rename note"})
-
