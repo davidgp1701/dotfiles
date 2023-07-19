@@ -1,5 +1,7 @@
 files/config/nvim/plugged
 files/config/nvim/plugin
+files/config/nvim-old/plugged
+files/config/nvim-old/plugin
 .zcompdump
 tags
 .nvimlog
