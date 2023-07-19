@@ -27,6 +27,13 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
+- name: Install ripgrep for complete project searchs
+  become: true
+  pacman:
+    name: lazygit
+    state: present
+  when: ansible_distribution == "Archlinux"
+
 - name: Install for telescope to find files
   become: true
   pacman:
