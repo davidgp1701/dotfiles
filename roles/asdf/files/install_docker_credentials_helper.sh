@@ -7,13 +7,12 @@ download_folder="$(xdg-user-dir DOWNLOAD)"
 
 install() {
 		curl -fsSL "$url" -o "${download_folder}/${file}"
-		tar -C "${HOME}/.local/bin/" -xzf "${download_folder}/${file}"
-		rm "${download_folder}/${file}"
+    mv "${download_folder}/${file}" "${HOME}/.local/bin/docker-credential-secretservice"
 		chmod 0755 "${HOME}/.local/bin/docker-credential-secretservice"
 }
 
 version="$1"
-file="docker-credential-secretservice-v${version}-amd64.tar.gz"
+file="docker-credential-secretservice-v${version}.linux-amd64"
 url="https://github.com/docker/docker-credential-helpers/releases/download/v${version}/${file}"
 
 if [[ ! -x "${HOME}/.local/bin/docker-credential-secretservice" ]]
@@ -21,8 +20,9 @@ then
 	install
 else
   installed_version="$(docker-credential-secretservice version)"
+  check_version="docker-credential-secretservice (github.com/docker/docker-credential-helpers) v${version}"
 
-	if [[ "$version" != "$installed_version" ]]
+	if [[ "$check_version" != "$installed_version" ]]
 	then
 		install
 	fi

@@ -53,6 +53,7 @@
     - google-chrome
     - gtk
     - hashicorp
+    - hyprland
     - kitty
     - latex
     - mikrotik
@@ -65,7 +66,6 @@
     - print
     - rust
     - spotify
-    - suckless
     - task
     - vconsole
     - wifi
@@ -78,8 +78,10 @@
   connection: local
   roles:
     - aws
+    - amdgpu
     - k8s
-    - xps9750
+    - thinkpad
+    - fprint
     - wireguard
 
 - hosts: dutchman

@@ -12,16 +12,9 @@
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Make sure Kitty config folder exists
-  ansible.builtin.file:
-    path: "{{ lookup( 'env', 'HOME' ) }}/.config/kitty"
-    state: directory
-    mode: '0750'
-
 - name: Links Kitty configuration file
   file:
-    src: "{{ lookup( 'env', 'ROOTDIR' ) }}/files/config/kitty/kitty.conf"
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/kitty/kitty.conf"
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/kitty"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/kitty"
     state: link
     force: yes
-

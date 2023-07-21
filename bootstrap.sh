@@ -111,7 +111,7 @@ fi
 install_package jq jq
 
 # Install build essentials
-install_package base_devel build-essential
+install_package base-devel build-essential
 
 # Ensure Paru is installed in Arch systems
 if [ "$os_id" == "arch" ]
@@ -134,3 +134,7 @@ ansible-galaxy collection install kewlfft.aur
 # Ensure log folder for Ansible exists
 [[ -d "${HOME}/.local/var/log" ]] || mkdir -p "${HOME}/.local/var/log"
 
+
+# Create my personal_projects folder
+[[ -d $"${HOME}/Documents/personal_projects" ]] || mkdir -p "${HOME}/Documents/personal_projects"
+git clone git@github.com:davidgp1701/dotfiles.git "${HOME}/Documents/personal_projects/dotfiles"

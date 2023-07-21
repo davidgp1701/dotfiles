@@ -18,7 +18,7 @@ After basic configuration of your Arch Linux system apply the following command 
 and `ansible`.
 
 ```
-source <(https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
+source <(curl -s https://raw.githubusercontent.com/davidgp1701/dotfiles/master/bootstrap.sh)
 ```
 
 Remember to generate some SSH keys that you can add to Github to clone the repo with all the ssh code. As time of
@@ -61,7 +61,8 @@ usermod -a -G video david
 
 ## Docker login using pass
 
-Extracting the steps from here: https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092
+Extracting the steps from here: https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092 .
+Also the following thread is helpful: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
 
 1. Install pass and gpg
 

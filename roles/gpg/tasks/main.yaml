@@ -10,7 +10,7 @@
     state: present
   become: true
   when: ansible_distribution == "Archlinux"
-   
+
 - name: Install GnuPG
   apt:
     name: gnupg
@@ -38,6 +38,13 @@
 - name: Add pinentry to GPG agent
   pacman:
     name: pinentry
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Add gcr, needed for pinentry-gnome3
+  pacman:
+    name: gcr
     state: present
   become: true
   when: ansible_distribution == "Archlinux"

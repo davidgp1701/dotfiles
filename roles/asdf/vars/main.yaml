@@ -1,13 +1,17 @@
 awscli:
   version: system
 direnv:
-  version: 2.31.0
+  version: 2.32.1
 docker_credential_secretservice:
-  version: 0.6.3
+  version: 0.7.0
 docker_compose:
   version: system
 editor_config:
   version: system
+github_cli:
+  version: 2.26.0
+glab:
+  version: 1.27.0
 golang:
   version: system
 hadolint:
@@ -31,4 +35,4 @@ tflint:
 tfsec:
   version: system
 websocat:
-  version: 1.7.0
+  version: 1.11.0

@@ -1,0 +1,92 @@
+---
+- name: Installs wofi
+  pacman:
+    name: wofi
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Hyprland
+  kewlfft.aur.aur:
+    use: paru
+    name: hyprland-git
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Waybar MPRIs
+  kewlfft.aur.aur:
+    use: paru
+    name: waybar-mpris-git
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Cava audio visualizer
+  kewlfft.aur.aur:
+    use: paru
+    name: cava
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs XDG Desktop Portal WLR
+  kewlfft.aur.aur:
+    use: paru
+    name: xdg-desktop-portal-wlr
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs tty-clock
+  kewlfft.aur.aur:
+    use: paru
+    name: tty-clock-git
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Swaylockd
+  kewlfft.aur.aur:
+    use: paru
+    name: swaylockd
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Grim
+  pacman:
+    name: grim
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Installs Slurp
+  pacman:
+    name: slurp
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Links config file for hyprland
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/hypr"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/hypr"
+    state: link
+    force: yes
+
+- name: Links hyprland start command
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/local/bin/start_hyprland.sh"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/start_hyprland.sh"
+    state: link
+    force: yes
+
+- name: Installs Gnome polkit
+  pacman:
+    name: polkit-gnome
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Links config file for Wofi
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/wofi"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/wofi"
+    state: link
+    force: yes
+
+- name: Links config file for waybar
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/waybar"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/waybar"
+    state: link
+    force: yes

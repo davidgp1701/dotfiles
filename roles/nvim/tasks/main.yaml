@@ -6,26 +6,12 @@
     state: absent
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure nvim normal package is not installed
-  become: true
-  apt:
-    name: neovim
-    state: absent
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Telescope uses this tool to show files previews
   become: true
   pacman:
     name: bat
     state: present
   when: ansible_distribution == "Archlinux"
-
-- name: Telescope uses this tool to show files previews
-  become: true
-  apt:
-    name: bat
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Ensure pip is installed
   become: true
@@ -34,13 +20,6 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-- name: Ensure pip is installed
-  become: true
-  apt:
-    name: python3-pip
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install ripgrep for complete project searchs
   become: true
   pacman:
@@ -50,10 +29,10 @@
 
 - name: Install ripgrep for complete project searchs
   become: true
-  apt:
-    name: ripgrep
+  pacman:
+    name: lazygit
     state: present
-  when: ansible_facts['os_family'] == "Debian"
+  when: ansible_distribution == "Archlinux"
 
 - name: Install for telescope to find files
   become: true
@@ -62,21 +41,6 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-- name: Install for telescope to find files
-  become: true
-  apt:
-    name: fd-find
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Links fd to fd-find
-  file:
-    src: /usr/bin/fdfind
-    dest: "{{ lookup( 'env', 'HOME' ) }}/.local/bin/fd"
-    state: link
-    force: yes
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install tree-sitter
   become: true
   pacman:
@@ -84,12 +48,26 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-- name: Install tree-sitter
+- name: Ensure libterm01 does not exists
   become: true
-  apt:
-    name: libtree-sitter0
+  pacman:
+    name: libvterm01
+    state: absent
+  when: ansible_distribution == "Archlinux"
+
+- name: Install libvterm
+  become: true
+  pacman:
+    name: libvterm
     state: present
-  when: ansible_facts['os_family'] == "Debian"
+  when: ansible_distribution == "Archlinux"
+
+- name: Install python-setuptools
+  become: true
+  pacman:
+    name: python-setuptools
+    state: present
+  when: ansible_distribution == "Archlinux"
 
 - name: Installs nvim nightly build
   kewlfft.aur.aur:
@@ -126,88 +104,3 @@
   ansible.builtin.git:
     repo: https://github.com/wbthomason/packer.nvim
     dest: "{{ lookup( 'env', 'HOME' ) }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
-
-- name: Install vim language server
-  npm:
-    name: vim-language-server
-    global: yes
-
-- name: Installs the lua-language-server
-  kewlfft.aur.aur:
-    use: paru
-    name: lua-language-server
-  when: ansible_distribution == "Archlinux"
-
-- name: Make sure Lua LSP con write logs to this folder
-  ansible.builtin.file:
-    path: "/usr/share/lua-language-server/log"
-    state: directory
-    mode: '0777'
-  become: true
-
-- name: Make sure Lua LSP con write to the meta folder
-  ansible.builtin.file:
-    path: "/usr/share/lua-language-server/meta"
-    state: directory
-    mode: '0777'
-  become: true
-
-- name: Install neovim python provider
-  pip:
-    name: pynvim
-    extra_args: --user
-
-- name: Install the Python LSP
-  pip:
-    name: python-lsp-server
-    extra_args: --user
-
-- name: Install Ruby
-  pacman:
-    name: ruby
-    state: present
-  become: true
-  when: ansible_distribution == "Archlinux"
-
-- name: Install Ruby
-  apt:
-    name: ruby
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Install Ruby Dev libs
-  apt:
-    name: ruby-dev
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Install Ruby provider
-  community.general.gem:
-    name: neovim
-    state: latest
-
-- name: Install "Node.js Neovim Provider"
-  community.general.npm:
-    name: neovim
-    global: yes
-
-- name: Install Debian NeoVim build dependencies
-  apt:
-    name:
-      - ninja-build
-      - gettext
-      - libtool
-      - libtool-bin
-      - autoconf
-      - automake
-      - cmake
-      - g++
-      - pkg-config
-      - unzip
-      - curl
-      - doxygen
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"

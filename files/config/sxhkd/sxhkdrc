@@ -32,7 +32,7 @@ super + shift + q
 
 # Lock the screen
 super + shift + x
-  betterlockscreen -l blur
+  betterlockscreen -l dimblur
 
 # Only laptop monitor
 super + @F1
@@ -123,7 +123,7 @@ super + r
 
 # terminal emulator
 super + Return
-  kitty
+  wezterm
 
 # program launcher
 super + @space
@@ -159,7 +159,7 @@ XF86Launch4
 
 # Keyboard Audiokeys
 XF86AudioMute
-  amixer -D pulse set Master 1+ toggle
+  amixer set Master toggle
 XF86Audio{Raise,Lower}Volume
   amixer set 'Master' 5%{+,-}
 XF86Audio{Next,Prev}
