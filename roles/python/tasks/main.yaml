@@ -5,14 +5,3 @@
     name: python-pip
     state: present
   when: ansible_distribution == "Archlinux"
-
-- name: Ensure pip is installed
-  become: true
-  apt:
-    name: python3-pip
-    state: present
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Installs Python Language Server protocol
-  pip:
-    name: 'python-language-server[yapf]'

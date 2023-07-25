@@ -1,0 +1,16 @@
+- name: Install Wezterm
+  pacman:
+    name:
+      - wezterm
+      - wezterm-shell-integration
+      - wezterm-terminfo
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"
+
+- name: Links wezterm configuration file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/wezterm"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/wezterm"
+    state: link
+    force: yes

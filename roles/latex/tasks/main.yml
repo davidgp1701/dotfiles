@@ -1,17 +1,10 @@
 ---
-- name: Install `texlive-most` packages
+- name: Install `texlive` packages
   become: true
   pacman:
-    name: texlive-most
+    name: texlive-basic
     state: present
   when: ansible_distribution == "Archlinux"
-
-# - name: Install `texlive-most` packages
-#   become: true
-#   apt:
-#     name: texlive
-#     state: present
-#   when: ansible_facts['os_family'] == "Debian"
 
 - name: Install `texlive-lang` packages
   become: true
@@ -20,13 +13,6 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-# - name: Install `texlive-lang` packages
-#   become: true
-#   apt:
-#     name: texlive-lang-all
-#     state: present
-#   when: ansible_facts['os_family'] == "Debian"
-
 - name: Install `texlive-bibtexextra` packages (Bibliography)
   become: true
   pacman:
@@ -34,23 +20,9 @@
     state: present
   when: ansible_distribution == "Archlinux"
 
-# - name: Install `texlive-bibtexextra` packages (Bibliography)
-#   become: true
-#   apt:
-#     name: texlive-bibtex-extra
-#     state: present
-#   when: ansible_facts['os_family'] == "Debian"
-
 - name: Install `biber` package (alternate Bibligraphy backend)
   become: true
   pacman:
     name: biber
     state: present
   when: ansible_distribution == "Archlinux"
-
-# - name: Install `biber` package (alternate Bibligraphy backend)
-#   become: true
-#   apt:
-#     name: biber
-#     state: present
-#   when: ansible_facts['os_family'] == "Debian"

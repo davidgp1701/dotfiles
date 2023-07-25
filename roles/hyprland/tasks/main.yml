@@ -30,12 +30,6 @@
     name: xdg-desktop-portal-wlr
   when: ansible_distribution == "Archlinux"
 
-- name: Installs tty-clock
-  kewlfft.aur.aur:
-    use: paru
-    name: tty-clock-git
-  when: ansible_distribution == "Archlinux"
-
 - name: Installs Swaylockd
   kewlfft.aur.aur:
     use: paru
