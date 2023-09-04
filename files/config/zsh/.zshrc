@@ -116,6 +116,10 @@ for f in ~/.config/shellconfigs/*; do source "$f"; done
 # ASDF Configuration
 if [[ -f "$HOME/.local/asdf/asdf.sh" ]]; then
     . "$HOME/.local/asdf/asdf.sh"
+    # append completions to fpath
+    fpath=(${ASDF_DIR}/completions $fpath)
+    # initialise completions with ZSH's compinit
+    autoload -Uz compinit && compinit
 fi
 
 # Start Direnv
