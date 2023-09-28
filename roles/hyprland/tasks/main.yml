@@ -12,6 +12,21 @@
     name: hyprland-git
   when: ansible_distribution == "Archlinux"
 
+- name: Ensure conflict dependencies with Hyprland XDG Portal are not installed
+  pacman:
+    name:
+      - xdg-desktop-portal-wlr
+    state: absent
+  become: true
+
+- name: Install Hyprland
+  pacman:
+    name:
+      - hyprland
+      - xdg-desktop-portal-hyprland
+    state: present
+  become: true
+
 - name: Installs Waybar MPRIs
   kewlfft.aur.aur:
     use: paru
