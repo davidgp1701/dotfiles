@@ -47,7 +47,7 @@ return {
         "isort", -- python formatter
         "jsonlint",
         "prettier", -- prettier formatter
-        "pylint", -- python linter
+        -- "pylint", -- python linter
         "shfmt",
         "stylua", -- lua formatter
         "tfsec",
