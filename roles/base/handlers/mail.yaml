@@ -1,4 +1,0 @@
----
-- name: Update pacman database
-  ansible.builtin.command: pacman -Sy
-  become: true
