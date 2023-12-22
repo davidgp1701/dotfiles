@@ -1,13 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
+      ./system/hardware/bluetooth.nix 
+      # ./system/hardware/wifi.nix
+      # ./system/util/suspend-and-hibernate.nix # Not working right now, wifi card not working after restart
+      ./system/wm/hyperland.nix
     ];
 
   # Bootloader.
@@ -43,19 +43,6 @@
     LC_PAPER = "es_ES.UTF-8";
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = false;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
-  services.xserver.desktopManager.gnome.enable = false;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
   };
 
   # Enable CUPS to print documents.
