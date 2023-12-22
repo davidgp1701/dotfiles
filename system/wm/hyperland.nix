@@ -1,11 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Import wayland config
-  imports = [ ./wayland.nix
-              ./pipewire.nix
-              ./dbus.nix
-            ];
+  imports = [ 
+    ./dbus.nix
+    ./fonts.nix
+    ./pipewire.nix
+    ./wayland.nix
+  ];
 
   # Security
   security = {
