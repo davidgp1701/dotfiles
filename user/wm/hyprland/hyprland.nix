@@ -25,6 +25,7 @@
       monitor=,preferred,auto,1
 
       exec-once = hyprctl setcursor " + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + "
+      exec-once = mm-applet
       exec-once = blueman-applet
       exec-once = waybar
       exec-once = swayidle -w timeout 90 '${pkgs.swaylock}/bin/swaylock' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
@@ -50,7 +51,7 @@
       decoration {
          # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-         rounding = 5
+         rounding = 8
          # blur = yes
          # blur_size = 5
          # blur_passes = 1
@@ -115,6 +116,11 @@
       bind=SUPERCONTROL,l,resizeactive,15 0
       bind=SUPERCONTROL,j,resizeactive,0 15
       bind=SUPERCONTROL,k,resizeactive,0 -15
+
+      bind=ALT,TAB,cyclenext
+      bind=ALT,TAB,bringactivetotop
+      bind=ALTSHIFT,TAB,cyclenext,prev
+      bind=ALTSHIFT,TAB,bringactivetotop
       
       # Dwingle layout
       bind=SUPER,g,togglegroup
