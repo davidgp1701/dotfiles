@@ -24,8 +24,9 @@
     extraConfig = "
       monitor=,preferred,auto,1
 
+      exec-once = pypr
       exec-once = hyprctl setcursor " + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + "
-      exec-once = mm-applet
+      exec-once = nm-applet
       exec-once = blueman-applet
       exec-once = waybar
       exec-once = swayidle -w timeout 90 '${pkgs.swaylock}/bin/swaylock' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
@@ -167,6 +168,27 @@
 
       # TOOLS
       bind=SUPER,N,exec,networkmanager_dmenu
+
+      bind=SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop
+      bind=SUPER,F,exec,pypr toggle ranger && hyprctl dispatch bringactivetotop
+      #bind=SUPER,N,exec,pypr toggle musikcube && hyprctl dispatch bringactivetotop
+      bind=SUPER,B,exec,pypr toggle btm && hyprctl dispatch bringactivetotop
+      bind=SUPER,A,exec,pypr toggle pavucontrol && hyprctl dispatch bringactivetotop
+      $scratchpadsize = size 80% 85%
+
+      $scratchpad = class:^(scratchpad)$
+      windowrulev2 = float,$scratchpad
+      windowrulev2 = $scratchpadsize,$scratchpad
+      windowrulev2 = workspace special silent,$scratchpad
+      windowrulev2 = center,$scratchpad
+
+      $pavucontrol = class:^(pavucontrol)$
+      windowrulev2 = float,$pavucontrol
+      windowrulev2 = size 86% 40%,$pavucontrol
+      windowrulev2 = move 50% 6%,$pavucontrol
+      windowrulev2 = workspace special silent,$pavucontrol
+
+      layerrule = blur,waybar
     ";
 
     xwayland = { enable = true; };
@@ -183,7 +205,46 @@
     swayidle
     xdg-desktop-portal-hyprland
     wdisplays
+    (pkgs.python3Packages.buildPythonPackage rec {
+      pname = "pyprland";
+      version = "1.4.1";
+      src = pkgs.fetchPypi {
+        inherit pname version;
+        sha256 = "sha256-JRxUn4uibkl9tyOe68YuHuJKwtJS//Pmi16el5gL9n8=";
+      };
+      format = "pyproject";
+      propagatedBuildInputs = with pkgs; [
+        python3Packages.setuptools
+        python3Packages.poetry-core
+        poetry
+      ];
+      doCheck = false;
+    })
   ];
+
+  home.file.".config/hypr/pyprland.json".text = ''
+    {
+      "pyprland": {
+        "plugins": ["scratchpads", "magnify"]
+      },
+      "scratchpads": {
+        "term": {
+          "command": "alacritty --class scratchpad",
+          "margin": 50
+        },
+        "btm": {
+          "command": "alacritty --class scratchpad -e btm",
+          "margin": 50
+        },
+        "pavucontrol": {
+          "command": "pavucontrol",
+          "margin": 50,
+          "unfocus": "hide",
+          "animation": "fromTop"
+        }
+      }
+    }
+  '';
 
   programs.fuzzel.enable = true;
   programs.fuzzel.settings = {
