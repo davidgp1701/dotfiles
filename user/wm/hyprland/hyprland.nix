@@ -10,6 +10,12 @@
     })
   ];
 
+  gtk.cursorTheme = {
+    package = pkgs.quintom-cursor-theme;
+    name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+    size = 36;
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [];
@@ -18,6 +24,7 @@
     extraConfig = "
       monitor=,preferred,auto,1
 
+      exec-once = hyprctl setcursor " + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + "
       exec-once = blueman-applet
       exec-once = waybar
       exec-once = swayidle -w timeout 90 '${pkgs.swaylock}/bin/swaylock' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
@@ -38,6 +45,29 @@
         }
         
         sensitivity=0
+      }
+
+      decoration {
+         # See https://wiki.hyprland.org/Configuring/Variables/ for more
+
+         rounding = 5
+         # blur = yes
+         # blur_size = 5
+         # blur_passes = 1
+         # blur_new_optimizations = on
+      }
+      general {
+        layout = master
+        cursor_inactive_timeout = 30
+        border_size = 4
+        no_cursor_warps = false
+        col.active_border = 0xff" + config.lib.stylix.colors.base08 + "
+
+        col.inactive_border = 0x33" + config.lib.stylix.colors.base00 + "
+
+        resize_on_border = true
+        gaps_in = 7
+        gaps_out = 7
       }
 
       # BINDS

@@ -5,6 +5,7 @@
     [ 
       ./hardware-configuration.nix
       ./system/hardware/bluetooth.nix 
+      ./system/hardware/opengl.nix
       # ./system/hardware/wifi.nix
       # ./system/util/suspend-and-hibernate.nix # Not working right now, wifi card not working after restart
       ./system/wm/hyperland.nix
