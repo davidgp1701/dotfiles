@@ -3,6 +3,8 @@
 {
   imports = [
      stylix.homeManagerModules.stylix
+    ./user/app/base.nix
+    ./user/app/browsers.nix
     ./user/style/fonts/fonts.nix
     ./user/wm/hyprland/hyprland.nix
     ./user/style/stylix/stylix.nix
