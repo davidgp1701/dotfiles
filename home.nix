@@ -51,6 +51,7 @@
   xdg.mimeApps.associations.added = {
     "application/octet-stream" = "flstudio.desktop;";
   };
+  xdg.configFile."mimeapps.list".force = true;
 
   home.sessionVariables = {
     EDITOR = editor;
