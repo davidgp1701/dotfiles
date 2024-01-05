@@ -29,7 +29,7 @@
       exec-once = nm-applet
       exec-once = blueman-applet
       exec-once = waybar
-      exec-once = swayidle -w timeout 90 '${pkgs.swaylock}/bin/swaylock' timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
+      exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
       exec = ~/.local/bin/swaybg-stylix
 
       input {

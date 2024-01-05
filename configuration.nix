@@ -69,7 +69,7 @@
   users.users.davidgp = {
     isNormalUser = true;
     description = "David Garcia Perez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "cdrom" ];
     packages = with pkgs; [
       firefox
       kitty
