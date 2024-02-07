@@ -1,0 +1,21 @@
+---
+- name: Installs yazi nightly build
+  kewlfft.aur.aur:
+    use: paru
+    name: yazi-git
+  when: ansible_distribution == "Archlinux"
+
+- name: Install yazi dependencies
+  pacman:
+    name:
+      - fmpegthumbnailer
+      - unar
+      - jq
+      - poppler
+      - fd
+      - ripgrep
+      - fzf
+      - zoxide
+    state: present
+  become: true
+  when: ansible_distribution == "Archlinux"

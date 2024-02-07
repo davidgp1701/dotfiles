@@ -1,3 +1,4 @@
+---
 # tasks to complete before running roles
 - hosts: all
   connection: local
@@ -72,6 +73,7 @@
     - wifi
     - xorg
     - zathura
+    - yazi
     - work
 
 - hosts: vortan
