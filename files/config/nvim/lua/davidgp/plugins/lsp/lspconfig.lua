@@ -158,6 +158,11 @@ return {
     lspconfig["yamlls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        yaml = {
+          yamlVersion = "1.2",
+        },
+      },
     })
   end,
 }

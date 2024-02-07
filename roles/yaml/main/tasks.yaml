@@ -1,0 +1,7 @@
+---
+- name: Links config file for yamlfmt
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/files/config/yamlfmt"
+    dest: "{{ lookup( 'env', 'HOME' ) }}/.config/yamlfmt"
+    state: link
+    force: yes
