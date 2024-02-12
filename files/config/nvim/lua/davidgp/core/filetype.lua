@@ -21,15 +21,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   group = hcl,
 })
 
--- local helm = vim.api.nvim_create_augroup("Helm", { clear = true })
---
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
---   pattern = {
---     "*/templates/*.yaml",
---     "*/templates/*.tpl",
---     "*.gotmpl",
---     "helmfile*.yaml",
---   },
---   command = "set filetype=helm",
---   group = helm,
--- })
+local helm = vim.api.nvim_create_augroup("Helm", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = {
+    "*/templates/*.yaml",
+    "*/templates/*.tpl",
+    "*.gotmpl",
+    "helmfile*.yaml",
+  },
+  command = "set filetype=helm",
+  group = helm,
+})

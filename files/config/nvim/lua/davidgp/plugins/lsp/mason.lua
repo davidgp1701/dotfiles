@@ -29,9 +29,11 @@ return {
       ensure_installed = {
         "bashls",
         "dockerls",
+        "helm_ls",
         "ltex",
         "lua_ls",
         "pyright",
+        "yamlls",
         "terraformls",
         "tflint",
       },
