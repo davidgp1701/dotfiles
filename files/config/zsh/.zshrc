@@ -137,3 +137,6 @@ export LC_CTYPE=en_US.UTF-8
 # Spaceship Prompt
 autoload -U promptinit; promptinit
 eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"

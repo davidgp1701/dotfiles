@@ -6,33 +6,12 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Installs zsh
-  apt:
-    name: zsh
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
 - name: Install zsh completions
   pacman:
     name: zsh-completions
     state: present
   become: yes
   when: ansible_distribution == "Archlinux"
-
-- name: Installs zsh-antigen
-  apt:
-    name: zsh-antigen
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Installs zsh-autosuggestions
-  apt:
-    name: zsh-autosuggestions
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
 
 - name: Install zsh autosugestions
   pacman:
@@ -41,19 +20,14 @@
   become: true
   when: ansible_distribution == "Archlinux"
 
-- name: Installs zsh-common
-  apt:
-    name: zsh-common
+- name: Install zoxide
+  pacman:
+    name:
+      - zoxide
+      - fzf
     state: present
   become: true
-  when: ansible_facts['os_family'] == "Debian"
-
-- name: Installs zsh-syntax-highlighting
-  apt:
-    name: zsh-syntax-highlighting
-    state: present
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
+  when: ansible_distribution == "Archlinux"
 
 - name: Install ZVM zsh-vi-mode plugin, better vi mode
   kewlfft.aur.aur:
