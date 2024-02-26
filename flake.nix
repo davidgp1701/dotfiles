@@ -7,9 +7,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     stylix.url = "github:danth/stylix";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, ... }@inputs:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -44,6 +48,7 @@
           inherit terminal;
           inherit theme;
           inherit wmType;
+          inherit (inputs) nixvim;
           inherit (inputs) stylix;
         };
       };

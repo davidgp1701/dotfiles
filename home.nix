@@ -1,11 +1,13 @@
-{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, stylix, ... }:
+{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, nixvim, stylix, ... }:
 
 {
   imports = [
      stylix.homeManagerModules.stylix
+     nixvim.homeManagerModules.nixvim
     ./user/app/base.nix
     ./user/app/browsers.nix
     ./user/app/makemkv.nix
+    ./user/app/nvim.nix
     ./user/style/fonts/fonts.nix
     ./user/wm/hyprland/hyprland.nix
     ./user/style/stylix/stylix.nix
