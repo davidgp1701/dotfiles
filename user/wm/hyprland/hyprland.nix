@@ -20,7 +20,7 @@
     enable = true;
     plugins = [];
     settings = {};
-    
+
     extraConfig = "
       monitor=,preferred,auto,1
 
@@ -41,11 +41,11 @@
         kb_rules=
 
         follow_mouse=1
-        
+
         touchpad {
           natural_scroll=no
         }
-        
+
         sensitivity=0
       }
 
@@ -76,43 +76,43 @@
       # some nice mouse binds
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
-      
+
       # Global Hyperland
       bind=SUPERSHIFT,q,killactive,
       bind=CONTROLALT,q,exit,
 
       # Lock screen
       bind=SUPERSHIFT,x,exec,swaylock
-      
+
       # Applications
       bind=SUPER,RETURN,exec,"+ terminal +"
       #bind=SUPER,E,exec,thunar
       bind=SUPER,SPACE,exec,fuzzel
-      
+
       # Swithc Layout
       #bind=,F12,exec,~/.config/hypr/scripts/switch-layout.sh
-      
+
       # Movements
       bind=SUPER,left,movefocus,l
       bind=SUPER,right,movefocus,r
       bind=SUPER,up,movefocus,u
       bind=SUPER,down,movefocus,d
-      
+
       bind=SUPER,h,movefocus,l
       bind=SUPER,l,movefocus,r
       bind=SUPER,k,movefocus,u
       bind=SUPER,j,movefocus,d
-      
+
       bind=SUPERSHIFT,h,movewindow,l
       bind=SUPERSHIFT,l,movewindow,r
       bind=SUPERSHIFT,k,movewindow,u
       bind=SUPERSHIFT,j,movewindow,d
-      
+
       # Windows
       bind=SUPER,V,togglefloating,
       bind=SUPER,P,pseudo,
       bind=SUPER,f,fullscreen,
-      
+
       bind=SUPERCONTROL,h,resizeactive,-15 0
       bind=SUPERCONTROL,l,resizeactive,15 0
       bind=SUPERCONTROL,j,resizeactive,0 15
@@ -122,12 +122,12 @@
       bind=ALT,TAB,bringactivetotop
       bind=ALTSHIFT,TAB,cyclenext,prev
       bind=ALTSHIFT,TAB,bringactivetotop
-      
+
       # Dwingle layout
       bind=SUPER,g,togglegroup
       bind=SUPER,tab,changegroupactive
       bind=SUPER,t,togglesplit
-      
+
       # Desktop
       bind=SUPER,1,workspace,1
       bind=SUPER,2,workspace,2
@@ -139,7 +139,7 @@
       bind=SUPER,8,workspace,8
       bind=SUPER,9,workspace,9
       bind=SUPER,0,workspace,10
-      
+
       bind=SUPERSHIFT,1,movetoworkspace,1
       bind=SUPERSHIFT,2,movetoworkspace,2
       bind=SUPERSHIFT,3,movetoworkspace,3
@@ -150,10 +150,10 @@
       bind=SUPERSHIFT,8,movetoworkspace,8
       bind=SUPERSHIFT,9,movetoworkspace,9
       bind=SUPERSHIFT,0,movetoworkspace,10
-      
+
       bind=SUPER,mouse_down,workspace,e+1
       bind=SUPER,mouse_up,workspace,e-1
-      
+
       # Multimedia
       #bind=SUPER,F6,exec,play-control.sh previous
       #bind=SUPER,F7,exec,play-control.sh play-pause
@@ -187,6 +187,9 @@
       windowrulev2 = size 86% 40%,$pavucontrol
       windowrulev2 = move 50% 6%,$pavucontrol
       windowrulev2 = workspace special silent,$pavucontrol
+
+      # Winbox
+      windowrulev2 = tile,title:^(WinBox)(.*)$
 
       layerrule = blur,waybar
     ";
