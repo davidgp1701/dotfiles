@@ -7,7 +7,7 @@
     ./user/app/base.nix
     ./user/app/browsers.nix
     ./user/app/makemkv.nix
-    ./user/app/nvim.nix
+    ./user/app/nvim/nvim.nix
     ./user/app/winbox.nix
     ./user/style/fonts/fonts.nix
     ./user/wm/hyprland/hyprland.nix
