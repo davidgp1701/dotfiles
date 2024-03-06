@@ -176,11 +176,6 @@ return {
     lspconfig["terraformls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      init_options = {
-        terraform = {
-          path = "/usr/bin/terraform-ls",
-        },
-      },
     })
 
     -- configure tflint server
