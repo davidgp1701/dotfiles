@@ -21,7 +21,7 @@ picom -b &
 # Bluetooth
 bluetoothctl power on
 
-# Lock screen when sleeping
+xset on
 xset s 600 5
 xss-lock -n 'systemctl suspend' -- betterlockscreen -l dimblur &
 
