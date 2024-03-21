@@ -63,3 +63,9 @@
     group: root
     mode: '0544'
   become: true
+
+- name: Install ClamAV (required for this laptop)
+  pacman:
+    name: clamav
+    state: present
+  become: true
