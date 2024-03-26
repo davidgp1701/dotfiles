@@ -9,6 +9,9 @@ clipmenud &
 # Ensure dunst is our dbus deamon, in case other ones are installed and automatically started
 /usr/bin/dunst &
 
+# To control the Logitec MX 3 Mouse
+solaar -w hide &
+
 # Set background image
 feh --no-fehbg --bg-fill /home/david/Pictures/shaded_landscape.jpeg &
 
