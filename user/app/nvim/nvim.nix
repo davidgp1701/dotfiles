@@ -1,6 +1,11 @@
 { config, pkgs,...}:
 
 {
+  imports = [
+    ./keymaps.nix
+    ./plugins.nix
+  ];
+
   programs.nixvim = {
     enable = true;
 
@@ -11,7 +16,7 @@
     colorschemes.catppuccin.flavour = "mocha";
 
     # Options
-    options = {
+    opts = {
       fileencoding = "utf-8";
       hidden = true;
       pumheight = 20;
@@ -51,10 +56,5 @@
     };
 
     extraConfigVim = builtins.readFile ./init.vim;
-
-    # plugins
-    plugins.lualine = {
-      enable = true;
-    };
   };
 }

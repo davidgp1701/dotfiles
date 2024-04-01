@@ -77,6 +77,18 @@
     ];
   };
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    dataDir = "/home/davidgp/.local/share/syncthing";
+    configDir = "/home/davidgp/.local/share/syncthing";
+    user = "davidgp";
+    group = "users";
+    guiAddress =  "127.0.0.1:8384";
+    overrideFolders = false;
+    overrideDevices = false;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
