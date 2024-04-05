@@ -2,6 +2,38 @@
 
 {
   programs.nixvim.plugins = {
+    cmp = {
+      enable = true;
+
+      settings = {
+        completion = {
+          completopt = "menu,menuone,preview,noselect";
+        };
+
+        mapping = {
+          "<C-p>" = "cmp.mapping.select_prev_item()";
+          "<C-n>" = "cmp.mapping.select_next_item()";
+          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<C-e>" = "cmp.mapping.abort()";
+          "<CR>" = "cmp.mapping.confirm({ select = false })";
+        };
+
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "buffer"; }
+          { name = "luasnip"; }
+          { name = "path"; }
+        ];
+      };
+    };
+
+    cmp-buffer.enable =  true;
+    cmp_luasnip.enable =  true;
+    cmp-nvim-lsp.enable =  true;
+    cmp-path.enable =  true;
+
     comment = {
       enable = true;
     };
@@ -33,11 +65,36 @@
       };
     };
 
+    friendly-snippets.enable = true;
+
     gitsigns = {
       enable =  true;
     };
 
     lualine = {
+      enable = true;
+    };
+
+    luasnip = {
+      enable = true;
+
+      extraConfig = {
+        history = true;
+        delete_check_events = "TextChanged";
+      };
+    };
+
+    lsp = {
+      enable = true;
+
+      servers = {
+        bashls.enable  = true;
+
+        nixd.enable = true;
+      };
+    };
+
+    lspkind = {
       enable = true;
     };
 
@@ -68,6 +125,17 @@
 
   # Plugins Keymaps
   programs.nixvim.keymaps = [
+    # Luasnip
+    {
+      mode = [ "i" "s" ];
+      key  = "<C-L>";
+      action = "function() require(\"luasnip\").jump(1) end";
+    }
+    {
+      mode = [ "i" "s" ];
+      key  = "<C-J>";
+      action = "function() require(\"luasnip\").jump(-1) end";
+    }
     # Nvim-Tree
     {
       mode = "n";
