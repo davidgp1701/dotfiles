@@ -65,6 +65,8 @@
       };
     };
 
+    diffview.enable = true;
+
     friendly-snippets.enable = true;
 
     gitsigns = {
@@ -95,6 +97,10 @@
     };
 
     lspkind = {
+      enable = true;
+    };
+
+    neogit = {
       enable = true;
     };
 
@@ -136,6 +142,15 @@
       key  = "<C-J>";
       action = "function() require(\"luasnip\").jump(-1) end";
     }
+
+    # Neogit
+    {
+      mode = "n";
+      key = "<leader>gs";
+      action = "<cmd>Neogit<CR>";
+      options.desc = "Opens Neogit";
+    }
+
     # Nvim-Tree
     {
       mode = "n";
@@ -209,10 +224,44 @@
 
   # Nvim-Surround
   programs.nixvim.extraPlugins = with pkgs.vimPlugins; [
+    ( pkgs.vimUtils.buildVimPlugin {
+      name = "cyclest";
+      src = pkgs.fetchFromGitHub {
+          owner = "tjdevries";
+          repo = "cyclist.vim";
+          rev = "d611ea3a21365f90d512dd024874e070e864309e";
+          hash = "sha256-CpfY2luD59p4FM9cvGsn6pyEFMAUv1vi2+WL27e6Pjk=";
+        };
+    })
     nvim-surround
   ];
 
   programs.nixvim.extraConfigLua = ''
     require("nvim-surround").setup({})
+  '';
+
+  programs.nixvim.extraConfigVim = ''
+      call cyclist#add_listchar_option_set('limited', {
+        \ 'eol': '↲',
+        \ 'tab': '» ',
+        \ 'trail': '·',
+        \ 'extends': '<',
+        \ 'precedes': '>',
+        \ 'conceal': '┊',
+        \ 'nbsp': '␣',
+        \ })
+
+      call cyclist#add_listchar_option_set('default', {
+        \ 'eol': '↲',
+        \ 'tab': '»·',
+        \ 'space': '·',
+        \ 'trail': '-',
+        \ 'extends': '☛',
+        \ 'precedes': '☚',
+        \ 'conceal': '┊',
+        \ 'nbsp': '☠',
+        \ })
+
+      call cyclist#activate_listchars('default')
   '';
 }
