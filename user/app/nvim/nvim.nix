@@ -13,7 +13,7 @@
 
     # Color scheme
     colorschemes.catppuccin.enable = true;
-    colorschemes.catppuccin.flavour = "mocha";
+    colorschemes.catppuccin.settings.flavour = "mocha";
 
     # Options
     opts = {
