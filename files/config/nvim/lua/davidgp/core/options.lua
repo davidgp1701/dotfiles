@@ -1,8 +1,8 @@
-vim.cmd('filetype plugin indent on')
+vim.cmd("filetype plugin indent on")
 vim.opt.fileencoding = "utf-8"
 
 -- required to keep multiple buffers
-vim.opt.hidden=true
+vim.opt.hidden = true
 
 -- maximum number of items in the pop up menu
 vim.opt.pumheight = 20
@@ -85,7 +85,7 @@ vim.opt.incsearch = true
 vim.opt.laststatus = 2
 
 -- show 120 columns
-vim.cmd('set colorcolumn=120')
+vim.cmd("set colorcolumn=120")
 
 -- color theme aspects
 vim.opt.background = "dark"
@@ -101,6 +101,3 @@ vim.opt.smartindent = true
 vim.cmd([[
   set mouse=
 ]])
-
-
-
