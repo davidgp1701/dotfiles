@@ -7,6 +7,7 @@
     ./user/app/base.nix
     ./user/app/browsers.nix
     ./user/app/makemkv.nix
+    ./user/app/mqtt-explorer.nix
     ./user/app/nvim/nvim.nix
     ./user/app/winbox.nix
     ./user/style/fonts/fonts.nix

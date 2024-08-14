@@ -32,6 +32,8 @@
       exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
       exec = ~/.local/bin/swaybg-stylix
 
+      debug:disable_logs = false
+
       input {
         kb_file=
         kb_layout=us
@@ -60,9 +62,9 @@
       }
       general {
         layout = master
-        cursor_inactive_timeout = 30
+        # cursor_inactive_timeout = 30
         border_size = 4
-        no_cursor_warps = false
+        # no_cursor_warps = false
         col.active_border = 0xff" + config.lib.stylix.colors.base08 + "
 
         col.inactive_border = 0x33" + config.lib.stylix.colors.base00 + "

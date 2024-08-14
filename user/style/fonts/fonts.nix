@@ -5,9 +5,10 @@
 
 
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ 
+    (pkgs.nerdfonts.override { fonts = [
       "FiraCode"
       "Hack"
+      "JetBrainsMono"
     ];})
   ];
 }

@@ -51,7 +51,7 @@
         css = [ "prettier" ];
         go = [ "gofmt" ];
         html = [ "prettier" ];
-        javascript = [ [ "prettierd" "prettier" ] ];
+        # javascript = [ [ "prettierd" "prettier" ] ];
         json = [ "prettier" ];
         lua = [ "stylua" ];
         markdown = [ "prettier" ];
@@ -80,7 +80,7 @@
     luasnip = {
       enable = true;
 
-      extraConfig = {
+      settings = {
         history = true;
         delete_check_events = "TextChanged";
       };

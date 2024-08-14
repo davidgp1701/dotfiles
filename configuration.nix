@@ -2,9 +2,9 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
-      ./system/hardware/bluetooth.nix 
+      ./system/hardware/bluetooth.nix
       ./system/hardware/fwupd.nix
       ./system/hardware/opengl.nix
       ./system/hardware/thunderbolt.nix
@@ -26,7 +26,7 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
- 
+
   # Enable auto delete of garbabe collector
   nix.gc.automatic = true;
 
@@ -55,7 +55,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true; # Deprecated, option no longer valid
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -75,8 +75,8 @@
     extraGroups = [ "networkmanager" "wheel" "cdrom" ];
     packages = with pkgs; [
       firefox
-      kitty
-      wezterm
+      wireguard-tools
+      wgnord
     ];
   };
 

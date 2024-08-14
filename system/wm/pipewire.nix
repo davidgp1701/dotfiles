@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  sound.enable = true;
+  # sound.enable = true; # TODO to delete, option no longer valid
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

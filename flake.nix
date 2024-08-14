@@ -21,8 +21,8 @@
 
     # User configuration
     editor="vim";
-    font = "Jetbrains Mono";
-    fontPkg = pkgs.jetbrains-mono; # Font package
+    font = "Hack";
+    fontPkg = pkgs.hack; # Font package
     terminal="alacritty";
     theme = "catppuccin-mocha";
     wmType = "wayland";
@@ -34,13 +34,13 @@
          ./configuration.nix
          nixos-hardware.nixosModules.framework-13-7040-amd
         ];
-      }; 
+      };
     };
     homeConfigurations = {
       davidgp = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
-        
+
         extraSpecialArgs = {
           inherit editor;
           inherit font;
