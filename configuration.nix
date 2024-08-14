@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -91,6 +91,11 @@
     overrideFolders = false;
     overrideDevices = false;
   };
+
+  services.zerotierone = {
+    enable = true;
+  };
+  systemd.services.zerotierone.wantedBy = lib.mkForce [ ]; # Forces not start at boot
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
