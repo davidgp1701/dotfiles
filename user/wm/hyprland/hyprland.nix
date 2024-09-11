@@ -74,6 +74,11 @@
         gaps_out = 7
       }
 
+      misc {
+        disable_splash_rendering = true
+        disable_hyprland_logo = true
+      }
+
       # BINDS
       # some nice mouse binds
       bindm=SUPER,mouse:272,movewindow
