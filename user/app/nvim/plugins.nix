@@ -41,27 +41,29 @@
     conform-nvim = {
       enable =  true;
 
-      formatOnSave = {
-        lspFallback = true;
-        timeoutMs = 1000;
-      };
+      settings ={
+        format_on_save = {
+          lspFallback = true;
+          timeoutMs = 1000;
+        };
 
-      formattersByFt = {
-        bash = [ "shfmt" ];
-        css = [ "prettier" ];
-        go = [ "gofmt" ];
-        html = [ "prettier" ];
-        # javascript = [ [ "prettierd" "prettier" ] ];
-        json = [ "prettier" ];
-        lua = [ "stylua" ];
-        markdown = [ "prettier" ];
-        python = [ "isort" "black" ];
-        sh = [ "shfmt" ];
-        terraform = [ "terraform_fmt" ];
-        yaml = [ "yamlfmt" ];
+        formatters_by_ft = {
+          bash = [ "shfmt" ];
+          css = [ "prettier" ];
+          go = [ "gofmt" ];
+          html = [ "prettier" ];
+          # javascript = [ [ "prettierd" "prettier" ] ];
+          json = [ "prettier" ];
+          lua = [ "stylua" ];
+          markdown = [ "prettier" ];
+          python = [ "isort" "black" ];
+          sh = [ "shfmt" ];
+          terraform = [ "terraform_fmt" ];
+          yaml = [ "yamlfmt" ];
 
-        "*" = [ "codespell" ];
-        "_" = [ "trim_whitespace" ];
+          "*" = [ "codespell" ];
+          "_" = [ "trim_whitespace" ];
+        };
       };
     };
 
