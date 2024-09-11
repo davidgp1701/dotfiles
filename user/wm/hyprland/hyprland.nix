@@ -172,10 +172,9 @@
       bind=SUPER,N,exec,networkmanager_dmenu
 
       bind=SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop
-      bind=SUPER,F,exec,pypr toggle ranger && hyprctl dispatch bringactivetotop
-      #bind=SUPER,N,exec,pypr toggle musikcube && hyprctl dispatch bringactivetotop
+      # bind=SUPER,F,exec,pypr toggle ranger && hyprctl dispatch bringactivetotop
       bind=SUPER,B,exec,pypr toggle btm && hyprctl dispatch bringactivetotop
-      bind=SUPER,A,exec,pypr toggle pavucontrol && hyprctl dispatch bringactivetotop
+      bind=SUPER,A,exec,pypr toggle pulsemixer && hyprctl dispatch bringactivetotop
       $scratchpadsize = size 80% 85%
 
       $scratchpad = class:^(scratchpad)$
@@ -202,23 +201,26 @@
 
   home.packages = with pkgs; [
     blueman
+    bottom
     brightnessctl
     fuzzel
     pamixer
     pavucontrol
+    pulsemixer
     swaybg
     swayidle
     xdg-desktop-portal-hyprland
     wdisplays
     (pkgs.python3Packages.buildPythonPackage rec {
       pname = "pyprland";
-      version = "1.4.1";
+      version = "2.4.0";
       src = pkgs.fetchPypi {
         inherit pname version;
-        sha256 = "sha256-JRxUn4uibkl9tyOe68YuHuJKwtJS//Pmi16el5gL9n8=";
+        sha256 = "sha256:2e8d0d21688c7fdb58ac1678550c91c7e23427d4472670f8661ddc94105fc33c";
       };
       format = "pyproject";
       propagatedBuildInputs = with pkgs; [
+        python3Packages.aiofiles
         python3Packages.setuptools
         python3Packages.poetry-core
         poetry
@@ -241,11 +243,9 @@
           "command": "alacritty --class scratchpad -e btm",
           "margin": 50
         },
-        "pavucontrol": {
-          "command": "pavucontrol",
-          "margin": 50,
-          "unfocus": "hide",
-          "animation": "fromTop"
+        "pulsemixer": {
+          "command": "alacritty --class scratchpad -e pulsemixer",
+          "margin": 50
         }
       }
     }
