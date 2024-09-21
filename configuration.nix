@@ -72,6 +72,7 @@
   users.users.davidgp = {
     isNormalUser = true;
     description = "David Garcia Perez";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "cdrom" ];
     packages = with pkgs; [
       firefox
@@ -121,6 +122,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
