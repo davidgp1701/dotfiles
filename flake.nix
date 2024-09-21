@@ -24,7 +24,7 @@
     font = "Hack";
     fontPkg = pkgs.hack; # Font package
     terminal="alacritty";
-    theme = "catppuccin-mocha";
+    theme = "gruvbox-dark-hard";
     wmType = "wayland";
   in {
     nixosConfigurations = {
