@@ -16,6 +16,13 @@
     size = 36;
   };
 
+  home.file = {
+    ".local/bin" = {
+      source = ./scripts;
+      recursive = true;
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [];
@@ -97,7 +104,8 @@
       bind=SUPER,SPACE,exec,fuzzel
 
       # Swithc Layout
-      #bind=,F12,exec,~/.config/hypr/scripts/switch-layout.sh
+      bind=,F12,exec,~/.local/bin/switch-layout.sh
+      bind=,code:234,exec,~/.local/bin/switch-layout.sh
 
       # Movements
       bind=SUPER,left,movefocus,l
@@ -209,6 +217,7 @@
     bottom
     brightnessctl
     fuzzel
+    jq
     pamixer
     pavucontrol
     pulsemixer
@@ -216,6 +225,7 @@
     swayidle
     xdg-desktop-portal-hyprland
     wdisplays
+    wev
     (pkgs.python3Packages.buildPythonPackage rec {
       pname = "pyprland";
       version = "2.4.0";
@@ -328,22 +338,6 @@
           #"all-outputs" = true;
           #"active-only" = true;
           "ignore-workspaces" = ["scratch" "-"];
-          #"show-special" = false;
-          #"persistent-workspaces" = {
-          #    # this block doesn't seem to work for whatever reason
-          #    "eDP-1" = [1 2 3 4 5 6 7 8 9];
-          #    "DP-1" = [1 2 3 4 5 6 7 8 9];
-          #    "HDMI-A-1" = [1 2 3 4 5 6 7 8 9];
-          #    "1" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "2" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "3" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "4" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "5" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "6" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "7" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "8" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #    "9" = ["eDP-1" "DP-1" "HDMI-A-1"];
-          #};
         };
 
         "idle_inhibitor" = {
