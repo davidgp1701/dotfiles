@@ -92,9 +92,16 @@
       enable = true;
 
       servers = {
+        ansiblels.enable = true;
         bashls.enable  = true;
-
+        dockerls.enable = true;
+        gopls.enable = true;
+        helm-ls.enable = true;
+        html.enable = true;
         nixd.enable = true;
+        terraformls.enable = true;
+        tflint.enable = true;
+        yamlls.enable = true;
       };
     };
 
@@ -120,6 +127,13 @@
 
     treesitter = {
       enable = true;
+
+      settings = {
+        auto_install = true;
+        highlight = {
+          enable = true;
+        };
+      };
     };
 
     treesitter-textobjects = {
@@ -127,6 +141,14 @@
     };
 
     ts-autotag = {
+      enable = true;
+    };
+
+    ts-comments = {
+      enable = true;
+    };
+
+    web-devicons = {
       enable = true;
     };
   };

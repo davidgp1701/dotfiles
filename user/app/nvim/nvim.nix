@@ -13,8 +13,8 @@
 
     # Color scheme
     colorschemes.gruvbox.enable = true;
-    # colorschemes.catppuccin.enable = true;
-    # colorschemes.catppuccin.settings.flavour = "mocha";
+    #colorschemes.catppuccin.enable = true;
+    #colorschemes.catppuccin.settings.flavour = "mocha";
 
     # Options
     opts = {
