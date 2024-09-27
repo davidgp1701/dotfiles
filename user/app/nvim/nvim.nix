@@ -1,9 +1,24 @@
-{ config, pkgs,...}:
+{ config, ...}:
 
 {
   imports = [
     ./keymaps.nix
-    ./plugins.nix
+    ./plugins/cmp.nix
+    ./plugins/comment.nix
+    ./plugins/conform.nix
+    ./plugins/diffview.nix
+    ./plugins/extra.nix
+    ./plugins/friendly-snippets.nix
+    ./plugins/gitsigns.nix
+    ./plugins/lsp.nix
+    ./plugins/lualine.nix
+    ./plugins/luasnip.nix
+    ./plugins/neogit.nix
+    ./plugins/nvim-autopairs.nix
+    ./plugins/nvim-tree.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
+    ./plugins/web-devicons.nix
   ];
 
   programs.nixvim = {
