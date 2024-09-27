@@ -1,4 +1,4 @@
-{ config, ...}:
+{ config, pkgs, ...}:
 
 {
   imports = [
@@ -10,15 +10,25 @@
     ./plugins/extra.nix
     ./plugins/friendly-snippets.nix
     ./plugins/gitsigns.nix
+    ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/luasnip.nix
     ./plugins/neogit.nix
     ./plugins/nvim-autopairs.nix
+    ./plugins/nvim-surround.nix
     ./plugins/nvim-tree.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/web-devicons.nix
+  ];
+
+  # Dependencies
+  home.packages = [
+    pkgs.ansible-lint
+    pkgs.nodePackages.jsonlint
+    pkgs.markdownlint-cli
+    pkgs.yamllint
   ];
 
   programs.nixvim = {

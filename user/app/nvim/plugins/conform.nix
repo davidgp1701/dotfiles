@@ -21,6 +21,7 @@
           python = [ "isort" "black" ];
           sh = [ "shfmt" ];
           terraform = [ "terraform_fmt" ];
+          terraform-vars = [ "terraform_fmt" ];
           yaml = [ "yamlfmt" ];
 
           "*" = [ "codespell" ];

@@ -2,7 +2,7 @@
 
 {
   # Nvim-Surround
-  programs.nixvim.extraPlugins = with pkgs.vimPlugins; [
+  programs.nixvim.extraPlugins = [
     ( pkgs.vimUtils.buildVimPlugin {
       name = "cyclest";
       src = pkgs.fetchFromGitHub {
@@ -12,12 +12,7 @@
           hash = "sha256-CpfY2luD59p4FM9cvGsn6pyEFMAUv1vi2+WL27e6Pjk=";
         };
     })
-    nvim-surround
   ];
-
-  programs.nixvim.extraConfigLua = ''
-    require("nvim-surround").setup({})
-  '';
 
   programs.nixvim.extraConfigVim = ''
       call cyclist#add_listchar_option_set('limited', {
