@@ -24,7 +24,6 @@
     - node
     - bash # It requires node first to install the LS
     - gpg
-    - nvim
     - python
     - reflector
     - starship
