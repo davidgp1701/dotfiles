@@ -14,12 +14,20 @@
     {
       mode = [ "i" "s" ];
       key  = "<C-L>";
-      action = "function() require(\"luasnip\").jump(1) end";
+      action.__raw = ''
+        function()
+          require("luasnip").jump(1)
+        end
+      '';
     }
     {
       mode = [ "i" "s" ];
       key  = "<C-J>";
-      action = "function() require(\"luasnip\").jump(-1) end";
+      action.__raw = ''
+        function()
+          require("luasnip").jump(-1)
+        end
+      '';
     }
   ];
 }

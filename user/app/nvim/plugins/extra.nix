@@ -1,7 +1,6 @@
 { pkgs,...}:
 
 {
-  # Nvim-Surround
   programs.nixvim.extraPlugins = [
     ( pkgs.vimUtils.buildVimPlugin {
       name = "cyclest";

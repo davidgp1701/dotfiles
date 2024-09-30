@@ -7,9 +7,13 @@
     ./plugins/comment.nix
     ./plugins/conform.nix
     ./plugins/diffview.nix
+    ./plugins/direnv.nix
     ./plugins/extra.nix
     ./plugins/friendly-snippets.nix
     ./plugins/gitsigns.nix
+    ./plugins/harpoon.nix
+    ./plugins/helm.nix
+    ./plugins/indent-blankline.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
@@ -21,6 +25,7 @@
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/web-devicons.nix
+    ./plugins/whichkey.nix
   ];
 
   # Dependencies
