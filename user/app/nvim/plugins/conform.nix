@@ -14,7 +14,7 @@
           css = [ "prettier" ];
           go = [ "gofmt" ];
           html = [ "prettier" ];
-          # javascript = [ [ "prettierd" "prettier" ] ];
+          javascript = [ "prettier" ];
           json = [ "prettier" ];
           lua = [ "stylua" ];
           markdown = [ "prettier" ];
@@ -30,4 +30,21 @@
       };
     };
   };
+
+  programs.nixvim.keymaps = [
+    {
+      mode = [ "n" "v" ];
+      key = "<leader>mp";
+      action.__raw = ''
+        function()
+          require("conform").format({
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 1000,
+          })
+        end
+      '';
+      options.desc = "Format file or range (in visual mode)";
+    }
+  ];
 }

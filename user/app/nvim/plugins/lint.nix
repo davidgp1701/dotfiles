@@ -13,4 +13,17 @@
       };
     };
   };
+
+  programs.nixvim.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>l";
+      action.__raw = ''
+        function()
+          require("lint").try_lint()
+        end
+      '';
+      options.desc = "Trigger linting for current file";
+    }
+  ];
 }
