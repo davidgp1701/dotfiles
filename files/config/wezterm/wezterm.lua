@@ -7,7 +7,10 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = 'GruvboxDarkHard'
+config.color_scheme = 'Gruvbox Material (Gogh)'
+-- config.color_scheme = 'Gruvbox dark, pale (base16)'
 
 -- Dissable tabbar
 config.enable_tab_bar = false
