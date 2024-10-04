@@ -4,6 +4,7 @@
   imports = [
     nixvim.homeManagerModules.nixvim
     ../user/app/nvim/nvim.nix
+    ../user/app/nix-prefetch-git.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

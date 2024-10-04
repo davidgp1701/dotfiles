@@ -26,6 +26,8 @@
     ./plugins/treesitter.nix
     ./plugins/web-devicons.nix
     ./plugins/whichkey.nix
+
+    # ./colorschemes/gruvbox-material.nix
   ];
 
   # Dependencies
@@ -42,7 +44,13 @@
     globals.mapleader = " ";
 
     # Color scheme
-    colorschemes.gruvbox.enable = true;
+    colorschemes.gruvbox = {
+      enable = true;
+    };
+    # colorschemes.rose-pine = {
+    #   enable = true;
+    #   settings.variant = "moon";
+    # };
     #colorschemes.catppuccin.enable = true;
     #colorschemes.catppuccin.settings.flavour = "mocha";
 

@@ -9,6 +9,7 @@
     ./user/app/direnv.nix
     ./user/app/makemkv.nix
     ./user/app/mqtt-explorer.nix
+    ./user/app/nix-prefetch-git.nix
     ./user/app/nvim/nvim.nix
     ./user/app/winbox.nix
     ./user/app/zsh.nix
