@@ -1,7 +1,8 @@
-{ config, pkgs, nixvim, ... }:
+{ config, lib, pkgs, nixvim, font, fontPkg, terminal, theme, wmType, stylix, ... }:
 
 {
   imports = [
+    stylix.homeManagerModules.stylix
     nixvim.homeManagerModules.nixvim
     ../user/app/nvim/nvim.nix
     ../user/app/nix-prefetch-git.nix
@@ -74,9 +75,15 @@
   #  /etc/profiles/per-user/david/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
+
+  nixpkgs.config.allowUnfree = true;
+
+  xdg.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  wayland.windowManager.hyprland.enable = lib.mkDefault false;
 }

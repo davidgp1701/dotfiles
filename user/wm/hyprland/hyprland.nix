@@ -16,6 +16,8 @@
     size = 36;
   };
 
+  # programs.hyprland.enable = true;
+
   home.file = {
     ".local/bin" = {
       source = ./scripts;
@@ -38,6 +40,7 @@
       exec-once = waybar
       exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
       exec = ~/.local/bin/swaybg-stylix
+      exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
       debug:disable_logs = false
 
@@ -67,8 +70,9 @@
          # blur_passes = 1
          # blur_new_optimizations = on
       }
+
       general {
-        layout = master
+        layout = dwindle
         # cursor_inactive_timeout = 30
         border_size = 4
         # no_cursor_warps = false
@@ -104,8 +108,8 @@
       bind=SUPER,SPACE,exec,fuzzel
 
       # Swithc Layout
-      bind=,F12,exec,~/.local/bin/switch-layout.sh
-      bind=,code:234,exec,~/.local/bin/switch-layout.sh
+      bind=,F12,exec,~/.local/bin/switch-layout-hyprland.sh
+      bind=,code:234,exec,~/.local/bin/switch-layout-hyprland.sh
 
       # Movements
       bind=SUPER,left,movefocus,l
