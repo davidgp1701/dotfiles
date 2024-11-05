@@ -38,7 +38,7 @@
       exec-once = nm-applet
       exec-once = blueman-applet
       exec-once = waybar
-      exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
+      # exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
       exec = ~/.local/bin/swaybg-stylix
       exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
@@ -174,9 +174,9 @@
       bind=SUPER,mouse_up,workspace,e-1
 
       # Multimedia
-      #bind=SUPER,F6,exec,play-control.sh previous
-      #bind=SUPER,F7,exec,play-control.sh play-pause
-      #bind=SUPER,F8,exec,play-control.sh next
+      bind=SUPER,F6,exec,play-control.sh previous
+      bind=SUPER,F7,exec,play-control.sh play-pause
+      bind=SUPER,F8,exec,play-control.sh next
       bind=,code:122,exec,pamixer -d 10
       bind=,code:123,exec,pamixer -i 10
       bind=,code:121,exec,pamixer -t
@@ -187,6 +187,7 @@
 
       # TOOLS
       bind=SUPER,N,exec,networkmanager_dmenu
+      bind=SUPERSHIFT,s,exec,XDG_CURRENT_DESKTOP=sway flameshot gui
 
       bind=SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop
       # bind=SUPER,F,exec,pypr toggle ranger && hyprctl dispatch bringactivetotop
@@ -208,6 +209,15 @@
 
       # Winbox
       windowrulev2 = tile,title:^(WinBox)(.*)$
+
+      # Flameshot
+      windowrulev2 = noanim, class:^(flameshot)$
+      windowrulev2 = float, class:^(flameshot)$
+      windowrulev2 = move 0 0, class:^(flameshot)$
+      windowrulev2 = pin, class:^(flameshot)$
+      # set this to your leftmost monitor id, otherwise you have to move your cursor to the leftmost monitor
+      # before executing flameshot
+      windowrulev2 = monitor 1, class:^(flameshot)$
 
       layerrule = blur,waybar
     ";

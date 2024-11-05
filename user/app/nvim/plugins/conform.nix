@@ -17,7 +17,7 @@
           javascript = [ "prettier" ];
           json = [ "prettier" ];
           lua = [ "stylua" ];
-          markdown = [ "prettier" ];
+          # markdown = [ "prettier" ];
           python = [ "isort" "black" ];
           sh = [ "shfmt" ];
           terraform = [ "terraform_fmt" ];

@@ -8,7 +8,7 @@
         bashls.enable  = true;
         dockerls.enable = true;
         gopls.enable = true;
-        helm-ls.enable = true;
+        helm_ls.enable = true;
         html.enable = true;
         nixd.enable = true;
         terraformls.enable = true;
