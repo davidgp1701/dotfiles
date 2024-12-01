@@ -73,7 +73,7 @@
     isNormalUser = true;
     description = "David Garcia Perez";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "cdrom" ];
+    extraGroups = [ "networkmanager" "wheel" "cdrom" "storage" ];
     packages = with pkgs; [
       firefox
       wireguard-tools
@@ -98,12 +98,17 @@
   };
   systemd.services.zerotierone.wantedBy = lib.mkForce [ ]; # Forces not start at boot
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     e2fsprogs
      git
      iperf
      pciutils
