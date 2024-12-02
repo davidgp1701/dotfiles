@@ -44,7 +44,7 @@ disabled = false
 
 [terraform]
 format = '| [$symbol$version \($workspace\)]($style) '
-symbol = "💠 "
+symbol = " "
 
 [python]
 format = '| [${symbol}${version}]($style) '
