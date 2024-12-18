@@ -2,6 +2,20 @@
   programs.nixvim.plugins = {
     telescope = {
       enable = true;
+
+      extensions = {
+        fzf-native.enable = true;
+      };
+
+      settings = {
+        pickers = {
+          find_files = {
+            theme = "ivy";
+          };
+          grep_string.theme = "ivy";
+          live_grep.theme = "ivy";
+        };
+      };
     };
   };
 

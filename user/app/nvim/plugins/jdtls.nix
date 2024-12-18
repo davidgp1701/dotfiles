@@ -1,11 +1,4 @@
 {
-  programs.nixvim.plugins = {
-    lualine = {
-      enable = true;
-    };
-  };
-}
-{
   programs.nixvim.plugins.nvim-jdtls = {
     enable = true;
     cmd = [

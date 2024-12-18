@@ -10,7 +10,7 @@
         gopls.enable = true;
         helm_ls.enable = true;
         html.enable = true;
-        # jdtls.enable = true;
+        jdtls.enable = true;
         nixd.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
