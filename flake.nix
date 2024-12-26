@@ -11,6 +11,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    winbox4 = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:ironman820/winbox4";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, ... }@inputs:
@@ -50,6 +54,7 @@
           inherit wmType;
           inherit (inputs) nixvim;
           inherit (inputs) stylix;
+          inherit (inputs) winbox4;
         };
       };
     };

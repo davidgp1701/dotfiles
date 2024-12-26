@@ -242,10 +242,10 @@
     wev
     (pkgs.python3Packages.buildPythonPackage rec {
       pname = "pyprland";
-      version = "2.4.0";
+      version = "2.4.3";
       src = pkgs.fetchPypi {
         inherit pname version;
-        sha256 = "sha256:2e8d0d21688c7fdb58ac1678550c91c7e23427d4472670f8661ddc94105fc33c";
+        sha256 = "sha256-ll1zzoZzjIt3eKWu4QTOH/1Y0bcVXaDWmt5AOcVznkI=";
       };
       format = "pyproject";
       propagatedBuildInputs = with pkgs; [

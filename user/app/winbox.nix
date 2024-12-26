@@ -8,6 +8,6 @@
     #   https://github.com/hyprwm/Hyprland/issues/2319
     wl-clipboard
     xclip
-    winbox
+    winbox4
   ];
 }

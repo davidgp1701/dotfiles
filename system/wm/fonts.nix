@@ -2,16 +2,14 @@
 
 {
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "Inconsolata"
-      "JetBrainsMono"
-      ]; })
     powerline
-    inconsolata
-    inconsolata-nerdfont
+    powerline-fonts
+    powerline-symbols
+    nerd-fonts.hack
+    nerd-fonts.inconsolata
     iosevka
     font-awesome
-    jetbrains-mono
+    nerd-fonts.jetbrains-mono
     ubuntu_font_family
     terminus_font
   ];

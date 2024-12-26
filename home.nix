@@ -1,4 +1,4 @@
-{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, nixvim, stylix, ... }:
+{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, nixvim, stylix, winbox4, ... }:
 
 {
   imports = [
