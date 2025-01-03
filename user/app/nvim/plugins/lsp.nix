@@ -4,7 +4,7 @@
       enable = true;
 
       servers = {
-        ansiblels.enable = true;
+        # ansiblels.enable = true;
         bashls.enable  = true;
         dockerls.enable = true;
         gopls.enable = true;

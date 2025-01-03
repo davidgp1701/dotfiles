@@ -32,7 +32,7 @@
 
   # Dependencies
   home.packages = [
-    pkgs.ansible-lint
+    # pkgs.ansible-lint
     pkgs.nodePackages.jsonlint
     pkgs.markdownlint-cli
     pkgs.yamllint

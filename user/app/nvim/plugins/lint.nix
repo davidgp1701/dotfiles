@@ -4,7 +4,7 @@
       enable = true;
 
       lintersByFt = {
-        ansible = ["ansible_lint"];
+        # ansible = ["ansible_lint"];
         json = ["jsonlint"];
         markdown = ["markdownlint"];
         python = ["pylint"];
