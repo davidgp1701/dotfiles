@@ -15,9 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:ironman820/winbox4";
     };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, hyprland-qtutils, ... }@inputs:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -55,6 +56,7 @@
           inherit (inputs) nixvim;
           inherit (inputs) stylix;
           inherit (inputs) winbox4;
+          inherit (inputs) hyprland-qtutils;
         };
       };
     };

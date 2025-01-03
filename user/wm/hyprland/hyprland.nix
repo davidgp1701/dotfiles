@@ -1,7 +1,6 @@
 { config, lib, pkgs, font, terminal, ...}:
 
 {
-
   imports = [
     ../../terminal/alacritty/alacritty.nix
     (import ../../app/dmenu-scripts/networkmanager-dmenu.nix {

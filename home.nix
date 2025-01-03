@@ -1,4 +1,4 @@
-{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, nixvim, stylix, winbox4, ... }:
+{ config, lib, pkgs, editor, font, fontPkg, terminal, theme, wmType, nixvim, stylix, winbox4, hyprland-qtutils, ... }:
 
 {
   imports = [
@@ -25,6 +25,7 @@
   home.stateVersion = "23.11"; # Home Manager language version, not NixOS version, this is for API compatibility
 
   home.packages = [
+    hyprland-qtutils.packages."${pkgs.system}".default
   ];
 
   home.file = {
