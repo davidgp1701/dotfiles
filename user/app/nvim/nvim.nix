@@ -14,6 +14,7 @@
     ./plugins/harpoon.nix
     ./plugins/helm.nix
     ./plugins/indent-blankline.nix
+    ./plugins/jdtls.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
@@ -33,6 +34,7 @@
   # Dependencies
   home.packages = [
     # pkgs.ansible-lint
+    pkgs.jdt-language-server
     pkgs.nodePackages.jsonlint
     pkgs.markdownlint-cli
     pkgs.yamllint
