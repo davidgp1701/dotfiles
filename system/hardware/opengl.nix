@@ -1,5 +1,5 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 }
