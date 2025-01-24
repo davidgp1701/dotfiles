@@ -8,6 +8,7 @@
     ./user/app/browsers.nix
     ./user/app/direnv.nix
     ./user/app/darktable.nix
+    ./user/app/flameshot.nix
     ./user/app/makemkv.nix
     ./user/app/mqtt-explorer.nix
     ./user/app/nix-prefetch-git.nix
