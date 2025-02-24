@@ -8,11 +8,13 @@
     ./user/app/browsers.nix
     ./user/app/direnv.nix
     ./user/app/darktable.nix
+    ./user/app/esptool.nix
     ./user/app/flameshot.nix
     ./user/app/makemkv.nix
     ./user/app/mqtt-explorer.nix
     ./user/app/nix-prefetch-git.nix
     ./user/app/nvim/nvim.nix
+    ./user/app/vnc.nix
     ./user/app/winbox.nix
     ./user/app/zsh.nix
     ./user/style/fonts/fonts.nix

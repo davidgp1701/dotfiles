@@ -91,7 +91,7 @@
     isNormalUser = true;
     description = "David Garcia Perez";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "cdrom" "storage" ];
+    extraGroups = [ "networkmanager" "wheel" "cdrom" "storage" "dialout" "uucp" ];
     packages = with pkgs; [
       firefox
       wireguard-tools
