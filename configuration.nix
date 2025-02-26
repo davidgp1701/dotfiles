@@ -132,7 +132,6 @@
      pciutils
      thunderbolt
      usbutils
-     vim
      wget
   ];
 

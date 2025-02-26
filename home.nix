@@ -35,6 +35,10 @@
   home.file = {
   };
 
+  home.shellAliases = {
+    vim = "nvim";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   xdg.enable = true;
