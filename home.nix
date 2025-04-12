@@ -11,7 +11,7 @@
     ./user/app/esptool.nix
     ./user/app/flameshot.nix
     ./user/app/gimp.nix
-    ./user/app/makemkv.nix
+    # ./user/app/makemkv.nix
     ./user/app/mqtt-explorer.nix
     ./user/app/nix-prefetch-git.nix
     ./user/app/nvim/nvim.nix
