@@ -2,8 +2,8 @@
 
 {
   imports = [
-    stylix.homeManagerModules.stylix
-    nixvim.homeManagerModules.nixvim
+    stylix.homeModules.stylix
+    nixvim.homeModules.nixvim
     ../user/app/nvim/nvim.nix
     ../user/app/nix-prefetch-git.nix
   ];

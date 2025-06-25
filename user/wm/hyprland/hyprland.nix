@@ -9,11 +9,11 @@
     })
   ];
 
-  gtk.cursorTheme = {
-    package = pkgs.quintom-cursor-theme;
-    name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
-    size = 36;
-  };
+  # gtk.cursorTheme = {
+  #   package = pkgs.quintom-cursor-theme;
+  #   name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+  #   size = 36;
+  # };
 
   # programs.hyprland.enable = true;
 
@@ -33,7 +33,6 @@
       monitor=,preferred,auto,1
 
       exec-once = pypr
-      exec-once = hyprctl setcursor " + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + "
       exec-once = nm-applet
       exec-once = blueman-applet
       exec-once = waybar
