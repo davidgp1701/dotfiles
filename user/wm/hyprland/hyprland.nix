@@ -9,12 +9,6 @@
     })
   ];
 
-  # gtk.cursorTheme = {
-  #   package = pkgs.quintom-cursor-theme;
-  #   name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
-  #   size = 36;
-  # };
-
   # programs.hyprland.enable = true;
 
   home.file = {
@@ -22,6 +16,14 @@
       source = ./scripts;
       recursive = true;
     };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.apple-cursor;
+    name = "macOS";
+    size = 20;
   };
 
   wayland.windowManager.hyprland = {
@@ -34,8 +36,8 @@
 
       exec-once = pypr
       exec-once = nm-applet
-      exec-once = blueman-applet
       exec-once = waybar
+      exec-once = blueman-applet
       # exec-once = swayidle -w timeout 600 '${pkgs.swaylock}/bin/swaylock' timeout 120 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep '${pkgs.swaylock}/bin/swaylock'
       exec = ~/.local/bin/swaybg-stylix
       exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -301,13 +303,6 @@
 
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oldAttrs: {
-      postPatch = ''
-        # use hyprctl to switch workspaces
-        sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprworkspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp
-        sed -i 's/gIPC->getSocket1Reply("dispatch workspace " + std::to_string(id()));/const std::string command = "hyprworkspace " + std::to_string(id());\n\tsystem(command.c_str());/g' src/modules/hyprland/workspaces.cpp
-      '';
-    });
     settings = {
       mainBar = {
         layer = "top";
