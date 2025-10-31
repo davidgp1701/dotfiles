@@ -34,9 +34,13 @@
   # Dependencies
   home.packages = [
     # pkgs.ansible-lint
+    pkgs.black
+    pkgs.gcc
     pkgs.jdt-language-server
     pkgs.nodePackages.jsonlint
     pkgs.markdownlint-cli
+    pkgs.pylint
+    pkgs.pyright
     pkgs.yamllint
   ];
 
@@ -46,15 +50,15 @@
     globals.mapleader = " ";
 
     # Color scheme
-    colorschemes.gruvbox = {
-      enable = true;
-    };
+    # colorschemes.gruvbox = {
+    #   enable = true;
+    # };
     # colorschemes.rose-pine = {
     #   enable = true;
     #   settings.variant = "moon";
     # };
-    #colorschemes.catppuccin.enable = true;
-    #colorschemes.catppuccin.settings.flavour = "mocha";
+    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin.settings.flavour = "mocha";
 
     # Options
     opts = {
@@ -94,6 +98,7 @@
       completeopt = [ "menu" "menuone" "noselect" ];
       smartcase = true;
       smartindent = true;
+      syntax = "on";
     };
 
     extraConfigVim = builtins.readFile ./init.vim;

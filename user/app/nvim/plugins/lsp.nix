@@ -12,6 +12,7 @@
         html.enable = true;
         jdtls.enable = true;
         nixd.enable = true;
+        pyright.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
         yamlls.enable = true;
