@@ -2,8 +2,8 @@
 
 {
   imports = [
-     stylix.homeManagerModules.stylix
-     nixvim.homeManagerModules.nixvim
+     stylix.homeModules.stylix
+     nixvim.homeModules.nixvim
     ./user/app/base.nix
     ./user/app/browsers.nix
     ./user/app/direnv.nix
