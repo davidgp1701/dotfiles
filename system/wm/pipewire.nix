@@ -2,7 +2,7 @@
 
 {
   # sound.enable = true; # TODO to delete, option no longer valid
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

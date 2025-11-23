@@ -10,7 +10,7 @@
     iosevka
     font-awesome
     nerd-fonts.jetbrains-mono
-    ubuntu_font_family
+    ubuntu-classic
     terminus_font
   ];
 

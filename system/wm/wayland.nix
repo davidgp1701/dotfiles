@@ -17,10 +17,10 @@
       options = "caps:escape";
       variant = "";
     };
+  };
 
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
+  services.displayManager.gdm ={
+    enable = true;
+    wayland = true;
   };
 }
