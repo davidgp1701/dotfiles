@@ -37,7 +37,6 @@
     pkgs.black
     pkgs.gcc
     pkgs.jdt-language-server
-    pkgs.nodePackages.jsonlint
     pkgs.markdownlint-cli
     pkgs.pylint
     pkgs.pyright
