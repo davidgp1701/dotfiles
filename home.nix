@@ -26,7 +26,7 @@
   home.username = "davidgp";
   home.homeDirectory = "/home/davidgp";
 
-  home.stateVersion = "23.11"; # Home Manager language version, not NixOS version, this is for API compatibility
+  home.stateVersion = "26.05"; # Home Manager language version, not NixOS version, this is for API compatibility
 
   home.packages = [
     hyprland-qtutils.packages."${pkgs.system}".default

@@ -5,7 +5,6 @@
 
       lintersByFt = {
         # ansible = ["ansible_lint"];
-        json = ["jsonlint"];
         markdown = ["markdownlint"];
         python = ["pylint"];
         yaml = ["yamllint"];

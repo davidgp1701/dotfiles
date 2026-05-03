@@ -193,33 +193,33 @@
       # bind=SUPER,F,exec,pypr toggle ranger && hyprctl dispatch bringactivetotop
       bind=SUPER,B,exec,pypr toggle btm && hyprctl dispatch bringactivetotop
       bind=SUPER,A,exec,pypr toggle pulsemixer && hyprctl dispatch bringactivetotop
-      $scratchpadsize = size 80% 85%
+      # $scratchpadsize = size 80% 85%
+      #
+      # $scratchpad = class:^(scratchpad)$
+      # windowrulev2 = float,$scratchpad
+      # windowrulev2 = $scratchpadsize,$scratchpad
+      # windowrulev2 = workspace special silent,$scratchpad
+      # windowrulev2 = center,$scratchpad
+      #
+      # $pavucontrol = class:^(pavucontrol)$
+      # windowrulev2 = float,$pavucontrol
+      # windowrulev2 = size 86% 40%,$pavucontrol
+      # windowrulev2 = move 50% 6%,$pavucontrol
+      # windowrulev2 = workspace special silent,$pavucontrol
+      #
+      # # Winbox
+      # windowrulev2 = tile,title:^(WinBox)(.*)$
+      #
+      # # Flameshot
+      # windowrulev2 = noanim, class:^(flameshot)$
+      # windowrulev2 = float, class:^(flameshot)$
+      # windowrulev2 = move 0 0, class:^(flameshot)$
+      # windowrulev2 = pin, class:^(flameshot)$
+      # # set this to your leftmost monitor id, otherwise you have to move your cursor to the leftmost monitor
+      # # before executing flameshot
+      # windowrulev2 = monitor 1, class:^(flameshot)$
 
-      $scratchpad = class:^(scratchpad)$
-      windowrulev2 = float,$scratchpad
-      windowrulev2 = $scratchpadsize,$scratchpad
-      windowrulev2 = workspace special silent,$scratchpad
-      windowrulev2 = center,$scratchpad
-
-      $pavucontrol = class:^(pavucontrol)$
-      windowrulev2 = float,$pavucontrol
-      windowrulev2 = size 86% 40%,$pavucontrol
-      windowrulev2 = move 50% 6%,$pavucontrol
-      windowrulev2 = workspace special silent,$pavucontrol
-
-      # Winbox
-      windowrulev2 = tile,title:^(WinBox)(.*)$
-
-      # Flameshot
-      windowrulev2 = noanim, class:^(flameshot)$
-      windowrulev2 = float, class:^(flameshot)$
-      windowrulev2 = move 0 0, class:^(flameshot)$
-      windowrulev2 = pin, class:^(flameshot)$
-      # set this to your leftmost monitor id, otherwise you have to move your cursor to the leftmost monitor
-      # before executing flameshot
-      windowrulev2 = monitor 1, class:^(flameshot)$
-
-      layerrule = blur,waybar
+      # layerrule = blur,waybar
     ";
 
     xwayland = { enable = true; };
